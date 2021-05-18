@@ -1,0 +1,109 @@
+{
+    "properties": {
+      "displayName": "HMCTS Tagging Policy",
+      "policyType": "Custom",
+      "mode": "Indexed",
+      "parameters": {
+        "allowedEnvironmentNames": {
+          "defaultValue": [
+            "sandbox",
+            "development",
+            "testing",
+            "demo",
+            "ITHC",
+            "staging",
+            "production"
+          ],
+          "type": "Array",
+          "metadata": {
+            "displayName": "Allowed environment Names",
+            "description": "Allowed environment names such as production or staging"
+          }
+        },
+        "allowedBusinessAreaNames": {
+          "defaultValue": [
+            "CFT",
+            "crime",
+            "cross-cutting"
+          ],
+          "type": "Array",
+          "metadata": {
+            "displayName": "Allowed businessArea names",
+            "description": "Allowed businessArea names such as CFT or crime"
+          }
+        },
+        "allowedApplicationNames": {
+          "defaultValue": [
+            "core"
+          ],
+          "type": "Array",
+          "metadata": {
+            "displayName": "Allowed application names",
+            "description": "Allowed application names such as core"
+          }
+        },   
+        "RequiredTags": {
+          "type": "Array",
+          "defaultValue": [
+            "environment",
+            "application",
+            "businessArea",
+            "builtFrom"
+          ],
+          "metadata": {
+            "displayName": "Required Tags",
+            "description": "The list of Required tags for resources."
+          }
+        }
+      },
+      "policyRule": {
+        "if": {
+          "anyOf": [
+            {
+              "count": {
+                "value": "[parameters('RequiredTags')]",
+                "where": {
+                  "field": "tags",
+                  "notContainsKey": "[current()]"
+                }
+              },
+              "greater": 0
+            },
+            {
+              "field": "tags['environment']",
+              "notIn": "[parameters('allowedEnvironmentNames')]"
+            },
+            {
+              "field": "tags['businessArea']",
+              "notIn": "[parameters('allowedBusinessAreaNames')]"
+            },
+            {
+              "field": "tags['application']",
+              "notIn": "[parameters('allowedApplicationNames')]"
+            },
+            {
+              "field": "tags['builtFrom']",
+              "notLike": "https://*"
+            }, 
+            {
+              "allOf": [{
+                "field": "tags['environment']",
+                "equals": "sandbox"
+              },
+              {
+                "field": "tags['deleteBy']",
+                "exists": "false"
+              }
+              ]
+            }
+          ]
+        },
+        "then": {
+          "effect": "deny"
+        }
+      }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "HMCTSTagging"
+  }

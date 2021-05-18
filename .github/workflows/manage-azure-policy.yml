@@ -1,0 +1,84 @@
+name: manage-azure-policy
+
+on:
+  push:
+    branches: [main]
+  pull_request: 
+
+env: 
+  MANAGEMENT_GROUP: dts002
+
+jobs:
+  apply-azure-policy-sandbox:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request'}}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        allow-no-subscriptions: true
+
+    - name: create sandbox files
+      if: ${{ github.event_name == 'pull_request'}}
+      run: |
+        ./pipeline-scripts/sandbox-override.sh
+      env:
+        ENVIRONMENT: "Sandbox"
+        SUB: "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4"
+
+    - name: Sandbox - test creating and updating Azure Policies
+      if: ${{ github.event_name == 'pull_request'}}
+      uses: azure/manage-azure-policy@v0
+      with:
+        mode: complete
+        paths: |
+          Sandbox/**
+
+    - name: Sandbox - Force compliance check
+      if: ${{ github.event_name == 'pull_request'}} 
+      uses: azure/policy-compliance-scan@v0
+      with:
+        wait: false
+        scopes: |
+          /subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4
+  
+  apply-azure-policy-live:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        allow-no-subscriptions: true
+    
+    - name: Live - Create or Update Azure Policies
+      if: ${{ github.ref == 'refs/heads/main' }}
+      uses: azure/manage-azure-policy@v0
+      with:
+        mode: complete
+        paths: |
+          policies/**
+          assignments/**
+
+    - name: Get list of subscriptions under management group
+      id: get_subscriptions
+      env:
+        MANAGEMENT_GROUP: ${{env.MANAGEMENT_GROUP}}
+      run: |
+        subs=$(az account management-group show --name $MANAGEMENT_GROUP --expand --query "children [?type=='/subscriptions'].id" -o tsv)
+        subs="${subs//$'\n'/'%0A'}"
+        echo ::set-output name=subs::"$subs"
+    
+    - name: Live - Force compliance check 
+      uses: azure/policy-compliance-scan@v0
+      with:
+        wait: false
+        scopes: "${{ steps.get_subscriptions.outputs.subs }}"
