@@ -23,7 +23,6 @@ jobs:
         allow-no-subscriptions: true
 
     - name: create sandbox files
-      if: ${{ github.event_name == 'pull_request'}}
       run: |
         ./pipeline-scripts/sandbox-override.sh
       env:
@@ -31,7 +30,6 @@ jobs:
         SUB: "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
 
     - name: Sandbox - test creating and updating Azure Policies
-      if: ${{ github.event_name == 'pull_request'}}
       uses: azure/manage-azure-policy@v0
       with:
         mode: complete
@@ -39,7 +37,6 @@ jobs:
           Sandbox/**
 
     - name: Sandbox - Force compliance check
-      if: ${{ github.event_name == 'pull_request'}} 
       uses: azure/policy-compliance-scan@v0
       with:
         wait: false
@@ -60,7 +57,6 @@ jobs:
         allow-no-subscriptions: true
     
     - name: Live - Create or Update Azure Policies
-      if: ${{ github.ref == 'refs/heads/main' }}
       uses: azure/manage-azure-policy@v0
       with:
         mode: complete
