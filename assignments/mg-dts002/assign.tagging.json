@@ -5,7 +5,7 @@
       },
       "description": "Policy to check required tags",
       "displayName": "HMCTS Tagging Policy",
-      "enforcementMode": "Default",
+      "enforcementMode": "DoNotEnforce",
       "notScopes": [],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
