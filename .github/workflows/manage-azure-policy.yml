@@ -28,7 +28,7 @@ jobs:
         ./pipeline-scripts/sandbox-override.sh
       env:
         ENVIRONMENT: "Sandbox"
-        SUB: "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4"
+        SUB: "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
 
     - name: Sandbox - test creating and updating Azure Policies
       if: ${{ github.event_name == 'pull_request'}}
@@ -44,7 +44,7 @@ jobs:
       with:
         wait: false
         scopes: |
-          /subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4
+          /subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
   
   apply-azure-policy-live:
     if: ${{ github.ref == 'refs/heads/main' }}
