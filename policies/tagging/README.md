@@ -9,9 +9,6 @@ All environments and resources:
  - "businessArea"
  - "builtFrom"
      
-Specific Sandbox Tags:
- - "deleteBy"
- 
 ## Allowed values
 Tags and their allowed values.
 
@@ -33,4 +30,4 @@ businessArea:
  - "cross-cutting"
  
  builtFrom: 
- - url to repository
+ - Name or URL of repository
