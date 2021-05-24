@@ -80,10 +80,6 @@
             {
               "field": "tags['application']",
               "notIn": "[parameters('allowedApplicationNames')]"
-            },
-            {
-              "field": "tags['builtFrom']",
-              "notLike": "https://*"
             }, 
             {
               "allOf": [{
@@ -99,7 +95,7 @@
           ]
         },
         "then": {
-          "effect": "deny"
+          "effect": "audit"
         }
       }
     },
