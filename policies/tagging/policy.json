@@ -4,6 +4,16 @@
       "policyType": "Custom",
       "mode": "Indexed",
       "parameters": {
+        "excludedResourceTypes": {
+          "defaultValue": [
+            "Microsoft.Network/networkWatchers"
+          ],
+          "type": "Array",
+          "metadata": {
+            "displayName": "Resource Types to exclude",
+            "description": "Resource Types to exclude from compliance results"
+          }
+        },
         "allowedEnvironmentNames": {
           "defaultValue": [
             "sandbox",
@@ -58,38 +68,35 @@
       },
       "policyRule": {
         "if": {
-          "anyOf": [
+          "allOf": [
             {
-              "count": {
-                "value": "[parameters('RequiredTags')]",
-                "where": {
-                  "field": "tags",
-                  "notContainsKey": "[current()]"
+              "field": "type",
+              "notIn": "[parameters('excludedResourceTypes')]"
+            },
+            {
+              "anyOf": [
+                {
+                  "count": {
+                    "value": "[parameters('RequiredTags')]",
+                    "where": {
+                      "field": "tags",
+                      "notContainsKey": "[current()]"
+                    }
+                  },
+                  "greater": 0
+                },
+                {
+                  "field": "tags['environment']",
+                  "notIn": "[parameters('allowedEnvironmentNames')]"
+                },
+                {
+                  "field": "tags['businessArea']",
+                  "notIn": "[parameters('allowedBusinessAreaNames')]"
+                },
+                {
+                  "field": "tags['application']",
+                  "notIn": "[parameters('allowedApplicationNames')]"
                 }
-              },
-              "greater": 0
-            },
-            {
-              "field": "tags['environment']",
-              "notIn": "[parameters('allowedEnvironmentNames')]"
-            },
-            {
-              "field": "tags['businessArea']",
-              "notIn": "[parameters('allowedBusinessAreaNames')]"
-            },
-            {
-              "field": "tags['application']",
-              "notIn": "[parameters('allowedApplicationNames')]"
-            }, 
-            {
-              "allOf": [{
-                "field": "tags['environment']",
-                "equals": "sandbox"
-              },
-              {
-                "field": "tags['deleteBy']",
-                "exists": "false"
-              }
               ]
             }
           ]
