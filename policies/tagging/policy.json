@@ -6,8 +6,7 @@
       "parameters": {
         "excludedResourceTypes": {
           "defaultValue": [
-            "Microsoft.Network/networkWatchers",
-            "Microsoft.Web/staticSites"
+            "Microsoft.Network/networkWatchers"
           ],
           "type": "Array",
           "metadata": {
