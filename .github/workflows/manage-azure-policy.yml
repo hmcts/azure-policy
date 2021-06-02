@@ -44,7 +44,7 @@ jobs:
           /subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
   
   apply-azure-policy-live:
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
