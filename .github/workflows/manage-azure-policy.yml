@@ -2,7 +2,7 @@ name: manage-azure-policy
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request: 
 
 env: 
