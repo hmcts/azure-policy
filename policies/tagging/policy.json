@@ -14,44 +14,6 @@
             "description": "Resource Types to exclude from compliance results"
           }
         },
-        "allowedEnvironmentNames": {
-          "defaultValue": [
-            "sandbox",
-            "development",
-            "testing",
-            "demo",
-            "ITHC",
-            "staging",
-            "production"
-          ],
-          "type": "Array",
-          "metadata": {
-            "displayName": "Allowed environment Names",
-            "description": "Allowed environment names such as production or staging"
-          }
-        },
-        "allowedBusinessAreaNames": {
-          "defaultValue": [
-            "CFT",
-            "crime",
-            "cross-cutting"
-          ],
-          "type": "Array",
-          "metadata": {
-            "displayName": "Allowed businessArea names",
-            "description": "Allowed businessArea names such as CFT or crime"
-          }
-        },
-        "allowedApplicationNames": {
-          "defaultValue": [
-            "core"
-          ],
-          "type": "Array",
-          "metadata": {
-            "displayName": "Allowed application names",
-            "description": "Allowed application names such as core"
-          }
-        },   
         "RequiredTags": {
           "type": "Array",
           "defaultValue": [
@@ -84,18 +46,6 @@
                     }
                   },
                   "greater": 0
-                },
-                {
-                  "field": "tags['environment']",
-                  "notIn": "[parameters('allowedEnvironmentNames')]"
-                },
-                {
-                  "field": "tags['businessArea']",
-                  "notIn": "[parameters('allowedBusinessAreaNames')]"
-                },
-                {
-                  "field": "tags['application']",
-                  "notIn": "[parameters('allowedApplicationNames')]"
                 }
               ]
             }
