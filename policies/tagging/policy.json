@@ -34,7 +34,7 @@
           "defaultValue": [
             "CFT",
             "crime",
-            "cross-cutting"
+            "Cross-Cutting"
           ],
           "type": "Array",
           "metadata": {
@@ -43,9 +43,6 @@
           }
         },
         "allowedApplicationNames": {
-          "defaultValue": [
-            "core"
-          ],
           "type": "Array",
           "metadata": {
             "displayName": "Allowed application names",
