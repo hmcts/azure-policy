@@ -95,7 +95,7 @@
                 },
                 {
                   "field": "tags['application']",
-                  "exists": "true"
+                  "exists": "[parameters('allowedApplicationNames')]"
                 }
               ]
             }
