@@ -42,6 +42,16 @@
             "description": "Allowed businessArea names such as CFT or crime"
           }
         },
+        "allowedApplicationNames": {
+          "defaultValue": [
+            "core"
+          ],
+          "type": "Array",
+          "metadata": {
+            "displayName": "Allowed application names",
+            "description": "Allowed application names such as core"
+          }
+        },
         "RequiredTags": {
           "type": "Array",
           "defaultValue": [
@@ -85,7 +95,7 @@
                 },
                 {
                   "field": "tags['application']",
-                  "exists": false
+                  "exists": "true"
                 }
               ]
             }
