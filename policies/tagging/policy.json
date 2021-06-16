@@ -43,6 +43,9 @@
           }
         },
         "allowedApplicationNames": {
+          "defaultValue": [
+            "core"
+          ],
           "type": "Array",
           "metadata": {
             "displayName": "Allowed application names",
