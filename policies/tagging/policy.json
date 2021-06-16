@@ -44,7 +44,18 @@
         },
         "allowedApplicationNames": {
           "defaultValue": [
-            "core"
+            "core",
+            "security-operations-centre",
+            "ethos",
+            "heritage",
+            "management-information",
+            "pet",
+            "robotics",
+            "hearing-management-interface",
+            "Juror Digital",
+            "courts-tribunals-service-centre",
+            "Video Hearings",
+            "Publishing and Information"
           ],
           "type": "Array",
           "metadata": {
@@ -95,7 +106,7 @@
                 },
                 {
                   "field": "tags['application']",
-                  "exists": "[parameters('allowedApplicationNames')]"
+                  "notIn": "[parameters('allowedApplicationNames')]"
                 }
               ]
             }
