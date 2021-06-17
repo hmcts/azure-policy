@@ -42,27 +42,6 @@
             "description": "Allowed businessArea names such as CFT or crime"
           }
         },
-        "allowedApplicationNames": {
-          "defaultValue": [
-            "core",
-            "security-operations-centre",
-            "ethos",
-            "heritage",
-            "management-information",
-            "pet",
-            "robotics",
-            "hearing-management-interface",
-            "Juror Digital",
-            "courts-tribunals-service-centre",
-            "Video Hearings",
-            "Publishing and Information"
-          ],
-          "type": "Array",
-          "metadata": {
-            "displayName": "Allowed application names",
-            "description": "Allowed application names such as core"
-          }
-        },
         "RequiredTags": {
           "type": "Array",
           "defaultValue": [
@@ -106,7 +85,7 @@
                 },
                 {
                   "field": "tags['application']",
-                  "notIn": "[parameters('allowedApplicationNames')]"
+                  "exists": false
                 }
               ]
             }
