@@ -42,16 +42,6 @@
             "description": "Allowed businessArea names such as CFT or crime"
           }
         },
-        "allowedApplicationNames": {
-          "defaultValue": [
-            ""
-          ],
-          "type": "Array",
-          "metadata": {
-            "displayName": "Allowed application names",
-            "description": "Allowed application names such as core"
-          }
-        },
         "RequiredTags": {
           "type": "Array",
           "defaultValue": [
@@ -87,15 +77,11 @@
                 },
                 {
                   "field": "tags['environment']",
-                  "in": "[parameters('allowedEnvironmentNames')]"
+                  "notIn": "[parameters('allowedEnvironmentNames')]"
                 },
                 {
                   "field": "tags['businessArea']",
-                  "in": "[parameters('allowedBusinessAreaNames')]"
-                },
-                {
-                  "field": "tags['application']",
-                  "in": "[parameters('allowedApplicationNames')]"
+                  "notIn": "[parameters('allowedBusinessAreaNames')]"
                 }
               ]
             }
