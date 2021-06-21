@@ -9,7 +9,7 @@ All environments and resources:
  - "builtFrom"
      
 ## Allowed values
-Tags and allowed values.
+Tags and their allowed values.
 
 environment:
  - "sandbox"
@@ -23,7 +23,4 @@ environment:
 businessArea:
  - "CFT"
  - "crime"
- - "Cross-Cutting"
- 
- builtFrom: 
- - Name or URL of repository
+ - "cross-cutting"
