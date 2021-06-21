@@ -5,6 +5,7 @@ Required tags, common and specific to subscription of resource.
 
 All environments and resources: 
  - "environment"
+ - "application"
  - "businessArea"
  - "builtFrom"
      
