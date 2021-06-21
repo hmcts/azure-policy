@@ -82,10 +82,6 @@
                 {
                   "field": "tags['businessArea']",
                   "notIn": "[parameters('allowedBusinessAreaNames')]"
-                },
-                {
-                  "field": "tags['application']",
-                  "exists": true
                 }
               ]
             }
