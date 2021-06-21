@@ -42,14 +42,6 @@
             "description": "Allowed businessArea names such as CFT or crime"
           }
         },
-        "allowedApplicationNames": {
-          "defaultValue": "",
-          "type": "String",
-          "metadata": {
-            "displayName": "Application names",
-            "description": "Application names such as core, Cross-Cutting"
-          }
-        },
         "RequiredTags": {
           "type": "Array",
           "defaultValue": [
