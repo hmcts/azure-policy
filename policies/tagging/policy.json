@@ -16,7 +16,13 @@
         },
         "allowedEnvironmentNames": {
           "defaultValue": [
-            ""
+            "sandbox",
+            "development",
+            "testing",
+            "demo",
+            "ITHC",
+            "staging",
+            "production"
           ],
           "type": "Array",
           "metadata": {
@@ -26,7 +32,9 @@
         },
         "allowedBusinessAreaNames": {
           "defaultValue": [
-            ""
+            "CFT",
+            "crime",
+            "Cross-Cutting"
           ],
           "type": "Array",
           "metadata": {
@@ -43,7 +51,7 @@
             "displayName": "Allowed application names",
             "description": "Allowed application names such as core"
           }
-        },   
+        },
         "RequiredTags": {
           "type": "Array",
           "defaultValue": [
@@ -88,7 +96,7 @@
                 {
                   "field": "tags['application']",
                   "in": "[parameters('allowedApplicationNames')]"
-                } 
+                }
               ]
             }
           ]
