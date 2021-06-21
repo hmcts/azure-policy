@@ -81,7 +81,7 @@
                 },
                 {
                   "field": "tags['businessArea']",
-                  "in": "[parameters('allowedBusinessAreaNames')]"
+                  "notIn": "[parameters('allowedBusinessAreaNames')]"
                 },
                 {
                   "field": "tags['application']",
