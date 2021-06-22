@@ -12,6 +12,9 @@ All environments and resources:
 ## Allowed values
 Tags and their allowed values.
 
+application:
+ - "core"
+
 environment:
  - "sandbox"
  - "development"
@@ -25,3 +28,6 @@ businessArea:
  - "CFT"
  - "crime"
  - "cross-cutting"
+ 
+ builtFrom: 
+ - Name or URL of repository
