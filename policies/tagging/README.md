@@ -13,7 +13,8 @@ All environments and resources:
 Tags and their allowed values.
 
 application:
- - "core"
+
+ - You can find a list of valid application names in the [terraform-modules-common-tags](https://github.com/hmcts/terraform-module-common-tags/blob/master/team-config.yml) repo or the [cnp-jenkins-config](https://github.com/hmcts/cnp-jenkins-config/blob/master/team-config.yml) repo
 
 environment:
  - "sandbox"
