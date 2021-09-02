@@ -6,7 +6,13 @@
       "parameters": {
         "excludedResourceTypes": {
           "defaultValue": [
-            "Microsoft.Network/networkWatchers"
+            "Microsoft.Network/networkWatchers",
+            "Microsoft.Web/serverfarms",
+            "Microsoft.Web/sites",
+            "Microsoft.Web/connections",
+            "microsoft.operationalinsights/workspaces",
+            "microsoft.insights/scheduledqueryrules",
+            "microsoft.insights/components"
           ],
           "type": "Array",
           "metadata": {
