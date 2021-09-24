@@ -69,6 +69,7 @@ jobs:
       env:
         MANAGEMENT_GROUP: ${{env.MANAGEMENT_GROUP}}
       run: |
+        set -e
         subs=$(az account management-group show --name $MANAGEMENT_GROUP --expand --query "children [?type=='/subscriptions'].id" -o tsv)
 
         subs="${subs//$'\n'/'%0A'}"
