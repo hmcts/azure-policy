@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -ex
 export ASSIGNMENTS=$(find ./assignments -type f -name 'assign.*.json')
 export POLICIES=$(find ./policies -name policy.json -type f )
 export ENVIRONMENT=${ENVIRONMENT:-Sandbox}
@@ -35,6 +35,7 @@ for assignment in ${ASSIGNMENTS}; do
     -e 'this.name=this.name + process.env.ENVIRONMENT' \
     -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
     -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' \
+    -e 'this.properties.notScopes=[]' \
     -e 'this.id=process.env.SUB + "/providers/Microsoft.Authorization/policyAssignments/" + this.name' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
 
 done
