@@ -10,7 +10,8 @@
             "microsoft.alertsmanagement/smartdetectoralertrules",
             "microsoft.insights/actiongroups",
             "Microsoft.Insights/activityLogAlerts",
-            "microsoft.operationsmanagement/solutions"
+            "microsoft.operationsmanagement/solutions",
+            "Microsoft.ContainerRegistry/registries/tasks"
           ],
           "type": "Array",
           "metadata": {
