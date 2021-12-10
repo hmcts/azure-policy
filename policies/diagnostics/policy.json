@@ -16,10 +16,6 @@
           "deploymentScope": "subscription",
           "existenceScope": "subscription",
           "deployment": {
-            "identity": {
-              "type": "SystemAssigned",
-              "location": "uksouth"
-            },
             "location": "uksouth",
             "properties": {
               "mode": "incremental",
