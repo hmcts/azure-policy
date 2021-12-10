@@ -31,6 +31,18 @@
         "details": {
           "type": "Microsoft.Insights/diagnosticSettings",
           "deploymentScope": "subscription",
+          "existenceCondition": {
+            "allOf": [
+              {
+                "field": "Microsoft.Insights/diagnosticSettings/eventHubName",
+                "equals": "[parameters('eventHubName')]"
+              },
+              {
+                "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+                "equals": "[parameters('eventHubAuthRule')]"
+              }
+            ]
+          },
           "existenceScope": "subscription",
           "deployment": {
             "location": "uksouth",
@@ -39,14 +51,7 @@
               "template": {
                 "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",
-                "parameters": {
-                  "eventHubName": {
-                    "type": "string"
-                  },
-                  "eventHubAuthRule": {
-                    "type": "string"
-                  }
-                },
+                "parameters": {},
                 "variables": {},
                 "resources": [
                   {
@@ -96,14 +101,7 @@
                 ],
                 "outputs": {}
               },
-              "parameters": {
-                "eventHubName": {
-                  "value": "parameters('eventHubName')"
-                },
-                "eventHubAuthRule": {
-                  "value": "parameters('eventHubAuthRule')"
-                }
-              }
+              "parameters": {}
             }
           },
           "roleDefinitionIds": [
