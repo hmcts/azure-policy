@@ -10,6 +10,10 @@
           "displayName": "Event Hub Name",
           "description": null
         },
+        "allowedValues": [
+          "soc-sbox",
+          "soc-prod"
+        ],
         "defaultValue": "soc-sbox"
       },
       "eventHubAuthRule": {
@@ -18,7 +22,11 @@
           "displayName": "Event Hub Authorization Rule Id",
           "description": null
         },
-        "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourcegroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule"
+        "allowedValues": [
+          "/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule",
+          "/providers/Microsoft.EventHub/namespaces/soc-prod/authorizationRules/soc-prod-auth-rule"
+        ],
+        "defaultValue": "/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule"
       }
     },
     "policyRule": {
