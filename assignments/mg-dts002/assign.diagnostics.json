@@ -5,7 +5,7 @@
       },
       "description": "Forwards all Activity Logs to an Azure Event Hub",
       "displayName": "HMCTS Collect Activity Logs",
-      "enforcementMode": "DoNotEnforce",
+      "enforcementMode": "Default",
       "nonComplianceMessages": [],
       "scope": [
         "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2"
