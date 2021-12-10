@@ -6,10 +6,6 @@
       "description": "Policy to set diagnostic setting to forward Activity Logs to an Azure Event Hub",
       "displayName": "HMCTS Diagnostic Policy",
       "enforcementMode": "DoNotEnforce",
-      "identity": {
-        "type": "SystemAssigned",
-        "location": "uksouth"
-      },
       "nonComplianceMessages": [],
       "scope": [
         "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
@@ -17,6 +13,10 @@
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
       "scope": "/providers/Microsoft.Management/managementGroups/dts002"
+    },
+    "identity": {
+      "type": "SystemAssigned",
+      "location": "uksouth"
     },
     "sku": {
       "name": "A0",
