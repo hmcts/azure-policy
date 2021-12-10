@@ -15,8 +15,7 @@
       "scope": "/providers/Microsoft.Management/managementGroups/dts002"
     },
     "identity": {
-      "type": "SystemAssigned",
-      "location": "uksouth"
+      "type": "SystemAssigned"
     },
     "sku": {
       "name": "A0",
