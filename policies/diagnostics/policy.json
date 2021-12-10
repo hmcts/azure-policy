@@ -16,6 +16,10 @@
           "deploymentScope": "subscription",
           "existenceScope": "subscription",
           "deployment": {
+            "identity": {
+              "type": "SystemAssigned",
+              "location": "uksouth"
+            },
             "location": "uksouth",
             "properties": {
               "mode": "incremental",
@@ -30,10 +34,6 @@
                     "type": "Microsoft.Insights/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
                     "location": "Global",
-                    "identity": {
-                      "type": "SystemAssigned",
-                      "location": "uksouth"
-                    },
                     "properties": {
                       "eventHubName": "soc-sbox",
                       "eventHubAuthorizationRuleId": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourcegroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule",
