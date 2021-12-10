@@ -16,17 +16,17 @@
         ],
         "defaultValue": "soc-sbox"
       },
-      "eventHubAuthRule": {
+      "eventHubAuthRuleId": {
         "type": "String",
         "metadata": {
           "displayName": "Event Hub Authorization Rule Id",
           "description": null
         },
         "allowedValues": [
-          "/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule",
-          "/providers/Microsoft.EventHub/namespaces/soc-prod/authorizationRules/soc-prod-auth-rule"
+          "/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-eventhub-namespace-sender",
+          "/providers/Microsoft.EventHub/namespaces/soc-prod/authorizationRules/soc-eventhub-namespace-sender"
         ],
-        "defaultValue": "/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule"
+        "defaultValue": "/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-eventhub-namespace-sender"
       }
     },
     "policyRule": {
@@ -47,7 +47,7 @@
               },
               {
                 "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
-                "equals": "[parameters('eventHubAuthRule')]"
+                "equals": "[parameters('eventHubAuthRuleId')]"
               }
             ]
           },
@@ -69,7 +69,7 @@
                     "location": "Global",
                     "properties": {
                       "eventHubName": "parameters('eventHubName')",
-                      "eventHubAuthorizationRuleId": "parameters('eventHubAuthRule')",
+                      "eventHubAuthorizationRuleId": "parameters('eventHubAuthRuleId')",
                       "logs": [
                         {
                           "category": "Administrative",
