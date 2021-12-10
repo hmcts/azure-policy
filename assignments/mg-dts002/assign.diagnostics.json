@@ -8,7 +8,7 @@
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [],
       "scope": [
-        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+        "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",

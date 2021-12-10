@@ -3,7 +3,23 @@
     "displayName": "HMCTS Diagnostic Policy",
     "policyType": "Custom",
     "mode": "All",
-    "parameters": {},
+    "parameters": {
+      "eventHubName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Event Hub Name",
+          "description": null
+        },
+        "defaultValue": "soc-sbox"
+      },
+      "eventHubAuthRule": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Event Hub Authorization Rule Id",
+          "description": null
+        },
+        "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourcegroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule"
+    },
     "policyRule": {
       "if": {
         "field": "type",
@@ -31,8 +47,8 @@
                     "apiVersion": "2017-05-01-preview",
                     "location": "Global",
                     "properties": {
-                      "eventHubName": "soc-sbox",
-                      "eventHubAuthorizationRuleId": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourcegroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule",
+                      "eventHubName": "parameters('eventHubName')",
+                      "eventHubAuthorizationRuleId": "parameters('eventHubName')",
                       "logs": [
                         {
                           "category": "Administrative",
@@ -72,7 +88,15 @@
                 ],
                 "outputs": {}
               },
-              "parameters": {}
+              "parameters": {
+                "eventHubName": {
+                  "value": "parameters('eventHub')"
+                },
+                "eventHubAuthRule": {
+                  "value": "parameters('eventHubAuthRule')"
+                }
+              }
+              }
             }
           },
           "roleDefinitionIds": [
