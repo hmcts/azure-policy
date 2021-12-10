@@ -1,0 +1,24 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to set diagnostic setting to forward Activity Logs to an Azure Event Hub",
+      "displayName": "HMCTS Diagnostic Policy",
+      "enforcementMode": "Enforce",
+      "nonComplianceMessages": [],
+      "Scopes": [
+        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab",
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+      "scope": "/providers/Microsoft.Management/managementGroups/dts002"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnosticGlobal",
+    "name": "HMCTSDiagnosticGlobal"
+}

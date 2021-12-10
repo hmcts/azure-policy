@@ -1,0 +1,90 @@
+{
+  "properties": {
+    "displayName": "HMCTS Diagnostic Policy",
+    "policyType": "Custom",
+    "mode": "All",
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.Resources/subscriptions"
+      },
+      "then": {
+        "effect": "deployIfNotExists",
+        "details": {
+          "type": "Microsoft.Insights/diagnosticSettings",
+          "deploymentScope": "subscription",
+          "existenceScope": "subscription",
+          "deployment": {
+            "location": "uksouth",
+            "properties": {
+              "mode": "incremental",
+              "template": {
+                "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+                "contentVersion": "1.0.0.0",
+                "parameters": {},
+                "variables": {},
+                "resources": [
+                  {
+                    "name": "subscriptionToEventHub",
+                    "type": "Microsoft.Insights/diagnosticSettings",
+                    "apiVersion": "2017-05-01-preview",
+                    "location": "Global",
+                    "properties": {
+                      "eventHubName": "soc-sbox",
+                      "eventHubAuthorizationRuleId": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourcegroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox/authorizationRules/soc-sbox-auth-rule",
+                      "logs": [
+                        {
+                          "category": "Administrative",
+                          "enabled": true
+                        },
+                        {
+                          "category": "Security",
+                          "enabled": true
+                        },
+                        {
+                          "category": "ServiceHealth",
+                          "enabled": true
+                        },
+                        {
+                          "category": "Alert",
+                          "enabled": true
+                        },
+                        {
+                          "category": "Recommendation",
+                          "enabled": true
+                        },
+                        {
+                          "category": "Policy",
+                          "enabled": true
+                        },
+                        {
+                          "category": "Autoscale",
+                          "enabled": true
+                        },
+                        {
+                          "category": "ResourceHealth",
+                          "enabled": true
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "outputs": {}
+              },
+              "parameters": {}
+            }
+          },
+          "roleDefinitionIds": [
+            "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+            "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293",
+            "/providers/Microsoft.Authorization/roleDefinitions/f526a384-b230-433a-b45c-95f59c4a2dec"
+          ]
+        }
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSDiagnostic"
+}
