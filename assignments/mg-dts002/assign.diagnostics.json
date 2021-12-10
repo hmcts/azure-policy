@@ -16,10 +16,7 @@
     },
     "location": "uksouth",
     "identity": {
-      "type": "UserAssigned",
-      "UserAssignedIdentities": {
-        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/apple-shared-infrastructure-sbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/diagnostics-policy-test" : {}
-      }
+      "type": "SystemAssigned"
     },
     "sku": {
       "name": "A0",
