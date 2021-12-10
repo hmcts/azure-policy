@@ -14,6 +14,7 @@
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
       "scope": "/providers/Microsoft.Management/managementGroups/dts002"
     },
+    "location": "uksouth",
     "identity": {
       "type": "UserAssigned",
       "UserAssignedIdentities": {
