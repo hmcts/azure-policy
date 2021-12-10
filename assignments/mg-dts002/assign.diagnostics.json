@@ -7,7 +7,7 @@
       "displayName": "HMCTS Diagnostic Policy",
       "enforcementMode": "Enforce",
       "nonComplianceMessages": [],
-      "scopes": [
+      "scope": [
         "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
       ],
       "parameters": {},
