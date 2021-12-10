@@ -1,0 +1,28 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Forwards all Activity Logs to an Azure Event Hub",
+      "displayName": "HMCTS Collect Activity Logs",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [],
+      "scope": [
+        "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2"
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+      "scope": "/providers/Microsoft.Management/managementGroups/dts002"
+    },
+    "location": "uksouth",
+    "identity": {
+      "type": "SystemAssigned"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnosticGlobal",
+    "name": "HMCTSDiagnosticGlobal"
+}
