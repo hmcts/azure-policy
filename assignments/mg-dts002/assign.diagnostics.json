@@ -7,8 +7,8 @@
       "displayName": "HMCTS Diagnostic Policy",
       "enforcementMode": "Enforce",
       "nonComplianceMessages": [],
-      "Scopes": [
-        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab",
+      "scopes": [
+        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
