@@ -59,7 +59,14 @@
               "template": {
                 "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",
-                "parameters": {},
+                "parameters": {
+                  "eventHubName": {
+                    "type": "string"
+                  },
+                  "eventHubAuthRule": {
+                    "type": "string"
+                  }
+                },
                 "variables": {},
                 "resources": [
                   {
@@ -68,8 +75,8 @@
                     "apiVersion": "2017-05-01-preview",
                     "location": "Global",
                     "properties": {
-                      "eventHubName": "parameters('eventHubName')",
-                      "eventHubAuthorizationRuleId": "parameters('eventHubAuthRule')",
+                      "eventHubName": "[parameters('eventHubName')]",
+                      "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                       "logs": [
                         {
                           "category": "Administrative",
@@ -109,7 +116,14 @@
                 ],
                 "outputs": {}
               },
-              "parameters": {}
+              "parameters": {
+                "eventHubName": {
+                  "value": "[parameters('eventHubName')]"
+                },
+                "eventHubAuthRule": {
+                  "value": "[parameters('eventHubAuthRule')]"
+                }
+              }
             }
           },
           "roleDefinitionIds": [

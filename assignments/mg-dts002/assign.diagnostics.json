@@ -3,8 +3,8 @@
       "metadata": {
         "assignedBy": "PlatOps"
       },
-      "description": "Policy to set diagnostic setting to forward Activity Logs to an Azure Event Hub",
-      "displayName": "HMCTS Diagnostic Policy",
+      "description": "Forwards all Activity Logs to an Azure Event Hub",
+      "displayName": "HMCTS Collect Activity Logs",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [],
       "scope": [
