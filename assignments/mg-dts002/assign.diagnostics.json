@@ -11,7 +11,7 @@
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
-      "scope": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2"
+      "scope": "/providers/Microsoft.Management/managementGroups/dts002/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2"
     },
     "location": "uksouth",
     "identity": {
