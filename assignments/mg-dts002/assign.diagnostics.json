@@ -93,7 +93,9 @@
     },
     "location": "uksouth",
     "identity": {
-      "type": "SystemAssigned"
+      "userAssignedIdentities": {
+        "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-diagnostics-mi": {}
+      }
     },
     "sku": {
       "name": "A0",
