@@ -67,15 +67,7 @@ jobs:
         mode: complete
         paths: |
           policies/**
-          assignments/subscriptions/${{env.POLICY_SUBSCRIPTION}}/**
-      env:
-        POLICY_SUBSCRIPTION: ${{env.POLICY_SUBSCRIPTION}}
-
-    - name: Live - Force compliance check
-      uses: azure/policy-compliance-scan@v0
-      with:
-        wait: false
-        scopes: /subscriptions/${{env.POLICY_SUBSCRIPTION}}
+          assignments/subscriptions/**
 
   apply-azure-policy-mgmt-group:
     if: ${{ github.ref == 'refs/heads/master' }}
