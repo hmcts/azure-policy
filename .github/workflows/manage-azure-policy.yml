@@ -47,7 +47,7 @@ jobs:
     if: ${{ github.ref == 'refs/heads/master' }}
     strategy:
       matrix:
-        subscriptions: [2307d175-7e49-434b-9ac2-515529b845f2]
+        subscriptions: [2307d175-7e49-434b-9ac2-515529b845f2, 8ae5b3b6-0b12-4888-b894-4cec33c92292]
     runs-on: ubuntu-latest
     env:
       POLICY_SUBSCRIPTION: ${{ matrix.subscriptions }}
