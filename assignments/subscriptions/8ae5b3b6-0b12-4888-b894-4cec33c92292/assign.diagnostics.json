@@ -8,7 +8,11 @@
       "enforcementMode": "Default",
       "nonComplianceMessages": [],
       "notScopes": [],
-      "parameters": {},
+      "parameters": {
+        "eventHubAuthRule": {
+          "value": "/providers/Microsoft.EventHub/namespaces/ekeventhub/authorizationRules/myauthrule2"
+        }
+      },
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
       "scope": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292"
     },
