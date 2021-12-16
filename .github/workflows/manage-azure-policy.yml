@@ -42,8 +42,42 @@ jobs:
         wait: false
         scopes: |
           /subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
-  
-  apply-azure-policy-live:
+
+  apply-azure-policy-subscription:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    strategy:
+      matrix:
+        subscriptions: [2307d175-7e49-434b-9ac2-515529b845f2]
+    runs-on: ubuntu-latest
+    env:
+      POLICY_SUBSCRIPTION: ${{ matrix.subscriptions }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        allow-no-subscriptions: false
+
+    - name: Live - Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        mode: complete
+        paths: |
+          policies/**
+          assignments/subscriptions/${{env.POLICY_SUBSCRIPTION}}/**
+      env:
+        POLICY_SUBSCRIPTION: ${{env.POLICY_SUBSCRIPTION}}
+
+    - name: Live - Force compliance check
+      uses: azure/policy-compliance-scan@v0
+      with:
+        wait: false
+        scopes: /subscriptions/${{env.POLICY_SUBSCRIPTION}}
+
+  apply-azure-policy-mgmt-group:
     if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     steps:
@@ -62,7 +96,9 @@ jobs:
         mode: complete
         paths: |
           policies/**
-          assignments/**
+          assignments/mgmt-groups/${{env.MANAGEMENT_GROUP}}/**
+      env:
+        MANAGEMENT_GROUP: ${{env.MANAGEMENT_GROUP}}
 
     - name: Get list of subscriptions under management group
       id: get_subscriptions
