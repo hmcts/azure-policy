@@ -25,6 +25,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnosticGlobal",
-    "name": "HMCTSDiagnosticGlobal"
+    "id": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnostic_HMCTS-SOC-PROD",
+    "name": "HMCTSDiagnostic_HMCTS-SOC-PROD"
 }
