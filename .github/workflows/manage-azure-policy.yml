@@ -83,7 +83,7 @@ jobs:
         mode: complete
         paths: |
           policies/**
-          assignments/mgmt-groups/${{env.MANAGEMENT_GROUP}}/**
+          assignments/mgmt-groups/**
       env:
         MANAGEMENT_GROUP: ${{env.MANAGEMENT_GROUP}}
 
