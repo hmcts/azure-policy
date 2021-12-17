@@ -26,7 +26,7 @@ jobs:
       run: |
         ./pipeline-scripts/sandbox-override.sh
       env:
-        ENVIRONMENT: "Sandbox"
+        ENVIRONMENT: "_Sandbox"
         SUB: "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
 
     - name: Sandbox - test creating and updating Azure Policies
