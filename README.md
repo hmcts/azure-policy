@@ -16,7 +16,7 @@ Before creating an assignment you must decide on a scope. It is possible to scop
 
 Policies that are to be assigned to a management group are located within the appropriate management group directory under `assignments/mgmt-groups`.
 
-Policies that are to be assigned to a subscription or group of subscriptions are located with the appropriate subscription directory under `assignments/subscriptions`.
+Policies that are to be assigned to a subscription or group of subscriptions are located within the appropriate subscription directory under `assignments/subscriptions`.
 
 When you've decided on a scope, create a policy assignment file in the appropriate directory. Name the file assign.policyname.json e.g. `assign.tagging.json`
 
@@ -46,4 +46,6 @@ When you create an assignment, a SystemAssigned managed identity is also created
 
 The name of the managed identity will be the same as the name of your policy assignment.
 
-In order to prevent creating multiple managed identities with the same name when applying a policy to multiple subscriptions, it is advisable to append the name of the policy assignment with `_SUBSCRIPTION_NAME` in order to be able to differentiate managed identities from one another and make it easier to assign permissions.
+In order to prevent creating multiple managed identities with the same name when applying a policy to multiple subscriptions, it is advisable to append the name of the policy assignment with `_SUBSCRIPTION_NAME`.
+
+This will make it much easier to differentiate managed identities from one another and make it easier to assign permissions.
