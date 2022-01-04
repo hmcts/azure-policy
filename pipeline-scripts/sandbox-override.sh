@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ex
-export ASSIGNMENTS=$(find ./assignments -type f -name 'assign.*.json')
+export ASSIGNMENTS=$(find ./assignments/$SUB -type f -name 'assign.*.json')
 export POLICIES=$(find ./policies -name policy.json -type f )
 export ENVIRONMENT=${ENVIRONMENT:-Sandbox}
 export ASSIGNMENTS_DIR="./${ENVIRONMENT:-Sandbox}/assignments"
@@ -32,7 +32,7 @@ for assignment in ${ASSIGNMENTS}; do
     echo "Creating file: ${ASSIGNMENTS_DIR}/${DIR}/${FILE}"
     npx json -f ${assignment} \
     -e 'this.properties.scope=process.env.SUB' \
-    -e 'this.name=this.name + process.env.ENVIRONMENT' \
+    -e 'this.name=this.name + "_" + process.env.ENVIRONMENT' \
     -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
     -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' \
     -e 'this.properties.notScopes=[]' \
