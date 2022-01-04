@@ -32,7 +32,7 @@ To test a policy assignment, create a new policy assignment json file under `ass
 
 This is the `DCD-CFTAPPS-SBOX` subscription which can be used for the purpose of testing new policies before live rollout.
 
-Creating a pull request will initiate a github action that will create your policy definition and assign it to this subscription.
+Creating a pull request will trigger a GitHub action that will create your policy definition and assign it to this subscription.
 
 The policy definition and assignment will be appended with `- Sandbox` so you can easily identify it in the Azure Portal.
 
