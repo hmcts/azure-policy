@@ -21,6 +21,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/Microsoft.Authorization/policyAssignments/HMCTSTagging_DTS-SHAREDSERVICES-SBOX",
+    "id": "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/providers/Microsoft.Authorization/policyAssignments/HMCTSTagging_DTS-SHAREDSERVICES-SBOX",
     "name": "HMCTSTagging_DTS-SHAREDSERVICES-SBOX"
 }
