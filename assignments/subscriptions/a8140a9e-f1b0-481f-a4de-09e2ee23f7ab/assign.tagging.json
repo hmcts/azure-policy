@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "HMCTS Tagging Policy for DTS-SHAREDSERVICES-SBOX",
+      "displayName": "HMCTS Tagging - SDS SBOX",
       "enforcementMode": "Default",
       "nonComplianceMessages": [
         {
