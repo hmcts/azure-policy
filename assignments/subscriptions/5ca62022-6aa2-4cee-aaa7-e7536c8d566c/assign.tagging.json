@@ -1,0 +1,31 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to check required tags",
+      "displayName": "HMCTS Tagging - SDS PROD",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
+        }
+      ],
+      "notScopes": [
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/ss-prod-00-aks-node-rg",
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/ss-prod-01-aks-node-rg",
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/ss-prod-00-rg",
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/ss-prod-01-rg"
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+      "scope": "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/providers/Microsoft.Authorization/policyAssignments/HMCTSTagging_DTS-SHAREDSERVICES-PROD",
+    "name": "HMCTSTagging_DTS-SHAREDSERVICES-PROD"
+}
