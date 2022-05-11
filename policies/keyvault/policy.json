@@ -21,7 +21,7 @@
         },
         "defaultValue": "azure-keyvault"
       },
-      "eventHubRuleId": {
+      "eventHubAuthRule": {
         "type": "String",
         "metadata": {
           "displayName": "Event Hub Authorization Rule Id",
@@ -133,7 +133,7 @@
                   "location": {
                     "type": "string"
                   },
-                  "eventHubRuleId": {
+                  "eventHubAuthRule": {
                     "type": "string"
                   },
                   "eventHubName": {
@@ -158,7 +158,7 @@
                     "dependsOn": [],
                     "properties": {
                       "eventHubName": "[parameters('eventHubName')]",
-                      "eventHubAuthorizationRuleId": "[parameters('eventHubRuleId')]",
+                      "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                       "metrics": [
                         {
                           "category": "AllMetrics",
@@ -192,8 +192,8 @@
                 "vaultName": {
                   "value": "[field('name')]"
                 },
-                "eventHubRuleId": {
-                  "value": "[parameters('eventHubRuleId')]"
+                "eventHubAuthRule": {
+                  "value": "[parameters('eventHubAuthRule')]"
                 },
                 "eventHubName": {
                   "value": "[parameters('eventHubName')]"
