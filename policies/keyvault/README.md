@@ -14,6 +14,12 @@ Resource path to shared access policy at event hubs namespace level. Shared acce
 Must start with /subscription/{subscriptionId} or /providers/{resourceProviderNamespace}
 e.g. /providers/Microsoft.EventHub/namespaces/{eventHubNamespace}/authorizationRules/{sasPolicyName}
 
+### Notice
+
+It should be noted that the built-in Microsoft policies that send diagnostic logs to Azure Event Hubs use the `eventHubAuthRuleId` parameter to denote the Event Hub Authorization Rule. The equivalent parameter in this repo is `eventHubAuthRule`.
+
+Make sure any policies for sending logs to Azure Event Hubs uses the `eventHubAuthRule` parameter to avoid errors.
+
 ## Log categories
 
 The following log categories are enabled:
