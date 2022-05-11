@@ -20,7 +20,7 @@
     "policyRule": {
       "if": {
         "field": "type",
-        "equals": "Microsoft.Resources/subscriptions"
+        "equals": "Microsoft.KeyVault/vaults"
       },
       "then": {
         "effect": "deployIfNotExists",
