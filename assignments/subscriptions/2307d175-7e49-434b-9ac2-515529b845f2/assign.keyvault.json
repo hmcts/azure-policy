@@ -4,7 +4,7 @@
         "assignedBy": "github.com/hmcts/azure-policy"
       },
       "description": "Forwards all Azure KeyVault Activity Logs to an Azure Event Hub",
-      "displayName": "HMCTS Keyvault Security Activity Logging",
+      "displayName": "HMCTS Keyvault Security Activity Logging - HMCTS-SOC-SBOX",
       "enforcementMode": "Default",
       "nonComplianceMessages": [],
       "notScopes": [],
@@ -26,5 +26,5 @@
     },
     "type": "Microsoft.Authorization/policyAssignments",
     "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSKeyVault_HMCTS-SOC-SBOX",
-    "name": "HMCTSKeyVault_HMCTS-SOC-SBOX"
+    "name": "HMCTSKV_HMCTS-SOC-SBOX"
 }
