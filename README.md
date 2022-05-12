@@ -26,17 +26,35 @@ Create a new directory named for the subscription id under the `assignments/subs
 
 Azure policy requires the subscription id and does not recognise friendly names.
 
-### How to test a policy assignment
+### How to test a policy definition
 
-To test a policy assignment, create a new policy assignment json file under `assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb`.
+To test a policy definition, create a new policy assignment json file under `assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb`.
 
-This is the `DCD-CFTAPPS-SBOX` subscription which can be used for the purpose of testing new policies before live rollout.
+This is the `DCD-CFTAPPS-SBOX` subscription which can be used for the purpose of testing that new policy defintions are using valid json and have the expected values before live rollout.
 
 Creating a pull request will trigger a GitHub action that will create your policy definition and assign it to this subscription.
 
 The policy definition and assignment will be appended with `- Sandbox` so you can easily identify it in the Azure Portal.
 
-When a pull request is approved and merged, a new policy definition will be created as well as an assignment for each of the scopes you have defined in your policy assignment json file.
+At this point, you will have a definition assigned to the DCD-CFTAPPS-SBOX subscription. In order to test that your policy has the desired effect, a compliance scan must be ran.
+
+This should take place automatically when the assignment is created. You should be able to see what resources are non-compliant and confirm that the resources listed are expected.
+
+In order to see if the policy will work in practice, a manual remediation task must be ran. This can be done by clicking on the assignment and clicking `Create remediation task`
+
+It should be noted that if the policy you are creating requires permissions over resources in another subscription e.g. if the policy is to forward diagnostic logs to an event hub in one of the SOC subscriptions, remediation will fail. This is because the policy also needs to be assigned to the other subscription as well but this will not take effect until after your PR is merged.
+
+Therefore, you must assign your policy to the subscription you are looking for non-compliant resources in, i.e. DCD-CFTAPPS-SBOX, as well as the subscription where the other resources, such as event hubs, exist, i.e. HMCTS-SOC-SBOX.
+
+When your pull request is approved and merged, a new policy definition will be created as well as an assignment for each of the scopes you have defined in your policy assignment json file.
+
+### How to test policy remediation
+
+To test that your policy will successfully remediate non-compliant resources, you should assign it to the DCD-CFTAPPS-SBOX and DCD-CFT-Sandbox subscriptions.
+
+Assignments will be created for these scopes when your PR is merged and you can run a remediation task to test all is working as expected.
+
+If everything is working as expected, submit a new PR with assignments for all the subscriptions you are targeting resources in or, in the case of management groups, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder.
 
 ### Naming conventions for deployIfNotExists policies
 
