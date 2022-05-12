@@ -44,7 +44,7 @@ In order to see if the policy will work in practice, a manual remediation task m
 
 It should be noted that if the policy you are creating requires permissions over resources in another subscription e.g. if the policy is to forward diagnostic logs to an event hub in one of the SOC subscriptions, remediation will fail. This is because the policy also needs to be assigned to the other subscription as well but this will not take effect until after your PR is merged.
 
-Therefore, you must assign your policy to the subscription you are looking for non-compliant resources in as well as the subscription where the other resources exist e.g. DCD-CFTAPPS-SBOX and HMCTS-SOC-SBOX.
+Therefore, you must assign your policy to the subscription you are looking for non-compliant resources i.e. DCD-CFTAPPS-SBOX in as well as the subscription where the other resources, such as event hubs, exist i.e. HMCTS-SOC-SBOX.
 
 When your pull request is approved and merged, a new policy definition will be created as well as an assignment for each of the scopes you have defined in your policy assignment json file.
 
