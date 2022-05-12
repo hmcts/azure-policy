@@ -1,7 +1,7 @@
 {
     "properties": {
       "metadata": {
-        "assignedBy": "PlatOps"
+        "assignedBy": "github.com/hmcts/azure-policy"
       },
       "description": "Forwards all Azure KeyVault Activity Logs to an Azure Event Hub",
       "displayName": "HMCTS Keyvault Security Activity Logging",
@@ -14,7 +14,7 @@
         }
       },
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
-      "scope": "/providers/Microsoft.Management/managementGroups/dts002"
+      "scope":"/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2"
     },
     "location": "uksouth",
     "identity": {

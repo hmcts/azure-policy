@@ -36,7 +36,7 @@ Creating a pull request will trigger a GitHub action that will create your polic
 
 The policy definition and assignment will be appended with `- Sandbox` so you can easily identify it in the Azure Portal.
 
-At this point, you will have a defintion assigned to the DCD-CFTAPPS-SBOX subscription. In order to test that your policy has the desired effect, a compliance scan must be ran.
+At this point, you will have a definition assigned to the DCD-CFTAPPS-SBOX subscription. In order to test that your policy has the desired effect, a compliance scan must be ran.
 
 This should take place automatically when the assignment is created. You should be able to see what resources are non-compliant and confirm that the resources listed are expected.
 
