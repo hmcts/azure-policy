@@ -48,7 +48,7 @@ Therefore, you must assign your policy to the subscription you are looking for n
 
 When your pull request is approved and merged, a new policy definition will be created as well as an assignment for each of the scopes you have defined in your policy assignment json file.
 
-## How to test a policy remediation
+### How to test policy remediation
 
 To test that your policy will successfully remediate non-compliant resources, you should assign it to the DCD-CFTAPPS-SBOX and DCD-CFT-Sandbox subscriptions.
 
