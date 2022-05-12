@@ -19,7 +19,7 @@
           "displayName": "EventHub Name",
           "description": "The event hub for Azure Diagnostics"
         },
-        "defaultValue": "azure-keyvault"
+        "defaultValue": "key-vault"
       },
       "eventHubAuthRule": {
         "type": "String",
