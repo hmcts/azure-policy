@@ -25,6 +25,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSKV_HMCTS-SOC-SBOX",
-    "name": "HMCTSKV_HMCTS-SOC-SBOX"
+    "id": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/providers/Microsoft.Authorization/policyAssignments/HMCTSKeyVault_HMCTS-SOC-SBOX",
+    "name": "HMCTSKeyVault_HMCTS-SOC-SBOX"
 }
