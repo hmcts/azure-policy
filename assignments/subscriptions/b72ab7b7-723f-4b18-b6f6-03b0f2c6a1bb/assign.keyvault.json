@@ -25,6 +25,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/providers/Microsoft.Authorization/policyAssignments/HMCTSKeyVault_DCD-CFTAPPS-SBOX",
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSKeyVault_DCD-CFTAPPS-SBOX",
     "name": "HMCTSKeyVault_DCD-CFTAPPS-SBOX"
 }
