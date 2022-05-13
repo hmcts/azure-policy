@@ -66,4 +66,6 @@ The name of the managed identity will be the same as the name of your policy ass
 
 In order to prevent creating multiple managed identities with the same name when applying a policy to multiple subscriptions, it is advisable to append the name of the policy assignment with `_SUBSCRIPTION_NAME`.
 
+You must also append the subscription name to the displayName of the policy assignment e.g. Forwards all Activity Logs to an Azure Event Hub - DCD-CFT-Sandbox
+
 This will make it much easier to differentiate managed identities from one another and make it easier to assign permissions.
