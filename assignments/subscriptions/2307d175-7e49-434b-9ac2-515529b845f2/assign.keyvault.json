@@ -26,5 +26,5 @@
     },
     "type": "Microsoft.Authorization/policyAssignments",
     "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSKeyVault_HMCTS-SOC-SBOX",
-    "name": ""
+    "name": "HMCTSKV_HMCTS-SOC-SBOX"
 }
