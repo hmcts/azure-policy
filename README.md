@@ -2,7 +2,19 @@
 
 ### What is this for?
 
-This repo stores azure policy definitions and assignments. 
+This repo stores azure policy definitions and assignments.
+
+### Overview of Azure Policy Defintions
+
+In Azure Policy, definitions describe resource compliance conditions and the effect to take if a condition is met.
+
+Policy definitions are written in JSON.
+
+### Overview of Azure Policy Assignments
+
+Policy assignments are used by Azure Policy to define which resources are assigned which policy definitions.
+
+Policies assignments must have a scope over which they take effect and this scope can be either a subscription or a management group.
 
 ### How to create a new policy definition
 
@@ -12,19 +24,45 @@ Create a policy definition json file in the new sub-directory. It should be name
 
 ### How to create a new policy assignment
 
-Before creating an assignment you must decide on a scope. It is possible to scope a policy assignment at the management group or subscription level.
-
 Policies that are to be assigned to a management group are located within the appropriate management group directory under `assignments/mgmt-groups`.
 
 Policies that are to be assigned to a subscription or group of subscriptions are located within the appropriate subscription directory under `assignments/subscriptions`.
 
-When you've decided on a scope, create a policy assignment file in the appropriate directory. Name the file assign.policyname.json e.g. `assign.tagging.json`
+When you've decided on a scope, create a policy assignment file in the appropriate directory. Name the file assign.policyname.json e.g. `assign.tagging.json`.
+
+### What scope should I choose?
+
+Use a subscription scope when you are testing out a policy or if you only want a policy to apply to a single subscription or group of subscriptions.
+
+Use a management groupo scope when you want a policy to apply to all subscriptions in the tenant.
 
 ### How to add a new subscription
 
 Create a new directory named for the subscription id under the `assignments/subscriptions` directory.
 
 Azure policy requires the subscription id and does not recognise friendly names.
+
+### Naming conventions for policies
+
+When applying policies to multiple subscription scopes, you should append the displayName, id and name of the policy assignment with the displayName of the subscription.
+
+This will make it easier to identify the policy assignment at a glance in the Azure Portal.
+
+e.g.
+```
+    "displayName": "HMCTS Keyvault Security Activity Logging - DCD-CFT-Sandbox",
+    "id": "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/providers/Microsoft.Authorization/policyAssignments/HMCTSKeyVault_DCD-CFT-Sandbox",
+    "name": "HMCTSKeyVault_DCD-CFT-Sandbox"
+```
+
+When applying a policy to the management group scope, you can leave the displayName without a suffix but make sure to set the id and name to `Global`
+
+e.g.
+```
+    "displayName": "HMCTS Collect Activity Logs",   
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnosticGlobal",
+    "name": "HMCTSDiagnosticGlobal"
+```
 
 ### How to test a policy definition
 
@@ -40,32 +78,51 @@ At this point, you will have a definition assigned to the DCD-CFTAPPS-SBOX subsc
 
 This should take place automatically when the assignment is created. You should be able to see what resources are non-compliant and confirm that the resources listed are expected.
 
+### How to test policy remediation
+
 In order to see if the policy will work in practice, a manual remediation task must be ran. This can be done by clicking on the assignment and clicking `Create remediation task`
 
-It should be noted that if the policy you are creating requires permissions over resources in another subscription e.g. if the policy is to forward diagnostic logs to an event hub in one of the SOC subscriptions, remediation will fail. This is because the policy also needs to be assigned to the other subscription as well but this will not take effect until after your PR is merged.
+You can do this for your `- Sandbox` policy assignment from above.
 
-Therefore, you must assign your policy to the subscription you are looking for non-compliant resources in, i.e. DCD-CFTAPPS-SBOX, as well as the subscription where the other resources, such as event hubs, exist, i.e. HMCTS-SOC-SBOX.
+If you want to test on an additional subscription, create another assignment json file under `assignments/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783`. This is the DCD-CFT-Sandbox subscription.
 
-When your pull request is approved and merged, a new policy definition will be created as well as an assignment for each of the scopes you have defined in your policy assignment json file.
+If everything is working as expected, submit a new PR with assignments for all the others subscriptions you are targeting resources in.
 
-### How to test policy remediation
+If your policy should take effect over all susbcriptions after testing, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder.
 
-To test that your policy will successfully remediate non-compliant resources, you should assign it to the DCD-CFTAPPS-SBOX and DCD-CFT-Sandbox subscriptions.
+### Policy permissions
 
-Assignments will be created for these scopes when your PR is merged and you can run a remediation task to test all is working as expected.
+Policies that use the deployIfNotExists action should have a list of roleDefinitionIds defined. These are required to remediate non-compliant resources. These permissions must be granted to some sort of identity.
 
-If everything is working as expected, submit a new PR with assignments for all the subscriptions you are targeting resources in or, in the case of management groups, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder.
+Currently, we use a User Assigned Managed Identity (UAMI) with such policy assignments.
 
-### Naming conventions for deployIfNotExists policies
+The reason for using a User Assigned instead of a System Assigned Managed Identity is that we can assign the appropriate permissions via code instead of doing this manually.
 
-Policies that use the deployIfNotExists action require permissions in order to make any changes that are necessary to ensure compliance.
+At the time of writing, deployIfNotExists actions require permissions to be manually assigned when being deployed via the manage-azure-policy GitHub action. See https://docs.microsoft.com/en-gb/azure/governance/policy/how-to/remediate-resources#how-remediation-security-works
 
-When you create an assignment, a SystemAssigned managed identity is also created to enforce the policy.
+The policies in HMCTS that are using the deployIfNotExists action are focused on ensuring diagnostic logging is in place for our Azure estate e.g. sending subscription level activity logs to an Azure Event Hub for consumption by Splunk.
 
-The name of the managed identity will be the same as the name of your policy assignment.
+There are two UAMIs currently in use for this:
 
-In order to prevent creating multiple managed identities with the same name when applying a policy to multiple subscriptions, it is advisable to append the name of the policy assignment with `_SUBSCRIPTION_NAME`.
+`soc-sbox-eventhub-azure-policy`
 
-You must also append the subscription name to the displayName of the policy assignment e.g. Forwards all Activity Logs to an Azure Event Hub - DCD-CFT-Sandbox
+`soc-prod-eventhub-azure-policy`
 
-This will make it much easier to differentiate managed identities from one another and make it easier to assign permissions.
+To enable diagnostic logging on PaaS, the following roles are required:
+
+| Role | Scope |
+|---|---|
+| Log Analytics Contributor |Subscription or management group containing resources to be remediated | 
+| Monitoring Contributor |Subscription or management group containing resources to be remediated |
+
+The identity must also have the Microsoft.EventHub/namespaces/authorizationRules/listkeys/action permission. This is available in the Azure Event Hubs Data Owner role but, to follow the principle of least privilege, a custom role called Azure Event Hubs List Namespace Keys has been created in the tenant with these permissions and this role should be used instead.
+
+The soc-sbox-eventhub-azure-policy identity has Log Analytics Contributor and Monitoring Contributor over the DCD-CFTAPPS-SBOX and DCD-CFT-Sandbox subscriptions that are to be used for testing purposes. It also has the Azure Event Hubs List Namespace Keys role over the Azure Event Hubs Namespace soc-sbox-eventhubns.
+
+The soc-prod-eventhub-azure-policy identity has Log Analytics Contributor and Monitoring Contributor over the dts002 management group. It also has the Azure Event Hubs List Namespace Keys role over the Azure Event Hubs Namespace soc-prod-eventhubns.
+
+These roles and permissions should be sufficient for your needs, however, if you need to add extra subscription scopes to the soc-sbox-eventhub-azure-policy identity for the purposes of testing, you can update the [terraform code](https://github.com/hmcts/soc/blob/master/modules/eventhub/roles.tf).
+
+You should not need to grant additional permissions to the soc-prod-eventhub-azure-policy identity
+
+Policies that do not use the deployIfNotExists action, e.g. our tagging policies, do not require permissions since they are simply evaluating resources.
