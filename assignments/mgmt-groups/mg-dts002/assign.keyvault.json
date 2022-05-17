@@ -4,23 +4,23 @@
         "assignedBy": "github.com/hmcts/azure-policy"
       },
       "description": "Forwards all Azure KeyVault Activity Logs to an Azure Event Hub",
-      "displayName": "HMCTS Keyvault Security Activity Logging - HMCTS-SOC-SBOX",
+      "displayName": "HMCTS Keyvault Security Activity Logging",
       "enforcementMode": "Default",
       "nonComplianceMessages": [],
       "notScopes": [],
       "parameters": {
         "eventHubAuthRule": {
-          "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+          "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
         }
       },
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
-      "scope":"/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2"
+      "scope": "/providers/Microsoft.Management/managementGroups/dts002"
     },
     "location": "uksouth",
     "identity": {
       "type": "UserAssigned",
       "userAssignedIdentities": {
-        "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-sbox-eventhub-azure-policy": {}
+        "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-eventhub-azure-policy": {}
     }
     },
     "sku": {
@@ -28,6 +28,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/providers/Microsoft.Authorization/policyAssignments/HMCTSKeyVault_HMCTS-SOC-SBOX",
-    "name": "HMCTSKeyVault_HMCTS-SOC-SBOX"
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSKeyVaultGlobal",
+    "name": "HMCTSKeyVaultGlobal"
 }
