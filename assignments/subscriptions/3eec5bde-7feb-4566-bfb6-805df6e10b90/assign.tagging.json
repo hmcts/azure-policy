@@ -1,29 +1,27 @@
 {
     "properties": {
-      "metadata": {
-        "assignedBy": "PlatOps"
-      },
-      "description": "Policy to check required tags",
-      "displayName": "HMCTS Tagging - SDS Test",
-      "enforcementMode": "Default",
-      "nonComplianceMessages": [
-        {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Policy to check required tags",
+        "displayName": "HMCTS Tagging - SDS Test",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [{
             "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
-        }
-      ],
-      "notScopes": [
-        "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-00-aks-node-rg",
-        "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-01-aks-node-rg",
-        "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-00-rg",
-        "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-01-rg"
-      ],
-      "parameters": {},
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
-      "scope": "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90"
+        }],
+        "notScopes": [
+            "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-00-aks-node-rg",
+            "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-01-aks-node-rg",
+            "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-00-rg",
+            "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-01-rg"
+        ],
+        "parameters": {},
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+        "scope": "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90"
     },
     "sku": {
-      "name": "A0",
-      "tier": "Free"
+        "name": "A0",
+        "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
     "id": "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/providers/Microsoft.Authorization/policyAssignments/HMCTSTagging_DTS-SHAREDSERVICES-TEST",
