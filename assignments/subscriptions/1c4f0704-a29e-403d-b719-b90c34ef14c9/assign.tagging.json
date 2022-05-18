@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "HMCTS Tagging - CFT Demo (DCD-CNP-DEV)",
+      "displayName": "HMCTS Tagging - CFT Demo/AAT (DCD-CNP-DEV)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
