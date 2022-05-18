@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "HMCTS Tagging - CFT SBOX",
+      "displayName": "HMCTS Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
