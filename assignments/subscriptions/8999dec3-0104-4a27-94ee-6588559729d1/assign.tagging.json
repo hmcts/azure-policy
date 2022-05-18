@@ -4,26 +4,23 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "HMCTS Tagging - CFT PROD (DCD-CFTAPPS-PROD)",
+      "displayName": "HMCTS Tagging - CFT PROD (DCD-CNP-PROD)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
             "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
         }
       ],
-      "notScopes": [
-        "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/cft-prod-00-aks-node-rg",
-        "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/cft-prod-01-aks-node-rg"
-      ],
+      "notScopes": [],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
-      "scope": "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27"
+      "scope": "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1"
     },
     "sku": {
       "name": "A0",
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/providers/Microsoft.Authorization/policyAssignments/HMCTSTagging_DCD-CFTAPPS-PROD",
-    "name": "HMCTSTagging_DCD-CFTAPPS-PROD"
+    "id": "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/providers/Microsoft.Authorization/policyAssignments/HMCTSTagging_DCD-CNP-PROD",
+    "name": "HMCTSTagging_DCD-CNP-PROD"
 }
