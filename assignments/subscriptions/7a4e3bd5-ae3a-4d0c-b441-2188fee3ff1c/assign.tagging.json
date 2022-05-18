@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "HMCTS Tagging - CFT Test (Perftest DCD-CNP-QA)",
+      "displayName": "HMCTS Tagging - CFT Test (Perftest/ITHC DCD-CNP-QA)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
