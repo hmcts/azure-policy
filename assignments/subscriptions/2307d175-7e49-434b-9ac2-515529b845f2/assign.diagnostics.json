@@ -1,5 +1,6 @@
 {
     "properties": {
+<<<<<<< HEAD
         "metadata": {
             "assignedBy": "PlatOps"
         },
@@ -23,6 +24,31 @@
     "sku": {
         "name": "A0",
         "tier": "Free"
+=======
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Forwards all Activity Logs to an Azure Event Hub",
+      "displayName": "HMCTS Collect Activity Logs",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [],
+      "notScopes": [],
+      "parameters": {
+        "eventHubAuthRule": {
+          "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+        }
+      },
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+      "scope": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2"
+    },
+    "location": "uksouth",
+    "identity": {
+      "type": "SystemAssigned"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+>>>>>>> parent of 45697e3 (assigned by)
     },
     "type": "Microsoft.Authorization/policyAssignments",
     "id": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnostic_HMCTS-SOC-SBOX",
