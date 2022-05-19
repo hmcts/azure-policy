@@ -1,0 +1,88 @@
+{
+    "properties": {
+        "displayName": "HMCTS Application Gateway Diagnostics Policy",
+        "policyType": "Custom",
+        "mode": "All",
+        "parameters": {
+            "eventHubAuthRule": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Event Hub Authorization Rule Id",
+                    "description": null
+                },
+                "allowedValues": [
+                    "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+                ],
+                "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+            }
+        },
+        "policyRule": {
+            "if": {
+                "field": "type",
+                "equals": "Microsoft.Network/applicationGateways"
+            },
+            "then": {
+                "effect": "deployIfNotExists",
+                "details": {
+                    "type": "Microsoft.Insights/diagnosticSettings",
+                    "deploymentScope": "subscription",
+                    "existenceCondition": {
+                        "allOf": [{
+                            "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+                            "equals": "[parameters('eventHubAuthRule')]"
+                        }]
+                    },
+                    "existenceScope": "subscription",
+                    "deployment": {
+                        "location": "uksouth",
+                        "properties": {
+                            "mode": "incremental",
+                            "template": {
+                                "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+                                "contentVersion": "1.0.0.0",
+                                "parameters": {
+                                    "eventHubAuthRule": {
+                                        "type": "string"
+                                    }
+                                },
+                                "variables": {},
+                                "resources": [{
+                                    "name": "subscriptionToEventHub",
+                                    "type": "Microsoft.Insights/diagnosticSettings",
+                                    "apiVersion": "2017-05-01-preview",
+                                    "location": "Global",
+                                    "properties": {
+                                        "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
+                                        "logs": [{
+                                                "category": "ApplicationGatewayAccessLog",
+                                                "enabled": true
+                                            },
+                                            {
+                                                "category": "ApplicationGatewayFirewallLog",
+                                                "enabled": true
+                                            }
+                                        ]
+                                    }
+                                }],
+                                "outputs": {}
+                            },
+                            "parameters": {
+                                "eventHubAuthRule": {
+                                    "value": "[parameters('eventHubAuthRule')]"
+                                }
+                            }
+                        }
+                    },
+                    "roleDefinitionIds": [
+                        "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+                        "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293",
+                        "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+                    ]
+                }
+            }
+        }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAppGatewayDiagnostic",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "HMCTSAppGatewayDiagnostic"
+}
