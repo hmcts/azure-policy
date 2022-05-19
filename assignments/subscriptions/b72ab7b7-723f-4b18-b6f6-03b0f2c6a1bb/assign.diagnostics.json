@@ -1,28 +1,28 @@
 {
     "properties": {
-      "metadata": {
-        "assignedBy": "PlatOps"
-      },
-      "description": "Forwards all Activity Logs to an Azure Event Hub",
-      "displayName": "HMCTS Collect Activity Logs",
-      "enforcementMode": "Default",
-      "nonComplianceMessages": [],
-      "notScopes": [],
-      "parameters": {
-        "eventHubAuthRule": {
-          "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
-        }
-      },
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
-      "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Forwards all Activity Logs to an Azure Event Hub",
+        "displayName": "HMCTS Collect Activity Logs",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "parameters": {
+            "eventHubAuthRule": {
+                "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+            }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+        "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
     },
     "location": "uksouth",
     "identity": {
-      "type": "SystemAssigned"
+        "type": "SystemAssigned"
     },
     "sku": {
-      "name": "A0",
-      "tier": "Free"
+        "name": "A0",
+        "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
     "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnostic_DCD-CFTAPPS-SBOX",
