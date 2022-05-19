@@ -18,7 +18,7 @@
     },
     "location": "uksouth",
     "identity": {
-        "type": "SystemAssigned"
+        "type": "UserAssigned"
     },
     "sku": {
         "name": "A0",
