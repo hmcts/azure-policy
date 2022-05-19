@@ -28,6 +28,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSAppGWDiagnostic",
-    "name": "HMCTSAppGWDiagnostic"
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSAppGWDiagnostic_HMCTS-SOC-PROD",
+    "name": "HMCTSAppGWDiagnostic_HMCTS-SOC-PROD"
 }
