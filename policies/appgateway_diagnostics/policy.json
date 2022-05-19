@@ -83,7 +83,7 @@
             }
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSappgatewayDiagnostics",
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAppGatewayDiagnostic",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSappgatewayDiagnostics"
+    "name": "HMCTSAppGatewayDiagnostic"
 }
