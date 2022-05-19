@@ -1,7 +1,7 @@
 {
     "properties": {
         "metadata": {
-            "assignedBy": "github.com/hmcts/azure-policy"
+            "assignedBy": "PlatOps"
         },
         "description": "Forwards App Gateway Logs to an Azure Event Hub",
         "displayName": "HMCTS Collect App Gateway Logs",
