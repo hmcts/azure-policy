@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "HMCTS Tagging - CFT PTL (DTS-CFTSBOX-INTSVC)",
+      "displayName": "HMCTS Tagging - CFT PTL SBOX (DTS-CFTSBOX-INTSVC)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
