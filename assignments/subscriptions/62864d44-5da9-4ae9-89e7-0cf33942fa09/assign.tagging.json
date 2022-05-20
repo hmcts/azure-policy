@@ -1,0 +1,29 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to check required tags",
+      "displayName": "HMCTS Tagging - CFT ITHC",
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        {
+            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
+        }
+      ],
+      "notScopes": [
+        "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09/resourceGroups/cft-ithc-00-aks-node-rg",
+        "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09/resourceGroups/cft-ithc-01-aks-node-rg"
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+      "scope": "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09/providers/Microsoft.Authorization/policyAssignments/HMCTSTagging_DCD-CFTAPPS-ITHC",
+    "name": "HMCTSTagging_DCD-CFTAPPS-ITHC"
+}
