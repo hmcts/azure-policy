@@ -18,10 +18,7 @@
     },
     "location": "uksouth",
     "identity": {
-        "type": "UserAssigned",
-        "userAssignedIdentities": {
-            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-eventhub-azure-policy": {}
-        }
+        "type": "SystemAssigned"
     },
     "sku": {
         "name": "A0",
