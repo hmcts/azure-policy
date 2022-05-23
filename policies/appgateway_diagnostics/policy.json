@@ -48,7 +48,7 @@
                                 },
                                 "variables": {},
                                 "resources": [{
-                                    "name": "subscriptionToEventHub",
+                                    "name": "appGatewayToEventHub",
                                     "type": "Microsoft.Insights/diagnosticSettings",
                                     "apiVersion": "2017-05-01-preview",
                                     "location": "Global",
