@@ -55,14 +55,9 @@
                                     "properties": {
                                         "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                                         "logs": [{
-                                                "category": "ApplicationGatewayAccessLog",
-                                                "enabled": true
-                                            },
-                                            {
-                                                "category": "ApplicationGatewayFirewallLog",
-                                                "enabled": true
-                                            }
-                                        ]
+                                            "category": "ApplicationGatewayFirewallLog",
+                                            "enabled": true
+                                        }]
                                     }
                                 }],
                                 "outputs": {}
