@@ -180,7 +180,7 @@
                                 "outputs": {
                                     "policy": {
                                         "type": "string",
-                                        "value": "[concat('Enabled diagnostic settings for ', parameters('vaultName'))]"
+                                        "value": "[concat('Enabled diagnostic settings for ', parameters('resourceName'))]"
                                     }
                                 }
                             },
