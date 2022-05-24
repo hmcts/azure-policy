@@ -19,12 +19,13 @@
         },
         "policyRule": {
             "if": {
+                "field": "type",
                 "type": "Microsoft.Network/applicationGateways"
             },
             "then": {
                 "effect": "deployIfNotExists",
                 "details": {
-                    "type": "Microsoft.Insights/diagnosticSettings",
+                    "type": "Microsoft.Network/applicationGateways/providers/diagnosticSettings",
                     "existenceCondition": {
                         "allOf": [{
                             "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
