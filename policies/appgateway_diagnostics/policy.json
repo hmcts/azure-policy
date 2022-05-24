@@ -1,6 +1,6 @@
 {
     "properties": {
-        "displayName": "Deploy Diagnostic Settings for Application Gateway to Log Analytics workspace",
+        "displayName": "Diagnostic Settings for Application Gateway to SOC",
         "policyType": "Custom",
         "mode": "Indexed",
         "parameters": {
