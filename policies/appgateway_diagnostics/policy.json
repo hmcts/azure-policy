@@ -26,20 +26,18 @@
                 "effect": "deployIfNotExists",
                 "details": {
                     "type": "Microsoft.Insights/diagnosticSettings",
-                    "deploymentScope": "subscription",
                     "existenceCondition": {
                         "allOf": [{
                             "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
                             "equals": "[parameters('eventHubAuthRule')]"
                         }]
                     },
-                    "existenceScope": "subscription",
                     "deployment": {
                         "location": "uksouth",
                         "properties": {
                             "mode": "incremental",
                             "template": {
-                                "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+                                "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
                                 "parameters": {
                                     "eventHubAuthRule": {
@@ -55,9 +53,14 @@
                                     "properties": {
                                         "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                                         "logs": [{
-                                            "category": "ApplicationGatewayFirewallLog",
-                                            "enabled": true
-                                        }]
+                                                "category": "ApplicationGatewayAccessLog",
+                                                "enabled": true
+                                            },
+                                            {
+                                                "category": "ApplicationGatewayFirewallLog",
+                                                "enabled": true
+                                            }
+                                        ]
                                     }
                                 }],
                                 "outputs": {}
