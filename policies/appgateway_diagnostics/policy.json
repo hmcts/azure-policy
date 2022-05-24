@@ -4,7 +4,7 @@
         "policyType": "Custom",
         "mode": "Indexed",
         "parameters": {
-            "logAnalytics": {
+            "profileName": {
                 "type": "String",
                 "metadata": {
                     "displayName": "Profile name",
@@ -18,7 +18,7 @@
                     "displayName": "EventHub Name",
                     "description": "The event hub for Azure Diagnostics"
                 },
-                "defaultValue": "app-gateway"
+                "defaultValue": "application-gateway"
             },
             "eventHubAuthRule": {
                 "type": "String",
@@ -213,5 +213,8 @@
                 }
             }
         }
-    }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "HMCTSAGWDiagnostic"
 }
