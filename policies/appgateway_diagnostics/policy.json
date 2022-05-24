@@ -19,8 +19,7 @@
         },
         "policyRule": {
             "if": {
-                "field": "type",
-                "equals": "Microsoft.Network/applicationGateways"
+                "type": "Microsoft.Network/applicationGateways"
             },
             "then": {
                 "effect": "deployIfNotExists",
