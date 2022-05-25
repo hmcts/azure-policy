@@ -210,6 +210,6 @@
         }
     },
     "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiagnostic",
-    "type": "Microsoft.DBforPostgreSQL/servers",
+    "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSPSQLDiagnostic"
 }
