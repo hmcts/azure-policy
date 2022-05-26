@@ -13,7 +13,7 @@
                 "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiagnostic",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
         "scope": "/providers/Microsoft.Management/managementGroups/dts002"
     },
     "location": "uksouth",
@@ -28,6 +28,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiagnosticGlobal",
-    "name": "HMCTSPSQLDiagnosticGlobal"
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiagGlobal",
+    "name": "HMCTSPSQLDiagGlobal"
 }

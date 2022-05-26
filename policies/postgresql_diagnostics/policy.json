@@ -209,7 +209,7 @@
             }
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiagnostic",
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSPSQLDiagnostic"
+    "name": "HMCTSPSQLDiag"
 }
