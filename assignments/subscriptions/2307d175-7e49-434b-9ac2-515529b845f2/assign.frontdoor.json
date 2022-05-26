@@ -3,7 +3,7 @@
         "metadata": {
             "assignedBy": "PlatOps"
         },
-        "description": "Forwards all Activity Logs to an Azure Event Hub",
+        "description": "Forwards all Front Door Logs to an Azure Event Hub",
         "displayName": "HMCTS Collect Activity Logs",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
