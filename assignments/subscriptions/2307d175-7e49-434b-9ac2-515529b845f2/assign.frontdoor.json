@@ -25,6 +25,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnostic_HMCTS-SOC-SBOX",
-    "name": "HMCTSDiagnostic_HMCTS-SOC-SBOX"
+    "id": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/providers/Microsoft.Authorization/policyAssignments/HMCTSFrontDoor_DCD-CFTAPPS-SBOX",
+    "name": "HMCTSFrontDoor_DCD-CFTAPPS-SBOX"
 }
