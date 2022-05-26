@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Forwards all PostgreSQL Logs to an Azure Event Hub",
-        "displayName": "HMCTS Collect PostgreSQL Logs",
+        "displayName": "HMCTS Collect PostgreSQL Flexible Server Logs",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
