@@ -4,7 +4,7 @@
             "assignedBy": "PlatOps"
         },
         "description": "Forwards all Front Door Logs to an Azure Event Hub",
-        "displayName": "HMCTS Collect Activity Logs",
+        "displayName": "HMCTS Collect Front Door Logs",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
