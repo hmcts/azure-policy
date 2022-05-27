@@ -43,6 +43,18 @@
                 },
                 "defaultValue": ""
             },
+            "metricsEnabled": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Enable metrics",
+                    "description": "Whether to enable metrics stream to the Event Hub - True or False"
+                },
+                "allowedValues": [
+                    "True",
+                    "False"
+                ],
+                "defaultValue": "False"
+            },
             "logsEnabled": {
                 "type": "String",
                 "metadata": {
