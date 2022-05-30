@@ -9,6 +9,11 @@
         "nonComplianceMessages": [],
         "notScopes": [],
         "parameters": {
+            "policyAssignmentName": {
+                "type": "string",
+                "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSNSGDiagnosticGlobal",
+                "defaultValue": "HMCTSNSGDiagnosticGlobal"
+            },
             "eventHubAuthRule": {
                 "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
             }
@@ -26,8 +31,5 @@
     "sku": {
         "name": "A0",
         "tier": "Free"
-    },
-    "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSNSGDiagnosticGlobal",
-    "name": "HMCTSNSGDiagnosticGlobal"
+    }
 }
