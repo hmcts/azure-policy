@@ -20,7 +20,7 @@
                 },
                 "defaultValue": "network-security-group"
             },
-            "eventHubAuthRuleId": {
+            "eventHubAuthRule": {
                 "type": "String",
                 "metadata": {
                     "displayName": "Event Hub Authorization Rule Id",
@@ -112,7 +112,7 @@
                                 "resourceName": {
                                     "type": "String"
                                 },
-                                "eventHubAuthRuleId": {
+                                "eventHubAuthRule": {
                                     "type": "string"
                                 },
                                 "eventHubName": {
@@ -137,7 +137,7 @@
                                 "dependsOn": [],
                                 "properties": {
                                     "eventHubName": "[parameters('eventHubName')]",
-                                    "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRuleId')]",
+                                    "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                                     "logs": [{
                                         "category": "NetworkSecurityGroupEvent",
                                         "enabled": "[parameters('logsEnabled')]"
@@ -159,8 +159,8 @@
                             "resourceName": {
                                 "value": "[field('name')]"
                             },
-                            "eventHubAuthRuleId": {
-                                "value": "[parameters('eventHubAuthRuleId')]"
+                            "eventHubAuthRule": {
+                                "value": "[parameters('eventHubAuthRule')]"
                             },
                             "eventHubName": {
                                 "value": "[parameters('eventHubName')]"
