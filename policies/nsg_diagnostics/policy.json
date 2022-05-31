@@ -10,7 +10,7 @@
                     "displayName": "Profile name",
                     "description": "The diagnostic settings profile name"
                 },
-                "defaultValue": "NSGToEventHub"
+                "defaultValue": "SOC-Prod"
             },
             "eventHubName": {
                 "type": "String",
