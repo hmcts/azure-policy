@@ -5,7 +5,7 @@
       },
       "description": "Policy to check required tags",
       "displayName": "HMCTS Tagging - CFT PTL SBOX (DTS-CFTSBOX-INTSVC)",
-      "enforcementMode": "DoNotEnforce",
+      "enforcementMode": "Default",
       "nonComplianceMessages": [
         {
             "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
