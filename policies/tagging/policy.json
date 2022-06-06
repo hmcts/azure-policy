@@ -27,7 +27,8 @@
             "demo",
             "ITHC",
             "staging",
-            "production"
+            "production",
+            "preview"
           ],
           "type": "Array",
           "metadata": {
