@@ -25,8 +25,7 @@
             "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/ss-prod-01-aks-node-rg",
             "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/ss-prod-00-aks-node-rg",
             "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/ss-ptlsbox-00-aks-node-rg",
-            "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/ss-ptl-00-aks-node-rg",
-            "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/AzureBackupRG_uksouth_1"
+            "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/ss-ptl-00-aks-node-rg"
         ],
         "parameters": {},
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
