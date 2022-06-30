@@ -11,6 +11,7 @@
             "microsoft.insights/actiongroups",
             "Microsoft.Insights/activityLogAlerts",
             "microsoft.operationsmanagement/solutions",
+            "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
             "Microsoft.ContainerRegistry/registries/tasks"
           ],
           "type": "Array",
