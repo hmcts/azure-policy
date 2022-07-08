@@ -13,7 +13,8 @@
       ],
       "notScopes": [
         "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3/resourceGroups/cft-ptlsbox-00-aks-node-rg",
-        "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3/resourceGroups/cft-ptlsbox-01-aks-node-rg"
+        "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3/resourceGroups/cft-ptlsbox-01-aks-node-rg",
+        "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3/resourceGroups/cft-ptlsbox-network-rg"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
