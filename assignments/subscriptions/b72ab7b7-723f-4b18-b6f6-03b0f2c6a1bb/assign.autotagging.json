@@ -22,6 +22,10 @@
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
       "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
     },
+    "location": "uksouth",
+    "identity": {
+        "type": "SystemAssigned"
+    },
     "sku": {
       "name": "A0",
       "tier": "Free"
