@@ -4,7 +4,7 @@
         "assignedBy": "https://github.com/hmcts/azure-policy"
       },
       "description": "Policy to auto tag: environment",
-      "displayName": "HMCTS Auto Tagging - Environment - Archiving with Records Management PROD (DTS-ARCHIVING-PROD)",
+      "displayName": "HMCTS Auto Tagging - Environment - Archiving with Records Management PROD (DTS-ARCHIVING-TEST)",
       "enforcementMode": "Default",
       "nonComplianceMessages": [],
       "notScopes": [],
@@ -13,7 +13,7 @@
           "value": "environment"
         },
         "tagValue": {
-          "value": "production"
+          "value": "test"
         }
       },
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
