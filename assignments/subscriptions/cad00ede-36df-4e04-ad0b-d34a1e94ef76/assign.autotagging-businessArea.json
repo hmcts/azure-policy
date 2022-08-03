@@ -29,5 +29,5 @@
     },
     "type": "Microsoft.Authorization/policyAssignments",
     "id": "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/providers/Microsoft.Authorization/policyAssignments/HMCTSAutoTagging_BusinessArea_DTS-ARCHIVING-TEST",
-    "name": "HMCTSTagging_BusinessArea_DTS-ARCHIVING-TEST"
+    "name": "HMCTSAutoTagging_BusinessArea_DTS-ARCHIVING-TEST"
 }
