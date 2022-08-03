@@ -5,7 +5,7 @@
       },
       "description": "Policy automatically apply tags",
       "displayName": "HMCTS Auto Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
-      "enforcementMode": "default",
+      "enforcementMode": "Default",
       "nonComplianceMessages": [],
       "notScopes": [
         "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-sbox-00-aks-node-rg",
