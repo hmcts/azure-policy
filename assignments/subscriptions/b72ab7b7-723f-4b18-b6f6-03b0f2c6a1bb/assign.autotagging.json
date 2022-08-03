@@ -3,7 +3,7 @@
       "metadata": {
         "assignedBy": "PlatOps"
       },
-      "description": "Policy to check required tags",
+      "description": "Policy automatically apply tags",
       "displayName": "HMCTS Auto Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
       "enforcementMode": "default",
       "nonComplianceMessages": [],
@@ -31,6 +31,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSAutoTagging_DCD-CFTAPPS-SBOX",
     "name": "HMCTSAutoTagging_DCD-CFTAPPS-SBOX"
 }
