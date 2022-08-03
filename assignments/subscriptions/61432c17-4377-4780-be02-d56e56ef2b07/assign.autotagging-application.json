@@ -6,6 +6,7 @@
       "description": "Policy to auto tag: application",
       "displayName": "HMCTS Auto Tagging - Application - Archiving with Records Management PROD (DTS-ARCHIVING-PROD)",
       "enforcementMode": "Default",
+      "nonComplianceMessages": [],
       "notScopes": [],
       "parameters": {
         "tagName": {
@@ -17,6 +18,10 @@
       },
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
       "scope": "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07"
+    },
+    "location": "uksouth",
+    "identity": {
+        "type": "SystemAssigned"
     },
     "sku": {
       "name": "A0",
