@@ -12,7 +12,14 @@
         }
       ],
       "notScopes": [],
-      "parameters": {},
+      "parameters": {
+        "allowedEnvironmentNames": {
+          "value": [ "production" ]
+        },
+        "allowedBusinessAreaNames": {
+          "value": [ "cross-cutting" ]
+        }
+      },
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
       "scope": "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07"
     },

@@ -1,0 +1,28 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "https://github.com/hmcts/azure-policy"
+      },
+      "description": "Policy to auto tag: application",
+      "displayName": "HMCTS Auto Tagging - Application - Archiving with Records Management TEST (DTS-ARCHIVING-TEST)",
+      "enforcementMode": "Default",
+      "notScopes": [],
+      "parameters": {
+        "tagName": {
+          "value": "application"
+        },
+        "tagValue": {
+          "value": "archive-with-records-management"
+        }
+      },
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
+      "scope": "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/providers/Microsoft.Authorization/policyAssignments/HMCTSAutoTagging_Application_DTS-ARCHIVING-TEST",
+    "name": "HMCTSTagging_Application_DTS-ARCHIVING-TEST"
+}
