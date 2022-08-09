@@ -12,7 +12,8 @@
         }
       ],
       "notScopes": [
-        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/PlatOpsMonitor_Test"
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/PlatOpsMonitor_Test",
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/alliurg2"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
