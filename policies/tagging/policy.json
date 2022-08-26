@@ -11,7 +11,9 @@
             "microsoft.insights/actiongroups",
             "Microsoft.Insights/activityLogAlerts",
             "microsoft.operationsmanagement/solutions",
-            "Microsoft.ContainerRegistry/registries/tasks"
+            "Microsoft.ContainerRegistry/registries/tasks",
+            "Microsoft.Network/dnsResolvers/inboundEndpoints",
+            "Microsoft.Network/dnsResolvers/outboundEndpoints"
           ],
           "type": "Array",
           "metadata": {
