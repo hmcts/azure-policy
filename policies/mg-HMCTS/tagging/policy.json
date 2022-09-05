@@ -1,0 +1,106 @@
+{
+    "properties": {
+      "displayName": "HMCTS Tagging Policy",
+      "policyType": "Custom",
+      "mode": "Indexed",
+      "parameters": {
+        "excludedResourceTypes": {
+          "defaultValue": [
+            "Microsoft.Network/networkWatchers",
+            "microsoft.alertsmanagement/smartdetectoralertrules",
+            "microsoft.insights/actiongroups",
+            "Microsoft.Insights/activityLogAlerts",
+            "microsoft.operationsmanagement/solutions",
+            "Microsoft.ContainerRegistry/registries/tasks",
+            "Microsoft.Network/dnsResolvers/inboundEndpoints",
+            "Microsoft.Network/dnsResolvers/outboundEndpoints"
+          ],
+          "type": "Array",
+          "metadata": {
+            "displayName": "Resource Types to exclude",
+            "description": "Resource Types to exclude from compliance results"
+          }
+        },
+        "allowedEnvironmentNames": {
+          "defaultValue": [
+            "sandbox",
+            "development",
+            "testing",
+            "demo",
+            "ITHC",
+            "staging",
+            "production",
+            "preview"
+          ],
+          "type": "Array",
+          "metadata": {
+            "displayName": "Allowed environment Names",
+            "description": "Allowed environment names such as production or staging"
+          }
+        },
+        "allowedBusinessAreaNames": {
+          "defaultValue": [
+            "CFT",
+            "crime",
+            "Cross-Cutting"
+          ],
+          "type": "Array",
+          "metadata": {
+            "displayName": "Allowed businessArea names",
+            "description": "Allowed businessArea names such as CFT or crime"
+          }
+        },
+        "RequiredTags": {
+          "type": "Array",
+          "defaultValue": [
+            "environment",
+            "application",
+            "businessArea",
+            "builtFrom"
+          ],
+          "metadata": {
+            "displayName": "Required Tags",
+            "description": "The list of Required tags for resources."
+          }
+        }
+      },
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "notIn": "[parameters('excludedResourceTypes')]"
+            },
+            {
+              "anyOf": [
+                {
+                  "count": {
+                    "value": "[parameters('RequiredTags')]",
+                    "where": {
+                      "field": "tags",
+                      "notContainsKey": "[current()]"
+                    }
+                  },
+                  "greater": 0
+                },
+                {
+                  "field": "tags['environment']",
+                  "notIn": "[parameters('allowedEnvironmentNames')]"
+                },
+                {
+                  "field": "tags['businessArea']",
+                  "notIn": "[parameters('allowedBusinessAreaNames')]"
+                }
+              ]
+            }
+          ]
+        },
+        "then": {
+          "effect": "deny"
+        }
+      }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "HMCTSTagging"
+  }
