@@ -216,5 +216,9 @@
     },
     "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic",
     "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "HMCTSAGWDiagnostic",
+
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic",
+    "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSAGWDiagnostic"
 }
