@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Policy to check required tags",
-        "displayName": "HMCTS Tagging Policy",
+        "displayName": "HMCTS Tagging Policy (HMCTS MG)",
         "enforcementMode": "DoNotEnforce",
         "nonComplianceMessages": [{
             "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
