@@ -44,166 +44,160 @@
         },
         "defaultValue": ""
       },
-      "metricsEnabled": {
-        "type": "String",
-        "metadata": {
-          "displayName": "Enable metrics",
-          "description": "Whether to enable metrics stream to the Event Hub - True or False"
-        },
-        "allowedValues": [
-          "True",
-          "False"
-        ],
-        "defaultValue": "False"
-      },
-      "logsEnabled": {
-        "type": "String",
-        "metadata": {
-          "displayName": "Enable logs",
-          "description": "Whether to enable logs stream to the Event Hub  - True or False"
-        },
-        "allowedValues": [
-          "True",
-          "False"
-        ],
-        "defaultValue": "True"
-      }
+      "allowedValues": [
+        "True",
+        "False"
+      ],
+      "defaultValue": "False"
     },
-    "policyRule": {
-      "if": {
-        "allOf": [
-          {
-            "field": "type",
-            "equals": "Microsoft.Sql/servers"
-          },
-          {
-            "anyOf": [
-              {
-                "value": "[parameters('eventHubLocation')]",
-                "equals": ""
-              },
-              {
-                "field": "location",
-                "equals": "[parameters('eventHubLocation')]"
-              }
-            ]
-          }
-        ]
+    "auditsEnabled": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Enable audit logs",
+        "description": "Whether to enable audit logs stream to the Event Hub  - True or False"
       },
-      "then": {
-        "effect": "deployIfNotExists",
-        "details": {
-          "type": "Microsoft.Insights/servers/auditingSettings",
-          "name": "[parameters('profileName')]",
-          "existenceCondition": {
-            "allOf": [
-              {
-                "field": "Microsoft.Sql/servers/auditingSettings/state",
-                "equals": "Enabled"
-              },
-              {
-                "field": "Microsoft.Sql/servers/auditingSettings/isAzureMonitorTargetEnabled",
-                "equals": "true"
-              }
-            ]
-          },
-          "roleDefinitionIds": [
-            "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
-            "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293"
-          ],
-          "deployment": {
-            "properties": {
-              "mode": "incremental",
-              "template": {
-                "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-                "contentVersion": "1.0.0.0",
-                "parameters": {
-                  "resourceName": {
-                    "type": "string"
-                  },
-                  "eventHubAuthRule": {
-                    "type": "string"
-                  },
-                  "eventHubName": {
-                    "type": "string"
-                  },
-                  "location": {
-                    "type": "string"
-                  },
-                  "auditsEnabled": {
-                    "type": "string"
-                  },
-                  "profileName": {
-                    "type": "string"
-                  }
-                },
-                "variables": {},
-                "resources": [
-                  {
-                    "type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
-                    "apiVersion": "2017-05-01-preview",
-                    "name": "[concat(parameters('resourceName'), '/master/', 'Microsoft.Insights/', parameters('profileName'))]",
-                    "location": "[parameters('location')]",
-                    "dependsOn": [],
-                    "properties": {
-                      "eventHubName": "[parameters('eventHubName')]",
-                      "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
-                      "logs": [
-                        {
-                          "category": "SQLSecurityAuditEvents",
-                          "enabled": "[parameters('auditsEnabled')]",
-                          "retentionPolicy": {
-                            "days": 0,
-                            "enabled": false
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "type": "Microsoft.Sql/servers/auditingSettings",
-                    "name": "[concat(parameters('resourceName'), '/Default')]",
-                    "apiVersion": "2017-03-01-preview",
-                    "properties": {
-                      "State": "Enabled",
-                      "isAzureMonitorTargetEnabled": "true"
-                    }
-                  }
-                ],
-                "outputs": {
-                  "policy": {
-                    "type": "string",
-                    "value": "[concat('Enabled audit settings for ', parameters('resourceName'))]"
-                  }
-                }
-              },
+      "allowedValues": [
+        "True",
+        "False"
+      ],
+      "defaultValue": "True"
+    }
+  },
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Sql/servers"
+        },
+        {
+          "anyOf": [
+            {
+              "value": "[parameters('eventHubLocation')]",
+              "equals": ""
+            },
+            {
+              "field": "location",
+              "equals": "[parameters('eventHubLocation')]"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "effect": "deployIfNotExists",
+      "details": {
+        "type": "Microsoft.Insights/servers/auditingSettings",
+        "name": "[parameters('profileName')]",
+        "existenceCondition": {
+          "allOf": [
+            {
+              "field": "Microsoft.Sql/servers/auditingSettings/state",
+              "equals": "Enabled"
+            },
+            {
+              "field": "Microsoft.Sql/servers/auditingSettings/isAzureMonitorTargetEnabled",
+              "equals": "true"
+            }
+          ]
+        },
+        "roleDefinitionIds": [
+          "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+          "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293"
+        ],
+        "deployment": {
+          "properties": {
+            "mode": "incremental",
+            "template": {
+              "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+              "contentVersion": "1.0.0.0",
               "parameters": {
-                "location": {
-                  "value": "[field('location')]"
-                },
                 "resourceName": {
-                  "value": "[field('name')]"
+                  "type": "string"
                 },
                 "eventHubAuthRule": {
-                  "value": "[parameters('eventHubAuthRule')]"
+                  "type": "string"
                 },
                 "eventHubName": {
-                  "value": "[parameters('eventHubName')]"
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
                 },
                 "auditsEnabled": {
-                  "value": "[parameters('auditsEnabled')]"
+                  "type": "string"
                 },
                 "profileName": {
-                  "value": "[parameters('profileName')]"
+                  "type": "string"
                 }
+              },
+              "variables": {},
+              "resources": [
+                {
+                  "type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
+                  "apiVersion": "2017-05-01-preview",
+                  "name": "[concat(parameters('resourceName'), '/master/', 'Microsoft.Insights/', parameters('profileName'))]",
+                  "location": "[parameters('location')]",
+                  "dependsOn": [],
+                  "properties": {
+                    "eventHubName": "[parameters('eventHubName')]",
+                    "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
+                    "logs": [
+                      {
+                        "category": "SQLSecurityAuditEvents",
+                        "enabled": "[parameters('auditsEnabled')]",
+                        "retentionPolicy": {
+                          "days": 0,
+                          "enabled": false
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "Microsoft.Sql/servers/auditingSettings",
+                  "name": "[concat(parameters('resourceName'), '/Default')]",
+                  "apiVersion": "2017-03-01-preview",
+                  "properties": {
+                    "State": "Enabled",
+                    "isAzureMonitorTargetEnabled": "true"
+                  }
+                }
+              ],
+              "outputs": {
+                "policy": {
+                  "type": "string",
+                  "value": "[concat('Enabled audit settings for ', parameters('resourceName'))]"
+                }
+              }
+            },
+            "parameters": {
+              "location": {
+                "value": "[field('location')]"
+              },
+              "resourceName": {
+                "value": "[field('name')]"
+              },
+              "eventHubAuthRule": {
+                "value": "[parameters('eventHubAuthRule')]"
+              },
+              "eventHubName": {
+                "value": "[parameters('eventHubName')]"
+              },
+              "auditsEnabled": {
+                "value": "[parameters('auditsEnabled')]"
+              },
+              "profileName": {
+                "value": "[parameters('profileName')]"
               }
             }
           }
         }
       }
     }
-  },
-  "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit",
-  "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSAzureSQLAudit"
+  }
+},
+"id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit",
+"type": "Microsoft.Authorization/policyDefinitions",
+"name": "HMCTSAzureSQLAudit"
 }
