@@ -44,11 +44,11 @@
         },
         "defaultValue": ""
       },
-      "auditsEnabled": {
+      "logsEnabled": {
         "type": "String",
         "metadata": {
-          "displayName": "Enable audit logs",
-          "description": "Whether to enable audit logs stream to the Event Hub  - True or False"
+          "displayName": "Enable audit and diagnostic logs",
+          "description": "Whether to enable audit and diagnostic logs stream to the Event Hub  - True or False"
         },
         "allowedValues": [
           "True",
