@@ -1,9 +1,9 @@
 {
   "properties": {
-    "displayName": "HMCTS Front Door Security Activity Logging",
+    "displayName": "HMCTS Keyvault Security Activity Logging",
     "policyType": "Custom",
     "mode": "Indexed",
-    "description": "Forwards all Azure Front Door Activity Logs to an Azure Event Hub",
+    "description": "Forwards all Azure KeyVault Activity Logs to an Azure Event Hub",
     "parameters": {
       "profileName": {
         "type": "String",
@@ -11,7 +11,7 @@
           "displayName": "Profile name",
           "description": "The diagnostic settings profile name"
         },
-        "defaultValue": "frontDoorToEventHub"
+        "defaultValue": "keyVaultToEventHub"
       },
       "eventHubName": {
         "type": "String",
@@ -19,7 +19,7 @@
           "displayName": "EventHub Name",
           "description": "The event hub for Azure Diagnostics"
         },
-        "defaultValue": "front-door"
+        "defaultValue": "key-vault"
       },
       "eventHubAuthRule": {
         "type": "String",
@@ -30,16 +30,16 @@
           "assignPermissions": true
         },
         "allowedValues": [
-          "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey",
-          "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+          "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey",
+          "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
         ],
-        "defaultValue": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
+        "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
       },
       "eventHubLocation": {
         "type": "String",
         "metadata": {
           "displayName": "Event Hub Location",
-          "description": "The location the Event Hub resides in. Only Front Doors in this location will be linked to this Event Hub.",
+          "description": "The location the Event Hub resides in. Only Key Vaults in this location will be linked to this Event Hub.",
           "strongType": "location"
         },
         "defaultValue": ""
@@ -74,7 +74,7 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Network/frontDoors"
+            "equals": "Microsoft.KeyVault/vaults"
           },
           {
             "anyOf": [
@@ -130,7 +130,7 @@
                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",
                 "parameters": {
-                  "frontDoorName": {
+                  "vaultName": {
                     "type": "string"
                   },
                   "location": {
@@ -154,9 +154,9 @@
                 },
                 "resources": [
                   {
-                    "type": "Microsoft.Network/frontDoors/providers/diagnosticSettings",
+                    "type": "Microsoft.KeyVault/vaults/providers/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
-                    "name": "[concat(parameters('frontDoorName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                    "name": "[concat(parameters('vaultName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
                     "location": "[parameters('location')]",
                     "dependsOn": [],
                     "properties": {
@@ -174,11 +174,7 @@
                       ],
                       "logs": [
                         {
-                          "category": "FrontdoorAccessLog",
-                          "enabled": "[parameters('logsEnabled')]"
-                        },
-                        {
-                          "category": "FrontdoorWebApplicationFirewallLog",
+                          "category": "AuditEvent",
                           "enabled": "[parameters('logsEnabled')]"
                         }
                       ]
@@ -188,7 +184,7 @@
                 "outputs": {
                   "policy": {
                     "type": "string",
-                    "value": "[concat('Enabled diagnostic settings for ', parameters('frontDoorName'))]"
+                    "value": "[concat('Enabled diagnostic settings for ', parameters('vaultName'))]"
                   }
                 }
               },
@@ -196,7 +192,7 @@
                 "location": {
                   "value": "[field('location')]"
                 },
-                "frontDoorName": {
+                "vaultName": {
                   "value": "[field('name')]"
                 },
                 "eventHubAuthRule": {
@@ -221,7 +217,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSFrontDoor",
+  "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSFrontDoor"
+  "name": "HMCTSKeyVault"
 }

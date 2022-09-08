@@ -217,7 +217,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "HMCTSKeyVault"
 }
