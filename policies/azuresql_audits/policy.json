@@ -81,7 +81,7 @@
       "then": {
         "effect": "deployIfNotExists",
         "details": {
-          "type": "Microsoft.Insights/servers/auditingSettings",
+          "type": "Microsoft.Sql/servers/auditingSettings",
           "name": "[parameters('profileName')]",
           "existenceCondition": {
             "allOf": [
