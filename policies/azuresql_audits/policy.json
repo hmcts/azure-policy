@@ -81,17 +81,28 @@
       "then": {
         "effect": "deployIfNotExists",
         "details": {
-          "type": "Microsoft.Sql/servers/auditingSettings",
+          "type": "Microsoft.Insights/diagnosticSettings",
           "name": "[parameters('profileName')]",
           "existenceCondition": {
-            "allOf": [
-              {
-                "field": "Microsoft.Sql/servers/auditingSettings/state",
-                "equals": "Enabled"
+            "allOf": [{
+              "count": {
+                "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
+                "where": {
+                  "field": "Microsoft.Insights/diagnosticSettings/logs[*].enabled",
+                  "equals": "[parameters('logsEnabled')]"
+                }
               },
+              "greaterOrEquals": 1
+            },
               {
-                "field": "Microsoft.Sql/servers/auditingSettings/isAzureMonitorTargetEnabled",
-                "equals": "true"
+                "count": {
+                  "field": "Microsoft.Insights/diagnosticSettings/metrics[*]",
+                  "where": {
+                    "field": "Microsoft.Insights/diagnosticSettings/metrics[*].enabled",
+                    "equals": "[parameters('metricsEnabled')]"
+                  }
+                },
+                "greaterOrEquals": 1
               }
             ]
           },
@@ -130,7 +141,7 @@
                   {
                     "type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
-                    "name": "[concat(parameters('resourceName'), '/master/', 'Microsoft.Insights/', parameters('profileName'))]",
+                    "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
                     "location": "[parameters('location')]",
                     "dependsOn": [],
                     "properties": {
@@ -144,17 +155,17 @@
                             "days": 0,
                             "enabled": false
                           }
+                        },
+                        {
+                          "category": "DevOpsOperationsAudit",
+                          "categoryGroup": null,
+                          "enabled": "[parameters('auditsEnabled')]",
+                          "retentionPolicy": {
+                            "days": 0,
+                            "enabled": false
+                          }
                         }
                       ]
-                    }
-                  },
-                  {
-                    "type": "Microsoft.Sql/servers/auditingSettings",
-                    "name": "[concat(parameters('resourceName'), '/Default')]",
-                    "apiVersion": "2017-03-01-preview",
-                    "properties": {
-                      "State": "Enabled",
-                      "isAzureMonitorTargetEnabled": "true"
                     }
                   }
                 ],
