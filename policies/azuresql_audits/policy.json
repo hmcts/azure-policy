@@ -1,17 +1,17 @@
 {
   "properties": {
-    "displayName": "Deploy Diagnostic Settings for Azure SQL Database to SOC",
+    "displayName": "Enable Audit Settings for Azure SQL to SOC",
     "policyType": "Custom",
     "mode": "Indexed",
-    "description": "Deploys the diagnostic settings for Azure SQL Database to the SOC Event Hub. Any Azure SQL Database which is missing this diagnostic settings is updated.",
+    "description": "Enables auditing settings for Azure SQL servers to stream to the SOC Event Hub. Any Azure SQL server which is missing this settings is updated along with its databases.",
     "parameters": {
       "profileName": {
         "type": "String",
         "metadata": {
           "displayName": "Profile name",
-          "description": "The diagnostic settings profile name"
+          "description": "The audit settings profile name"
         },
-        "defaultValue": "AzureSQLToEventHub"
+        "defaultValue": "AzureSQLAuditToEventHub"
       },
       "eventHubName": {
         "type": "String",
@@ -74,7 +74,7 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Sql/servers/databases"
+            "equals": "Microsoft.Sql/servers"
           },
           {
             "anyOf": [
@@ -93,29 +93,17 @@
       "then": {
         "effect": "deployIfNotExists",
         "details": {
-          "type": "Microsoft.Insights/diagnosticSettings",
+          "type": "Microsoft.Insights/servers/auditingSettings",
           "name": "[parameters('profileName')]",
           "existenceCondition": {
             "allOf": [
               {
-                "count": {
-                  "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
-                  "where": {
-                    "field": "Microsoft.Insights/diagnosticSettings/logs[*].enabled",
-                    "equals": "[parameters('logsEnabled')]"
-                  }
-                },
-                "greaterOrEquals": 1
+                "field": "Microsoft.Sql/servers/auditingSettings/state",
+                "equals": "Enabled"
               },
               {
-                "count": {
-                  "field": "Microsoft.Insights/diagnosticSettings/metrics[*]",
-                  "where": {
-                    "field": "Microsoft.Insights/diagnosticSettings/metrics[*].enabled",
-                    "equals": "[parameters('metricsEnabled')]"
-                  }
-                },
-                "greaterOrEquals": 1
+                "field": "Microsoft.Sql/servers/auditingSettings/isAzureMonitorTargetEnabled",
+                "equals": "true"
               }
             ]
           },
@@ -142,49 +130,50 @@
                   "location": {
                     "type": "string"
                   },
-                  "metricsEnabled": {
-                    "type": "string"
-                  },
-                  "logsEnabled": {
+                  "auditsEnabled": {
                     "type": "string"
                   },
                   "profileName": {
                     "type": "string"
                   }
                 },
+                "variables": {},
                 "resources": [
                   {
                     "type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
-                    "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                    "name": "[concat(parameters('resourceName'), '/master/', 'Microsoft.Insights/', parameters('profileName'))]",
                     "location": "[parameters('location')]",
                     "dependsOn": [],
                     "properties": {
                       "eventHubName": "[parameters('eventHubName')]",
                       "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
-                      "metrics": [
-                        {
-                          "category": "AllMetrics",
-                          "enabled": "[parameters('metricsEnabled')]",
-                          "retentionPolicy": {
-                            "enabled": false,
-                            "days": 0
-                          }
-                        }
-                      ],
                       "logs": [
                         {
                           "category": "SQLSecurityAuditEvents",
-                          "enabled": "[parameters('logsEnabled')]"
+                          "enabled": "[parameters('auditsEnabled')]",
+                          "retentionPolicy": {
+                            "days": 0,
+                            "enabled": false
+                          }
                         }
                       ]
+                    }
+                  },
+                  {
+                    "type": "Microsoft.Sql/servers/auditingSettings",
+                    "name": "[concat(parameters('resourceName'), '/Default')]",
+                    "apiVersion": "2017-03-01-preview",
+                    "properties": {
+                      "State": "Enabled",
+                      "isAzureMonitorTargetEnabled": "true"
                     }
                   }
                 ],
                 "outputs": {
                   "policy": {
                     "type": "string",
-                    "value": "[concat('Enabled diagnostic settings for ', parameters('resourceName'))]"
+                    "value": "[concat('Enabled audit settings for ', parameters('resourceName'))]"
                   }
                 }
               },
@@ -201,11 +190,8 @@
                 "eventHubName": {
                   "value": "[parameters('eventHubName')]"
                 },
-                "metricsEnabled": {
-                  "value": "[parameters('metricsEnabled')]"
-                },
-                "logsEnabled": {
-                  "value": "[parameters('logsEnabled')]"
+                "auditsEnabled": {
+                  "value": "[parameters('auditsEnabled')]"
                 },
                 "profileName": {
                   "value": "[parameters('profileName')]"
@@ -217,7 +203,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLDiag",
+  "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSAzureSQLDiag"
+  "name": "HMCTSAzureSQLAudit"
 }
