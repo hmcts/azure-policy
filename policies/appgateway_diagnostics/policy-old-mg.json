@@ -1,6 +1,6 @@
 {
     "properties": {
-        "displayName": "Diagnostic Settings for PostgreSQL to SOC",
+        "displayName": "Diagnostic Settings for Application Gateway to SOC",
         "policyType": "Custom",
         "mode": "Indexed",
         "parameters": {
@@ -10,7 +10,7 @@
                     "displayName": "Profile name",
                     "description": "The diagnostic settings profile name"
                 },
-                "defaultValue": "PSQLFlexToEventHub"
+                "defaultValue": "AppGatewayToEventHub"
             },
             "eventHubName": {
                 "type": "String",
@@ -18,7 +18,7 @@
                     "displayName": "EventHub Name",
                     "description": "The event hub for Azure Diagnostics"
                 },
-                "defaultValue": "postgresql-flexible-server"
+                "defaultValue": "application-gateway"
             },
             "eventHubAuthRule": {
                 "type": "String",
@@ -72,7 +72,7 @@
             "if": {
                 "allOf": [{
                         "field": "type",
-                        "equals": "Microsoft.DBforPostgreSQL/flexibleServers"
+                        "equals": "Microsoft.Network/applicationGateways"
                     },
                     {
                         "anyOf": [{
@@ -150,7 +150,7 @@
                                 },
                                 "variables": {},
                                 "resources": [{
-                                    "type": "Microsoft.DBforPostgreSQL/flexibleServers/providers/diagnosticSettings",
+                                    "type": "Microsoft.Network/applicationGateways/providers/diagnosticSettings",
                                     "apiVersion": "2017-05-01-preview",
                                     "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
                                     "location": "[parameters('location')]",
@@ -167,9 +167,14 @@
                                             }
                                         }],
                                         "logs": [{
-                                            "category": "PostgreSQLLogs",
-                                            "enabled": "[parameters('logsEnabled')]"
-                                        }]
+                                                "category": "ApplicationGatewayAccessLog",
+                                                "enabled": "[parameters('logsEnabled')]"
+                                            },
+                                            {
+                                                "category": "ApplicationGatewayFirewallLog",
+                                                "enabled": "[parameters('logsEnabled')]"
+                                            }
+                                        ]
                                     }
                                 }],
                                 "outputs": {
@@ -209,7 +214,7 @@
             }
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLFlexDiag",
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSPSQLFlexDiag"
+    "name": "HMCTSAGWDiagnostic"
 }
