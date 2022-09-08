@@ -86,7 +86,7 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Sql/servers"
+            "equals": "Microsoft.Sql/servers/databases"
           },
           {
             "anyOf": [
@@ -103,7 +103,7 @@
         ]
       },
       "then": {
-        "effect": "deployIfNotExists",
+        "effect": "DeployIfNotExists",
         "details": {
           "type": "Microsoft.Insights/diagnosticSettings",
           "name": "[parameters('profileName')]",
@@ -175,6 +175,16 @@
                     "properties": {
                       "eventHubName": "[parameters('eventHubName')]",
                       "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
+                      "metrics": [
+                        {
+                          "category": "AllMetrics",
+                          "enabled": "[parameters('metricsEnabled')]",
+                          "retentionPolicy": {
+                            "enabled": false,
+                            "days": 0
+                          }
+                        }
+                      ],
                       "logs": [
                         {
                           "category": "SQLSecurityAuditEvents",
