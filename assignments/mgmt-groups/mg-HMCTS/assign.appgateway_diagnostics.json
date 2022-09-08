@@ -14,7 +14,7 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic",
-        "scope": "/providers/Microsoft.Management/managementGroups/dts002"
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "location": "uksouth",
     "identity": {
@@ -28,6 +28,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSAGWDiagnosticGlobal",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSAGWDiagnosticGlobal",
     "name": "HMCTSAGWDiagnosticGlobal"
 }
