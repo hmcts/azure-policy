@@ -59,8 +59,20 @@
       "logsEnabled": {
         "type": "String",
         "metadata": {
-          "displayName": "Enable audit and diagnostic logs",
-          "description": "Whether to enable audit and diagnostic logs stream to the Event Hub  - True or False"
+          "displayName": "Enable diagnostic logs",
+          "description": "Whether to enable diagnostic logs stream to the Event Hub  - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "auditsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Enable audit logs",
+          "description": "Whether to enable audit logs stream to the Event Hub  - True or False"
         },
         "allowedValues": [
           "True",
@@ -96,16 +108,17 @@
           "type": "Microsoft.Insights/diagnosticSettings",
           "name": "[parameters('profileName')]",
           "existenceCondition": {
-            "allOf": [{
-              "count": {
-                "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
-                "where": {
-                  "field": "Microsoft.Insights/diagnosticSettings/logs[*].enabled",
-                  "equals": "[parameters('logsEnabled')]"
-                }
+            "allOf": [
+              {
+                "count": {
+                  "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
+                  "where": {
+                    "field": "Microsoft.Insights/diagnosticSettings/logs[*].enabled",
+                    "equals": "[parameters('logsEnabled')]"
+                  }
+                },
+                "greaterOrEquals": 1
               },
-              "greaterOrEquals": 1
-            },
               {
                 "count": {
                   "field": "Microsoft.Insights/diagnosticSettings/metrics[*]",
@@ -142,6 +155,9 @@
                     "type": "string"
                   },
                   "logsEnabled": {
+                    "type": "string"
+                  },
+                  "auditsEnabled": {
                     "type": "string"
                   },
                   "profileName": {
@@ -203,6 +219,9 @@
                 },
                 "logsEnabled": {
                   "value": "[parameters('logsEnabled')]"
+                },
+                "auditsEnabled": {
+                  "value": "[parameters('auditsEnabled')]"
                 },
                 "profileName": {
                   "value": "[parameters('profileName')]"
