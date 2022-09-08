@@ -129,7 +129,7 @@
                   "location": {
                     "type": "string"
                   },
-                  "auditsEnabled": {
+                  "logsEnabled": {
                     "type": "string"
                   },
                   "profileName": {
@@ -150,7 +150,7 @@
                       "logs": [
                         {
                           "category": "SQLSecurityAuditEvents",
-                          "enabled": "[parameters('auditsEnabled')]",
+                          "enabled": "[parameters('logsEnabled')]",
                           "retentionPolicy": {
                             "days": 0,
                             "enabled": false
@@ -159,7 +159,7 @@
                         {
                           "category": "DevOpsOperationsAudit",
                           "categoryGroup": null,
-                          "enabled": "[parameters('auditsEnabled')]",
+                          "enabled": "[parameters('logsEnabled')]",
                           "retentionPolicy": {
                             "days": 0,
                             "enabled": false
@@ -189,8 +189,8 @@
                 "eventHubName": {
                   "value": "[parameters('eventHubName')]"
                 },
-                "auditsEnabled": {
-                  "value": "[parameters('auditsEnabled')]"
+                "logsEnabled": {
+                  "value": "[parameters('logsEnabled')]"
                 },
                 "profileName": {
                   "value": "[parameters('profileName')]"
