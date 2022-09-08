@@ -78,7 +78,7 @@
           "True",
           "False"
         ],
-        "defaultValue": "True"
+        "defaultValue": "False"
       }
     },
     "policyRule": {
