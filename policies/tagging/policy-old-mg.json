@@ -1,6 +1,6 @@
 {
     "properties": {
-      "displayName": "HMCTS Tagging",
+      "displayName": "HMCTS Tagging Policy",
       "policyType": "Custom",
       "mode": "Indexed",
       "parameters": {
@@ -101,7 +101,7 @@
         }
       }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSTagging"
   }
