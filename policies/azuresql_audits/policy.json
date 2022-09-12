@@ -157,6 +157,9 @@
                   "logsEnabled": {
                     "type": "string"
                   },
+                  "metricsEnabled": {
+                    "type": "string"
+                  },
                   "auditsEnabled": {
                     "type": "string"
                   },
@@ -213,6 +216,9 @@
                 },
                 "eventHubName": {
                   "value": "[parameters('eventHubName')]"
+                },
+                "metricsEnabled": {
+                  "value": "[parameters('metricsEnabled')]"
                 },
                 "logsEnabled": {
                   "value": "[parameters('logsEnabled')]"
