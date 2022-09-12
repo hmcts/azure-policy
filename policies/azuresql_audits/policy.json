@@ -206,7 +206,7 @@
                   "value": "[field('location')]"
                 },
                 "fullName": {
-                  "value": "[field('fullName')]"
+                  "value": "[field('name')]"
                 },
                 "eventHubAuthRule": {
                   "value": "[parameters('eventHubAuthRule')]"
