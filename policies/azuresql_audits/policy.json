@@ -19,7 +19,7 @@
           "displayName": "EventHub Name",
           "description": "The event hub for Azure Diagnostics"
         },
-        "defaultValue": "test"
+        "defaultValue": "azure-sql-database"
       },
       "eventHubAuthRule": {
         "type": "String",
