@@ -86,7 +86,7 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Sql/servers"
+            "equals": "Microsoft.Sql/servers/databases"
           },
           {
             "anyOf": [
@@ -142,7 +142,7 @@
                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",
                 "parameters": {
-                  "resourceName": {
+                  "fullName": {
                     "type": "string"
                   },
                   "eventHubAuthRule": {
@@ -169,7 +169,7 @@
                   {
                     "type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
-                    "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                    "name": "[concat(parameters('fullName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
                     "location": "[parameters('location')]",
                     "dependsOn": [],
                     "properties": {
@@ -197,7 +197,7 @@
                 "outputs": {
                   "policy": {
                     "type": "string",
-                    "value": "[concat('Enabled audit settings for ', parameters('resourceName'))]"
+                    "value": "[concat('Enabled audit settings for ', parameters('fullName'))]"
                   }
                 }
               },
@@ -205,8 +205,8 @@
                 "location": {
                   "value": "[field('location')]"
                 },
-                "resourceName": {
-                  "value": "[field('name')]"
+                "fullName": {
+                  "value": "[field('fullName')]"
                 },
                 "eventHubAuthRule": {
                   "value": "[parameters('eventHubAuthRule')]"
