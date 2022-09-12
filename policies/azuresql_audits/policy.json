@@ -189,10 +189,6 @@
                         {
                           "category": "SQLSecurityAuditEvents",
                           "enabled": "[parameters('logsEnabled')]"
-                        },
-                        {
-                          "category": "DevOpsOperationsAudit",
-                          "enabled": "[parameters('logsEnabled')]"
                         }
                       ]
                     }
