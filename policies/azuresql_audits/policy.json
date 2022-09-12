@@ -169,7 +169,7 @@
                   {
                     "type": "Microsoft.Sql/servers/databases/providers/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
-                    "name": "[concat(parameters('resourceName'), '/master/', 'Microsoft.Insights/', parameters('profileName'))]",
+                    "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
                     "location": "[parameters('location')]",
                     "dependsOn": [],
                     "properties": {
@@ -188,20 +188,11 @@
                       "logs": [
                         {
                           "category": "SQLSecurityAuditEvents",
-                          "enabled": "[parameters('logsEnabled')]",
-                          "retentionPolicy": {
-                            "days": 0,
-                            "enabled": false
-                          }
+                          "enabled": "[parameters('logsEnabled')]"
                         },
                         {
                           "category": "DevOpsOperationsAudit",
-                          "categoryGroup": null,
-                          "enabled": "[parameters('logsEnabled')]",
-                          "retentionPolicy": {
-                            "days": 0,
-                            "enabled": false
-                          }
+                          "enabled": "[parameters('logsEnabled')]"
                         }
                       ]
                     }
