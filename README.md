@@ -74,7 +74,7 @@ Creating a pull request will trigger a GitHub action that will create your polic
 
 The policy definition and assignment will be appended with `- Sandbox` so you can easily identify it in the Azure Portal.
 
-At this point, you will have a definition assigned to the DCD-CFTAPPS-SBOX subscription. In order to test that your policy has the desired effect, a compliance scan must be ran.
+At this point, you will have a definition assigned to the `DCD-CFTAPPS-SBOX` subscription. In order to test that your policy has the desired effect, a compliance scan must be ran.
 
 This should take place automatically when the assignment is created. You should be able to see what resources are non-compliant and confirm that the resources listed are expected.
 
@@ -84,11 +84,11 @@ In order to see if the policy will work in practice, a manual remediation task m
 
 You can do this for your `- Sandbox` policy assignment from above.
 
-If you want to test on an additional subscription, create another assignment json file under `assignments/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783`. This is the DCD-CFT-Sandbox subscription.
+If you want to test on an additional subscription, create another assignment json file under `assignments/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783`. This is the `DCD-CFT-Sandbox` subscription.
 
 If everything is working as expected, submit a new PR with assignments for all the others subscriptions you are targeting resources in.
 
-If your policy should take effect over all susbcriptions after testing, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder.
+If your policy should take effect over all subscriptions after testing, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder.
 
 ### Policy permissions
 
@@ -98,31 +98,36 @@ Currently, we use a User Assigned Managed Identity (UAMI) with such policy assig
 
 The reason for using a User Assigned instead of a System Assigned Managed Identity is that we can assign the appropriate permissions via code instead of doing this manually.
 
-At the time of writing, deployIfNotExists actions require permissions to be manually assigned when being deployed via the manage-azure-policy GitHub action. See https://docs.microsoft.com/en-gb/azure/governance/policy/how-to/remediate-resources#how-remediation-security-works
+At the time of writing, `deployIfNotExists` actions require permissions to be manually assigned when being deployed via the manage-azure-policy GitHub action. See https://docs.microsoft.com/en-gb/azure/governance/policy/how-to/remediate-resources#how-remediation-security-works
 
-The policies in HMCTS that are using the deployIfNotExists action are focused on ensuring diagnostic logging is in place for our Azure estate e.g. sending subscription level activity logs to an Azure Event Hub for consumption by Splunk.
+The policies in HMCTS that are using the `deployIfNotExists` action are focused on ensuring diagnostic logging is in place for our Azure estate e.g. sending subscription level activity logs to an Azure Event Hub for consumption by Splunk.
 
 There are two UAMIs currently in use for this:
 
-`soc-sbox-eventhub-azure-policy`
-
-`soc-prod-eventhub-azure-policy`
+- `soc-sbox-eventhub-azure-policy`
+- `soc-prod-eventhub-azure-policy`
 
 To enable diagnostic logging on PaaS, the following roles are required:
 
 | Role | Scope |
 |---|---|
-| Log Analytics Contributor |Subscription or management group containing resources to be remediated | 
-| Monitoring Contributor |Subscription or management group containing resources to be remediated |
+| Log Analytics Contributor | Subscription or management group containing resources to be remediated | 
+| Monitoring Contributor | Subscription or management group containing resources to be remediated |
 
 The identity must also have the Microsoft.EventHub/namespaces/authorizationRules/listkeys/action permission. This is available in the Azure Event Hubs Data Owner role.
 
-The soc-sbox-eventhub-azure-policy identity has Log Analytics Contributor and Monitoring Contributor over the DCD-CFTAPPS-SBOX and DCD-CFT-Sandbox subscriptions that are to be used for testing purposes. It also has the Azure Event Hubs Data Owner role over the Azure Event Hubs Namespace soc-sbox-eventhubns.
+The `soc-sbox-eventhub-azure-policy` identity has Log Analytics Contributor and Monitoring Contributor over the DCD-CFTAPPS-SBOX and DCD-CFT-Sandbox subscriptions that are to be used for testing purposes. It also has the Azure Event Hubs Data Owner role over the Azure Event Hubs Namespace soc-sbox-eventhubns.
 
-The soc-prod-eventhub-azure-policy identity has Log Analytics Contributor and Monitoring Contributor over the dts002 management group. It also has the Azure Event Hubs Data Owner role over the Azure Event Hubs Namespace soc-prod-eventhubns.
+The `soc-prod-eventhub-azure-policy` identity has Log Analytics Contributor and Monitoring Contributor over the dts002 management group. It also has the Azure Event Hubs Data Owner role over the Azure Event Hubs Namespace soc-prod-eventhubns.
 
-These roles and permissions should be sufficient for your needs, however, if you need to add extra subscription scopes to the soc-sbox-eventhub-azure-policy identity for the purposes of testing, you can update the [terraform code](https://github.com/hmcts/soc/blob/master/modules/eventhub/roles.tf).
+These roles and permissions should be sufficient for your needs, however, if you need to add extra subscription scopes to the `soc-sbox-eventhub-azure-policy` identity for the purposes of testing, you can update the [terraform code](https://github.com/hmcts/soc/blob/master/modules/eventhub/roles.tf).
 
-You should not need to grant additional permissions to the soc-prod-eventhub-azure-policy identity
+You should not need to grant additional permissions to the `soc-prod-eventhub-azure-policy` identity
 
-Policies that do not use the deployIfNotExists action, e.g. our tagging policies, do not require permissions since they are simply evaluating resources.
+Policies that do not use the `deployIfNotExists` action, e.g. our tagging policies, do not require permissions since they are simply evaluating resources.
+
+### Policy Structure
+You can find more detail on the structure of a `Policy`, `Initiative` or `Assignment` in the following [Azure Policy](https://docs.microsoft.com/en-gb/azure/governance/policy/) documentation
+- [Definition Structure](https://docs.microsoft.com/en-gb/azure/governance/policy/concepts/definition-structure)
+- [Initiative Structure](https://docs.microsoft.com/en-gb/azure/governance/policy/concepts/initiative-definition-structure)
+- [Assignment structure](https://docs.microsoft.com/en-gb/azure/governance/policy/concepts/assignment-structure)
