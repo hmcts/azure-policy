@@ -39,7 +39,7 @@
         "type": "String",
         "metadata": {
           "displayName": "Event Hub Location",
-          "description": "The location the Event Hub resides in. Only Key Vaults in this location will be linked to this Event Hub.",
+          "description": "The location the Event Hub resides in. Only Azure SQL databases in this location will be linked to this Event Hub.",
           "strongType": "location"
         },
         "defaultValue": ""
