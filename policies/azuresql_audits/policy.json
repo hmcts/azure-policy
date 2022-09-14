@@ -236,7 +236,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit",
+  "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "HMCTSAzureSQLAudit"
 }
