@@ -31,4 +31,3 @@
   "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSAzureSQLAudit",
   "name": "HMCTSAzureSQLAudit"
 }
-/* daf */
