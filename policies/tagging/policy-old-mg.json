@@ -13,8 +13,7 @@
             "microsoft.operationsmanagement/solutions",
             "Microsoft.ContainerRegistry/registries/tasks",
             "Microsoft.Network/dnsResolvers/inboundEndpoints",
-            "Microsoft.Network/dnsResolvers/outboundEndpoints",
-            "Microsoft.Network/privateDnsZones/virtualNetworkLinks"
+            "Microsoft.Network/dnsResolvers/outboundEndpoints"
           ],
           "type": "Array",
           "metadata": {
