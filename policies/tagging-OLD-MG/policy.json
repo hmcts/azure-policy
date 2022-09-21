@@ -13,7 +13,8 @@
             "microsoft.operationsmanagement/solutions",
             "Microsoft.ContainerRegistry/registries/tasks",
             "Microsoft.Network/dnsResolvers/inboundEndpoints",
-            "Microsoft.Network/dnsResolvers/outboundEndpoints"
+            "Microsoft.Network/dnsResolvers/outboundEndpoints",
+            "Microsoft.Network/networkWatchers/flowLogs"
           ],
           "type": "Array",
           "metadata": {
