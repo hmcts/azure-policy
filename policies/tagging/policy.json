@@ -14,7 +14,8 @@
             "Microsoft.ContainerRegistry/registries/tasks",
             "Microsoft.Network/dnsResolvers/inboundEndpoints",
             "Microsoft.Network/dnsResolvers/outboundEndpoints",
-            "Microsoft.Network/networkWatchers/flowLogs"
+            "Microsoft.Network/networkWatchers/flowLogs",
+            "Microsoft.Network/privateDnsZones/virtualNetworkLinks"
           ],
           "type": "Array",
           "metadata": {
