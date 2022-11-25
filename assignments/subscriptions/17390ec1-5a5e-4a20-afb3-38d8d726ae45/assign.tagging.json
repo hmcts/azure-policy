@@ -13,7 +13,7 @@
       ],
       "notScopes": [],
       "parameters": {},
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
       "scope": "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45"
     },
     "sku": {

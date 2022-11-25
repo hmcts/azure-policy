@@ -16,7 +16,7 @@
           "value": "cross-cutting"
         }
       },
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
       "scope": "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76"
     },
     "location": "uksouth",

@@ -16,7 +16,7 @@
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-01-rg"
         ],
         "parameters": {},
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
         "scope": "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c"
     },
     "sku": {

@@ -60,7 +60,7 @@ When applying a policy to the management group scope, you can leave the displayN
 e.g.
 ```
     "displayName": "HMCTS Collect Activity Logs",   
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnosticGlobal",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnosticGlobal",
     "name": "HMCTSDiagnosticGlobal"
 ```
 
@@ -118,7 +118,7 @@ The identity must also have the Microsoft.EventHub/namespaces/authorizationRules
 
 The `soc-sbox-eventhub-azure-policy` identity has Log Analytics Contributor and Monitoring Contributor over the DCD-CFTAPPS-SBOX and DCD-CFT-Sandbox subscriptions that are to be used for testing purposes. It also has the Azure Event Hubs Data Owner role over the Azure Event Hubs Namespace soc-sbox-eventhubns.
 
-The `soc-prod-eventhub-azure-policy` identity has Log Analytics Contributor and Monitoring Contributor over the dts002 management group. It also has the Azure Event Hubs Data Owner role over the Azure Event Hubs Namespace soc-prod-eventhubns.
+The `soc-prod-eventhub-azure-policy` identity has Log Analytics Contributor and Monitoring Contributor over the HMCTS management group. It also has the Azure Event Hubs Data Owner role over the Azure Event Hubs Namespace soc-prod-eventhubns.
 
 These roles and permissions should be sufficient for your needs, however, if you need to add extra subscription scopes to the `soc-sbox-eventhub-azure-policy` identity for the purposes of testing, you can update the [terraform code](https://github.com/hmcts/soc/blob/master/modules/eventhub/roles.tf).
 

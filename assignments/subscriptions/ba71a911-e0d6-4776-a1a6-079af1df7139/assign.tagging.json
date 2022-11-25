@@ -16,7 +16,7 @@
             "/subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/ss-ithc-01-rg"
         ],
         "parameters": {},
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
         "scope": "/subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139"
     },
     "sku": {

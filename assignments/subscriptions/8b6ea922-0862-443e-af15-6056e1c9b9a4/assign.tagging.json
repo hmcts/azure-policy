@@ -16,7 +16,7 @@
         "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourceGroups/cft-preview-01-aks-node-rg"
       ],
       "parameters": {},
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
       "scope": "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4"
     },
     "sku": {
