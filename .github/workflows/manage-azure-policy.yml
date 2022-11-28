@@ -93,7 +93,7 @@ jobs:
         MANAGEMENT_GROUP: ${{env.MANAGEMENT_GROUP}}
       run: |
         set -e
-        subs=$( az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' > subs.txt)
+        az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' > subs.txt
 
         
         # Have to escape new lines to get all lines of a multiline var
