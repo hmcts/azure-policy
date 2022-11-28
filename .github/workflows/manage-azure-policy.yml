@@ -104,7 +104,7 @@ jobs:
         enabled_subs=$(cat subs.txt)
         enabled_subs="${enabled_subs//$'\n'/'%0A'}"
         
-        echo "subs=$enabled_subs" >> $GITHUB_OUTPUT
+        echo "subs=$subs" >> $GITHUB_OUTPUT
         
     - name: Live - Force compliance check 
       uses: azure/policy-compliance-scan@v0
