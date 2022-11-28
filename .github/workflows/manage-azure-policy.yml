@@ -99,8 +99,8 @@ jobs:
         
         
         echo 'subs<<EOF' >> $GITHUB_OUTPUT
-        az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' > subs.txt
-        echo 'EOF' >> $GITHUB_ENV
+        az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' >> $GITHUB_OUTPUT
+        echo 'EOF' >> $GITHUB_OUTPUT
         
         # Have to escape new lines to get all lines of a multiline var
         # https://github.community/t/set-output-truncates-multiline-strings/16852/3
