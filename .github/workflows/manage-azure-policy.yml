@@ -1,12 +1,13 @@
 name: manage-azure-policy
 
 on:
+  workflow_dispatch:
   push:
     branches: [master]
   pull_request: 
 
 env: 
-  MANAGEMENT_GROUP: dts002
+  MANAGEMENT_GROUP: HMCTS
 
 jobs:
   apply-azure-policy-sandbox:
@@ -93,28 +94,10 @@ jobs:
         MANAGEMENT_GROUP: ${{env.MANAGEMENT_GROUP}}
       run: |
         set -e
-        subs=$(az account management-group show --name $MANAGEMENT_GROUP --expand --query "children [?type=='/subscriptions'].id" -o tsv)
+        echo 'subs<<EOF' >> $GITHUB_OUTPUT
+        az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' >> $GITHUB_OUTPUT
+        echo 'EOF' >> $GITHUB_OUTPUT
 
-        subs="${subs//$'\n'/'%0A'}"
-        echo ::set-output name=subs::"$subs"
-        
-        subs=$(az account management-group show --name $MANAGEMENT_GROUP --expand --query "children [?type=='/subscriptions'].id" -o tsv)
-        for sub in $subs; do
-          sub_id=$(echo $sub | cut -d "/" -f 3 )
-          if [[ $(az account show --subscription $sub_id --query state -o tsv) == "Enabled" ]] ; then 
-            echo $sub >> subs.txt 
-          fi
-        done
-        
-        echo "Enabled Subs"
-        cat subs.txt
-        
-        # Have to escape new lines to get all lines of a multiline var
-        # https://github.community/t/set-output-truncates-multiline-strings/16852/3
-        enabled_subs=$(cat subs.txt)
-        enabled_subs="${enabled_subs//$'\n'/'%0A'}"
-        echo ::set-output name=subs::"$enabled_subs"
-        
     - name: Live - Force compliance check 
       uses: azure/policy-compliance-scan@v0
       with:

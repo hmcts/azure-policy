@@ -172,7 +172,7 @@
             }
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSNSGDiagnostic",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSNSGDiagnostic",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSNSGDiagnostic"
 }

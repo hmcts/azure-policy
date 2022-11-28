@@ -1,6 +1,6 @@
 {
     "properties": {
-      "displayName": "HMCTS Tagging Policy",
+      "displayName": "HMCTS Tagging",
       "policyType": "Custom",
       "mode": "Indexed",
       "parameters": {
@@ -11,7 +11,11 @@
             "microsoft.insights/actiongroups",
             "Microsoft.Insights/activityLogAlerts",
             "microsoft.operationsmanagement/solutions",
-            "Microsoft.ContainerRegistry/registries/tasks"
+            "Microsoft.ContainerRegistry/registries/tasks",
+            "Microsoft.Network/dnsResolvers/inboundEndpoints",
+            "Microsoft.Network/dnsResolvers/outboundEndpoints",
+            "Microsoft.Network/networkWatchers/flowLogs",
+            "Microsoft.Network/privateDnsZones/virtualNetworkLinks"
           ],
           "type": "Array",
           "metadata": {
@@ -98,7 +102,7 @@
         }
       }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSTagging"
   }

@@ -1,0 +1,36 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy automatically apply tags",
+      "displayName": "HMCTS Auto Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [],
+      "notScopes": [
+        "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-sbox-00-aks-node-rg",
+        "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-sbox-01-aks-node-rg"
+      ],
+      "parameters": {
+        "tagName": {
+            "value": "environment"
+        },
+        "tagValue": {
+            "value": "Sandbox"
+        }
+      },
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
+      "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+    },
+    "location": "uksouth",
+    "identity": {
+        "type": "SystemAssigned"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSAutoTagging_DCD-CFTAPPS-SBOX",
+    "name": "HMCTSAutoTagging_DCD-CFTAPPS-SBOX"
+}

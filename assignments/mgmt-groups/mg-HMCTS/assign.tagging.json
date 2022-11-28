@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Policy to check required tags",
-        "displayName": "HMCTS Tagging Policy",
+        "displayName": "HMCTS Tagging (HMCTS MG)",
         "enforcementMode": "DoNotEnforce",
         "nonComplianceMessages": [{
             "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
@@ -14,6 +14,7 @@
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-01-aks-node-rg",
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/ss-sbox-01-aks-node-rg",
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/ss-sbox-00-aks-node-rg",
+            "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/pre-sbox",
             "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/ss-dev-01-aks-node-rg",
             "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/ss-dev-00-aks-node-rg",
             "/subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/ss-ithc-01-aks-node-rg",
@@ -28,14 +29,14 @@
             "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/ss-ptl-00-aks-node-rg"
         ],
         "parameters": {},
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
-        "scope": "/providers/Microsoft.Management/managementGroups/dts002"
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "sku": {
         "name": "A0",
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyAssignments/HMCTSTaggingGlobal",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSTaggingGlobal",
     "name": "HMCTSTaggingGlobal"
 }

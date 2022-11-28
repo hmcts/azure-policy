@@ -13,10 +13,11 @@
             "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-00-aks-node-rg",
             "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-01-aks-node-rg",
             "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-00-rg",
-            "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-01-rg"
+            "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/ss-test-01-rg",
+            "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/AzureBackupRG_uksouth_1"
         ],
         "parameters": {},
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/dts002/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
         "scope": "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90"
     },
     "sku": {

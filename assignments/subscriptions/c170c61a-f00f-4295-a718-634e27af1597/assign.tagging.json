@@ -1,0 +1,26 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "github.com/hmcts/azure-policy"
+      },
+      "description": "Policy to check required tags",
+      "displayName": "HMCTS Tagging - HERITAGE EXTSVC-PROD(DTS-HERITAGE-EXTSVC-PROD)",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
+        }
+      ],
+      "notScopes": [],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+      "scope": "/subscriptions/c170c61a-f00f-4295-a718-634e27af1597"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/c170c61a-f00f-4295-a718-634e27af1597/providers/Microsoft.Authorization/policyAssignments/HMCTSTagging_DTS-HERITAGE-EXTSVC-PROD",
+    "name": "HMCTSTagging_DTS-HERITAGE-EXTSVC-PROD"
+}

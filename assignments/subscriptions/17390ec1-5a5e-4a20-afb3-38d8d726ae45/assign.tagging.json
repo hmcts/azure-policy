@@ -1,0 +1,26 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "github.com/hmcts/azure-policy"
+      },
+      "description": "Policy to check required tags",
+      "displayName": "HMCTS Tagging - HERITAGE INTSVC-PROD(DTS-HERITAGE-INTSVC-PROD)",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
+        }
+      ],
+      "notScopes": [],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
+      "scope": "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/providers/Microsoft.Authorization/policyAssignments/HMCTSTagging_DTS-HERITAGE-INTSVC-PROD",
+    "name": "HMCTSTagging_DTS-HERITAGE-INTSVC-PROD"
+}
