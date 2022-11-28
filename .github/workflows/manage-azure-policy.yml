@@ -94,27 +94,9 @@ jobs:
         MANAGEMENT_GROUP: ${{env.MANAGEMENT_GROUP}}
       run: |
         set -e
-        
-        az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id'
-        
-        
         echo 'subs<<EOF' >> $GITHUB_OUTPUT
         az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
-        
-        # Have to escape new lines to get all lines of a multiline var
-        # https://github.community/t/set-output-truncates-multiline-strings/16852/3
-        #enabled_subs=$(cat subs.txt)
-        #enabled_subs="${enabled_subs//$'\n'/'%0A'}"
-        
-        #echo "subs=$subs" >> $GITHUB_OUTPUT
-
-    - name: Get list of subscriptions under management group
-      id: list_subs
-      env:
-        subs: ${{ steps.get_subscriptions.outputs.subs }}
-      run: |
-        for sub in $subs; do echo "sub: $sub"; done
 
     - name: Live - Force compliance check 
       uses: azure/policy-compliance-scan@v0
