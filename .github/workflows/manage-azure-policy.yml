@@ -93,6 +93,8 @@ jobs:
         MANAGEMENT_GROUP: ${{env.MANAGEMENT_GROUP}}
       run: |
         set -e
+        
+        az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id'
         az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' > subs.txt
 
         
