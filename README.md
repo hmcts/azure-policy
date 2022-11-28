@@ -135,4 +135,4 @@ You can find more detail on the structure of a `Policy`, `Initiative` or `Assign
 
 ### Workflow permissions
 
-A [custom role](./custom_role.json) was created for the workflow, it's basically a copy of the `Resource Policy Contributor` built in role with a few extra permissions to list subscriptions. 
+A [custom role](./custom_role.json) was created for the workflow, it's basically a copy of the `Resource Policy Contributor` built in role with a few extra permissions to list Management Groups and Subscriptions. 
