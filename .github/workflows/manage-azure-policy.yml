@@ -102,7 +102,8 @@ jobs:
         # https://github.community/t/set-output-truncates-multiline-strings/16852/3
         enabled_subs=$(cat subs.txt)
         enabled_subs="${enabled_subs//$'\n'/'%0A'}"
-        echo ::set-output name=subs::"$enabled_subs"
+        
+        echo "subs=$enabled_subs" >> $GITHUB_OUTPUT
         
     - name: Live - Force compliance check 
       uses: azure/policy-compliance-scan@v0
