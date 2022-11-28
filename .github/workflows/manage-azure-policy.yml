@@ -6,7 +6,7 @@ on:
   pull_request: 
 
 env: 
-  MANAGEMENT_GROUP: "HMCTS"
+  MANAGEMENT_GROUP: HMCTS
 
 jobs:
   apply-azure-policy-sandbox:
