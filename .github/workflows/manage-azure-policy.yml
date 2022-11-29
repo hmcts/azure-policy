@@ -95,7 +95,7 @@ jobs:
       run: |
         set -e
         echo 'subs<<EOF' >> $GITHUB_OUTPUT
-        az account management-group show --name HMCTS --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' >> $GITHUB_OUTPUT
+        az account management-group show --name ${MANAGEMENT_GROUP} --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
 
     - name: Live - Force compliance check 

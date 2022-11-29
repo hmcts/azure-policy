@@ -131,3 +131,8 @@ You can find more detail on the structure of a `Policy`, `Initiative` or `Assign
 - [Definition Structure](https://docs.microsoft.com/en-gb/azure/governance/policy/concepts/definition-structure)
 - [Initiative Structure](https://docs.microsoft.com/en-gb/azure/governance/policy/concepts/initiative-definition-structure)
 - [Assignment structure](https://docs.microsoft.com/en-gb/azure/governance/policy/concepts/assignment-structure)
+
+
+### Workflow permissions
+
+A [custom role](./custom_role.json) was created for the workflow, it's basically a copy of the `Resource Policy Contributor` built in role with a few extra permissions to list Management Groups and Subscriptions. 

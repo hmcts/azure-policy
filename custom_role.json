@@ -1,0 +1,28 @@
+{
+  "id": "/providers/Microsoft.Authorization/roleDefinitions/39c041aa-f45a-4dcc-9e8b-39671978c884",
+  "properties": {
+    "roleName": "Azure Policy Manager",
+    "description": "Role for the Azure Policy Manager to manage policies and to be able to list subscriptions so that it can kick off the policy compliance check ",
+    "assignableScopes": [
+      "/providers/Microsoft.Management/managementGroups/HMCTS"
+    ],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Authorization/policyassignments/*",
+          "Microsoft.Authorization/policydefinitions/*",
+          "Microsoft.Authorization/policyexemptions/*",
+          "Microsoft.Authorization/policysetdefinitions/*",
+          "Microsoft.PolicyInsights/*",
+          "Microsoft.Support/*",
+          "Microsoft.Management/register/action",
+          "Microsoft.Management/managementGroups/subscriptions/read",
+          "Microsoft.Management/managementGroups/read"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
+}
