@@ -13,7 +13,7 @@
           "value": "businessArea"
         },
         "tagValue": {
-          "value": "cross-cutting"
+          "value": "Cross-Cutting"
         }
       },
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
