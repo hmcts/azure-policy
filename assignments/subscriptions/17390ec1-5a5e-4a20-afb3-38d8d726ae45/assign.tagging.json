@@ -11,7 +11,9 @@
             "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
         }
       ],
-      "notScopes": [],
+      "notScopes": [
+      "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/resourceGroups/martha-rg/providers/Microsoft.RecoveryServices/vaults/martha-rsv-prod/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;martha-rg;martha-vm1-prod/protectedItems/vm;iaasvmcontainerv2;martha-rg;martha-vm2-prod"
+      ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
       "scope": "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45"
