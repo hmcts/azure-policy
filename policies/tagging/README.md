@@ -28,7 +28,7 @@ environment:
 businessArea:
  - "CFT"
  - "crime"
- - "cross-cutting"
+ - "Cross-Cutting"
  
  builtFrom: 
  - Name or URL of repository
