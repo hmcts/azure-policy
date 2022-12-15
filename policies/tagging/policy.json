@@ -8,6 +8,7 @@
           "defaultValue": [
             "Microsoft.Network/networkWatchers",
             "Microsoft.RecoveryServices/vaults",
+            "Microsoft.Compute/snapshots",
             "microsoft.alertsmanagement/smartdetectoralertrules",
             "microsoft.insights/actiongroups",
             "Microsoft.Insights/activityLogAlerts",
