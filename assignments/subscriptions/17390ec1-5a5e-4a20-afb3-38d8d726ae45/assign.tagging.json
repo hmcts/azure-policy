@@ -12,9 +12,8 @@
         }
       ],
       "notScopes": [
-      "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/resourceGroups/martha-rg/providers/Microsoft.RecoveryServices/vaults/martha-rsv-prod/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;martha-rg;martha-vm1-prod/protectedItems/vm;iaasvmcontainerv2;martha-rg;martha-vm2-prod",
-      "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/resourceGroups/martha-rg/providers/Microsoft.Compute/virtualMachines/martha-vm1-prod",
-      "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/resourceGroups/martha-rg/providers/Microsoft.Compute/virtualMachines/martha-vm12-prod"
+      "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/resourceGroups/martha-rg/providers/Microsoft.RecoveryServices/vaults/martha-rsv-prod/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;martha-rg;martha-vm1-prod/protectedItems/vm;iaasvmcontainerv2;martha-rg;martha-vm1-prod",
+      "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/resourceGroups/martha-rg/providers/Microsoft.RecoveryServices/vaults/martha-rsv-prod/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;martha-rg;martha-vm2-prod/protectedItems/vm;iaasvmcontainerv2;martha-rg;martha-vm2-prod"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
