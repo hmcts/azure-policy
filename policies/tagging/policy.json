@@ -17,7 +17,8 @@
             "Microsoft.Network/dnsResolvers/inboundEndpoints",
             "Microsoft.Network/dnsResolvers/outboundEndpoints",
             "Microsoft.Network/networkWatchers/flowLogs",
-            "Microsoft.Network/privateDnsZones/virtualNetworkLinks"
+            "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+            "Microsoft.Compute/restorePointCollections"
           ],
           "type": "Array",
           "metadata": {
