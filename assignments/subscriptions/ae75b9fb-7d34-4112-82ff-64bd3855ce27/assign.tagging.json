@@ -12,7 +12,9 @@
         }
       ],
       "notScopes": [
-        "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/martha-rg/providers/Microsoft.RecoveryServices/vaults/martha-rsv-stg/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;martha-rg;martha-vm1-stg/protectedItems/vm;iaasvmcontainerv2;martha-rg;martha-vm2-stg"
+        "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/martha-rg/providers/Microsoft.RecoveryServices/vaults/martha-rsv-stg/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;martha-rg;martha-vm1-stg/protectedItems/vm;iaasvmcontainerv2;martha-rg;martha-vm2-stg",
+        "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/martha-rg/providers/Microsoft.Compute/virtualMachines/martha-vm1-stg",
+        "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/martha-rg/providers/Microsoft.Compute/virtualMachines/martha-vm2-stg"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
