@@ -20,9 +20,8 @@ jobs:
     - name: Login to Azure
       uses: azure/login@v1
       with:
-          client-id: b430ef1e-4e79-4e92-a152-8e5b5bc195d4 # DTS CFT AKS version checker
-          tenant-id: 531ff96d-0ae9-462a-8d2d-bec7c0b42082 # HMCTS.NET
-          allow-no-subscriptions: true
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+        allow-no-subscriptions: true
     - name: create sandbox files
       run: |
         ./pipeline-scripts/sandbox-override.sh
