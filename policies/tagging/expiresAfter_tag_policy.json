@@ -14,23 +14,13 @@
         }
       }
     },
-    "policyRule": {
-      "if": {
-        "allOf": [{   
-           "field": "[concat('tags[', parameters('RequiredTag'), ']')]",
-           "exists": "false"
-         },
-         {
-           "not": [{
-            "field": "tags.date",
-            "match": "####-##-##"
-           }]
-         }
-        ]  
-      },
-      "then": {
-        "effect": "audit"
-      }
+  "policyRule": {
+    "if": {
+      "field": "[concat('tags[', parameters('RequiredTag'), ']')]",
+      "notMatch": "####-##-##"
+    },
+    "then": {
+      "effect": "audit"
     }
   },
   "id": "/providers/Microsoft.Management/managementGroups/CFT - SandboxAuthorization/policyDefinitions/expireAfter Tagging",
