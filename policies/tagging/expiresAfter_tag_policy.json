@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "displayName": "Expire After Tag",
+    "policyType": "Custom",
+    "mode": "Indexed",
+
+    "parameters": {
+      "RequiredTag": {
+        "defaultValue": "expireAfter",
+        "type": "String",
+        "metadata": {
+          "displayName": "Required Tag Name",
+          "description": "Required expireAfter tag on resource"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [{   
+           "field": "[concat('tags[', parameters('RequiredTag'), ']')]",
+           "exists": "false"
+         },
+         {
+           "not": [{
+            "field": "tags.date",
+            "match": "####-##-##"
+           }]
+         }
+        ]  
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/CFT - SandboxAuthorization/policyDefinitions/expireAfter Tagging",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "expireAfter Tagging"
+}
