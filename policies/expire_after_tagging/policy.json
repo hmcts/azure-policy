@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "Expire After Tag",
+    "displayName": "Expire After Tagging",
     "policyType": "Custom",
     "mode": "Indexed",
 
@@ -23,8 +23,8 @@
       "effect": "audit"
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/expireAfterTagging",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpireAfterTagging",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "expireAfterTagging"
+  "name": "ExpireAfterTagging"
   }
 }

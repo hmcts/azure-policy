@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "expireAfter Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
+      "displayName": "Expire After Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
@@ -24,6 +24,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/expireAfterTagging_DCD-CFTAPPS-SBOX",
-    "name": "expireAfterTagging_DCD-CFTAPPS-SBOX"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/ExpireAfterTagging_DCD-CFTAPPS-SBOX",
+    "name": "ExpireAfterTagging_DCD-CFTAPPS-SBOX"
 }
