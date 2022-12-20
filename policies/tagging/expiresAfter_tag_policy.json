@@ -23,7 +23,8 @@
       "effect": "audit"
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/CFT - Sandbox/Authorization/policyDefinitions/expireAfter Tagging",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT - Sandbox/Authorization/policyDefinitions/expireAfterTagging",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "expireAfter Tagging"
+  "name": "expireAfterTagging"
+  }
 }
