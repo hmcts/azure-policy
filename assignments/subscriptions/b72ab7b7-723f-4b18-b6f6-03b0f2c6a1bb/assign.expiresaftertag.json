@@ -4,11 +4,11 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "Expire After Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
+      "displayName": "Expires After Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
-            "message": "Resource doesn't meet the tagging requirements. Add expireAfter tag with value of expire date in format yyyy-mm-dd"
+            "message": "Resource doesn't meet the tagging requirements. Add expiresAfter tag with value of expire date in format yyyy-mm-dd"
         }
       ],
       "notScopes": [
@@ -16,7 +16,7 @@
         "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-sbox-01-aks-node-rg"
       ],
       "parameters": {},
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpireAfterTagging",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
       "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
     },
     "sku": {
@@ -24,6 +24,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/ExpireAfterTagging_DCD-CFTAPPS-SBOX",
-    "name": "ExpireAfterTagging_DCD-CFTAPPS-SBOX"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/ExpiresAfterTagging_DCD-CFTAPPS-SBOX",
+    "name": "ExpiresAfterTagging_DCD-CFTAPPS-SBOX"
 }

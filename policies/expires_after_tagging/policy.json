@@ -1,0 +1,30 @@
+{
+    "properties": {
+      "displayName": "Expires After Tagging",
+      "policyType": "Custom",
+      "mode": "Indexed",
+
+      "parameters": {
+        "RequiredTag": {
+          "defaultValue": "expiresAfter",
+          "type": "String",
+          "metadata": {
+            "displayName": "Required Tag Name",
+            "description": "Required expiresAfter tag on resource"
+          }
+        }
+      },
+      "policyRule": {
+        "if": {
+          "field": "[concat('tags[', parameters('RequiredTag'), ']')]",
+          "notMatch": "####-##-##"
+        },
+        "then": {
+          "effect": "audit"
+        }
+      }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "ExpiresAfterTagging"
+  }
