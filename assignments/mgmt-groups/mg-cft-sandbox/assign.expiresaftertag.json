@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "Expires After Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
+      "displayName": "Expires After Tagging - CFT-Sandbox",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
@@ -14,13 +14,13 @@
       "notScopes": [],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
-      "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+      "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
     },
     "sku": {
       "name": "A0",
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/ExpiresAfterTagging_DCD-CFTAPPS-SBOX",
-    "name": "ExpiresAfterTagging_DCD-CFTAPPS-SBOX"
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresAfterTagging_CFT-SANDBOX",
+    "name": "ExpiresAfterTagging_CFT-SANDBOX"
 }
