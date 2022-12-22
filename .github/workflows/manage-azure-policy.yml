@@ -22,7 +22,6 @@ jobs:
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
         allow-no-subscriptions: true
-
     - name: create sandbox files
       run: |
         ./pipeline-scripts/sandbox-override.sh

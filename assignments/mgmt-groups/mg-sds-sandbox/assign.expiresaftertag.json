@@ -1,0 +1,26 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to check required tag",
+      "displayName": "HMCTS Expires After Tagging - (mg:SDS-Sandbox)",
+      "enforcementMode": "DoNotEnforce",
+      "nonComplianceMessages": [
+        {
+            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/expires_after_tagging/README.md"
+        }
+      ],
+      "notScopes": [],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
+      "scope": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresAfterTagging_SDS-SANDBOX",
+    "name": "ExpiresAfterTagging_SDS-SANDBOX"
+}
