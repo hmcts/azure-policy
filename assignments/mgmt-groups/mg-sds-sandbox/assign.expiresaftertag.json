@@ -21,6 +21,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresAfterTagging_SDS-SANDBOX",
-    "name": "ExpiresAfterTagging_SDS-SANDBOX"
+    "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresTag_SDS-Sbox",
+    "name": "ExpiresTag_SDS-Sbox"
 }

@@ -21,6 +21,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresAfterTagging_PLATFORM-SANDBOX",
-    "name": "ExpiresAfterTagging_PLATFORM-SANDBOX"
+    "id": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresTag_Platform-Sbox",
+    "name": "ExpiresTag_Platform-Sbox"
 }

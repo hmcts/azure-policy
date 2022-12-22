@@ -21,6 +21,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresAfterTagging_CFT-SANDBOX",
-    "name": "ExpiresAfterTagging_CFT-SANDBOX"
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresTag_CFT-Sbox",
+    "name": "ExpiresTag_CFT-Sbox"
 }
