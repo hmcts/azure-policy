@@ -3,7 +3,7 @@
       "metadata": {
         "assignedBy": "PlatOps"
       },
-      "description": "Policy to check required tags",
+      "description": "Policy to check required tag",
       "displayName": "Expires After Tagging - CFT SBOX (DCD-CFTAPPS-SBOX)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
