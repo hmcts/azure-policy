@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "Expires After Tagging - PLATFORM-SANDBOX",
+      "displayName": "HMCTS Expires After Tagging - PLATFORM-SANDBOX",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {

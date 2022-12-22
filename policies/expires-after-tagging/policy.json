@@ -1,6 +1,6 @@
 {
     "properties": {
-      "displayName": "Expires After Tagging",
+      "displayName": "HMCTS Expires After Tagging",
       "policyType": "Custom",
       "mode": "Indexed",
 
