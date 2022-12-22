@@ -8,7 +8,7 @@
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
-            "message": "Resource doesn't meet the tagging requirements. Add expiresAfter tag with value of expire date in format yyyy-mm-dd"
+            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/expires_after_tagging/README.md"
         }
       ],
       "notScopes": [],
