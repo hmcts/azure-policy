@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tag",
-      "displayName": "HMCTS Expires After Tagging - SDS-SANDBOX",
+      "displayName": "HMCTS Expires After Tagging - (mg:SDS-SANDBOX)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {

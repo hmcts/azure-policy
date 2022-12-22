@@ -4,7 +4,7 @@
         "assignedBy": "PlatOps"
       },
       "description": "Policy to check required tags",
-      "displayName": "HMCTS Expires After Tagging - CFT-Sandbox",
+      "displayName": "HMCTS Expires After Tagging - (mg:CFT-Sandbox)",
       "enforcementMode": "DoNotEnforce",
       "nonComplianceMessages": [
         {
