@@ -20,7 +20,7 @@
           "notMatch": "####-##-##"
         },
         "then": {
-          "effect": "audit"
+          "effect": "deny"
         }
       }
     },
