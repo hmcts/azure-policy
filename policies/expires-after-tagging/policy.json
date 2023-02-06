@@ -40,8 +40,20 @@
       },
       "policyRule": {
         "if": {
-          "field": "[concat('tags[', parameters('RequiredTag'), ']')]",
-          "notMatch": "####-##-##"
+          "allOf": [
+            {
+              "field": "type",
+              "notIn": "[parameters('excludedResourceTypes')]"
+            },
+            {
+              "anyOf": [
+                {
+                  "field": "[concat('tags[', parameters('RequiredTag'), ']')]",
+                  "notMatch": "####-##-##"
+                }
+              ]
+            }
+          ]
         },
         "then": {
           "effect": "deny"
