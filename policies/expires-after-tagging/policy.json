@@ -5,6 +5,30 @@
       "mode": "Indexed",
 
       "parameters": {
+        "excludedResourceTypes": {
+          "defaultValue": [
+            "Microsoft.Network/networkWatchers",
+            "Microsoft.RecoveryServices/vaults",
+            "Microsoft.Compute/snapshots",
+            "microsoft.alertsmanagement/smartdetectoralertrules",
+            "microsoft.insights/actiongroups",
+            "Microsoft.Insights/activityLogAlerts",
+            "microsoft.operationsmanagement/solutions",
+            "Microsoft.ContainerRegistry/registries/tasks",
+            "Microsoft.Network/dnsResolvers/inboundEndpoints",
+            "Microsoft.Network/dnsResolvers/outboundEndpoints",
+            "Microsoft.Network/networkWatchers/flowLogs",
+            "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+            "Microsoft.Compute/restorePointCollections",
+            "microsoft.network/vpnserverconfigurations",
+            "microsoft.network/virtualhubs"
+          ],
+          "type": "String",
+          "metadata": {
+            "displayName": "Resource Types to exclude",
+            "description": "Resource Types to exclude from compliance results"
+          }
+        },
         "RequiredTag": {
           "defaultValue": "expiresAfter",
           "type": "String",
