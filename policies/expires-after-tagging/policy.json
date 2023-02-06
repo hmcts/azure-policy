@@ -23,7 +23,7 @@
             "microsoft.network/vpnserverconfigurations",
             "microsoft.network/virtualhubs"
           ],
-          "type": "String",
+          "type": "Array",
           "metadata": {
             "displayName": "Resource Types to exclude",
             "description": "Resource Types to exclude from compliance results"
