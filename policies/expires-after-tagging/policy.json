@@ -21,7 +21,8 @@
             "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
             "Microsoft.Compute/restorePointCollections",
             "microsoft.network/vpnserverconfigurations",
-            "microsoft.network/virtualhubs"
+            "microsoft.network/virtualhubs",
+            "microsoft.network/virtualwans"
           ],
           "type": "Array",
           "metadata": {
