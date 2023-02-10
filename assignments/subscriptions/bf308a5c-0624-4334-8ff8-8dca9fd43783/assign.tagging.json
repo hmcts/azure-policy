@@ -14,7 +14,8 @@
       "notScopes": [
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/PlatOpsMonitor_Test",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/alliurg2",
-        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/FL_timja-fleet-test_timja-hub_uksouth"  
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/FL_timja-fleet-test_timja-hub_uksouth",
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/update-management-center-test"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
