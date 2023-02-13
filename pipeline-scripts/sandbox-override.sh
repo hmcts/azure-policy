@@ -34,7 +34,7 @@ for assignment in ${ASSIGNMENTS}; do
     -e 'this.properties.scope=process.env.SUB' \
     -e 'this.name=this.name + "_" + process.env.ENVIRONMENT' \
     -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
-    -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' \
+    -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop()' \
     -e 'this.properties.notScopes=[]' \
     -e 'this.id=process.env.SUB + "/providers/Microsoft.Authorization/policyAssignments/" + this.name' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
 
