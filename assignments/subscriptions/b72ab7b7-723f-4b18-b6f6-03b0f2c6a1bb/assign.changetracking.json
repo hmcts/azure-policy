@@ -25,6 +25,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/Enable-VM-ChangeTracking",
-    "name": "Enable-VM-ChangeTracking"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/Enable-VM-ChangeTracking-SBOX",
+    "name": "Enable-VM-ChangeTracking-SBOX"
 }
