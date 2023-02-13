@@ -14,7 +14,7 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/92a36f05-ebc9-4bba-9128-b47ad2ea3354",
-        "scope": "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/update-management-center-test"
+        "scope": "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783"
     },
     "location": "uksouth",
     "identity": {
