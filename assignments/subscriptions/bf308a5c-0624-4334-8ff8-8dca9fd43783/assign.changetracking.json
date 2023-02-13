@@ -7,7 +7,14 @@
         "displayName": "Enable ChangeTracking and Inventory for virtual machines",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
-        "notScopes": [],
+        "notScopes": [
+            "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/core-infra-idam-saat",
+            "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/core-infra-idam-sandbox",
+            "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/datalake-rg",
+            "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/hmcts-dmz-webserver",
+            "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/mgmt-vpn-2-sbox",
+            "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/rdo-sod-elk-poc"
+        ],
         "parameters": {
             "eventHubAuthRule": {
                 "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
