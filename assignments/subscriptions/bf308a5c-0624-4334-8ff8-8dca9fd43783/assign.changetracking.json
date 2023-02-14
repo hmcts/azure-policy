@@ -17,7 +17,7 @@
         ],
         "parameters": {
             "bringYourOwnUserAssignedManagedIdentity": {
-                "value": "false"
+                "value": false
             },
             "dcrResourceId": {
                 "value": "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/update-management-center-test/providers/microsoft.insights/datacollectionrules/test-collection-rule"
