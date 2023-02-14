@@ -18,6 +18,12 @@
         "parameters": {
             "eventHubAuthRule": {
                 "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+            },
+            "bringYourOwnUserAssignedManagedIdentity": {
+                "value": "false"
+            },
+            "dcrResourceId": {
+                "value": "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/update-management-center-test/providers/microsoft.insights/datacollectionrules/test-collection-rule"
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/92a36f05-ebc9-4bba-9128-b47ad2ea3354",
