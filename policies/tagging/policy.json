@@ -18,7 +18,8 @@
             "Microsoft.Network/dnsResolvers/outboundEndpoints",
             "Microsoft.Network/networkWatchers/flowLogs",
             "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
-            "Microsoft.Compute/restorePointCollections"
+            "Microsoft.Compute/restorePointCollections",
+            "Microsoft.Powershell.DSC"
           ],
           "type": "Array",
           "metadata": {
