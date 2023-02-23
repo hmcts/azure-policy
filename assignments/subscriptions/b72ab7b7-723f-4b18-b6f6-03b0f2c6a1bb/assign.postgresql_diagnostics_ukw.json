@@ -10,7 +10,7 @@
         "notScopes": [],
         "parameters": {
             "eventHubAuthRule": {
-                "value": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/nd-policy-test-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
+                "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
@@ -30,4 +30,4 @@
     "type": "Microsoft.Authorization/policyAssignments",
     "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiag_DCD-CFTAPPS-SBOX",
     "name": "HMCTSPSQLDiag_DCD-CFTAPPS-SBOX"
-}
+    }
