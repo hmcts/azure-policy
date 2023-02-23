@@ -10,7 +10,7 @@
         "notScopes": [],
         "parameters": {
             "eventHubAuthRule": {
-                "value": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/snd-policy-test-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
+                "value": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/nd-policy-test-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
