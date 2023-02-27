@@ -28,6 +28,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiag_DCD-CFTAPPS-SBOX",
-    "name": "HMCTSPSQLDiag_DCD-CFTAPPS-SBOX"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiag_DCD-CFTAPPS-SBOX_UKW",
+    "name": "HMCTSPSQLDiag_DCD-CFTAPPS-SBOX_UKW"
     }
