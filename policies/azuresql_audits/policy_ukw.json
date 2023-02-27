@@ -1,9 +1,9 @@
 {
   "properties": {
-    "displayName": "Enable Audit Settings for Azure SQL to SOC",
+    "displayName": "Enable Audit Settings for Azure SQL to SOC UKW",
     "policyType": "Custom",
     "mode": "Indexed",
-    "description": "Enables auditing settings for Azure SQL servers to stream to the SOC Event Hub. Any Azure SQL server which is missing this settings is updated along with its databases.",
+    "description": "Enables auditing settings for Azure SQL servers to stream to the SOC Event Hub UKW. Any Azure SQL server which is missing this settings is updated along with its databases.",
     "parameters": {
       "profileName": {
         "type": "String",
@@ -30,10 +30,10 @@
           "assignPermissions": true
         },
         "allowedValues": [
-          "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey",
-          "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
+          "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey", 
+          "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-ukw-rg/providers/Microsoft.EventHub/namespaces/soc-prod-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
         ],
-        "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+        "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
       },
       "eventHubLocation": {
         "type": "String",
