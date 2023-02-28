@@ -236,7 +236,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit_SBOX_UKW",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit2-Sbox",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "HMCTSAzureSQLAudit"
 }

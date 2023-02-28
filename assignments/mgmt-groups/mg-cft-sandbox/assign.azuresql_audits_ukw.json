@@ -28,6 +28,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSAzureSQLAudit-UKW_CFT-Sbox",
-    "name": "HMCTSAzureSQLAudit-UKW_CFT-Sbox"
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSAzureSQLAudit2-Sbox",
+    "name": "HMCTSAzureSQLAudit2-Sbox"
     }
