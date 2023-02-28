@@ -1,0 +1,33 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "PlatOps"
+        },
+        "description": "Forwards all Azure SQL Server audit logs to an Azure Event Hub UKW",
+        "displayName": "HMCTS Collect Azure SQL Server Audit Logs UKW - (mg:CFT-Sandbox)",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "parameters": {
+            "eventHubAuthRule": {
+                "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
+            }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit_SBOX_UKW",
+        "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    },
+    "location": "ukwest",
+    "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-sbox-eventhub-uks-azure-policy": {}
+        }
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSAzureSQLAudit-UKW_CFT-Sbox",
+    "name": "HMCTSAzureSQLAudit-UKW_CFT-Sbox"
+    }
