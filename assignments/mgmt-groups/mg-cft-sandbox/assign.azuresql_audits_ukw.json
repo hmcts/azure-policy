@@ -20,7 +20,7 @@
     "identity": {
         "type": "UserAssigned",
         "userAssignedIdentities": {
-            "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-core-infra-sbox-ukw-rg": {}
+            "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-sbox-eventhub-uks-azure-policy": {}
         }
     },
     "sku": {
