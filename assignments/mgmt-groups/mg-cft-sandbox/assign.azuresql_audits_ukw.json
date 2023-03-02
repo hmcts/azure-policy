@@ -13,7 +13,7 @@
                 "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit2-Sbox",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
         "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
     },
     "location": "ukwest",
@@ -28,6 +28,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSAzureSQLAudit2-Sbox",
-    "name": "HMCTSAzureSQLAudit2-Sbox"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiagGlobal",
+    "name": "HMCTSPSQLDiagGlobal"
     }
