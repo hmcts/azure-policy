@@ -1,0 +1,33 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Forwards all Azure SQL Server audit logs to an Azure Event Hub UKW",
+        "displayName": "HMCTS Collect Azure SQL Server Audit Logs UKW (HMCTS MG)",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "parameters": {
+            "eventHubAuthRule": {
+                "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-prod-ukw-rg/providers/Microsoft.EventHub/namespaces/soc-prod-ukw-eventhubns/authorizationRules/RootManageSharedAccessKey"
+            }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit",
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    },
+    "location": "ukwest",
+    "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-prod-ukw-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-ukw-eventhubns-azure-policy": {}
+        }
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSAzureSQLAuditGlobal",
+    "name": "HMCTSAzureSQLAuditGlobal"
+    }
