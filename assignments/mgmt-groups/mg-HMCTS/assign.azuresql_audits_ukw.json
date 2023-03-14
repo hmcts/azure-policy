@@ -20,7 +20,7 @@
     "identity": {
         "type": "UserAssigned",
         "userAssignedIdentities": {
-            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-ukw-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-ukw-eventhubns-azure-policy": {}
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourcegroups/soc-core-infra-prod-ukw-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-eventhub-ukw-azure-policy": {}
         }
     },
     "sku": {
