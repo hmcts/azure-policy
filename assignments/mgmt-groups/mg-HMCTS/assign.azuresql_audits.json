@@ -6,7 +6,9 @@
     "description": "Forwards all Azure SQL Server audit logs to an Azure Event Hub",
     "displayName": "HMCTS Collect Azure SQL Server Audit Logs (HMCTS MG)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [],
+    "nonComplianceMessages": [{
+      "message": "Resource doesn't have SQL Security Audit Event logs enabled"
+    }],
     "notScopes": [],
     "parameters": {
       "eventHubAuthRule": {
