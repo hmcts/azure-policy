@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "displayName": "HMCTS Region Policy",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "parameters": {
+      "listOfAllowedLocations": {
+        "defaultValue": [
+          "uksouth"
+        ],
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed Locations",
+          "description": "Regions allowed to have resources deployed into"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "location",
+            "notIn": "[parameters('listOfNotAllowedLocations')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSRegionPolicy",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSRegionPolicy"
+}
