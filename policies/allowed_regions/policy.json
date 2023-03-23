@@ -20,7 +20,11 @@
         "allOf": [
           {
             "field": "location",
-            "notIn": "[parameters('listOfNotAllowedLocations')]"
+            "notIn": "[parameters('listOfAllowedLocations')]"
+          },
+          {
+            "field": "location",
+            "notEquals": "global"
           }
         ]
       },
