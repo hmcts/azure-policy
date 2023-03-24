@@ -4,14 +4,15 @@
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {
-      "listOfAllowedLocations": {
+      "listOfAllowedResources": {
         "defaultValue": [
-          "uksouth"
+          "Microsoft.Sql/servers/databases",
+          "Microsoft.DBforPostgreSQL/servers"
         ],
         "type": "Array",
         "metadata": {
-          "displayName": "Allowed Locations",
-          "description": "Regions allowed to have resources deployed into"
+          "displayName": "Allowed Resources",
+          "description": "Resources only allowed to have be deployed to into UK South"
         }
       }
     },
@@ -19,12 +20,12 @@
       "if": {
         "allOf": [
           {
-            "field": "location",
-            "notIn": "[parameters('listOfAllowedLocations')]"
+            "field": "type",
+            "in": "[parameters('listOfAllowedResources')]"
           },
           {
             "field": "location",
-            "notEquals": "global"
+            "notEquals": "uksouth"
           }
         ]
       },

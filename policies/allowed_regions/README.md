@@ -1,7 +1,7 @@
 # HMCTS Location Policy
 
 ## Allowed locations
-Given the HMCTS principle is for resources to be deployed to UK south and there is no requirement for multi-region (with some exceptions)
+Given the HMCTS principle is for SQL Servers and PostgresSQL Databases to be deployed to UK south and there is no requirement for multi-region (with some exceptions)
 
 ## Check compliance
 
