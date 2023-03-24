@@ -1,0 +1,25 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to check resource locations",
+      "displayName": "HMCTS Location Policy - (mg:CFT-Sandbox)",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+            "message": "Resource doesn't meet location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_regions/README.md"
+        }
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSRegionPolicy",
+      "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/Region_CFT-Sbox",
+    "name": "ExpiresTag_Platform-Sbox"
+}
