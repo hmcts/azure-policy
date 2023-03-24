@@ -6,8 +6,10 @@
     "parameters": {
       "listOfAllowedResources": {
         "defaultValue": [
+          "Microsoft.Sql/servers",
           "Microsoft.Sql/servers/databases",
-          "Microsoft.DBforPostgreSQL/servers"
+          "Microsoft.DBforPostgreSQL/servers",
+          "Microsoft.DBforPostgreSQL/flexibleServers"
         ],
         "type": "Array",
         "metadata": {
