@@ -11,7 +11,8 @@
         "type": "Array",
         "metadata": {
           "displayName": "Allowed Locations",
-          "description": "Permitted HMCTS Regions"
+          "description": "Permitted HMCTS Regions",
+          "strongType": "location"
         }
       }
     },
