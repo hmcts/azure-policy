@@ -1,0 +1,25 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to check resource locations",
+      "displayName": "HMCTS Resource Locations - CFT SBOX (DCD-CFTAPPS-SBOX)",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+            "message": "Resource doesn't meet location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_regions/README.md"
+        }
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
+      "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSLocation_Policy_DCD-CFTAPPS-SBOX",
+    "name": "HMCTSLocation_Policy_DCD-CFTAPPS-SBOX"
+}
