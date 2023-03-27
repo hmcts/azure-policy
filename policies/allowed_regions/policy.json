@@ -4,17 +4,14 @@
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {
-      "listOfAllowedResources": {
+      "listOfAllowedLocations": {
         "defaultValue": [
-          "Microsoft.Sql/servers",
-          "Microsoft.Sql/servers/databases",
-          "Microsoft.DBforPostgreSQL/servers",
-          "Microsoft.DBforPostgreSQL/flexibleServers"
+          "uksouth"
         ],
         "type": "Array",
         "metadata": {
-          "displayName": "Allowed Resources",
-          "description": "Resources only allowed to have be deployed to into UK South"
+          "displayName": "Allowed Locations",
+          "description": "Permitted HMCTS Regions"
         }
       }
     },
@@ -22,12 +19,12 @@
       "if": {
         "allOf": [
           {
-            "field": "type",
-            "in": "[parameters('listOfAllowedResources')]"
+            "field": "location",
+            "notIn": "[parameters('listOfAllowedLocations')]"
           },
           {
             "field": "location",
-            "notEquals": "uksouth"
+            "notEquals": "global"
           }
         ]
       },
