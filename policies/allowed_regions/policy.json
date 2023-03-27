@@ -6,7 +6,8 @@
     "parameters": {
       "listOfAllowedLocations": {
         "defaultValue": [
-          "uksouth"
+          "uksouth",
+          "global"
         ],
         "type": "Array",
         "metadata": {
@@ -18,16 +19,10 @@
     },
     "policyRule": {
       "if": {
-        "allOf": [
-          {
+        "not": {
             "field": "location",
-            "notIn": "[parameters('listOfAllowedLocations')]"
-          },
-          {
-            "field": "location",
-            "notEquals": "global"
+            "in": "[parameters('listOfAllowedLocations')]"
           }
-        ]
       },
       "then": {
         "effect": "deny"
