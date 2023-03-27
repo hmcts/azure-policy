@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "HMCTS Location Policy",
+    "displayName": "HMCTS Resource Location Policy",
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {
@@ -33,7 +33,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSLocationPolicy",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSLocationPolicy"
+  "name": "HMCTSResourceLocationPolicy"
 }
