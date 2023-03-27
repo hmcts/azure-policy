@@ -18,12 +18,10 @@
     },
     "policyRule": {
       "if": {
-        "not": [
-          {
+        "not": {
             "field": "location",
             "in": "[parameters('listOfAllowedLocations')]"
           }
-        ]
       },
       "then": {
         "effect": "deny"
