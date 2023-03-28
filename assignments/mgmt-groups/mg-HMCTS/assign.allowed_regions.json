@@ -48,7 +48,12 @@
         "/subscriptions/4bb049c8-33f3-4860-91b4-9ee45375cc18/resourceGroups/vh-booking-queue-subscriber-prod",
         "/subscriptions/4bb049c8-33f3-4860-91b4-9ee45375cc18/resourceGroups/vh-booking-queue-subscriber-preprod",
         "/subscriptions/4bb049c8-33f3-4860-91b4-9ee45375cc18/resourceGroups/vh-admin-web-prod",
-        "/subscriptions/4bb049c8-33f3-4860-91b4-9ee45375cc18/resourceGroups/vh-admin-web-preprod"
+        "/subscriptions/4bb049c8-33f3-4860-91b4-9ee45375cc18/resourceGroups/vh-admin-web-preprod",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/fpl-case-service-aat",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/fpl-case-service-demo",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/fpl-case-service-ithc",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/fpl-case-service-perftest",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourceGroups/fpl-case-service-prod"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
