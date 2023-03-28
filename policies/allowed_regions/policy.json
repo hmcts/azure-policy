@@ -6,27 +6,23 @@
     "parameters": {
       "listOfAllowedLocations": {
         "defaultValue": [
-          "uksouth"
+          "uksouth",
+          "global"
         ],
         "type": "Array",
         "metadata": {
           "displayName": "Allowed Locations",
-          "description": "Permitted HMCTS Regions"
+          "description": "Permitted HMCTS Regions",
+          "strongType": "location"
         }
       }
     },
     "policyRule": {
       "if": {
-        "allOf": [
-          {
+        "not": {
             "field": "location",
-            "notIn": "[parameters('listOfAllowedLocations')]"
-          },
-          {
-            "field": "location",
-            "notEquals": "global"
+            "in": "[parameters('listOfAllowedLocations')]"
           }
-        ]
       },
       "then": {
         "effect": "deny"
