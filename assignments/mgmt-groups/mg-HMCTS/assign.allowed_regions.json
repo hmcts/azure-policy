@@ -152,7 +152,9 @@
         "/subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/AzureBackupRG_ukwest_1",
         "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/ukw-hub-sbox-int",
         "/subscriptions/0978315c-75fe-4ada-9d11-1eb5e0e0b214/resourceGroups/ukw-hub-prod-int",
-        "/subscriptions/fb084706-583f-4c9a-bdab-949aac66ba5c/resourceGroups/ukw-hub-nonprodi"
+        "/subscriptions/fb084706-583f-4c9a-bdab-949aac66ba5c/resourceGroups/ukw-hub-nonprodi",
+        "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-ukw-rg",
+        "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
