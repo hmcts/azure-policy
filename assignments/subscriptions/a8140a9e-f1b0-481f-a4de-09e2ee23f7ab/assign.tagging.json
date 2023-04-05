@@ -16,7 +16,6 @@
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/ss-sbox-01-rg",
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/pre-sbox",
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/hackathon-ease-of-platform",
-            # disabled to clone the db 
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/toffee-v11-data-sbox"
         ],
         "parameters": {},
