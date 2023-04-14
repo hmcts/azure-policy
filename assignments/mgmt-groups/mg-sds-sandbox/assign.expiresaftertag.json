@@ -11,7 +11,10 @@
             "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/expires_after_tagging/README.md"
         }
       ],
-      "notScopes": ["/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/b2c-darts-sbox"],
+      "notScopes": [
+                "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/b2c-darts-sbox",
+                "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/postgres-dms-migration-rg"
+                   ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
       "scope": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox"
