@@ -8,6 +8,7 @@ All environments and resources:
  - application
  - businessArea
  - builtFrom
+ - expiresAfter
      
 ## Allowed values
 Tags and their allowed values.
@@ -30,9 +31,14 @@ businessArea:
  - crime
  - Cross-Cutting
  
- builtFrom: 
+builtFrom: 
  - Name or URL of repository
 
+expiresAfter:
+ - YYYY-MM-DD
+ 
+Only needed in SBOX environment
+ 
 ## Check compliance
 
 You can view the current compliance status in the Azure portal.
