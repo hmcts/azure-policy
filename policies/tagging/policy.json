@@ -19,8 +19,7 @@
             "Microsoft.Network/networkWatchers/flowLogs",
             "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
             "Microsoft.Compute/restorePointCollections",
-            "Microsoft.Compute/virtualMachines/extensions",
-            "Microsoft.PowerShell.DSC"
+            "Microsoft.Compute/virtualMachines/extensions"
           ],
           "type": "Array",
           "metadata": {
