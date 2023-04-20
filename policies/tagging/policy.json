@@ -20,7 +20,7 @@
             "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
             "Microsoft.Compute/restorePointCollections",
             "Microsoft.Compute/virtualMachines/extensions",
-            "Microsoft.PowerShell.DSC"
+            "Microsoft.Resources/deployments"
           ],
           "type": "Array",
           "metadata": {

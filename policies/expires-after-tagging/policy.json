@@ -23,7 +23,7 @@
             "microsoft.network/vpnserverconfigurations",
             "microsoft.network/virtualhubs",
             "microsoft.network/virtualwans",
-            "Microsoft.PowerShell.DSC"
+            "Microsoft.Resources/deployments"
           ],
           "type": "Array",
           "metadata": {
