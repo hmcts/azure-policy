@@ -13,7 +13,8 @@
       ],
       "notScopes": [
         "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/dasi-chatapp",
-        "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/hmcts-hub-sbox-int"
+        "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/hmcts-hub-sbox-int",
+        "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACS-LAB-AVD-RG"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
