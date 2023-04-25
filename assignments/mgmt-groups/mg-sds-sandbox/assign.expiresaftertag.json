@@ -12,9 +12,8 @@
         }
       ],
       "notScopes": [
-                "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/b2c-darts-sbox",
-                "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/postgres-dms-migration-rg"
-                   ],
+                "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/b2c-darts-sbox"
+                ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
       "scope": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox"
