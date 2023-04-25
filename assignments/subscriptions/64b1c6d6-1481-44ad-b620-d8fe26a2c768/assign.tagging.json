@@ -13,7 +13,8 @@
             "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/ss-ptlsbox-00-aks-node-rg",
             "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/ss-ptlsbox-01-aks-node-rg",
             "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/ss-ptlsbox-00-rg",
-            "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/ss-ptlsbox-01-rg"
+            "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/ss-ptlsbox-01-rg",
+            "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/ss-ptlsbox-db-migration-rg"
         ],
         "parameters": {},
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
