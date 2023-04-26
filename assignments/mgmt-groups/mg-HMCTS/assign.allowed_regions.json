@@ -161,7 +161,12 @@
         "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-ukw-rg",
         "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-ukw-rg",
         "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/b2c-darts-sbox",
-        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/pre-sbox-backup"
+        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/pre-sbox-backup",
+        "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/pre-test-backup",
+        "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/pre-dev-backup",
+        "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/pre-demo-backup",
+        "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/pre-stg-backup",
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/pre-prod-backup"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
