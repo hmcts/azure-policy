@@ -166,7 +166,8 @@
         "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/pre-dev-backup",
         "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/pre-demo-backup",
         "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/pre-stg-backup",
-        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/pre-prod-backup"
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/pre-prod-backup",
+        "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/azure-external-identities-link-rg"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
