@@ -167,7 +167,12 @@
         "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/pre-demo-backup",
         "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/pre-stg-backup",
         "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/pre-prod-backup",
-        "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/azure-external-identities-link-rg"
+        "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/azure-external-identities-link-rg",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourceGroups/rpa-prod",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourcegroups/rpa-aat",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/rpa-demo",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/rpa-ithc",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/rpa-perftest"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
