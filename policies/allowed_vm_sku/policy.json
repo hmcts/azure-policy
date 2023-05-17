@@ -1,0 +1,52 @@
+{
+  "properties": {
+    "displayName": "HMCTS Allowed VM SKU sizes",
+    "policyType": "BuiltIn",
+    "mode": "Indexed",
+    "parameters": {
+      "allowedSkus": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed SKU names",
+          "description": "HMCTS allowed VM SKU sizes",
+        },
+        "allowedValues": [
+          "Standard_D2ds_v5",
+          "Standard_D4ds_v5",
+          "Standard_DD16ds_v5",
+          "Standard_FD16ds_v5",
+          "Standard_E2ds_v5"
+        ],
+        "defaultValue": [
+          "Standard_D2ds_v5",
+          "Standard_E2ds_v5"
+        ]
+      },
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Deny"
+        ],
+        "defaultValue": "Deny"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "allowedSkus",
+          "in": "[parameters('allowedSkus')]"
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSVmSkuSize",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSVmSkuSize"
+}
