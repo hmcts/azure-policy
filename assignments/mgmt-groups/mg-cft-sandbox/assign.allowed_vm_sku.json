@@ -13,7 +13,7 @@
       ],
       "notScopes": [],
       "parameters": {},
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSVmSkuSize",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Compute/virtualMachines/policyDefinitions/HMCTSVmSkuSize",
       "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
     },
     "allowedSkuSize": {
@@ -31,7 +31,7 @@
       ]
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSizeAssignment_CFT-Sandbox",
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Compute/virtualMachines/policyAssignments/HMCTSVmSkuSizeAssignment_CFT-Sandbox",
     "name": "HMCTSVmSkuSizeAssignment_CFT-Sandbox"
   }
   
