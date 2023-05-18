@@ -31,7 +31,7 @@
       ]
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSizeAssignmentC_CFT-Sandbox",
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSizeAssignment_CFT-Sandbox",
     "name": "HMCTSVmSkuSizeAssignment_CFT-Sandbox"
   }
   
