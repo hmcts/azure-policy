@@ -34,18 +34,7 @@
           "Standard_E16ds_v5",
           "Standard_E32ds_v5"
         ]
-      }, 
-      "effect": {
-        "type": "String",
-        "metadata": {
-          "displayName": "Effect",
-          "description": "Correct VM sizes"
-        },
-        "allowedValues": [
-          "Deny"
-        ],
-        "defaultValue": "Deny"
-      }
+      } 
     },
     "policyRule": {
       "if": {
