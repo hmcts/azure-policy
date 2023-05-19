@@ -18,7 +18,6 @@
 
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Compute/virtualMachines/policyAssignments/HMCTSVmSkuSizeAssignment_CFT-Sandbox",
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Compute/virtualMachines/policyAssignments/HMCTSVmSkuSizegit_CFT-Sandbox",
     "name": "HMCTSVmSkuSizeAssignment_CFT-Sandbox"
   }
-  

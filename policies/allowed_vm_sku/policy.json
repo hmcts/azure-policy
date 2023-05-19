@@ -7,8 +7,8 @@
       "listOfAllowedSKUs": {
         "type": "Array",
         "metadata": {
-          "displayName": "Allowed SKU names",
-          "description": "HMCTS allowed VM SKU sizes"
+          "displayName": "Allowed Virtual Machine SKU Sizes",
+          "description": "The allowed Virtual Machine SKU sizes in HMCTS"
         },
         "allowedValues": [
           "Standard_D2ds_v5",
