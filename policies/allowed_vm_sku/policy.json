@@ -4,7 +4,7 @@
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {
-      "allowedSkus": {
+      "listOfAllowedSKUs": {
         "type": "Array",
         "metadata": {
           "displayName": "Allowed SKU names",
@@ -40,7 +40,7 @@
       "if": {
         "not": {
           "field": "Microsoft.Compute/virtualMachines/sku.name",
-          "in": "[parameters('allowedSkus')]"
+          "in": "[parameters('listOfAllowedSKUs')]"
         }
       },
       "then": {
