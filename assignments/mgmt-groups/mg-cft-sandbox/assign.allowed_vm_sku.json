@@ -3,7 +3,7 @@
       "metadata": {
         "assignedBy": "PlatOps"
       },
-      "description": "Restrict the Virtual Machine SKU sizes that can be deployed HMCTS",
+      "description": "Restrict the Virtual Machine SKU sizes that can be deployed in HMCTS",
       "displayName": "HMCTS Restricted VM SKU Sizes - (mg:CFT-Sandbox)",
       "enforcementMode": "Default",
       "nonComplianceMessages": [
