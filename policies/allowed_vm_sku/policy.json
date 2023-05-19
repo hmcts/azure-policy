@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "HMCTS Allowed VM SKU sizes",
+    "displayName": "This policy enables you to specify a set of virtual machine size SKUs that can be deployed HMCTS",
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {
