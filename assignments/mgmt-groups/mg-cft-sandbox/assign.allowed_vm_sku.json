@@ -21,3 +21,4 @@
     "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Compute/virtualMachines/policyAssignments/HMCTSVmSkuSizeAssignment_CFT-Sandbox",
     "name": "HMCTSVmSkuSizeAssignment_CFT-Sandbox"
   }
+  
