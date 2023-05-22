@@ -4,7 +4,7 @@
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {
-      "allowedSKUs": {
+      "listOfAllowedSKUs": {
         "type": "Array",
         "metadata": {
           "displayName": "Allowed Virtual Machine SKU Sizes",
