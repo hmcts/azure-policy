@@ -16,14 +16,30 @@
           "description": "Permitted HMCTS Regions",
           "strongType": "location"
         }
+      },
+      "excludedResourceTypes": {
+        "defaultValue": [
+          "Microsoft.AzureActiveDirectory/b2cDirectories"
+        ],
+        "type": "Array",
+        "metadata": {
+          "displayName": "Resource Types to exclude",
+          "description": "Resource Types to exclude from compliance results"
+        }
       }
     },
     "policyRule": {
       "if": {
-        "not": {
+        "allOf": [
+          {
+            "field": "type",
+            "notIn": "[parameters('excludedResourceTypes')]"
+          },
+          {
             "field": "location",
-            "in": "[parameters('listOfAllowedLocations')]"
+            "notIn": "[parameters('listOfAllowedLocations')]"
           }
+        ]
       },
       "then": {
         "effect": "deny"
