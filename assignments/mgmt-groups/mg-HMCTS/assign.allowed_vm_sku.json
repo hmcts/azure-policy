@@ -19,6 +19,6 @@
     },
     "type": "Microsoft.Authorization/policyAssignments",
     "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSize",
-    "name": "HMCTSVmSkuSize-Sbox"
+    "name": "HMCTSVmSkuSize"
   }
   
