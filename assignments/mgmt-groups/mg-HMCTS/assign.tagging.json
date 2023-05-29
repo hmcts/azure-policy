@@ -30,7 +30,8 @@
             "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/hmcts-hub-sbox-int",
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/b2c-darts-sbox",
             "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACS-LAB-AVD-RG",
-            "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/azure-external-identities-link-rg"
+            "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/azure-external-identities-link-rg",
+            "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/NeilM-OpenAI-POC-RG"
         ],
         "parameters": {},
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
