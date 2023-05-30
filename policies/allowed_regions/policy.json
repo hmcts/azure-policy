@@ -20,7 +20,8 @@
       "excludedResourceTypes": {
         "defaultValue": [
           "Microsoft.AzureActiveDirectory/b2cDirectories",
-          "Microsoft.Cdn/profiles"
+          "Microsoft.Cdn/profiles",
+          "Microsoft.Cdn/profiles/endpoints"
         ],
         "type": "Array",
         "metadata": {
