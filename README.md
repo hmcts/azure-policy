@@ -66,13 +66,20 @@ e.g.
 
 ### How to test a policy definition
 
-To test a policy definition, create a new policy assignment json file under `assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb`.
+To test a policy definition, create a new policy assignment json file under `assignments/mg-cft-sandbox`.
 
 This is the `DCD-CFTAPPS-SBOX` subscription which can be used for the purpose of testing that new policy defintions are using valid json and have the expected values before live rollout.
 
 Creating a pull request will trigger a GitHub action that will create your policy definition and assign it to this subscription.
 
-The policy definition and assignment will be appended with `- Sandbox` so you can easily identify it in the Azure Portal.
+The policy definition and assignment will be appended with `- CFT-Sandbox` so you can easily identify it in the Azure Portal.
+
+e.g.
+```
+     "displayName": "HMCTS Restricted VM SKU Sizes - (mg:CFT-Sandbox)"
+     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+     "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSize-Sbox"
+```
 
 At this point, you will have a definition assigned to the `DCD-CFTAPPS-SBOX` subscription. In order to test that your policy has the desired effect, a compliance scan must be ran.
 
