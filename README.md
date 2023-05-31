@@ -66,7 +66,7 @@ e.g.
 
 ### How to test a policy definition
 
-To test a policy definition, create a new policy assignment json file under `assignments/mg-cft-sandbox`.
+To test a policy definition, create a new policy assignment json file under `assignments/mg-cft-sandbox`. You can also test the policy assignment on a subscription assignment json file under `assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb'.
 
 This is the `DCD-CFTAPPS-SBOX` subscription which can be used for the purpose of testing that new policy definitions are using valid json and have the expected values before live rollout.
 
