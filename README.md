@@ -4,7 +4,7 @@
 
 This repo stores azure policy definitions and assignments.
 
-### Overview of Azure Policy Defintions
+### Overview of Azure Policy Definitions
 
 In Azure Policy, definitions describe resource compliance conditions and the effect to take if a condition is met.
 
@@ -34,7 +34,7 @@ When you've decided on a scope, create a policy assignment file in the appropria
 
 Use a subscription scope when you are testing out a policy or if you only want a policy to apply to a single subscription or group of subscriptions.
 
-Use a management groupo scope when you want a policy to apply to all subscriptions in the tenant.
+Use a management group scope when you want a policy to apply to all subscriptions in the tenant.
 
 ### How to add a new subscription
 
@@ -66,15 +66,22 @@ e.g.
 
 ### How to test a policy definition
 
-To test a policy definition, create a new policy assignment json file under `assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb`.
+To test a policy definition, create a new policy assignment json file under `assignments/mg-cft-sandbox`. You can also test the policy assignment on a subscription assignment json file under `assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb'.
 
-This is the `DCD-CFTAPPS-SBOX` subscription which can be used for the purpose of testing that new policy defintions are using valid json and have the expected values before live rollout.
+This is the `DCD-CFTAPPS-SBOX` subscription which can be used for the purpose of testing that new policy definitions are using valid json and have the expected values before live rollout.
 
 Creating a pull request will trigger a GitHub action that will create your policy definition and assign it to this subscription.
 
-The policy definition and assignment will be appended with `- Sandbox` so you can easily identify it in the Azure Portal.
+The policy definition and assignment will be appended with `- CFT-Sandbox` so you can easily identify it in the Azure Portal.
 
-At this point, you will have a definition assigned to the `DCD-CFTAPPS-SBOX` subscription. In order to test that your policy has the desired effect, a compliance scan must be ran.
+e.g.
+```
+    "displayName": "HMCTS Restricted VM SKU Sizes - (mg:CFT-Sandbox)"
+    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSize-Sbox"
+```
+
+At this point, you will have a definition assigned to the `DCD-CFTAPPS-SBOX` subscription. In order to test that your policy has the desired effect, a compliance scan must be run.
 
 This should take place automatically when the assignment is created. You should be able to see what resources are non-compliant and confirm that the resources listed are expected.
 
@@ -86,9 +93,16 @@ You can do this for your `- Sandbox` policy assignment from above.
 
 If you want to test on an additional subscription, create another assignment json file under `assignments/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783`. This is the `DCD-CFT-Sandbox` subscription.
 
-If everything is working as expected, submit a new PR with assignments for all the others subscriptions you are targeting resources in.
+If everything is working as expected, submit a new PR with assignments for all the other subscriptions you are targeting resources in.
 
-If your policy should take effect over all subscriptions after testing, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder.
+If your policy should take effect over all subscriptions after testing, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder. Ensure that that the policy 'id' and assignment 'policyDefinitionId' match 
+
+e.g.
+```
+    "displayName": "HMCTS Restricted VM SKU Sizes - (HMCTS MG)"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSize"
+```
 
 ### Policy permissions
 
