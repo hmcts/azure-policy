@@ -19,4 +19,4 @@ The specific VM SKU [sizes](https://tools.hmcts.net/confluence/display/DACS/D.1k
 | Extremely Large |  E32ds_v5      |
 
 ## Exemptions 
-The exemptions [list](https://tools.hmcts.net/confluence/display/DACS/D.1k+Azure+SKU+Standards+-+In+progress) that has been enabled until the non-complaint VM's can be migrated to the compliant VM size.
+The exemptions [list](https://github.com/hmcts/azure-policy/blob/193aa858dd99e203f9a7f6a311630ab617d03178/assignments/mgmt-groups/mg-HMCTS/assign.allowed_vm_sku.json#L15) that has been enabled until the non-complaint VM's can be migrated to the compliant VM size.
