@@ -14,7 +14,8 @@
       "notScopes": [
                 "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/b2c-darts-sbox",
                 "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/SendGrid-nonprod",
-                "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/sku-vmpolicy-test-rg"
+                "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/sku-vmpolicy-test-rg",
+                "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/bluesquadpoc"
                 ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
