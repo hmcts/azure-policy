@@ -1,9 +1,12 @@
-# HMCTS VM SKU Policy
+# HMCTS virtual machine SKU Policy
 
-The policy enables you to specify a set of VM SKUs sizes that can be deployed in HMCTS
+The policy enables you to specify a set of VM SKUs sizes that can be deployed in HMCTS.
 
-## Required VM SKU Sizes
-The specific VM SKU [sizes](https://tools.hmcts.net/confluence/display/DACS/D.1k+Azure+SKU+Standards+-+In+progress) that are enforced by the policy .
+## Required virtual machine SKU Sizes
+
+The specific VM SKU sizes that are enforced by the policy:
+
+### General purpose
 
 | Size            |  VM Series     |
 | -------------   |  ------------- |
@@ -12,6 +15,11 @@ The specific VM SKU [sizes](https://tools.hmcts.net/confluence/display/DACS/D.1k
 | Large           |  D8ds_v5       |
 | Extra Large     |  D16ds_v5      |
 | Extremely Large |  D32ds_v5      |
+
+### Memory optimised
+
+| Size            |  VM Series     |
+| -------------   |  ------------- |
 | Small           |  E2ds_v5       |
 | Medium          |  E4ds_v5       |
 | Large           |  E8ds_v5       |
@@ -19,4 +27,5 @@ The specific VM SKU [sizes](https://tools.hmcts.net/confluence/display/DACS/D.1k
 | Extremely Large |  E32ds_v5      |
 
 ## Exemptions 
-The exemptions [list](https://github.com/hmcts/azure-policy/blob/193aa858dd99e203f9a7f6a311630ab617d03178/assignments/mgmt-groups/mg-HMCTS/assign.allowed_vm_sku.json#L15) that has been enabled until the non-complaint VM's can be migrated to the compliant VM size.
+
+Send a pull request to [assignments/mgmt-groups/mg-HMCTS/assign.allowed_vm_sku.json](https://github.com/hmcts/azure-policy/blob/HEAD/assignments/mgmt-groups/mg-HMCTS/assign.allowed_vm_sku.json) with justification for why you need to use one not on the standard list.
