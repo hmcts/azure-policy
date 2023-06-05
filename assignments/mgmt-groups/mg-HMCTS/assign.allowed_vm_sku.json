@@ -3,12 +3,12 @@
       "metadata": {
         "assignedBy": "PlatOps"
       },
-      "description": "Restrict the Virtual Machine SKU sizes that can be deployed in HMCTS",
-      "displayName": "HMCTS Restricted VM SKU Sizes - (HMCTS MG)",
+      "description": "Approved Virtual Machine SKU sizes",
+      "displayName": "HMCTS Approved VM SKU Sizes - (HMCTS MG)",
       "enforcementMode": "Default",
       "nonComplianceMessages": [
         {
-          "message": "This VM SKU size is not allowed. See https://tools.hmcts.net/confluence/display/DACS/D.1k+Azure+SKU+Standards+-+In+progress"
+          "message": "This VM SKU size is not allowed. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_vm_sku/README.md"
         }
       ],
       "notScopes": [
