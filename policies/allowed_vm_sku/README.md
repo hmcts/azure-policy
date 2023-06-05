@@ -1,4 +1,4 @@
-# HMCTS virtual machine SKU Policy
+# HMCTS Virtual Machine SKU Policy
 
 The policy enables you to specify a set of VM SKUs sizes that can be deployed in HMCTS.
 
