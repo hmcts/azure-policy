@@ -187,7 +187,9 @@
         "/subscriptions/0978315c-75fe-4ada-9d11-1eb5e0e0b214/resourceGroups/panorama-prod-ukw-rg",
         "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/panorama-sbox-ukw-rg",
         "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/bluesquadpoc",
-        "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/bluesquadpoc"
+        "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/bluesquadpoc",
+        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/sds-platform-shutter-webapp-sbox-rg"
+          
 
       ],
       "parameters": {},
