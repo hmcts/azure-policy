@@ -189,7 +189,8 @@
         "/subscriptions/0978315c-75fe-4ada-9d11-1eb5e0e0b214/resourceGroups/panorama-prod-ukw-rg",
         "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/bluesquadpoc",
         "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/bluesquadpoc",
-        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/sds-platform-shutter-webapp-sbox-rg"
+        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/sds-platform-shutter-webapp-sbox-rg",
+        "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-platform-shutter-webapp-sbox-rg"
           
 
       ],
