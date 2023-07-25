@@ -191,7 +191,9 @@
         "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/bluesquadpoc",
         "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/sds-platform-shutter-webapp-sbox-rg",
         "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-platform-shutter-webapp-sbox-rg",
-        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/plum-shutter-poc-rg"
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/plum-shutter-poc-rg",
+        "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/cft-platform-shutter-webapp-prod-rg",
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/sds-platform-shutter-webapp-prod-rg"
           
 
       ],
