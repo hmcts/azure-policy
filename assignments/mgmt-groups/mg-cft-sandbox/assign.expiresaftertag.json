@@ -8,7 +8,7 @@
       "enforcementMode": "Default",
       "nonComplianceMessages": [
         {
-            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/expires_after_tagging/README.md"
+            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/expires-after-tagging/README.md"
         }
       ],
       "notScopes": [
