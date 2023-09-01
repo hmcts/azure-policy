@@ -16,7 +16,8 @@
         "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/cft-ptl-01-aks-node-rg",
         "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/cft-nonprod-db-migration-rg",
         "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/cft-prod-db-migration-rg",
-        "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/test-database-sbox"
+        "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/test-database-sbox",
+        "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/test-sqlmi-data-sbox"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
