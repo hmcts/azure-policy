@@ -23,6 +23,8 @@
           "microsoft.network/virtualhubs",
           "microsoft.network/virtualwans",
           "Microsoft.Sql/managedInstances/securityAlertPolicies",
+          "Microsoft.Sql/managedInstances/databases",
+          "Microsoft.Sql/managedInstances/administrators",
           "Microsoft.Sql/virtualClusters",
           "Microsoft.Network/networkIntentPolicies",
           "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions",

@@ -21,6 +21,8 @@
           "Microsoft.Compute/restorePointCollections",
           "Microsoft.Compute/virtualMachines/extensions",
           "Microsoft.Sql/managedInstances/securityAlertPolicies",
+          "Microsoft.Sql/managedInstances/databases",
+          "Microsoft.Sql/managedInstances/administrators",
           "Microsoft.Sql/virtualClusters",
           "Microsoft.Network/networkIntentPolicies",
           "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions",
