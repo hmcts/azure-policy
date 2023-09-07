@@ -22,7 +22,11 @@
           "microsoft.network/vpnserverconfigurations",
           "microsoft.network/virtualhubs",
           "microsoft.network/virtualwans",
-          "Microsoft.Sql/managedInstances/securityAlertPolicies"
+          "Microsoft.Sql/managedInstances/securityAlertPolicies",
+          "Microsoft.Sql/virtualClusters",
+          "Microsoft.Network/networkIntentPolicies",
+          "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions",
+          "Microsoft.Network/serviceEndpointPolicies"
         ],
         "type": "Array",
         "metadata": {

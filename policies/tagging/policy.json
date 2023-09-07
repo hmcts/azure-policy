@@ -20,7 +20,11 @@
           "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
           "Microsoft.Compute/restorePointCollections",
           "Microsoft.Compute/virtualMachines/extensions",
-          "Microsoft.Sql/managedInstances/securityAlertPolicies"
+          "Microsoft.Sql/managedInstances/securityAlertPolicies",
+          "Microsoft.Sql/virtualClusters",
+          "Microsoft.Network/networkIntentPolicies",
+          "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions",
+          "Microsoft.Network/serviceEndpointPolicies"
         ],
         "type": "Array",
         "metadata": {
