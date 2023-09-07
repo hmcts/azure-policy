@@ -18,7 +18,8 @@
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/hackathon-ease-of-platform",
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/toffee-v11-data-sbox",
             "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/b2c-darts-sbox",
-            "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/bluesquadpoc"
+            "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/bluesquadpoc",
+            "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/test-sqlmi-2-sbox"
            
         ],
         "parameters": {},
