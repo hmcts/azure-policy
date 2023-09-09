@@ -13,7 +13,8 @@
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-00-aks-node-rg",
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-01-aks-node-rg",
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-00-rg",
-            "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-01-rg"
+            "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-01-rg",
+            "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/help-with-fees-demo"
         ],
         "parameters": {},
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
