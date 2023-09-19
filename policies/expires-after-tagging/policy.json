@@ -30,7 +30,8 @@
           "Microsoft.Network/networkIntentPolicies",
           "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions",
           "Microsoft.Network/serviceEndpointPolicies",
-          "Microsoft.Network/FrontDoorWebApplicationFirewallPolicies"
+          "Microsoft.Network/FrontDoorWebApplicationFirewallPolicies",
+          "Microsoft.Network/FrontDoors"
         ],
         "type": "Array",
         "metadata": {
