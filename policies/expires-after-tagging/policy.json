@@ -31,7 +31,8 @@
           "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions",
           "Microsoft.Network/serviceEndpointPolicies",
           "Microsoft.Network/FrontDoorWebApplicationFirewallPolicies",
-          "Microsoft.Network/FrontDoors"
+          "Microsoft.Network/FrontDoors",
+          "Microsoft.Cdn/profiles"
         ],
         "type": "Array",
         "metadata": {
