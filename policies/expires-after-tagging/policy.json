@@ -29,7 +29,8 @@
           "Microsoft.Sql/virtualClusters",
           "Microsoft.Network/networkIntentPolicies",
           "Microsoft.Network/serviceEndpointPolicies/serviceEndpointPolicyDefinitions",
-          "Microsoft.Network/serviceEndpointPolicies"
+          "Microsoft.Network/serviceEndpointPolicies",
+          "Microsoft.Network/FrontDoorWebApplicationFirewallPolicies"
         ],
         "type": "Array",
         "metadata": {
