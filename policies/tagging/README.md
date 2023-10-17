@@ -8,6 +8,8 @@ All environments and resources:
  - application
  - businessArea
  - builtFrom
+
+Sandbox only:
  - expiresAfter
      
 ## Allowed values
@@ -34,10 +36,9 @@ businessArea:
 builtFrom: 
  - Name or URL of repository
 
-expiresAfter:
+expiresAfter (sandbox only):
  - YYYY-MM-DD
  
-Only needed in SBOX environment
  
 ## Check compliance
 
