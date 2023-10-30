@@ -19,15 +19,27 @@
             "if": {
                 "anyOf": [
                     {
-                        "field": "[concat('tags[', 'environment', ']')]",
-                        "in": ["sandbox", "sbox"]
-                    },
-                    {
                         "allOf": [
                             {
                                 "field": "[concat('tags[', 'environment', ']')]",
-                                "notIn": ["sandbox", "sbox"]
+                                "in": ["sandbox", "sbox"]
                             },
+                            {
+                                "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
+                                "exists": "false"
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[4]]]",
+                                "exists": "true"
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[4]]]",
+                                "notEquals": ""
+                            }
+                        ]
+                    },
+                    {
+                        "allOf": [
                             {
                                 "field": "[concat('tags[', parameters('tagNames')[0], ']')]",
                                 "exists": "false"
@@ -100,8 +112,16 @@
                         "value": "[resourceGroup().tags[parameters('tagNames')[3]]]"
                     },
                     {
-                        "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
-                        "value": "[resourceGroup().tags[parameters('tagNames')[4]]]"
+                        "anyOf": [
+                            {
+                                "field": "[concat('tags[', 'environment', ']')]",
+                                "in": ["sandbox", "sbox"]
+                            },
+                            {
+                                "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
+                                "value": "[resourceGroup().tags[parameters('tagNames')[4]]]"
+                            }
+                        ]
                     }
                 ]
             }
