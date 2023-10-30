@@ -17,66 +17,78 @@
         },
         "policyRule": {
             "if": {
-                "allOf": [
+                "anyOf": [
                     {
-                        "field": "[concat('tags[', parameters('tagNames')[0], ']')]",
-                        "exists": "false"
+                        "field": "[concat('tags[', 'environment', ']')]",
+                        "in": ["sandbox", "sbox"]
                     },
                     {
-                        "field": "[concat('tags[', parameters('tagNames')[1], ']')]",
-                        "exists": "false"
-                    },
-                    {
-                        "field": "[concat('tags[', parameters('tagNames')[2], ']')]",
-                        "exists": "false"
-                    },
-                    {
-                        "field": "[concat('tags[', parameters('tagNames')[3], ']')]",
-                        "exists": "false"
-                    },
-                    {
-                        "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
-                        "exists": "false"
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[0]]]",
-                        "exists": "true"
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[1]]]",
-                        "exists": "true"
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[2]]]",
-                        "exists": "true"
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[3]]]",
-                        "exists": "true"
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[4]]]",
-                        "exists": "true"
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[0]]]",
-                        "notEquals": ""
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[1]]]",
-                        "notEquals": ""
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[2]]]",
-                        "notEquals": ""
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[3]]]",
-                        "notEquals": ""
-                    },
-                    {
-                        "value": "[resourceGroup().tags[parameters('tagNames')[4]]]",
-                        "notEquals": ""
+                        "allOf": [
+                            {
+                                "field": "[concat('tags[', 'environment', ']')]",
+                                "notIn": ["sandbox", "sbox"]
+                            },
+                            {
+                                "field": "[concat('tags[', parameters('tagNames')[0], ']')]",
+                                "exists": "false"
+                            },
+                            {
+                                "field": "[concat('tags[', parameters('tagNames')[1], ']')]",
+                                "exists": "false"
+                            },
+                            {
+                                "field": "[concat('tags[', parameters('tagNames')[2], ']')]",
+                                "exists": "false"
+                            },
+                            {
+                                "field": "[concat('tags[', parameters('tagNames')[3], ']')]",
+                                "exists": "false"
+                            },
+                            {
+                                "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
+                                "exists": "false"
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[0]]]",
+                                "exists": "true"
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[1]]]",
+                                "exists": "true"
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[2]]]",
+                                "exists": "true"
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[3]]]",
+                                "exists": "true"
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[4]]]",
+                                "exists": "true"
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[0]]]",
+                                "notEquals": ""
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[1]]]",
+                                "notEquals": ""
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[2]]]",
+                                "notEquals": ""
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[3]]]",
+                                "notEquals": ""
+                            },
+                            {
+                                "value": "[resourceGroup().tags[parameters('tagNames')[4]]]",
+                                "notEquals": ""
+                            }
+                        ]
                     }
                 ]
             },
