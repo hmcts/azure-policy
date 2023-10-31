@@ -3,16 +3,16 @@
       "metadata": {
         "assignedBy": "PlatOps"
       },
-      "description": "Policy to copy resource group expireAfter tag to a new resource when its created on sandbox environment",
-      "displayName": "HMCTS Copy expireAfter Tag from resource group for sandbox environments - CFT SBOX (DCD-CFTAPPS-SBOX",
+      "description": "Policy to copy resource group expiresAfter tag to a new resource when its created on sandbox environment",
+      "displayName": "HMCTS Copy expiresAfter Tag from resource group for sandbox environments - CFT SBOX (DCD-CFTAPPS-SBOX",
       "enforcementMode": "Default",
       "notScopes": [],
       "parameters": {
-        "expireaftertag": {
-            "value": "expireAfter"
+        "expiresaftertag": {
+            "value": "expiresAfter"
         }
       },
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupexpireafterTag",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupexpiresafterTag",
       "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
     },
     "sku": {
@@ -20,6 +20,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyResourceGroupexpireafterTag",
-    "name": "HMCTSCopyResourceGroupexpireafterTag_DCD-CFTAPPS-SBOX"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyResourceGroupexpiresafterTag",
+    "name": "HMCTSCopyResourceGroupexpiresafterTag_DCD-CFTAPPS-SBOX"
 }

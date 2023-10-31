@@ -6,11 +6,11 @@
             "category": "Tags"
         },
         "parameters": {
-            "expireaftertag": {
+            "expiresaftertag": {
                 "type": "String",
                 "metadata": {
-                    "displayName": "ExpireAfter Tag",
-                    "description": "Copies the ExpireAfter tag to a new resource if it exist on the resource group, will only run on sandbox environments"
+                    "displayName": "ExpiresAfter Tag",
+                    "description": "Copies the ExpiresAfter tag to a new resource if it exist on the resource group, will only run on sandbox environments"
                 }
             }
         },
@@ -18,15 +18,15 @@
             "if": {
                 "allOf": [
                     {
-                        "field": "[concat('tags[', parameters('expireaftertag'), ']')]",
+                        "field": "[concat('tags[', parameters('expiresaftertag'), ']')]",
                         "exists": "false"
                     },
                     {
-                        "value": "[resourceGroup().tags[parameters('expireaftertag')]]",
+                        "value": "[resourceGroup().tags[parameters('expiresaftertag')]]",
                         "exists": "true"
                     },
                     {
-                        "value": "[resourceGroup().tags[parameters('expireaftertag')]]",
+                        "value": "[resourceGroup().tags[parameters('expiresaftertag')]]",
                         "notEquals": ""
                     },
                     {
@@ -39,14 +39,14 @@
                 "effect": "append",
                 "details": [
                     {
-                        "field": "[concat('tags[', parameters('expireaftertag'), ']')]",
-                        "value": "[resourceGroup().tags[parameters('expireaftertag')]]"
+                        "field": "[concat('tags[', parameters('expiresaftertag'), ']')]",
+                        "value": "[resourceGroup().tags[parameters('expiresaftertag')]]"
                     }
                 ]
             }
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupexpireafterTag",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupexpiresafterTag",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSCopyResourceGroupexpireafterTag"
+    "name": "HMCTSCopyResourceGroupexpiresafterTag"
 }
