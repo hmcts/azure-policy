@@ -11,7 +11,7 @@
                 "type": "Array",
                 "metadata": {
                     "displayName": "Tag Names",
-                    "description": "Names of the tags, to be copied from the resource group. The values are set in policy assignment"
+                    "description": "Names of the tags, to be copied from the resource group. The values are set in assign.copy.rg.required.tags policy assignment"
                 }
             }
         },
@@ -90,10 +90,6 @@
                     {
                         "field": "[concat('tags[', parameters('tagNames')[3], ']')]",
                         "value": "[resourceGroup().tags[parameters('tagNames')[3]]]"
-                    },
-                    {
-                        "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
-                        "value": "[resourceGroup().tags[parameters('tagNames')[4]]]"
                     }
                 ]
             }

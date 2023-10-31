@@ -1,0 +1,52 @@
+{
+    "properties": {
+        "displayName": "Append tags and their values from the resource group",
+        "mode": "Indexed",
+        "metadata": {
+            "category": "Tags"
+        },
+        "parameters": {
+            "expireaftertag": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "ExpireAfter Tag",
+                    "description": "Copies the ExpireAfter tag to a new resource if it exist on the resource group, will only run on sandbox environments"
+                }
+            }
+        },
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "[concat('tags[', parameters('expireaftertag')[0], ']')]",
+                        "exists": "false"
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('expireaftertag')[0]]]",
+                        "exists": "true"
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('expireaftertag')[0]]]",
+                        "notEquals": ""
+                    },
+                    {
+                        "field": "[concat('tags[environment]')]",
+                        "equals": "sandbox"
+                    }
+                ]
+            },
+            "then": {
+                "effect": "append",
+                "details": [
+                    {
+                        "field": "[concat('tags[', parameters('expireaftertag')[0], ']')]",
+                        "value": "[resourceGroup().tags[parameters('expireaftertag')[0]]]"
+                    }
+                ]
+            }
+        }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupexpireafterTag",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "HMCTSCopyResourceGroupexpireafterTag"
+}
