@@ -90,6 +90,10 @@
                     {
                         "field": "[concat('tags[', parameters('tagNames')[3], ']')]",
                         "value": "[resourceGroup().tags[parameters('tagNames')[3]]]"
+                    },
+                    {
+                        "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
+                        "value": "[resourceGroup().tags[parameters('tagNames')[4]]]"
                     }
                 ]
             }
