@@ -21,26 +21,6 @@
                     {
                         "allOf": [
                             {
-                                "field": "[concat('tags[', 'environment', ']')]",
-                                "in": ["sandbox", "sbox"]
-                            },
-                            {
-                                "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
-                                "exists": "false"
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[4]]]",
-                                "exists": "true"
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[4]]]",
-                                "notEquals": ""
-                            }
-                        ]
-                    },
-                    {
-                        "allOf": [
-                            {
                                 "field": "[concat('tags[', parameters('tagNames')[0], ']')]",
                                 "exists": "false"
                             },
@@ -112,7 +92,7 @@
                         "value": "[resourceGroup().tags[parameters('tagNames')[3]]]"
                     },
                     {
-                        "anyOf": [
+                        "allOf": [
                             {
                                 "field": "[concat('tags[', 'environment', ']')]",
                                 "in": ["sandbox", "sbox"]
