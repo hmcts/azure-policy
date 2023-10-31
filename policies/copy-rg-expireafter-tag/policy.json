@@ -18,15 +18,15 @@
             "if": {
                 "allOf": [
                     {
-                        "field": "[concat('tags[', parameters('tagName'), ']')]",
+                        "field": "[concat('tags[', parameters('expireaftertag'), ']')]",
                         "exists": "false"
                     },
                     {
-                        "value": "[resourceGroup().tags[parameters('tagName')]]",
+                        "value": "[resourceGroup().tags[parameters('expireaftertag')]]",
                         "exists": "true"
                     },
                     {
-                        "value": "[resourceGroup().tags[parameters('tagName')]]",
+                        "value": "[resourceGroup().tags[parameters('expireaftertag')]]",
                         "notEquals": ""
                     },
                     {
@@ -39,8 +39,8 @@
                 "effect": "append",
                 "details": [
                     {
-                        "field": "[concat('tags[', parameters('tagName'), ']')]",
-                        "value": "[resourceGroup().tags[parameters('tagName')]]"
+                        "field": "[concat('tags[', parameters('expireaftertag'), ']')]",
+                        "value": "[resourceGroup().tags[parameters('expireaftertag')]]"
                     }
                 ]
             }
