@@ -1,0 +1,25 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to copy rg tags when a new resource is created",
+      "displayName": "HMCTS Copy ResourceGroup Tags - CFT SBOX (DCD-CFTAPPS-SBOX",
+      "enforcementMode": "Default",
+      "notScopes": [],
+      "parameters": {
+        "tagNames": {
+            "value": ["environment", "application", "businessArea", "builtFrom", "expiresAfter"]
+        }
+      },
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupTags",
+      "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyResourceGroupTags_DCD-CFTAPPS-SBOX",
+    "name": "HMCTSCopyResourceGroupTags_DCD-CFTAPPS-SBOX"
+}
