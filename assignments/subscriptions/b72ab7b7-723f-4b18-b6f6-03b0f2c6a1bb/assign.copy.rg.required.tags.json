@@ -3,7 +3,7 @@
       "metadata": {
         "assignedBy": "PlatOps"
       },
-      "description": "Policy to copy rg tags when a new resource is created",
+      "description": "Policy to copy resource group tags and add them to a new resource when its created",
       "displayName": "HMCTS Copy ResourceGroup Tags - CFT SBOX (DCD-CFTAPPS-SBOX",
       "enforcementMode": "Default",
       "notScopes": [],
