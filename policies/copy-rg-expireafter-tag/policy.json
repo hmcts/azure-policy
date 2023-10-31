@@ -22,16 +22,16 @@
                         "exists": "false"
                     },
                     {
+                        "value": "[resourceGroup().tags['environment']]",
+                        "equals": "sandbox"
+                    },
+                    {
                         "value": "[resourceGroup().tags[parameters('expiresaftertag')]]",
                         "exists": "true"
                     },
                     {
                         "value": "[resourceGroup().tags[parameters('expiresaftertag')]]",
                         "notEquals": ""
-                    },
-                    {
-                        "field": "[concat('tags[environment]')]",
-                        "equals": "sandbox"
                     }
                 ]
             },

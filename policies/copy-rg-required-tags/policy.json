@@ -17,58 +17,54 @@
         },
         "policyRule": {
             "if": {
-                "anyOf": [
+                "allOf": [
                     {
-                        "allOf": [
-                            {
-                                "field": "[concat('tags[', parameters('tagNames')[0], ']')]",
-                                "exists": "false"
-                            },
-                            {
-                                "field": "[concat('tags[', parameters('tagNames')[1], ']')]",
-                                "exists": "false"
-                            },
-                            {
-                                "field": "[concat('tags[', parameters('tagNames')[2], ']')]",
-                                "exists": "false"
-                            },
-                            {
-                                "field": "[concat('tags[', parameters('tagNames')[3], ']')]",
-                                "exists": "false"
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[0]]]",
-                                "exists": "true"
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[1]]]",
-                                "exists": "true"
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[2]]]",
-                                "exists": "true"
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[3]]]",
-                                "exists": "true"
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[0]]]",
-                                "notEquals": ""
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[1]]]",
-                                "notEquals": ""
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[2]]]",
-                                "notEquals": ""
-                            },
-                            {
-                                "value": "[resourceGroup().tags[parameters('tagNames')[3]]]",
-                                "notEquals": ""
-                            }
-                        ]
+                        "field": "[concat('tags[', parameters('tagNames')[0], ']')]",
+                        "exists": "false"
+                    },
+                    {
+                        "field": "[concat('tags[', parameters('tagNames')[1], ']')]",
+                        "exists": "false"
+                    },
+                    {
+                        "field": "[concat('tags[', parameters('tagNames')[2], ']')]",
+                        "exists": "false"
+                    },
+                    {
+                        "field": "[concat('tags[', parameters('tagNames')[3], ']')]",
+                        "exists": "false"
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('tagNames')[0]]]",
+                        "exists": "true"
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('tagNames')[1]]]",
+                        "exists": "true"
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('tagNames')[2]]]",
+                        "exists": "true"
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('tagNames')[3]]]",
+                        "exists": "true"
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('tagNames')[0]]]",
+                        "notEquals": ""
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('tagNames')[1]]]",
+                        "notEquals": ""
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('tagNames')[2]]]",
+                        "notEquals": ""
+                    },
+                    {
+                        "value": "[resourceGroup().tags[parameters('tagNames')[3]]]",
+                        "notEquals": ""
                     }
                 ]
             },
