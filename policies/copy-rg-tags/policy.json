@@ -90,6 +90,18 @@
                     {
                         "field": "[concat('tags[', parameters('tagNames')[3], ']')]",
                         "value": "[resourceGroup().tags[parameters('tagNames')[3]]]"
+                    },
+                    {
+                        "allOf": [
+                            {
+                                "field": "[concat('tags[', 'environment', ']')]",
+                                "in": ["sandbox", "sbox"]
+                            },
+                            {
+                                "field": "[concat('tags[', parameters('tagNames')[4], ']')]",
+                                "value": "[resourceGroup().tags[parameters('tagNames')[4]]]"
+                            }
+                        ]
                     }
                 ]
             }
