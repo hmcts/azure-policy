@@ -18,7 +18,8 @@
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/update-management-center-test",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/test-postgres-flex",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/oms-automation",
-        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/timj-rg"
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/timj-rg",
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/platops-sandbox-rg"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
