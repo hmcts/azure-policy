@@ -20,6 +20,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyResourceGroupexpiresafterTag_CFT-Sbox",
-    "name": "HMCTSCopyResourceGroupexpiresafterTag_CFT-Sbox"
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyExp-CFT-Sbox",
+    "name": "HMCTSCopyExp-CFT-Sbox"
 }
