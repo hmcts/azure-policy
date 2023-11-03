@@ -20,6 +20,6 @@
       "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyResourceGroupexpiresafterTag_SDS-Sbox",
-    "name": "HMCTSCopyResourceGroupexpiresafterTag_SDS-Sbox"
+    "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyExp-SDS-Sbox",
+    "name": "HMCTSCopyExp-SDS-Sbox"
 }
