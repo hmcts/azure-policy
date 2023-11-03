@@ -1,0 +1,25 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to copy resource group expiresAfter tag to a new resource when its created on sandbox environment",
+      "displayName": "HMCTS Copy expiresAfter Tag from resource group - (mg:Platform-Sandbox)",
+      "enforcementMode": "Default",
+      "notScopes": [],
+      "parameters": {
+        "expiresaftertag": {
+            "value": "expiresAfter"
+        }
+      },
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupexpiresafterTag",
+      "scope": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyResourceGroupexpiresafterTag_Plat-Sbox",
+    "name": "HMCTSCopyResourceGroupexpiresafterTag_Plat-Sbox"
+}
