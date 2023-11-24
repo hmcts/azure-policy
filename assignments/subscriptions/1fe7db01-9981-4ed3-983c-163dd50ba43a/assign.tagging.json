@@ -3,7 +3,7 @@
     "metadata": {
       "assignedBy": "PlatOps"
     },
-    "description": "Policy to check required tags",
+    "description": "exclude taggging on resource group",
     "displayName": "exclde RG",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
