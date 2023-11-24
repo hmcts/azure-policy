@@ -28,6 +28,27 @@
           "displayName": "Resource Types to exclude",
           "description": "Resource Types to exclude from compliance results"
         }
+      },
+      "excludedLocations": {
+        "defaultValue": [
+          "westeurope"
+        ],
+        "type": "Array",
+        "metadata": {
+          "displayName": "Excluded Locations",
+          "description": "Locations to exclude from compliance results",
+          "strongType": "location"
+        }
+      },
+      "excludedResourceGroups": {
+        "defaultValue": [
+          "rg-chatbot"
+        ],
+        "type": "Array",
+        "metadata": {
+          "displayName": "Excluded Resource Groups",
+          "description": "Resource Groups to exclude from compliance results"
+        }
       }
     },
     "policyRule": {
@@ -40,6 +61,14 @@
           {
             "field": "location",
             "notIn": "[parameters('listOfAllowedLocations')]"
+          },
+          {
+            "field": "location",
+            "notIn": "[parameters('excludedLocations')]"
+          },
+          {
+            "field": "resourceGroup",
+            "notIn": "[parameters('excludedResourceGroups')]"
           }
         ]
       },
