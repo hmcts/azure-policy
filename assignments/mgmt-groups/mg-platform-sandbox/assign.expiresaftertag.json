@@ -1,32 +1,33 @@
 {
-    "properties": {
-      "metadata": {
-        "assignedBy": "PlatOps"
-      },
-      "description": "Policy to check required tags",
-      "displayName": "HMCTS Expires After Tagging - (mg:Platform-Sandbox)",
-      "enforcementMode": "Default",
-      "nonComplianceMessages": [
-        {
-            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/expires-after-tagging/README.md"
-        }
-      ],
-      "notScopes": [
-        "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/dasi-chatapp",
-        "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/hmcts-hub-sbox-int",
-        "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACS-LAB-AVD-RG",
-        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/SendGrid-nonprod",
-        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/sku-vmpolicy-test-rg"
-      ],
-      "parameters": {},
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
-      "scope": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox"
+  "properties": {
+    "metadata": {
+      "assignedBy": "PlatOps"
     },
-    "sku": {
-      "name": "A0",
-      "tier": "Free"
-    },
-    "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresTag_Platform-Sbox",
-    "name": "ExpiresTag_Platform-Sbox"
+    "description": "Policy to check required tags",
+    "displayName": "HMCTS Expires After Tagging - (mg:Platform-Sandbox)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/expires-after-tagging/README.md"
+      }
+    ],
+    "notScopes": [
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/dasi-chatapp",
+      "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/hmcts-hub-sbox-int",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACS-LAB-AVD-RG",
+      "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/SendGrid-nonprod",
+      "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/sku-vmpolicy-test-rg",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-chatbot"
+    ],
+    "parameters": {},
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
+    "scope": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox"
+  },
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox/providers/Microsoft.Authorization/policyAssignments/ExpiresTag_Platform-Sbox",
+  "name": "ExpiresTag_Platform-Sbox"
 }
