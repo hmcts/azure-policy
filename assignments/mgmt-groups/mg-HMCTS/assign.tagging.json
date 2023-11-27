@@ -6,9 +6,11 @@
         "description": "Policy to check required tags",
         "displayName": "HMCTS Tagging (HMCTS MG)",
         "enforcementMode": "DoNotEnforce",
-        "nonComplianceMessages": [{
-            "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
-        }],
+        "nonComplianceMessages": [
+            {
+                "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
+            }
+        ],
         "notScopes": [
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-00-aks-node-rg",
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/ss-demo-01-aks-node-rg",
@@ -38,7 +40,8 @@
             "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/oms-automation",
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/help-with-fees-demo",
             "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/help-with-fees-prod",
-            "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/lz-stg-rg"
+            "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/lz-stg-rg",
+            "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-chatbot"
         ],
         "parameters": {},
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
