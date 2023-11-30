@@ -17,6 +17,7 @@
         "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACS-LAB-AVD-RG",
         "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/SendGrid-nonprod",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/sku-vmpolicy-test-rg",
+        "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/hmcts-hub-ngfw-rg",
         "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-chatbot"
       ],
       "parameters": {},
