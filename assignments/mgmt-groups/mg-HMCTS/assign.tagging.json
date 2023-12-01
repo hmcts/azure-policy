@@ -41,7 +41,6 @@
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/help-with-fees-demo",
             "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/help-with-fees-prod",
             "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/lz-stg-rg",
-            "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/hmcts-hub-ngfw-rg", 
             "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-chatbot"
         ],
         "parameters": {},
