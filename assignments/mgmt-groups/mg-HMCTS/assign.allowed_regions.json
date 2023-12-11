@@ -12,6 +12,9 @@
         }
       ],
       "notScopes": [
+        "/subscriptions/3d84f717-22a0-4f4e-aac7-5ff8f4ee0a90",
+        "/subscriptions/28d33a47-7c14-456d-9a40-ce9c9b5a3937",
+        "/subscriptions/55c2f45e-1381-4b17-9bd0-f85215b8bb4f",
         "/subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-aat",
         "/subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-demo",
         "/subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-dev",

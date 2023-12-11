@@ -12,9 +12,9 @@
       }
     ],
     "notScopes": [
-      "/subscriptions/3d84f717-22a0-4f4e-aac7-5ff8f4ee0a90/resourceGroups/PRP-PENTEST-01",
-      "/subscriptions/28d33a47-7c14-456d-9a40-ce9c9b5a3937/resourceGroups/RG-MLV-PENTEST-01",
-      "/subscriptions/55c2f45e-1381-4b17-9bd0-f85215b8bb4f/resourceGroups/RG-PRD-PENTEST-01",
+      "/subscriptions/3d84f717-22a0-4f4e-aac7-5ff8f4ee0a90",
+      "/subscriptions/28d33a47-7c14-456d-9a40-ce9c9b5a3937",
+      "/subscriptions/55c2f45e-1381-4b17-9bd0-f85215b8bb4f",
       "/subscriptions/66cfcc0b-d764-4c07-bbeb-0a74101dbcf3/resourceGroups/RG-MGT-VNET-01",
       "/subscriptions/66cfcc0b-d764-4c07-bbeb-0a74101dbcf3/resourceGroups/RG-MGT-DEV-INFRA-01",
       "/subscriptions/66cfcc0b-d764-4c07-bbeb-0a74101dbcf3/resourceGroups/RG-MGT-OPS-INFRA-01",
