@@ -225,7 +225,8 @@
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/rd-ithc",
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/rd-perftest",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/rd-sandbox",
-        "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-chatbot"
+        "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-chatbot",
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/div-sandbox"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
