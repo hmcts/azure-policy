@@ -155,7 +155,7 @@
                 "resources": [
                   {
                     "type": "Microsoft.Cdn/profiles/providers/diagnosticSettings",
-                    "apiVersion": "2021-06-01",
+                    "apiVersion": "2021-05-01-preview",
                     "name": "[concat(parameters('frontDoorName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
                     "location": "[parameters('location')]",
                     "dependsOn": [],
