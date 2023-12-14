@@ -74,7 +74,7 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Network/frontDoors"
+            "equals": "Microsoft.Cdn/profiles"
           },
           {
             "anyOf": [
@@ -154,8 +154,8 @@
                 },
                 "resources": [
                   {
-                    "type": "Microsoft.Network/frontDoors/providers/diagnosticSettings",
-                    "apiVersion": "2017-05-01-preview",
+                    "type": "Microsoft.Cdn/profiles/providers/diagnosticSettings",
+                    "apiVersion": "2021-06-01",
                     "name": "[concat(parameters('frontDoorName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
                     "location": "[parameters('location')]",
                     "dependsOn": [],
