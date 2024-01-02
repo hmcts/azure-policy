@@ -150,3 +150,10 @@ You can find more detail on the structure of a `Policy`, `Initiative` or `Assign
 ### Workflow permissions
 
 A [custom role](./custom_role.json) was created for the workflow, it's basically a copy of the `Resource Policy Contributor` built in role with a few extra permissions to list Management Groups and Subscriptions. 
+
+### Rotating Azure Credentials
+The AZURE_CREDENTIALS secret stores the **clientId**, **clientSecret**, **subscriptionId** and **tenantId** in a JSON object. You may be required to rotate the **clientSecret** value which can be done as follows:
+- Run `az login` and sign in with your Azure account.
+- Run `az ad sp create-for-rbac --name azure-policy-manager --json-auth`. This will create a new Service Principal secret in Azure and print out a JSON object containing the updated **clientSecret** value.
+- Copy the JSON object(You only need the 4 values from above) and paste this into the AZURE_CREDENTIALS GitHub secret.
+- Save and test the GitHub workflow.
