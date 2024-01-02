@@ -8,7 +8,7 @@
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
-        "message": "Resource doesn't meet location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_regions/README.md"
+          "message": "Resource doesn't meet location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_regions/README.md"
       }
     ],
     "notScopes": [
@@ -233,6 +233,7 @@
       "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/bar-perftest-rg",
       "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourceGroups/bar-prod-rg",
       "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-platops-chatbot"
+
     ],
     "parameters": {},
     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
