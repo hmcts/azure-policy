@@ -11,7 +11,10 @@
             "message": "Resource doesn't meet the tagging requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
         }
       ],
-      "notScopes": [],
+      "notScopes": [
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/bar-ithc-rg",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/bar-perftest-rg"
+      ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
       "scope": "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c"

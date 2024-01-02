@@ -12,6 +12,9 @@
         }
       ],
       "notScopes": [
+        "/subscriptions/3d84f717-22a0-4f4e-aac7-5ff8f4ee0a90",
+        "/subscriptions/28d33a47-7c14-456d-9a40-ce9c9b5a3937",
+        "/subscriptions/55c2f45e-1381-4b17-9bd0-f85215b8bb4f",
         "/subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-aat",
         "/subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-demo",
         "/subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-dev",
@@ -222,7 +225,13 @@
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/rd-ithc",
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/rd-perftest",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/rd-sandbox",
-        "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-chatbot"
+        "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-chatbot",
+        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/div-sandbox",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/bar-aat-rg",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/bar-demo-rg",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/bar-ithc-rg",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/bar-perftest-rg",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourceGroups/bar-prod-rg"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
