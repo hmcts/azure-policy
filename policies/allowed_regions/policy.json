@@ -22,7 +22,9 @@
           "Microsoft.AzureActiveDirectory/b2cDirectories",
           "Microsoft.Cdn/profiles",
           "Microsoft.Cdn/profiles/endpoints",
-          "Microsoft.Insights/components"
+          "Microsoft.Insights/components",
+          "Microsoft.Cdn/profiles",
+          "microsoft.insights/scheduledqueryrules"
         ],
         "type": "Array",
         "metadata": {
