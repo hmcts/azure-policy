@@ -21,7 +21,7 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPurview",
-        "scope": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6"
+        "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
     },
     "location": "uksouth",
     "identity": {
@@ -35,6 +35,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/providers/Microsoft.Authorization/policyDefinitions/HMCTSPurview_DCD-CFTAPPS-SBOX",
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyDefinitions/HMCTSPurview_DCD-CFTAPPS-SBOX",
     "name": "HMCTSPurview_DCD-CFTAPPS-SBOX"
 }
