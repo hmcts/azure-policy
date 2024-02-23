@@ -37,3 +37,6 @@ The parameter profileName will be what appears on the diagnostic settings page.
 The name of the Purview account is programmatically set when the policy is evaluated and remediated.
 
 The name of the Purview account is concatenated with the Microsoft.Insights provider and the profileName parameter to enable the policy to be successfully applied.
+
+## IMPORTANT NOTE
+The policy is only applied to purview accounts that contain `dc` - for Data Catalogue

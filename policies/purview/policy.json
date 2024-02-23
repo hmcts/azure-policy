@@ -87,6 +87,18 @@
                   "equals": "[parameters('eventHubLocation')]"
                 }
               ]
+            },
+            {
+              "anyOf": [
+                {
+                  "field": "name",
+                  "contains": "dc-purview"
+                },
+                {
+                  "field": "name",
+                  "contains": "dc-mspurview"
+                }
+              ]
             }
           ]
         },
