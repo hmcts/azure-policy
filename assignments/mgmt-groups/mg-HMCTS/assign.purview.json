@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Forwards all Azure Purview Activity Logs to an Azure Event Hub",
-        "displayName": "HMCTS Purview Security Activity Logging - SDS DEV",
+        "displayName": "HMCTS Purview Security Activity Logging - (HMCTS MG)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
@@ -14,7 +14,7 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPurview",
-        "scope": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6"
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "location": "uksouth",
     "identity": {
@@ -28,6 +28,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/providers/Microsoft.Authorization/policyAssignments/HMCTSPurview_DTS-SHAREDSERVICES-DEV",
-    "name": "HMCTSPurview_DTS-SHAREDSERVICES-DEV"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSPurview_DTS-SHAREDSERVICES-DEV",
+    "name": "HMCTSPurviewGlobal"
 }
