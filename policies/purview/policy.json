@@ -87,6 +87,10 @@
                   "equals": "[parameters('eventHubLocation')]"
                 }
               ]
+            },
+            {
+              "field": "name",
+              "contains": "dc"
             }
           ]
         },
