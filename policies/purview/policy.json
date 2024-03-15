@@ -1,7 +1,7 @@
 {
   "properties": {
     "displayName": "HMCTS Purview Security Activity Logging",
-    "policyType": "BuiltIn",
+    "policyType": "Custom",
     "mode": "Indexed",
     "description": "Resource logs should be enabled to track activities and events that take place on your resources and give you visibility and insights into any changes that occur. This policy deploys a diagnostic setting using a category group to route logs to an Event Hub for Microsoft Purview accounts (microsoft.purview/accounts).",
     "metadata": {
