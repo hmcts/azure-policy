@@ -9,6 +9,14 @@
       "version": "1.1.0"
     },
     "parameters": {
+      "profileName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Profile name",
+          "description": "The diagnostic settings profile name"
+        },
+        "defaultValue": "keyVaultToEventHub"
+      },
       "effect": {
         "type": "String",
         "metadata": {
@@ -72,6 +80,39 @@
           "description": "Event Hub Name."
         },
         "defaultValue": "purview_audit"
+      },
+      "eventHubLocation": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Event Hub Location",
+          "description": "The location the Event Hub resides in. Only Key Vaults in this location will be linked to this Event Hub.",
+          "strongType": "location"
+        },
+        "defaultValue": ""
+      },
+      "logsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Enable logs",
+          "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "metricsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Enable metrics",
+          "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "False"
       }
     },
     "policyRule": {
@@ -84,6 +125,10 @@
           {
             "field": "location",
             "equals": "[parameters('resourceLocation')]"
+          },
+          {
+            "field": "location",
+            "equals": "[parameters('eventHubLocation')]"
           },
           {
             "anyOf": [
@@ -103,6 +148,7 @@
         "effect": "[parameters('effect')]",
         "details": {
           "type": "Microsoft.Insights/diagnosticSettings",
+          "name": "[parameters('profileName')]",
           "existenceCondition": {
             "allOf": [
               {
@@ -148,6 +194,26 @@
               {
                 "field": "Microsoft.Insights/diagnosticSettings/eventHubName",
                 "equals": "[parameters('eventHubName')]"
+              },
+              {
+                "count": {
+                  "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
+                  "where": {
+                    "field": "Microsoft.Insights/diagnosticSettings/logs[*].enabled",
+                    "equals": "[parameters('logsEnabled')]"
+                  }
+                },
+                "greaterOrEquals": 1
+              },
+              {
+                "count": {
+                  "field": "Microsoft.Insights/diagnosticSettings/metrics[*]",
+                  "where": {
+                    "field": "Microsoft.Insights/diagnosticSettings/metrics[*].enabled",
+                    "equals": "[parameters('metricsEnabled')]"
+                  }
+                },
+                "greaterOrEquals": 1
               }
             ]
           },
@@ -179,6 +245,15 @@
                   },
                   "resourceName": {
                     "type": "string"
+                  },
+                  "profileName": {
+                    "type": "string"
+                  },
+                  "logsEnabled": {
+                    "type": "string"
+                  },
+                  "metricsEnabled": {
+                    "type": "string"
                   }
                 },
                 "variables": {},
@@ -193,15 +268,20 @@
                       "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                       "logs": [
                         {
-                          "categoryGroup": "audit",
-                          "enabled": "[equals(parameters('categoryGroup'), 'audit')]"
-                        },
-                        {
-                          "categoryGroup": "allLogs",
-                          "enabled": "[equals(parameters('categoryGroup'), 'allLogs')]"
+                          "category": "AuditEvent",
+                          "enabled": "[parameters('logsEnabled')]"
                         }
                       ],
-                      "metrics": []
+                      "metrics": [
+                        {
+                          "category": "AllMetrics",
+                          "enabled": "[parameters('metricsEnabled')]",
+                          "retentionPolicy": {
+                            "enabled": false,
+                            "days": 0
+                          }
+                        }
+                      ]
                     }
                   }
                 ],
@@ -230,6 +310,15 @@
                 },
                 "resourceName": {
                   "value": "[field('name')]"
+                },
+                "profileName": {
+                  "value": "[parameters('profileName')]"
+                },
+                "logsEnabled": {
+                  "value": "[parameters('logsEnabled')]"
+                },
+                "metricsEnabled": {
+                  "type": "string"
                 }
               }
             }
