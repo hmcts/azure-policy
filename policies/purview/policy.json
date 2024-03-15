@@ -48,16 +48,22 @@
           "displayName": "Resource Location",
           "description": "Resource Location must be in the same location as the Event Hub Namespace.",
           "strongType": "location"
-        }
+        },
+        "defaultValue": "UK South"
       },
-      "eventHubAuthorizationRuleId": {
+      "eventHubAuthRule": {
         "type": "String",
         "metadata": {
           "displayName": "Event Hub Authorization Rule Id",
-          "description": "Event Hub Authorization Rule Id - the authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+          "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
           "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules",
           "assignPermissions": true
-        }
+        },
+        "allowedValues": [
+          "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey",
+          "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
+        ],
+        "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
       },
       "eventHubName": {
         "type": "String",
@@ -137,7 +143,7 @@
               },
               {
                 "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
-                "equals": "[parameters('eventHubAuthorizationRuleId')]"
+                "equals": "[parameters('eventHubAuthRule')]"
               },
               {
                 "field": "Microsoft.Insights/diagnosticSettings/eventHubName",
@@ -165,7 +171,7 @@
                   "eventHubName": {
                     "type": "string"
                   },
-                  "eventHubAuthorizationRuleId": {
+                  "eventHubAuthRule": {
                     "type": "string"
                   },
                   "resourceLocation": {
@@ -184,7 +190,7 @@
                     "location": "[parameters('resourceLocation')]",
                     "properties": {
                       "eventHubName": "[parameters('eventHubName')]",
-                      "eventHubAuthorizationRuleId": "[parameters('eventHubAuthorizationRuleId')]",
+                      "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                       "logs": [
                         {
                           "categoryGroup": "audit",
@@ -202,7 +208,7 @@
                 "outputs": {
                   "policy": {
                     "type": "string",
-                    "value": "[concat('Diagnostic setting ', parameters('diagnosticSettingName'), ' for type Microsoft Purview accounts (microsoft.purview/accounts), resourceName ', parameters('resourceName'), ' to EventHub ', parameters('eventHubAuthorizationRuleId'), ':', parameters('eventHubName'), ' configured')]"
+                    "value": "[concat('Diagnostic setting ', parameters('diagnosticSettingName'), ' for type Microsoft Purview accounts (microsoft.purview/accounts), resourceName ', parameters('resourceName'), ' to EventHub ', parameters('eventHubAuthRule'), ':', parameters('eventHubName'), ' configured')]"
                   }
                 }
               },
@@ -216,8 +222,8 @@
                 "eventHubName": {
                   "value": "[parameters('eventHubName')]"
                 },
-                "eventHubAuthorizationRuleId": {
-                  "value": "[parameters('eventHubAuthorizationRuleId')]"
+                "eventHubAuthRule": {
+                  "value": "[parameters('eventHubAuthRule')]"
                 },
                 "resourceLocation": {
                   "value": "[field('location')]"
