@@ -1,0 +1,42 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Configure periodic checking for missing system updates on Windows azure virtual machines",
+        "displayName": "Scan Windows VMs for Missing Patches",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "parameters": {
+            "tagValues": {
+                "value": ""
+            }
+            "tagOperator": {
+                "value": "Any"
+            }
+            "locations": {
+                "value": ""
+            }
+            "assessmentMode": {
+                "value": "AutomaticByPlatform"
+            }
+            "osType": {
+                "value": "Windows"
+            }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+        "scope": "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f"
+    },
+    "location": "uksouth",
+    "identity": {
+        "type": "SystemAssigned"
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/providers/Microsoft.Authorization/policyAssignments/HMCTSScanVMsAUM",
+    "name": "HMCTSScanVMsAUM"
+}
