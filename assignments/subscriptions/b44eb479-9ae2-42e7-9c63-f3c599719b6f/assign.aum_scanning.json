@@ -25,13 +25,13 @@
         ],
         "parameters": {
             "tagValues": {
-                "value": ""
+                "value": {}
             },
             "tagOperator": {
                 "value": "Any"
             },
             "locations": {
-                "value": ""
+                "value": []
             },
             "assessmentMode": {
                 "value": "AutomaticByPlatform"
