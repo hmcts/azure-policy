@@ -40,7 +40,7 @@
                 "value": "Windows"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSScanVMsAUM_DTS-MANAGEMENT-NONPROD-INTSVC",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
         "scope": "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f"
     },
     "location": "uksouth",
