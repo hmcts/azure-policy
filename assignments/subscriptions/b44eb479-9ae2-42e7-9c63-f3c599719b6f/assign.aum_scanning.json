@@ -11,7 +11,18 @@
                 "message": "VM doesn't meet the update scanning requirement. See https://github.com/hmcts/azure-policy/blob/master/policies/update_manager_scans/README.md"
             }
         ],
-        "notScopes": [],
+        "notScopes": [ 
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/bastion-nonprod-rg",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/boarding-nonprod-rg",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/DefaultResourceGroup-SUK",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/dts-management-nonprod-intsvc-tfstate",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/dynatrace-activegate-nonprod",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/fslogix-nonprod-rg",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/mgmt-state-store-nonprod-rg",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/NetworkWatcherRG",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/sendgrid-nonprod",
+            "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f/resourceGroups/azure-service-health-alert-rg"
+        ],
         "parameters": {
             "tagValues": {
                 "value": ""
