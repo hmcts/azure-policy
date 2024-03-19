@@ -6,26 +6,30 @@
         "description": "Configure periodic checking for missing system updates on Windows azure virtual machines",
         "displayName": "Scan Windows VMs for Missing Patches",
         "enforcementMode": "Default",
-        "nonComplianceMessages": [],
+        "nonComplianceMessages": [
+            {
+                "message": "VM doesn't meet the update scanning requirement. See https://github.com/hmcts/azure-policy/blob/master/policies/update_manager_scans/README.md"
+            }
+        ],
         "notScopes": [],
         "parameters": {
             "tagValues": {
                 "value": ""
-            }
+            },
             "tagOperator": {
                 "value": "Any"
-            }
+            },
             "locations": {
                 "value": ""
-            }
+            },
             "assessmentMode": {
                 "value": "AutomaticByPlatform"
-            }
+            },
             "osType": {
                 "value": "Windows"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSScanVMsAUM",
         "scope": "/subscriptions/b44eb479-9ae2-42e7-9c63-f3c599719b6f"
     },
     "location": "uksouth",
