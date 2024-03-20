@@ -44,7 +44,7 @@
         "name": "A0",
         "tier": "Free"
     },
-    "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSScanVMsAUM_DCD-CFT-Sandbox",
-    "name": "HMCTSScanVMsAUM_DCD-CFT-Sandbox"
+    "id": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "59efceea-0c96-497e-a4a1-4eb2290dac15"
 }
