@@ -3,8 +3,8 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Configure periodic checking for missing system updates on Windows azure virtual machines",
-        "displayName": "Scan Windows VMs for Missing Patches - DTS-MANAGEMENT-NONPROD-INTSVC",
+        "description": "Configure periodic checking for missing system updates on Linux azure virtual machines",
+        "displayName": "Scan Linux VMs for Missing Patches - DCD-CFT-Sandbox",
         "enforcementMode": "Default",
         "nonComplianceMessages": [
             {
@@ -12,6 +12,9 @@
             }
         ],
         "notScopes": [
+            "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/mgmt-vpn-2-sbox",
+            "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/hmcts-dmz-webserver",
+            "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/wa-sandbox"
         ],
         "parameters": {
             "tagValues": {
@@ -42,6 +45,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSScanVMsAUM_DTS-MANAGEMENT-NONPROD-INTSVC",
-    "name": "HMCTSScanVMsAUM_DTS-MANAGEMENT-NONPROD-INTSVC"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSScanVMsAUM_DCD-CFT-Sandbox",
+    "name": "HMCTSScanVMsAUM_DCD-CFT-Sandbox"
 }
