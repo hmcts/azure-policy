@@ -30,7 +30,7 @@
                 "value": "AutomaticByPlatform"
             },
             "osType": {
-                "value": "Windows"
+                "value": "Linux"
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
