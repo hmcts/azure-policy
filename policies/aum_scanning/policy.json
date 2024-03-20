@@ -1026,7 +1026,7 @@
         "4.4.1"
       ]
     },
-    "id": "/providers/Microsoft.Authorization/policyDefinitions/HMCTSScanVMsAUM",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSScanVMsAUM",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSScanVMsAUM"
   }
