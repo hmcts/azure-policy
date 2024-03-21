@@ -33,7 +33,7 @@
                 "value": "Linux"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAUMScanning",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAUMScanningSandbox",
         "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
     },
     "location": "uksouth",
@@ -45,6 +45,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAUMScanning",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAUMScanningS",
     "name": "HMCTSAUMScanning"
 }
