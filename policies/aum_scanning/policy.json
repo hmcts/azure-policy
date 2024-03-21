@@ -1026,7 +1026,7 @@
         "4.4.1"
       ]
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAUMScanning",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAUMScanningSandbox",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSAUMScanning"
+    "name": "HMCTSAUMScanningSandbox"
   }
