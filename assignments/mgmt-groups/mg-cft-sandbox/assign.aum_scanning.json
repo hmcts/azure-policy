@@ -8,7 +8,7 @@
         "enforcementMode": "Default",
         "nonComplianceMessages": [
             {
-                "message": "VM doesn't meet the update scanning requirement. See https://github.com/hmcts/azure-policy/blob/master/policies/update_manager_scans/README.md"
+                "message": "VM doesn't meet the update scanning requirement."
             }
         ],
         "notScopes": [],
