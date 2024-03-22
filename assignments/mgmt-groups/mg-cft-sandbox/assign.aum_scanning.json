@@ -30,7 +30,7 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scanning",
-        "scope": "/providers/Microsoft.Management/managementGroups/DCD-CFT-Sandbox/core-infra-idam-sandbox"
+        "scope": "/providers/Microsoft.Management/managementGroups/DCD-CFT-Sandbox"
     },
     "location": "uksouth",
     "identity": {
@@ -41,6 +41,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scanning_DCD-CFT-Sandbox",
-    "name": "HMCTSaum_scanning_DCD-CFT-Sandbox"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scanning_CFT-Sbox",
+    "name": "HMCTSaum_scanning_CFT-Sbox"
 }
