@@ -14,7 +14,10 @@
         "notScopes": [],
         "parameters": {
             "tagValues": {
-                "value": {"AUM_Reboot":"Yes","AUM_Service":"Test_Policy"}
+                "value": {
+                    "AUM_Reboot": "Yes",
+                    "AUM_Service": "Test_Policy"
+                }
             },
             "tagOperator": {
                 "value": "Any"
