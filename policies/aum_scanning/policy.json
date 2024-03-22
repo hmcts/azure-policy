@@ -3,7 +3,7 @@
       "displayName": "Configure periodic checking for missing system updates on VMs",
       "policyType": "BuiltIn",
       "mode": "Indexed",
-      "description": "Configure auto-assessment (every 24 hours) for OS updates on native Azure virtual machines. You can control the scope of assignment according to machine subscription, resource group, location or tag. Learn more about this for Windows: https://aka.ms/computevm-windowspatchassessmentmode, for Linux: https://aka.ms/computevm-linuxpatchassessmentmode.",
+      "description": "Configure auto-assessment (every 24 hours) for OS updates on native Azure virtual machines. You can control the scope of assignment according to machine subscription, resource group, location or tag. Learn more about this for Windows: https://aka.ms/computevm-windowspatchassessmentmode, for Linux: https://aka.ms/computevm-linuxpatchassessmentmode. Copied 22-3-2024",
       "metadata": {
         "version": "4.8.0",
         "category": "Azure Update Manager"
@@ -1026,7 +1026,7 @@
         "4.4.1"
       ]
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAUM",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scanning",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSAUM"
+    "name": "HMCTSaum_scanning"
   }
