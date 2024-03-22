@@ -11,14 +11,10 @@
                 "message": "VM doesn't meet the update scanning requirement. See https://github.com/hmcts/azure-policy/blob/master/policies/update_manager_scans/README.md"
             }
         ],
-        "notScopes": [
-            "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/mgmt-vpn-2-sbox",
-            "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/hmcts-dmz-webserver",
-            "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/wa-sandbox"
-        ],
+        "notScopes": [],
         "parameters": {
             "tagValues": {
-                "value": {}
+                "value": {"AUM_Reboot":"Yes","AUM_Service":"Test_Policy"}
             },
             "tagOperator": {
                 "value": "Any"
@@ -34,7 +30,7 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scanning",
-        "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+        "scope": "/providers/Microsoft.Management/managementGroups/DCD-CFT-Sandbox/core-infra-idam-sandbox"
     },
     "location": "uksouth",
     "identity": {
