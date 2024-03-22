@@ -64,15 +64,22 @@ e.g.
     "name": "HMCTSDiagnosticGlobal"
 ```
 
-### How to test a policy definition
+## How to test a policy definition
 
-To test a policy definition, create a new policy assignment json file under `assignments/mg-cft-sandbox`. You can also test the policy assignment on a subscription assignment json file under `assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb'.
+### Deployment
+**Management Group Scopes**
+To test a policy definition, create a new policy assignment json file under `assignments/mg-cft-sandbox`.  This management group contains 3 subscriptions which your test policy will be applied to. [Azure Portal Link](https://portal.azure.com/#view/Microsoft_Azure_Resources/ManagmentGroupDrilldownMenuBlade/~/overview/tenantId/531ff96d-0ae9-462a-8d2d-bec7c0b42082/mgId/CFT-Sandbox/mgDisplayName/CFT%20-%20Sandbox/mgCanAddOrMoveSubscription~/true/mgParentAccessLevel/Owner/drillDownMode~/true/defaultMenuItemId/subscriptions/showDirectChildSubscriptionsOnly~/false)
+
+**Subscription Scopes**
+You can also test the policy assignment on a subscription assignment json file under `assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb'.
 
 This is the `DCD-CFTAPPS-SBOX` subscription which can be used for the purpose of testing that new policy definitions are using valid json and have the expected values before live rollout.
 
-Creating a pull request will trigger a GitHub action that will create your policy definition and assign it to this subscription.
+**Github Actions**
+Creating a pull request will trigger a GitHub action that will create your policy definition and assign it to this subscription.  **ONLY** policy definitions in the above folders *assignments/mg-cft-sandbox* or *assignments/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb* will be processed.  All other folders containing policy definitions will be ignored by the PR GitHub action. So if your resource isn't contained by either of these scopes, you need to select a new resource for testing or create one within the scope.
 
-The policy definition and assignment will be appended with `- CFT-Sandbox` so you can easily identify it in the Azure Portal.
+
+The policy definition and assignment will be appended by GitHub action, with `- CFT-Sandbox` making them, easily identifiable in the Azure Portal.
 
 e.g.
 ```
@@ -81,11 +88,12 @@ e.g.
     "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSize-Sbox"
 ```
 
+### Operation
 At this point, you will have a definition assigned to the `DCD-CFTAPPS-SBOX` subscription. In order to test that your policy has the desired effect, a compliance scan must be run.
+
 
 This should take place automatically when the assignment is created. You should be able to see what resources are non-compliant and confirm that the resources listed are expected.
 
-### How to test policy remediation
 
 In order to see if the policy will work in practice, a manual remediation task must be ran. This can be done by clicking on the assignment and clicking `Create remediation task`
 
@@ -157,3 +165,20 @@ The AZURE_CREDENTIALS secret stores the **clientId**, **clientSecret**, **subscr
 - Run `az ad sp create-for-rbac --name azure-policy-manager --json-auth`. This will create a new Service Principal secret in Azure and print out a JSON object containing the updated **clientSecret** value.
 - Copy the JSON object(You only need the 4 values from above) and paste this into the AZURE_CREDENTIALS GitHub secret.
 - Save and test the GitHub workflow.
+
+# Troubleshooting
+
+## Appling Policies
+
+1. Github Action completes successfully but nothing happens
+- Pull requests (PR) only apply to the *Testing* Sandbox scopes
+- Merge will apply to all the other scopes
+Check the assignments folder location of your policy.json
+
+2. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
+*An error occured while creating policy assignment. Error: The policy assignment create request is invalid. The policy definition '/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft. Authorization/policyDefinitions/HMCTSAUMSandbox' could not be found.*
+
+Open the scope used by the assignment policy.json file and confirm that  
+- "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"  
+- "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/...
+Match the assignments folder target.

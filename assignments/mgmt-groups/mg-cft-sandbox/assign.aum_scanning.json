@@ -3,19 +3,18 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Configure periodic checking for missing system updates on Windows azure virtual machines",
-        "displayName": "Scan Windows VMs for Missing Patches - DTS-MANAGEMENT-NONPROD-INTSVC",
+        "description": "Configure periodic checking for missing system updates on Linux azure virtual machines",
+        "displayName": "Scan Linux VMs for Missing Patches - DCD-CFT-Sandbox",
         "enforcementMode": "Default",
         "nonComplianceMessages": [
             {
                 "message": "VM doesn't meet the update scanning requirement. See https://github.com/hmcts/azure-policy/blob/master/policies/update_manager_scans/README.md"
             }
         ],
-        "notScopes": [
-        ],
+        "notScopes": [],
         "parameters": {
             "tagValues": {
-                "value": {}
+                "value": {"AUM_Reboot":"Yes","AUM_Service":"Test_Policy"}
             },
             "tagOperator": {
                 "value": "Any"
@@ -27,11 +26,11 @@
                 "value": "AutomaticByPlatform"
             },
             "osType": {
-                "value": "Windows"
+                "value": "Linux"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
-        "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scanning",
+        "scope": "/providers/Microsoft.Management/managementGroups/DCD-CFT-Sandbox"
     },
     "location": "uksouth",
     "identity": {
@@ -42,6 +41,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSScanVMsAUM_DTS-MANAGEMENT-NONPROD-INTSVC",
-    "name": "HMCTSScanVMsAUM_DTS-MANAGEMENT-NONPROD-INTSVC"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scanning_CFT-Sbox",
+    "name": "HMCTSaum_scanning_CFT-Sbox"
 }
