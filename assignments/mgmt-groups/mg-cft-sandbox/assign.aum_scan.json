@@ -32,7 +32,7 @@
                 "value": "Linux"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scan",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scan",
         "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
     },
     "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSaum_scan",
