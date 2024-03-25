@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Configure periodic checking for missing system updates on Linux azure virtual machines",
-        "displayName": "Scan Linux VMs for Missing Patches - DCD-CFT-Sandbox",
+        "displayName": "Scan Linux VMs for Missing Patches - (mg:CFT-Sandbox)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [
             {
@@ -36,6 +36,6 @@
         "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSaum_CFT-Sbox",
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSaum_CFT-Sbox",
     "name": "HMCTSaum_CFT-Sbox"
 }
