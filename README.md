@@ -103,7 +103,9 @@ If you want to test on an additional subscription, create another assignment jso
 
 If everything is working as expected, submit a new PR with assignments for all the other subscriptions you are targeting resources in.
 
-If your policy should take effect over all subscriptions after testing, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder. Ensure that that the policy 'id' and assignment 'policyDefinitionId' match 
+If your policy should take effect over all subscriptions after testing, remove the subscription specific assignments and create an assignment json file under the mgmt-groups folder. Ensure that that the policy 'id' and assignment 'policyDefinitionId' match.
+
+Notice, there is a 24 characters limit on the policy name.
 
 e.g.
 ```
@@ -111,6 +113,7 @@ e.g.
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSize"
 ```
+
 
 ### Policy permissions
 
@@ -176,9 +179,24 @@ The AZURE_CREDENTIALS secret stores the **clientId**, **clientSecret**, **subscr
 Check the assignments folder location of your policy.json
 
 2. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
-*An error occured while creating policy assignment. Error: The policy assignment create request is invalid. The policy definition '/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft. Authorization/policyDefinitions/HMCTSAUMSandbox' could not be found.*
 
-Open the scope used by the assignment policy.json file and confirm that  
-- "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"  
-- "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/...
+
+An error occured while creating policy assignment. Error: The policy assignment create request is invalid. The policy definition '/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft. Authorization/policyDefinitions/HMCTSAUMSandbox' could not be found.*
+
+Open the scope used by the assignment policy.json file and confirm that
+
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"  
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/...
+
 Match the assignments folder target.
+
+3. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
+
+Error: The request content was invalid and could not be deserialized: 'Could not find member 'enforcementMode' on object of type 'PolicyDefinitionProperties'. Path 'properties.enforcementMode', line 15, position 22.'.
+
+Open the scope used by the assignment assign.mynewpolicy.json file and confirm that
+
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox/providers/Microsoft.Authorization/policyAssignments/...",
+
+Are correct.
