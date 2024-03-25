@@ -37,5 +37,5 @@
     },
     "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/59efceea-0c96-497e-a4a1-4eb2290dac15",
     "type": "Microsoft.Authorization/policyAssignments",
-    "name": "59efceea-0c96-497e-a4a1-4eb2290dac15"
+    "name": "HMCTSaum_scan"
 }
