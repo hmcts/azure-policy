@@ -32,10 +32,10 @@
                 "value": "Linux"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scan",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
         "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
     },
+    "id": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSaum_scan-Sbox",
-    "name": "HMCTSaum_scan-Sbox"
+    "name": "59efceea-0c96-497e-a4a1-4eb2290dac15"
 }
