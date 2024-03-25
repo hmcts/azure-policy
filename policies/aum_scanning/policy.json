@@ -1026,7 +1026,7 @@
       "4.4.1"
     ]
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum_scanning",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSaum",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSaum_scanning"
+  "name": "HMCTSaum"
 }
