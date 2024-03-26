@@ -196,12 +196,20 @@ Check the assignments folder location which contains your assign.mypolicy.json f
 
 An error occured while creating policy assignment. Error: The policy assignment create request is invalid. The policy definition '/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft. Authorization/policyDefinitions/HMCTSAUMSandbox' could not be found.*
 
-Open the scope used by the assignment assign.mypolicy.json file and confirm that
+Check the assignment assign.mypolicy.json file and confirm that scope and ID match.
+
+Subscriptions Scopes
 
     "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"  
     "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/...
 
-Match the assignments folder target.
+    or
+Management Group Scopes
+
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS" 
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSaum_scan"
+
+Also the assignment folder target scope is the same as what has been described in the scope and ID.
 
 2b Alternatively
 ---
