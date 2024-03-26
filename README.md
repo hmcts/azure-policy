@@ -16,6 +16,17 @@ Policy assignments are used by Azure Policy to define which resources are assign
 
 Policies assignments must have a scope over which they take effect and this scope can be either a subscription or a management group.
 
+### Azure's built-in policy definitions
+
+In the Azure portal, browse to Policy, then definitions.  Search for the required definition, then select it.  The Definition ID will be displayed.
+
+For example
+
+`/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15`
+
+This can then be used as the policyDefinitionId in your assignment assign.mynewpolicy.json file
+
+
 ### How to create a new policy definition
 
 Create a new sub-directory under `policies` and name it for the purpose of the policy e.g. tagging.
@@ -176,7 +187,9 @@ The AZURE_CREDENTIALS secret stores the **clientId**, **clientSecret**, **subscr
 ### 1. Github Action completes successfully but nothing happens
 - Pull requests (PR) only apply to the *Testing* Sandbox scopes
 - Merge will apply to all the other scopes
-Check the assignments folder location of your assign.mypolicy.json file
+
+
+Check the assignments folder location which contains your assign.mypolicy.json file. Is it the correct scope?
 
 ### 2. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
 
@@ -195,6 +208,7 @@ Match the assignments folder target.
 
 
 This issue can be caused by the policies / mypolicies / policy.json definition failing to create when a duplicate "displayName": "Configure periodic checking..." has been used.  Was a built-in Azure copied?
+
 
 ### 3. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
 
