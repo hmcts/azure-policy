@@ -173,24 +173,31 @@ The AZURE_CREDENTIALS secret stores the **clientId**, **clientSecret**, **subscr
 
 ## Appling Policies
 
-1. Github Action completes successfully but nothing happens
+### 1. Github Action completes successfully but nothing happens
 - Pull requests (PR) only apply to the *Testing* Sandbox scopes
 - Merge will apply to all the other scopes
-Check the assignments folder location of your policy.json
+Check the assignments folder location of your assign.mypolicy.json file
 
-2. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
+### 2. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
 
 
 An error occured while creating policy assignment. Error: The policy assignment create request is invalid. The policy definition '/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft. Authorization/policyDefinitions/HMCTSAUMSandbox' could not be found.*
 
-Open the scope used by the assignment policy.json file and confirm that
+Open the scope used by the assignment assign.mypolicy.json file and confirm that
 
     "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"  
     "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/...
 
 Match the assignments folder target.
 
-3. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
+2b Alternatively
+---
+
+
+This issue can be caused by the policies / mypolicies / policy.json definition failing to create when a duplicate "displayName": "Configure periodic checking..." has been used.  Was a built-in Azure copied?
+
+### 3. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
+
 
 Error: The request content was invalid and could not be deserialized: 'Could not find member 'enforcementMode' on object of type 'PolicyDefinitionProperties'. Path 'properties.enforcementMode', line 15, position 22.'.
 
@@ -200,3 +207,38 @@ Open the scope used by the assignment assign.mynewpolicy.json file and confirm t
     "id": "/providers/Microsoft.Management/managementGroups/Platform-Sandbox/providers/Microsoft.Authorization/policyAssignments/...",
 
 Are correct.
+
+### 4. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
+
+
+An error occured while creating policy assignment. Error: The requested operation on resource 'Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSaum_scan' failed since identity is unavailable for location ''.
+
+Open the scope used by the assignment assign.mynewpolicy.json file and confirm that
+
+    "location": "uksouth",
+
+5. Github Action Error, Stage "Sandbox - Test creating and updating Azure Polices"
+
+
+An error occured while creating policy assignment. Error: The policy assignment  'HMCTSaum_scan' request is invalid. Policy assignments must include a 'managed identity' when assigning 'Modify' policy definitions. Please see https://aka.ms/azurepolicyremediation for usage information.
+
+
+Open the scope used by the assignment assign.mynewpolicy.json file and confirm that
+
+```"identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-sbox-eventhub-azure-policy": {}
+        }
+    },
+```
+
+Or for PROD
+
+```"identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-eventhub-azure-policy": {}
+        }
+    },
+```
