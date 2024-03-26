@@ -3,8 +3,8 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Configure periodic checking for missing system updates on Linux azure virtual machines",
-        "displayName": "Scan Linux VMs for Missing Patches - (mg:CFT-Sandbox)",
+        "description": "Configure periodic checking for missing system updates on Windows azure virtual machines",
+        "displayName": "Scan Windows VMs for Missing Patches - (HMCTS MG)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [
             {
@@ -16,7 +16,7 @@
             "tagValues": {
                 "value": {
                     "AUM_Reboot": "Yes",
-                    "AUM_Service": "Test_Policy"
+                    "builtFrom": "hmcts/ops-jumpboxes"
                 }
             },
             "tagOperator": {
@@ -29,11 +29,11 @@
                 "value": "AutomaticByPlatform"
             },
             "osType": {
-                "value": "Linux"
+                "value": "Windows"
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
-        "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "location": "uksouth",
     "identity": {
