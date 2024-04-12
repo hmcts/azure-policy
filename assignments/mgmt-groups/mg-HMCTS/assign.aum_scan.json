@@ -14,7 +14,7 @@
         "notScopes": [],
         "parameters": {
             "tagValues": {
-                "value": []
+                "value": {}
             },
             "tagOperator": {
                 "value": "Any"
