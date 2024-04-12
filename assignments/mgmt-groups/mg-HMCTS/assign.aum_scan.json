@@ -14,10 +14,7 @@
         "notScopes": [],
         "parameters": {
             "tagValues": {
-                "value": {
-                    "AUM_Reboot": "Yes",
-                    "builtFrom": "hmcts/ops-jumpboxes"
-                }
+                "value": []
             },
             "tagOperator": {
                 "value": "Any"
