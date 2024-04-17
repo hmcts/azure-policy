@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "PlatOps"
+    },
+    "description": "Restrict the Disk SKU sizes that can be deployed in HMCTS",
+    "displayName": "HMCTS Restricted Disk SKU Sizes - (mg:CFT-Sandbox)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "This Disk SKU size is not allowed. Allowed SKU sizes are Standard HDD LRS, Standard HDD LRS or Premium SSD LRS. There is also a 2TiB limit on new disks."
+      }
+    ],
+    "notScopes": [],
+    "parameters": {},
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSize",
+    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSDiskSkuSize-Sbox",
+  "name": "HMCTSDiskSkuSize-Sbox"
+}
