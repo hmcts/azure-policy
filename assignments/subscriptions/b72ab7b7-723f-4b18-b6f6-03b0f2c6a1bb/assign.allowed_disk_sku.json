@@ -8,7 +8,7 @@
       "enforcementMode": "Default",
       "nonComplianceMessages": [
         {
-          "message": "This Disk SKU size is not allowed. Allowed SKU sizes are Standard HDD LRS, Standard HDD LRS or Premium SSD LRS. There is also a 2TiB limit on new disks."
+          "message": "The selected SKU is not permitted or the size is greater than 2TB. Please select a SKU from [Standard HDD LRS, Standard SSD LRS, Premium SSD LRS] and ensure the size does not exceed 2TB."
         }
       ],
       "notScopes": [],
