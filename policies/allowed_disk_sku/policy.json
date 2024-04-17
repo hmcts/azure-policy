@@ -12,14 +12,14 @@
           "description": "The allowed disk SKU sizes in HMCTS"
         },
         "allowedValues": [
-          "StandardHDD_LRS",
+          "Standard_LRS",
           "StandardSSD_LRS",
-          "PremiumSSD_LRS"
+          "Premium_LRS"
         ],
         "defaultValue": [
-          "StandardHDD_LRS",
+          "Standard_LRS",
           "StandardSSD_LRS",
-          "PremiumSSD_LRS"
+          "Premium_LRS"
         ]
       }
     },
