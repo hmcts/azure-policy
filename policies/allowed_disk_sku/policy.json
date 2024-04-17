@@ -33,6 +33,10 @@
           {
             "field": "Microsoft.Compute/disks/sku.name",
             "notIn": "[parameters('allowedDiskSkus')]"
+          },
+          {
+            "field": "Microsoft.Compute/disks/diskSizeGB",
+            "greater": 2048
           }
         ]
       },
