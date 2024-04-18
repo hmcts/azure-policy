@@ -1,10 +1,10 @@
 # HMCTS Disk SKU Policy
 
-The policy enables you to specify a set of VM SKUs sizes that can be deployed in HMCTS.
+The policy enables you to specify a set of disk SKUs sizes that can be deployed in HMCTS.
 
 ## Required Disk SKU Sizes
 
-The specific Disk SKU sizes that are enforced by the policy:
+The specific disk SKU sizes that are enforced by the policy:
 
 
 | Name             | SKU             | Max Size (GB) |
