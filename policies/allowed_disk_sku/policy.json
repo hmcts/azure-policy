@@ -25,18 +25,30 @@
     },
     "policyRule": {
       "if": {
-        "allOf": [
+        "anyOf": [
           {
-            "field": "type",
-            "equals": "Microsoft.Compute/disks"
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Compute/disks"
+              },
+              {
+                "field": "Microsoft.Compute/disks/sku.name",
+                "notIn": "[parameters('allowedDiskSkus')]"
+              }
+            ]
           },
           {
-            "field": "Microsoft.Compute/disks/sku.name",
-            "notIn": "[parameters('allowedDiskSkus')]"
-          },
-          {
-            "field": "Microsoft.Compute/disks/diskSizeGB",
-            "greater": 2048
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Compute/disks"
+              },
+              {
+                "field": "Microsoft.Compute/disks/diskSizeGB",
+                "greater": 2048 
+              }
+            ]
           }
         ]
       },
