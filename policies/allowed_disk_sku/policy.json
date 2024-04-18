@@ -1,0 +1,63 @@
+{
+  "properties": {
+    "displayName": "This policy enables you to specify a set of disk SKUs that can be deployed in HMCTS",
+    "policyType": "Custom",
+    "description": "Restricts disk SKUs that can be deployed in HMCTS and limits sizes to a maximum of 2TiB",
+    "mode": "Indexed",
+    "parameters": {
+      "allowedDiskSkus": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed disk SKU Sizes",
+          "description": "The allowed disk SKU sizes in HMCTS"
+        },
+        "allowedValues": [
+          "Standard_LRS",
+          "StandardSSD_LRS",
+          "Premium_LRS"
+        ],
+        "defaultValue": [
+          "Standard_LRS",
+          "StandardSSD_LRS",
+          "Premium_LRS"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "anyOf": [
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Compute/disks"
+              },
+              {
+                "field": "Microsoft.Compute/disks/sku.name",
+                "notIn": "[parameters('allowedDiskSkus')]"
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Compute/disks"
+              },
+              {
+                "field": "Microsoft.Compute/disks/diskSizeGB",
+                "greater": 2048 
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "Deny"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSize",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSDiskSkuSize"
+}
