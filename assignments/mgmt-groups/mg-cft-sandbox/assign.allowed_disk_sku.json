@@ -17,7 +17,7 @@
       "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSDiskSkuSize-Sbox",
-    "name": "HMCTSDiskSkuSize-Sbox"
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSDiskSkuSize-cft-Sbox",
+    "name": "HMCTSDiskSkuSize-cft-Sbox"
   }
   
