@@ -1,15 +1,15 @@
 {
   "properties": {
     "metadata": {
-    "assignedBy": "PlatOps"
+      "assignedBy": "PlatOps"
     },
     "description": "Approved Disk SKU sizes",
     "displayName": "HMCTS Approved Disk SKU Sizes - (HMCTS MG)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
-    {
-      "message": "The selected SKU is not permitted or the size is greater than 2TB. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_disk_sku/README.md"
-    }
+      {
+        "message": "The selected SKU is not permitted or the size is greater than 2TB. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_disk_sku/README.md"
+      }
     ],
     "notScopes": [
       "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/resourceGroups/RG-PRP-ATL-INT-01",
@@ -20,7 +20,8 @@
       "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/darts-migration-prod-rg",
       "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/juror-prod-rg",
       "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/resourceGroups/PCMAN-RG",
-      "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-splunk-prod-rg"
+      "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-splunk-prod-rg",
+      "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/resourceGroups/RG-PRD-ATL-INT-01"
     ],
     "parameters": {},
     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSize",
