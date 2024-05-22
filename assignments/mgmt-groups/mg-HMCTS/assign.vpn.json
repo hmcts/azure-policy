@@ -1,0 +1,32 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Policy to exclude vnet",
+        "displayName": "HMCTS VPN",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            {
+                "message": "Resource doesn't meet the vpn exclusion requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
+            }
+        ],
+        "notScopes": [
+            "/subscriptions/28d33a47-7c14-456d-9a40-ce9c9b5a3937/",
+            "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/",
+            "/subscriptions/55c2f45e-1381-4b17-9bd0-f85215b8bb4f/",
+            "/subscriptions/3d84f717-22a0-4f4e-aac7-5ff8f4ee0a90/"
+
+        ],
+        "parameters": {},
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSVPN",
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSTaggingGlobal",
+    "name": "HMCTSTaggingGlobal"
+}
