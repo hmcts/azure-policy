@@ -8,7 +8,7 @@
         "enforcementMode": "Default",
         "nonComplianceMessages": [
             {
-                "message": "This virtual network is applied to the virtual manager"
+                "message": "This virtual network is applied to the virtual manager See https://github.com/hmcts/azure-policy/blob/master/policies/vpn/README.md for more information."
             }
         ],
         "notScopes": [

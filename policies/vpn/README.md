@@ -10,4 +10,6 @@ If you require an exception please create a new PR and add the Resource Group in
 
 ## Check compliance
 
-You can view the current compliance status in the [Azure portal Policy page](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview), search for ****HMCTS VPN Policy - (HMCTS MG)**** then type your teams name to find any resources that are not compliant. For more information, please refer to the [README](https://github.com/hmcts/azure-policy/blob/main/README.md) in our GitHub repository.
+You can view the current compliance status in the [Azure portal Policy page](https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview), search for ****HMCTS VPN Policy - (HMCTS MG)**** then type your teams name to find any resources that are no compliant.
+
+
