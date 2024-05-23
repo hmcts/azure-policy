@@ -6,7 +6,7 @@ This policy enforce virtual manager and exclude certain subscription from it
 
 ### Exceptions
 
-If you require an exception please create a new PR and add the Resource Group in which you plan to add or update infrustructure in [Here](https://github.com/hmcts/azure-policy/blob/f5882400a823866a66eff009336072b4d35d5b50/assignments/mgmt-groups/mg-HMCTS/assign.vpn.json)
+If you require an exception please create a new PR and add the Resource Group in which you plan to add or update infrustructure in [Here](https://github.com/hmcts/azure-policy/blob/489c958d219271f1aec1e25bb15baa0befda2d84/assignments/mgmt-groups/mg-HMCTS/assign.vpn.json#L11)
 
 ## Check compliance
 
