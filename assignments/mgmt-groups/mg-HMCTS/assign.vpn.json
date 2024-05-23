@@ -1,14 +1,15 @@
+
 {
     "properties": {
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Policy to exclude vnet",
-        "displayName": "HMCTS VPN",
+        "description": "Policy to add any virtual network tagged with “environment” to VPN-connection-required Network Group" ,
+        "displayName": "HMCTS VPN connection required",
         "enforcementMode": "Default",
         "nonComplianceMessages": [
             {
-                "message": "Resource doesn't meet the vpn exclusion requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/tagging/README.md"
+                "message": "To be updated"
             }
         ],
         "notScopes": [
@@ -19,7 +20,7 @@
 
         ],
         "parameters": {},
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSVPN",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/VPNConnectionRequired",
         "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "sku": {
@@ -27,6 +28,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSTaggingGlobal",
-    "name": "HMCTSTaggingGlobal"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/VPNConnectionRequired",
+    "name": "VPNConnectionRequired"
 }

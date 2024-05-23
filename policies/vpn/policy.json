@@ -1,38 +1,33 @@
 {
   "properties": {
-    "displayName": "HMCTS VPN",
     "policyType": "Custom",
-    "mode": "Indexed",
-    "parameters": {
-      "excludedResourceTypes": {
-        "defaultValue": [
-          "Microsoft.AzureActiveDirectory/virtualNetworks"
-        ],
-        "type": "Array",
-        "metadata": {
-          "displayName": "Resource Types to exclude",
-          "description": "Resource Types to exclude from compliance results"
-        }
-      }
-    },
+    "mode": "Microsoft.Network.Data",
     "policyRule": {
       "if": {
         "allOf": [
           {
             "field": "type",
-            "notIn": "[parameters('excludedResourceTypes')]"
+            "equals": "Microsoft.Network/virtualNetworks"
+          },
+          {
+            "allOf": [
+              {
+                "field": "tags",
+                "containskey": "environment"
+              }
+            ]
           }
         ]
       },
       "then": {
-        "effect": "Modify",
+        "effect": "addToNetworkGroup",
         "details": {
-          "roleDefinitionIds": ["/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/network-manager-rg/providers/Microsoft.Network/networkManagers/hmcts/networkGroups/VPN-connection-required"]
+          "networkGroupId": "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/network-manager-rg/providers/Microsoft.Network/networkManagers/hmcts/networkGroups/VPN-connection-required"
         }
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSVPN",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/VPNConnectionRequired",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSVPN"
+  "name": "VPNConnectionRequired"
 }
