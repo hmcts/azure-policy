@@ -6,11 +6,6 @@
         "description": "Policy to add any virtual network tagged with “environment” to VPN-connection-required Network Group",
         "displayName": "HMCTS VPN connection required",
         "enforcementMode": "Default",
-        "nonComplianceMessages": [
-            {
-                "message": "This virtual network is applied to the virtual manager See https://github.com/hmcts/azure-policy/blob/master/policies/vpn/README.md for more information."
-            }
-        ],
         "notScopes": [
             "/subscriptions/28d33a47-7c14-456d-9a40-ce9c9b5a3937/",
             "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/",
