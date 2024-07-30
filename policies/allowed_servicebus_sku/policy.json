@@ -35,14 +35,6 @@
                 "notIn": "[parameters('allowedSkus')]"
               }
             ]
-          },
-          {
-            "allOf": [
-              {
-                "field": "type",
-                "equals": "Microsoft.ServiceBus/namespaces"
-              }
-            ]
           }
         ]
       },
