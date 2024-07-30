@@ -17,7 +17,8 @@
         ],
         "defaultValue": [
           "Basic",
-          "Standard"        ]
+          "Standard"        
+        ]
       }
     },
     "policyRule": {
