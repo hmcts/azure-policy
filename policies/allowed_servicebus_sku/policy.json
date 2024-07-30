@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "displayName": "This policy enables you to specify a set of servicebus SKUs that can be deployed in HMCTS",
+    "policyType": "Custom",
+    "description": "Restricts servicebus SKUs that can be deployed in HMCTS",
+    "mode": "Indexed",
+    "parameters": {
+      "allowedSkus": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed servicebus SKUs",
+          "description": "The allowed servicebus SKUs in HMCTS"
+        },
+        "allowedValues": [
+          "Basic",
+          "Standard"
+        ],
+        "defaultValue": [
+          "Basic",
+          "Standard"        
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "anyOf": [
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.ServiceBus/namespaces"
+              },
+              {
+                "field": "Microsoft.ServiceBus/namespaces/sku.name",
+                "notIn": "[parameters('allowedSkus')]"
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.ServiceBus/namespaces"
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "Deny"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSServiceBusSku",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSServiceBusSku"
+}
