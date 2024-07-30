@@ -8,8 +8,8 @@
       "allowedSkus": {
         "type": "Array",
         "metadata": {
-          "displayName": "Allowed disk SKU Sizes",
-          "description": "The allowed disk SKU sizes in HMCTS"
+          "displayName": "Allowed servicebus SKUs",
+          "description": "The allowed servicebus SKUs in HMCTS"
         },
         "allowedValues": [
           "Basic",

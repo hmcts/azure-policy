@@ -1,10 +1,10 @@
-# HMCTS Disk SKU Policy
+# HMCTS servicebus SKU Policy
 
 The policy enables you to specify a set of SKUs for service bus that can be deployed in HMCTS.
 
 ## Required SKUs
 
-The specific SKU sizes that are enforced by the policy:
+The specific SKUs that are enforced by the policy:
 
 
 | Name             | Environments             |
