@@ -1,0 +1,33 @@
+{
+  "properties": {
+    "policyType": "Custom",
+    "mode": "Microsoft.Network.Data",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Network/virtualNetworks"
+          },
+          {
+            "allOf": [
+              {
+                "field": "tags",
+                "containskey": "environment"
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "addToNetworkGroup",
+        "details": {
+          "networkGroupId": "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/network-manager-rg/providers/Microsoft.Network/networkManagers/hmcts/networkGroups/VPN-connection-required"
+        }
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/VPNConnectionRequired",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "VPNConnectionRequired"
+}
