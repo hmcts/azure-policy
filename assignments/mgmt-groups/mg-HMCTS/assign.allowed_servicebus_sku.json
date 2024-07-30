@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "PlatOps"
+    },
+    "description": "Approved Service Bus SKUs",
+    "displayName": "HMCTS Approved Service Bus SKUs - (HMCTS MG)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "The selected SKU is not permitted. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_servicebus_sku/README.md"
+      }
+    ],
+    "notScopes": [
+      "/providers/Microsoft.Management/managementGroups/HMCTS/CFT/CFT - Production",
+      "/providers/Microsoft.Management/managementGroups/HMCTS/Heritage/Heritage - Production",
+      "/providers/Microsoft.Management/managementGroups/HMCTS/SDS/SDS - Production",
+      "/providers/Microsoft.Management/managementGroups/HMCTS/Platform/Platform - Production",
+      "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292"
+    ],
+    "parameters": {},
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSServiceBusSku",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSServiceBusSku",
+  "name": "HMCTSServiceBusSku"
+}
