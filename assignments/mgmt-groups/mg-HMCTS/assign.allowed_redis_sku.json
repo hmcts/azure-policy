@@ -1,0 +1,63 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Approved Redis SKUs",
+      "displayName": "HMCTS Approved Redis SKUs - (mg:HMCTS)",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+          "message": "The selected SKU is not permitted. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_redis_sku/README.md"
+        }
+      ],
+      "notScopes": [
+        "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27",
+        "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1",
+        "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348",
+        "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3",
+        "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07",
+        "/subscriptions/e9674938-57cb-43ff-a440-1917658e468c",
+        "/subscriptions/c170c61a-f00f-4295-a718-634e27af1597",
+        "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45",
+        "/subscriptions/00b9a00a-20eb-4173-b7b6-468e00836a33",
+        "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244",
+        "/subscriptions/04d27a32-7a07-48b3-95b8-3c8691e1a263",
+        "/subscriptions/0978315c-75fe-4ada-9d11-1eb5e0e0b214",
+        "/subscriptions/ed302caf-ec27-4c64-a05e-85731c3ce90e",
+        "/subscriptions/58a2ce36-4e09-467b-8330-d164aa559c68",
+        "/subscriptions/4bb049c8-33f3-4860-91b4-9ee45375cc18",
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c",
+        "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68",
+        "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631",
+        "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768",
+        "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourcegroups/sscs-demo/providers/microsoft.servicebus/namespaces/sscs-servicebus-demo",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourcegroups/sscs-aat/providers/microsoft.servicebus/namespaces/sscs-servicebus-aat",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourcegroups/civil-sdt-aat/providers/microsoft.servicebus/namespaces/civil-sdt-servicebus-aat",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourcegroups/sscs-perftest/providers/microsoft.servicebus/namespaces/sscs-servicebus-perftest",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourcegroups/sscs-ithc/providers/microsoft.servicebus/namespaces/sscs-servicebus-ithc",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/idam-idam-prod/providers/microsoft.servicebus/namespaces/idam-servicebus-prod",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/rd-prod/providers/microsoft.servicebus/namespaces/rd-servicebus-prod",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/reform-scan-prod/providers/microsoft.servicebus/namespaces/reform-scan-servicebus-prod-premium",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/sscs-prod/providers/microsoft.servicebus/namespaces/sscs-servicebus-prod",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/hmc-shared-prod/providers/microsoft.servicebus/namespaces/hmc-servicebus-prod",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/ccd-shared-prod/providers/microsoft.servicebus/namespaces/ccd-servicebus-prod",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/ccpay-prod/providers/microsoft.servicebus/namespaces/ccpay-servicebus-prod-premium",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/bulk-scan-prod/providers/microsoft.servicebus/namespaces/bulk-scan-servicebus-prod-premium",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/ethos-prod/providers/microsoft.servicebus/namespaces/ethos-sb-prod",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/et-prod/providers/microsoft.servicebus/namespaces/et-sb-prod",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourcegroups/civil-sdt-prod/providers/microsoft.servicebus/namespaces/civil-sdt-servicebus-prod",
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourcegroups/libragob-prod-rg/providers/microsoft.servicebus/namespaces/libragob-prod",
+        "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourcegroups/vh-infra-core-prod/providers/microsoft.servicebus/namespaces/vh-infra-core-prod-premium",
+        "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourcegroups/libragob-test-rg/providers/microsoft.servicebus/namespaces/libragob-test"
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSRedisCacheSku",
+      "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSRedisCacheSku",
+    "name": "HMCTSRedisCacheSku"
+  }
