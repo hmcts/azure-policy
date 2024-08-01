@@ -44,7 +44,12 @@
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourcegroups/sscs-redis-cache-perftest/providers/microsoft.cache/redis/sscs-redis-perftest",
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourcegroups/sscs-cor-cache-perftest/providers/microsoft.cache/redis/sscs-cor-frontend-v6-perftest",
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourcegroups/sscs-cor-cache-ithc/providers/microsoft.cache/redis/sscs-cor-frontend-v6-ithc",
-        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourcegroups/sscs-cache-ithc/providers/microsoft.cache/redis/sscs-ithc"
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourcegroups/sscs-cache-ithc/providers/microsoft.cache/redis/sscs-ithc",
+        "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/resourcegroups/a360-c2x2555-uat/providers/microsoft.cache/redis/a360-c2x2555-dz-redis",
+        "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourcegroups/darts-test-rg/providers/microsoft.cache/redis/darts-test",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourcegroups/core-infra-aat/providers/microsoft.cache/redis/civil-citizen-ui-cache-draft-store-aat",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourcegroups/ia-cache-aat/providers/microsoft.cache/redis/ia-aat",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourcegroups/ia-redis-cache-demo/providers/microsoft.cache/redis/ia-redis-demo"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSRedisCacheSku",
