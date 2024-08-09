@@ -41,7 +41,8 @@
             "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/help-with-fees-demo",
             "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/help-with-fees-prod",
             "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/lz-stg-rg",
-            "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/rg-platops-chatbot"
+            "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/mgmt-perf-testing",
+            "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/datalake-rg"
         ],
         "parameters": {},
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
