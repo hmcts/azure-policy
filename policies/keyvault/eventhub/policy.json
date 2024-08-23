@@ -192,12 +192,6 @@
                 },
                 "profileName": {
                   "value": "[parameters('profileName')]"
-                },
-                "mojEventHubAuthRule": {
-                  "value": "[parameters('mojEventHubAuthRule')]"
-                },
-                "mojEventHubName": {
-                  "value": "[parameters('mojEventHubName')]"
                 }
               }
             }
