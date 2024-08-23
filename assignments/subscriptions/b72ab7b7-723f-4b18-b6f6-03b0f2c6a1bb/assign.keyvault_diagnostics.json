@@ -1,0 +1,37 @@
+
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Forwards all KV Logs to an Azure Event Hub",
+        "displayName": "HMCTS Collect and Send KeyVault Logs to Event Hub",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "parameters": {
+            "eventHubAuthRule": {
+                "value": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+            },
+            "mojEventHubAuthRule": {
+                "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/moj-soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/moj-soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
+            }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/eventhub/eventhub_keyvault",
+        "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+    },
+    "location": "uksouth",
+    "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-sbox-eventhub-azure-policy": {}
+        }
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSNSGDiagnostic_DCD-CFTAPPS-SBOX",
+    "name": "HMCTSMOJDiagnostic_DCD-CFTAPPS-SBOX"
+}
