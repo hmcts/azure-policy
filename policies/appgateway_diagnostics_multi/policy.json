@@ -46,7 +46,7 @@
             "mojEventHubName": {
                 "type": "String",
                 "metadata": {
-                    "displayName": "EventHub Name",
+                    "displayName": "MOJ - EventHub Name",
                     "description": "The event hub for Azure Diagnostics"
                 },
                 "defaultValue": "soc-feed-res-events-uksouth"
@@ -54,7 +54,7 @@
             "mojEventHubAuthRule": {
                 "type": "String",
                 "metadata": {
-                    "displayName": "Event Hub Authorization Rule Id",
+                    "displayName": "MOJ - Event Hub Authorization Rule Id",
                     "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
                     "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules",
                     "assignPermissions": true
@@ -154,6 +154,12 @@
                                         "type": "string"
                                     },
                                     "eventHubName": {
+                                        "type": "string"
+                                    },
+                                    "mojEventHubAuthRule": {
+                                        "type": "string"
+                                    },
+                                    "mojEventHubName": {
                                         "type": "string"
                                     },
                                     "location": {
