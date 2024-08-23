@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Forwards all App Gateway Logs to an Azure Event Hub - MOJ",
-        "displayName": "HMCTS Collect App Gateway Logs",
+        "displayName": "HMCTS Collect App Gateway Logs - MOJ",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
