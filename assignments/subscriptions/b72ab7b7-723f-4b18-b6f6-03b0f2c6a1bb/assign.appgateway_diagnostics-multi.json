@@ -16,7 +16,7 @@
                 "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/moj-soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/moj-soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/MultiHMCTSAGWDiagnostic",
         "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
     },
     "location": "uksouth",
@@ -31,6 +31,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSAGWDiagnostic_DCD-CFTAPPS-SBOX",
-    "name": "HMCTSAGWDiagnostic_DCD-CFTAPPS-SBOX"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/Multi_HMCTSAGWDiagnostic_DCD-CFTAPPS-SBOX",
+    "name": "Multi_HMCTSAGWDiagnostic_DCD-CFTAPPS-SBOX"
 }
