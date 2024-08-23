@@ -1,6 +1,6 @@
 {
     "properties": {
-        "displayName": "Diagnostic Settings for Application Gateway to SOC",
+        "displayName": "Diagnostic Settings for Application Gateway to SOC - Multiple endpoints",
         "policyType": "Custom",
         "mode": "Indexed",
         "parameters": {
@@ -269,7 +269,7 @@
             }
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/MultiHMCTSAGWDiagnostic",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSAGWDiagnostic"
+    "name": "MultiHMCTSAGWDiagnostic"
 }
