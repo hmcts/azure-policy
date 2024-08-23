@@ -254,10 +254,10 @@
                                     "value": "[parameters('eventHubName')]"
                                 },
                                 "mojEventHubAuthRule": {
-                                    "value": "[parameters('eventHubAuthRule')]"
+                                    "value": "[parameters('mojEventHubAuthRule')]"
                                 },
                                 "mojEventHubName": {
-                                    "value": "[parameters('eventHubName')]"
+                                    "value": "[parameters('mojEventHubName')]"
                                 },
                                 "profileName": {
                                     "value": "[parameters('profileName')]"
