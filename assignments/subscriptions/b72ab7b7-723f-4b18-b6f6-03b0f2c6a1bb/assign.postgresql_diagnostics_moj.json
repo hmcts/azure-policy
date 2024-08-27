@@ -3,8 +3,8 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Forwards all PostgreSQL Logs to an Azure Event Hub",
-        "displayName": "HMCTS Collect PostgreSQL Logs",
+        "description": "Forwards all PostgreSQL Logs to an Azure Event Hub - MOJ",
+        "displayName": "HMCTS Collect PostgreSQL Logs - MOJ",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
