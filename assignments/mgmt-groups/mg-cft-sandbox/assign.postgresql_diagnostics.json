@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Forwards all PostgreSQL Logs to an Azure Event Hub - MOJ",
-        "displayName": "HMCTS Collect PostgreSQL Logs - MOJ",
+        "displayName": "HMCTS Collect PostgreSQL Logs - MOJ (HMCTS MG)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
@@ -20,13 +20,13 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
-        "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "location": "uksouth",
     "identity": {
         "type": "UserAssigned",
         "userAssignedIdentities": {
-            "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-sbox-eventhub-azure-policy": {}
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-eventhub-azure-policy": {}
         }
     },
     "sku": {
@@ -34,6 +34,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiag_moj_DCD-CFTAPPS-SBOX",
-    "name": "HMCTSPSQLDiag_moj_DCD-CFTAPPS-SBOX"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiagGlobal-moj",
+    "name": "HMCTSPSQLDiagGlobal-moj"
 }
