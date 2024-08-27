@@ -10,7 +10,7 @@
         "notScopes": [],
         "parameters": {
             "profileName":{
-                "value": "frontDoorToEventHub"
+                "value": "FrontDoorToEventHub"
             },
             "eventHubName": {
                 "value": "soc-feed-res-events-uksouth"
