@@ -218,7 +218,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTKVMOJDiagnosticTempSBOX",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKVDiagnostic",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTKVMOJDiagnosticTempSBOX"
+  "name": "HMCTSKVDiagnostic"
 }
