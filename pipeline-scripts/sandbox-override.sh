@@ -10,12 +10,12 @@ mkdir -p ${ASSIGNMENTS_DIR} ${POLICIES_DIR}
 
 
 echo "Creating Sandbox Policies"
-for policy in ${POLICIES}; do 
+for policy in ${POLICIES}; do
     FILE=$(basename ${policy})
     DIR=$(basename "$(dirname ${policy})" )
     mkdir -p ${POLICIES_DIR}/${DIR}
 
-    echo "Creating file: ${POLICIES_DIR}/${DIR}/${FILE}"    
+    echo "Creating file: ${POLICIES_DIR}/${DIR}/${FILE}"
     npx json -f ${policy} \
     -e 'this.name=this.name + process.env.ENVIRONMENT' \
     -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
@@ -24,7 +24,7 @@ for policy in ${POLICIES}; do
 done
 
 echo "Creating Sandbox Assignments"
-for assignment in ${ASSIGNMENTS}; do 
+for assignment in ${ASSIGNMENTS}; do
     FILE=$(basename ${assignment})
     DIR=$(basename "$(dirname ${assignment})" )
     mkdir -p ${ASSIGNMENTS_DIR}/${DIR}
