@@ -9,6 +9,9 @@
         "nonComplianceMessages": [],
         "notScopes": [],
         "parameters": {
+            "profileName":{
+                "value": "KeyvaultToEventHubMoj"
+            },
             "eventHubName": {
                 "value": "soc-feed-res-events-uksouth"
             },
