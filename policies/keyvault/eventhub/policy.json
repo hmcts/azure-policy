@@ -218,7 +218,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTKVDiagnosticTemp",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSKeyVault"
+  "name": "HMCTKVDiagnosticTemp"
 }
