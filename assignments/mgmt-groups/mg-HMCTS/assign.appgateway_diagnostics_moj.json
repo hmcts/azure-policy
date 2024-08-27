@@ -34,6 +34,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSAGWDiagnosticGlobal_moj",
-    "name": "HMCTSAGWDiagnosticGlobal_moj"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSAGWDiagGlobal_MOJ",
+    "name": "HMCTSAGWDiagGlobal_MOJ"
 }
