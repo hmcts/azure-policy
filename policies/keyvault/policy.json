@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "HMCTS Keyvault Diagnostics Sandbox",
+    "displayName": "HMCTS Keyvault Security Activity Logging",
     "policyType": "Custom",
     "mode": "Indexed",
     "description": "Forwards all Azure KeyVault Activity Logs to an Azure Event Hub",
