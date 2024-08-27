@@ -1,7 +1,6 @@
-
 {
   "properties": {
-    "displayName": "HMCTS Keyvault Security Activity Logging",
+    "displayName": "HMCTS Keyvault Sandbox",
     "policyType": "Custom",
     "mode": "Indexed",
     "description": "Forwards all Azure KeyVault Activity Logs to an Azure Event Hub",
@@ -34,6 +33,7 @@
           "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/rg-soc-feed-evhns-uksouth/providers/Microsoft.EventHub/namespaces/evhns-soc-feed-uksouth/authorizationRules/RootManageSharedAccessKey",
           "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey",
           "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
+
         ],
         "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
       },
@@ -219,7 +219,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/eventhub/eventhub_keyvault",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "eventhub_keyvault"
+  "name": "HMCTSKeyVault"
 }
