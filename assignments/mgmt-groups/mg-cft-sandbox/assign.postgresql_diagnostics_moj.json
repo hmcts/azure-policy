@@ -35,6 +35,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiagGlobal-MOJ",
-    "name": "HMCTSPSQLDiagGlobal-MOJ"
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLDiag-sbox-MOJ",
+    "name": "HMCTSPSQLDiag-sbox-MOJ"
 }

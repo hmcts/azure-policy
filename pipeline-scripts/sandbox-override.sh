@@ -51,6 +51,7 @@ for assignment in ${MGMT_ASSIGNMENTS}; do
     echo "Creating file: ${ASSIGNMENTS_DIR}/${DIR}/${FILE}"
     npx json -f ${assignment} \
     -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT' \
-    -e 'this.properties.description=this.properties.description + " - " + process.env.ENVIRONMENT' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
+    -e 'this.properties.description=this.properties.description + " - " + process.env.ENVIRONMENT' \
+    -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' \> ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
 
 done
