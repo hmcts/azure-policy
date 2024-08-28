@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches: [master]
-  pull_request: 
+  pull_request:
 
-env: 
+env:
   MANAGEMENT_GROUP: HMCTS
 
 jobs:
@@ -70,13 +70,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    
+
     - name: Login to Azure
       uses: azure/login@v2
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
         allow-no-subscriptions: true
-    
+
     - name: Live - Create or Update Azure Policies
       uses: azure/manage-azure-policy@v0
       with:
@@ -97,7 +97,7 @@ jobs:
         az account management-group show --name ${MANAGEMENT_GROUP} --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
 
-    - name: Live - Force compliance check 
+    - name: Live - Force compliance check
       uses: azure/policy-compliance-scan@v0
       with:
         wait: false
