@@ -19,7 +19,7 @@
                 "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/rg-soc-feed-evhns-uksouth/providers/Microsoft.EventHub/namespaces/evhns-soc-feed-uksouth/authorizationRules/RootManageSharedAccessKey"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKVDiagnostic",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
         "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "location": "uksouth",
@@ -34,6 +34,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSKVDiagnosticGlobal_moj",
-    "name": "HMCTSKVDiagnosticGlobal_moj"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSKVDAGlobal_moj",
+    "name": "HMCTSKVDAGlobal_moj"
 }
