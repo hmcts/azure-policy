@@ -3,8 +3,8 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Forwards all Activity Logs to an Azure Event Hub",
-        "displayName": "HMCTS Collect Activity Logs",
+        "description": "Forwards all Activity Logs to an Azure Event Hub - MOJ",
+        "displayName": "HMCTS Collect Activity Logs - MOJ",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
@@ -31,6 +31,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnostic_DCD-CFTAPPS-SBOX",
-    "name": "HMCTSDiagnostic_DCD-CFTAPPS-SBOX"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnostic_moj_DCD-CFTAPPS-SBOX",
+    "name": "HMCTSDiagnostic_moj_DCD-CFTAPPS-SBOX"
 }
