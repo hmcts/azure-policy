@@ -34,6 +34,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSFDDiagGlobal_MOJ",
-    "name": "HMCTSFDDiagGlobal_MOJ"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSFDDiag_MOJ_DCD-CFTAPPS-SBOX",
+    "name": "HMCTSFDDiag_MOJ_DCD-CFTAPPS-SBOX"
 }
