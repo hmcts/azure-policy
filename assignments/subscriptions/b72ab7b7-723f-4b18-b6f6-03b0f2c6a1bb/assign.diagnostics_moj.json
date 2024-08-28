@@ -1,0 +1,36 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Forwards all Activity Logs to an Azure Event Hub",
+        "displayName": "HMCTS Collect Activity Logs",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "parameters": {
+            "profileName":{
+                "value": "subscriptionToEventHubMoj"
+            },
+            "eventHubName": {
+                "value": "soc-feed-audit-events"
+            },
+            "eventHubAuthRule": {
+                "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/rg-soc-feed-evhns-uksouth/providers/Microsoft.EventHub/namespaces/evhns-soc-feed-uksouth/authorizationRules/RootManageSharedAccessKey"
+            }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+        "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+    },
+    "location": "uksouth",
+    "identity": {
+        "type": "SystemAssigned"
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnostic_DCD-CFTAPPS-SBOX",
+    "name": "HMCTSDiagnostic_DCD-CFTAPPS-SBOX"
+}
