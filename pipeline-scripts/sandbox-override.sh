@@ -1,6 +1,8 @@
 #!/bin/bash
 set -ex
-export ASSIGNMENTS=$(find ./assignments/$SUB -type f -name 'assign.*.json')
+
+export SUB_ASSIGNMENTS=$(find ./assignments/$SUB  -type f -name 'assign.*.json')
+export MGMT_ASSIGNMENTS=$(find ./assignments/mgmt-groups/mg-cft-sandbox -type f -name 'assign.*.json')
 export POLICIES=$(find ./policies -name policy.json -type f )
 export ENVIRONMENT=${ENVIRONMENT:-Sandbox}
 export ASSIGNMENTS_DIR="./${ENVIRONMENT:-Sandbox}/assignments"
@@ -23,8 +25,8 @@ for policy in ${POLICIES}; do
 
 done
 
-echo "Creating Sandbox Assignments"
-for assignment in ${ASSIGNMENTS}; do
+echo "Creating Sandbox Subscription Assignments"
+for assignment in ${SUB_ASSIGNMENTS}; do
     FILE=$(basename ${assignment})
     DIR=$(basename "$(dirname ${assignment})" )
     mkdir -p ${ASSIGNMENTS_DIR}/${DIR}
@@ -37,5 +39,18 @@ for assignment in ${ASSIGNMENTS}; do
     -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' \
     -e 'this.properties.notScopes=[]' \
     -e 'this.id=process.env.SUB + "/providers/Microsoft.Authorization/policyAssignments/" + this.name' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
+
+done
+
+echo "Creating Sandbox Management Group Assignments"
+for assignment in ${MGMT_ASSIGNMENTS}; do
+    FILE=$(basename ${assignment})
+    DIR=$(basename "$(dirname ${assignment})" )
+    mkdir -p ${ASSIGNMENTS_DIR}/${DIR}
+
+    echo "Creating file: ${ASSIGNMENTS_DIR}/${DIR}/${FILE}"
+    npx json -f ${assignment} \
+    -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT' \
+    -e 'this.properties.description=this.properties.description + " - " + process.env.ENVIRONMENT' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
 
 done
