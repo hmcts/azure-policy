@@ -3,13 +3,13 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Forwards all azuresql_audits Logs to an Azure Event Hub",
-        "displayName": "HMCTS Collect azuresql_audits Logs",
+        "description": "Forwards all azuresql_audits Logs to an Azure Event Hub - MOJ",
+        "displayName": "HMCTS Collect azuresql_audits Logs - MOJ",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
         "parameters": {
-            "profileName":{
+            "profileName": {
                 "value": "azuresql_auditsToEventHubMoj"
             },
             "eventHubName": {
