@@ -42,16 +42,19 @@ for assignment in ${SUB_ASSIGNMENTS}; do
 
 done
 
-echo "Creating Sandbox Management Group Assignments"
-for assignment in ${MGMT_ASSIGNMENTS}; do
-    FILE=$(basename ${assignment})
-    DIR=$(basename "$(dirname ${assignment})" )
-    mkdir -p ${ASSIGNMENTS_DIR}/${DIR}
+## Commented out for now, this will not work with policies created at subscription level as we do above (line 15).
+## For this to work we can only assign a policy that exists at or above the management group itself i.e. the already deployed policies that are created at HMCTS management group
 
-    echo "Creating file: ${ASSIGNMENTS_DIR}/${DIR}/${FILE}"
-    npx json -f ${assignment} \
-    -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT' \
-    -e 'this.properties.description=this.properties.description + " - " + process.env.ENVIRONMENT' \
-    -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
+# echo "Creating Sandbox Management Group Assignments"
+# for assignment in ${MGMT_ASSIGNMENTS}; do
+#     FILE=$(basename ${assignment})
+#     DIR=$(basename "$(dirname ${assignment})" )
+#     mkdir -p ${ASSIGNMENTS_DIR}/${DIR}
 
-done
+#     echo "Creating file: ${ASSIGNMENTS_DIR}/${DIR}/${FILE}"
+#     npx json -f ${assignment} \
+#     -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT' \
+#     -e 'this.properties.description=this.properties.description + " - " + process.env.ENVIRONMENT' \
+#     -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
+
+# done
