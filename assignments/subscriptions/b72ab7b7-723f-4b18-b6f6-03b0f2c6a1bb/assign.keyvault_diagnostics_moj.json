@@ -3,8 +3,8 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Forwards all KV Logs to an Azure Event Hub",
-        "displayName": "HMCTS Collect and Send KeyVault Logs to Event Hub",
+        "description": "Forwards all KV Logs to an Azure Event Hub- MOJ",
+        "displayName": "HMCTS Collect and Send KeyVault Logs to Event Hub- MOJ",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
