@@ -3,23 +3,23 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Forwards all Activity Logs to an Azure Event Hub - MOJ",
-        "displayName": "HMCTS Collect Activity Logs - MOJ (HMCTS MG)",
+        "description": "Forwards all PostgreSQL Flexible Server Logs to an Azure Event Hub - MOJ",
+        "displayName": "HMCTS Collect PostgreSQL Flexible Server Logs - MOJ (HMCTS MG)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
         "parameters": {
             "profileName":{
-                "value": "subscriptionToEventHubMoj"
+                "value": "PSQLFlexToEventHubMOJ"
             },
             "eventHubName": {
-                "value": "soc-feed-audit-events"
+                "value": "soc-feed-res-events-uksouth"
             },
             "eventHubAuthRule": {
                 "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/rg-soc-feed-evhns-uksouth/providers/Microsoft.EventHub/namespaces/evhns-soc-feed-uksouth/authorizationRules/RootManageSharedAccessKey"
             }
         },
-        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLFlexDiag",
         "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "location": "uksouth",
@@ -34,10 +34,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-<<<<<<< HEAD
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagnosticGlobal",
-=======
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSDiagGlobal_MOJ",
->>>>>>> master
-    "name": "HMCTSDiagGlobal_MOJ"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSPSQLFlxDiagGloblMoj",
+    "name": "HMCTSPSQLFlxDiagGloblMoj"
 }
