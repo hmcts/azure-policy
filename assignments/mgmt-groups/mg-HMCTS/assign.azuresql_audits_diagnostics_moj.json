@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Forwards all AzureSQL_audits Logs to an Azure Event Hub - MOJ",
-        "displayName": "HMCTS Collect AzureSQL_audits Logs (HMCTS MG)",
+        "displayName": "HMCTS Collect AzureSQL_audits Logs - MOJ (HMCTS MG)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
