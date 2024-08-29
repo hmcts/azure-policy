@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Forwards all Activity Logs to an Azure Event Hub - MOJ",
-        "displayName": "HMCTS Collect Front Door Activity Logs - MOJ",
+        "displayName": "HMCTS Collect Front Door Logs - MOJ",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
