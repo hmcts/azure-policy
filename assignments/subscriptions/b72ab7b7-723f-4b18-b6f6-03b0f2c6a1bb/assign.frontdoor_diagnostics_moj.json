@@ -3,8 +3,8 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Forwards all Activity Logs to an Azure Event Hub",
-        "displayName": "HMCTS Collect Activity Logs",
+        "description": "Forwards all Activity Logs to an Azure Event Hub - MOJ",
+        "displayName": "HMCTS Collect Front Door Activity Logs - MOJ",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
