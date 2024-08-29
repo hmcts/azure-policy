@@ -4,6 +4,22 @@
     "policyType": "Custom",
     "mode": "All",
     "parameters": {
+      "profileName": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        },
+        "defaultValue": "subscriptionToEventHub"
+      },
+      "eventHubName": {
+        "type": "String",
+        "metadata": {
+            "displayName": "EventHub Name",
+            "description": "The event hub for Azure Diagnostics"
+        },
+        "defaultValue": ""
+      },
       "eventHubAuthRule": {
         "type": "String",
         "metadata": {
@@ -11,9 +27,10 @@
           "description": null
         },
         "allowedValues": [
+          "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/rg-soc-feed-evhns-uksouth/providers/Microsoft.EventHub/namespaces/evhns-soc-feed-uksouth/authorizationRules/RootManageSharedAccessKey",
           "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey",
           "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
-        ],
+      ],
         "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
       }
     },
@@ -44,6 +61,12 @@
                 "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",
                 "parameters": {
+                  "profileName": {
+                    "type": "String"
+                  },
+                  "eventHubName": {
+                    "type": "string"
+                  },
                   "eventHubAuthRule": {
                     "type": "string"
                   }
@@ -51,11 +74,12 @@
                 "variables": {},
                 "resources": [
                   {
-                    "name": "subscriptionToEventHub",
+                    "name": "[parameters('profileName')]",
                     "type": "Microsoft.Insights/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
                     "location": "Global",
                     "properties": {
+                      "eventHubName": "[parameters('eventHubName')]",
                       "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                       "logs": [
                         {
@@ -97,6 +121,12 @@
                 "outputs": {}
               },
               "parameters": {
+                "profileName": {
+                  "value": "[parameters('profileName')]"
+                },
+                "eventHubName": {
+                  "value": "[parameters('eventHubName')]"
+                },
                 "eventHubAuthRule": {
                   "value": "[parameters('eventHubAuthRule')]"
                 }
