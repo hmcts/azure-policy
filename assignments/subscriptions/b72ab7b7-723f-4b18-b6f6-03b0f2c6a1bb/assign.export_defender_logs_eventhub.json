@@ -12,6 +12,9 @@
       "resourceGroupName":{
           "value": "rg-export-defender-eventhub-uksouth"
       },
+      "resourceGroupLocation":{
+          "value": "uksouth"
+      },
       "eventHubDetails": {
           "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/eventhubs/defender-for-cloud/authorizationrules/DiagnosticSharedAccessKey"
       }
