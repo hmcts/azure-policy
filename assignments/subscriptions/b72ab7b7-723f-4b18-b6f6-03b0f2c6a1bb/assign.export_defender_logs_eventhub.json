@@ -20,6 +20,6 @@
     "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDefenderCloud-Sbox",
-  "name": "HMCTSDefenderCloud-Sbox"
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDefenderCloud_DCD-CFTAPPS-SBOX",
+  "name": "HMCTSDefenderCloud_DCD-CFTAPPS-SBOX"
 }
