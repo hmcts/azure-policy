@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "PlatOps"
+    },
+    "description": "Deploy export to Event Hub for Microsoft Defender for Cloud data",
+    "displayName": "HMCTS  - Deploy export to Event Hub for Microsoft Defender for Cloud - CFT SBOX (DCD-CFTAPPS-SBOX)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [],
+    "notScopes": [],
+    "parameters": {
+      "resourceGroupName":{
+          "value": "rg-export-defender-eventhub-uksouth"
+      },
+      "eventHubDetails": {
+          "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/eventhubs/defender-for-cloud/authorizationrules/DiagnosticSharedAccessKey"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDefenderCloud",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDefenderCloud-Sbox",
+  "name": "HMCTSDefenderCloud-Sbox"
+}
