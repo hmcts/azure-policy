@@ -21,7 +21,7 @@
           "strongType": "location"
         },
         "allowedValues": ["uksouth", "ukwest"],
-        "default": "uksouth"
+        "defaultValue": "uksouth"
       },
       "createResourceGroup": {
         "type": "Boolean",
