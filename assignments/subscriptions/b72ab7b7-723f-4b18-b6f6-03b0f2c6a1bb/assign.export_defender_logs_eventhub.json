@@ -22,6 +22,12 @@
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/HMCTSDefenderCloud",
     "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
   },
+  "identity": {
+    "type": "UserAssigned",
+    "userAssignedIdentities": {
+        "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-sbox-eventhub-azure-policy": {}
+    }
+  },
   "type": "Microsoft.Authorization/policyAssignments",
   "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDefenderCloud_DCD-CFTAPPS-SBOX",
   "name": "HMCTSDefenderCloud_DCD-CFTAPPS-SBOX"
