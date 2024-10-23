@@ -15,11 +15,12 @@
       },
       "resourceGroupLocation": {
         "type": "String",
+        "default": "uksouth",
+        "allowedValues": ["uksouth", "ukwest"],
         "metadata": {
           "displayName": "Resource group location",
           "description": "The location where the resource group and the export to Event Hub configuration are created.",
-          "strongType": "location",
-          "default": "uksouth"
+          "strongType": "location"
         }
       },
       "createResourceGroup": {
@@ -291,7 +292,7 @@
             ]
           },
           "deployment": {
-            "location": "uksouth",
+            "location": "[parameters('resourceGroupLocation')]",
             "properties": {
               "mode": "incremental",
               "template": {
