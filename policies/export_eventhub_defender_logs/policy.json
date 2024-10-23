@@ -292,7 +292,7 @@
             ]
           },
           "deployment": {
-            "location": "[parameters('resourceGroupLocation')]",
+            "location": "uksouth",
             "properties": {
               "mode": "incremental",
               "template": {
