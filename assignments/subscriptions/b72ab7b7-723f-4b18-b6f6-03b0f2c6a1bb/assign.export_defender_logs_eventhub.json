@@ -19,7 +19,7 @@
           "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/eventhubs/defender-for-cloud/authorizationrules/DiagnosticSharedAccessKey"
       }
     },
-    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cdfcce10-4578-4ecd-9703-530938e4abcb",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/HMCTSDefenderCloud",
     "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
   },
   "type": "Microsoft.Authorization/policyAssignments",

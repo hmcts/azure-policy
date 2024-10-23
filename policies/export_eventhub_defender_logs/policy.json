@@ -1,14 +1,10 @@
 {
   "properties": {
     "displayName": "HMCTS - Deploy export to Event Hub for Microsoft Defender for Cloud data",
-    "policyType": "BuiltIn",
+    "policyType": "Custom",
     "mode": "All",
     "description": "Enable export to Event Hub of Microsoft Defender for Cloud data. This policy deploys an export to Event Hub configuration with your conditions and target Event Hub on the assigned scope. To deploy this policy on newly created subscriptions, open the Compliance tab, select the relevant non-compliant assignment and create a remediation task.",
-    "metadata": {
-      "version": "4.2.0",
-      "category": "Security Center"
-    },
-    "version": "4.2.0",
+    "metadata": {},
     "parameters": {
       "resourceGroupName": {
         "type": "String",
@@ -601,10 +597,9 @@
           }
         }
       }
-    },
-    "versions": ["4.2.0"]
+    }
   },
-  "id": "/providers/Microsoft.Authorization/policyDefinitions/cdfcce10-4578-4ecd-9703-530938e4abcb",
+  "id": "/providers/Microsoft.Authorization/policyDefinitions/HMCTSDefenderCloud",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "cdfcce10-4578-4ecd-9703-530938e4abcb"
+  "name": "HMCTSDefenderCloud"
 }
