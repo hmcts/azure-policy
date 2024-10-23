@@ -13,16 +13,6 @@
           "description": "The resource group name where the export to Event Hub configuration is created. If you enter a name for a resource group that doesn't exist, it'll be created in the subscription. Note that each resource group can only have one export to Event Hub configured."
         }
       },
-      "resourceGroupLocation": {
-        "type": "String",
-        "metadata": {
-          "displayName": "Resource group location",
-          "description": "The location where the resource group and the export to Event Hub configuration are created.",
-          "strongType": "location"
-        },
-        "allowedValues": ["uksouth", "ukwest"],
-        "defaultValue": "uksouth"
-      },
       "createResourceGroup": {
         "type": "Boolean",
         "metadata": {
@@ -302,9 +292,6 @@
                   "resourceGroupName": {
                     "type": "string"
                   },
-                  "resourceGroupLocation": {
-                    "type": "string"
-                  },
                   "createResourceGroup": {
                     "type": "bool"
                   },
@@ -510,7 +497,7 @@
                     "name": "[parameters('resourceGroupName')]",
                     "type": "Microsoft.Resources/resourceGroups",
                     "apiVersion": "2019-10-01",
-                    "location": "[parameters('resourceGroupLocation')]"
+                    "location": "uksouth"
                   },
                   {
                     "type": "Microsoft.Resources/deployments",
@@ -531,7 +518,7 @@
                           {
                             "tags": {},
                             "apiVersion": "2019-01-01-preview",
-                            "location": "[parameters('resourceGroupLocation')]",
+                            "location": "uksouth",
                             "name": "exportToEventHub",
                             "type": "Microsoft.Security/automations",
                             "dependsOn": [],
@@ -563,9 +550,6 @@
               "parameters": {
                 "resourceGroupName": {
                   "value": "[parameters('resourceGroupName')]"
-                },
-                "resourceGroupLocation": {
-                  "value": "[parameters('resourceGroupLocation')]"
                 },
                 "createResourceGroup": {
                   "value": "[parameters('createResourceGroup')]"
