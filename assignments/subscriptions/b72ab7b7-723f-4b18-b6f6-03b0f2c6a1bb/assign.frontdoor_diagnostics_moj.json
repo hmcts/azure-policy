@@ -13,7 +13,7 @@
                 "value": "FrontDoorToEventHubMoj"
             },
             "eventHubName": {
-                "value": "soc-feed-res-events-uksouth"
+                "value": "azure-resource-events"
             },
             "eventHubAuthRule": {
                 "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/rg-soc-feed-evhns-uksouth/providers/Microsoft.EventHub/namespaces/evhns-soc-feed-uksouth/authorizationRules/RootManageSharedAccessKey"
