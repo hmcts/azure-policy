@@ -12,6 +12,15 @@ An existing resource can be used but must exist in every subscription that the p
 
 - Name: Event Hub details
   Type: String
+  strongType: "Microsoft.EventHub/namespaces/eventhubs/authorizationrules",
+```
+
+The Event Hub details parameter is a string format that points directly to the complete auth rule for the event hub consumer group. This is important because the policy breaks this known format down to gather other information.
+
+Example string:
+
+```text
+/subscriptions/<subscription-id>/resourceGroups/<rg-name>/providers/Microsoft.EventHub/namespaces/<eventHub Namespace>/eventhubs/<Event Hub consumer group>/authorizationrules/<Auth Rule Name>
 ```
 
 ## All Parameters
