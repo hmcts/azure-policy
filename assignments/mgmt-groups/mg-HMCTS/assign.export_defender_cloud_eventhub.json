@@ -1,0 +1,36 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Deploy export to Event Hub for Microsoft Defender for Cloud data",
+        "displayName": "HMCTS - Deploy export to Event Hub for Microsoft Defender for Cloud - MOJ (HMCTS MG)",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [],
+        "notScopes": [],
+        "parameters": {
+            "resourceGroupName":{
+                "value": "rg-export-defender-eventhub-uksouth"
+            },
+            "eventHubDetails": {
+                "value": "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/eventhubs/defender-for-cloud/authorizationrules/DiagnosticSharedAccessKey"
+            }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDefenderCloud",
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    },
+    "location": "uksouth",
+    "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-eventhub-azure-policy": {}
+        }
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSDefenderCloud",
+    "name": "HMCTSDefenderCloud"
+}
