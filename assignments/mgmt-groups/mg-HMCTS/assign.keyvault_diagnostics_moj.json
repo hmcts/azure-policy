@@ -20,21 +20,7 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
-        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS",
-        "policyRule": {
-            "if": {
-                "allOf": [
-                    {
-                        "field": "type",
-                        "equals": "Microsoft.KeyVault/vaults"
-                    },
-                    {
-                        "field": "Microsoft.KeyVault/vaults/diagnosticSettings[*].eventHubName",
-                        "equals": "[parameters('eventHubName')]"
-                    }
-                ]
-            }
-        }
+        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
     },
     "location": "uksouth",
     "identity": {
