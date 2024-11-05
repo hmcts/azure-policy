@@ -34,6 +34,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSKVDAGlobal_moj",
-    "name": "HMCTSKVDAGlobal_moj"
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/TESTHMCTSKVDAGlobal_moj",
+    "name": "TESTHMCTSKVDAGlobal_moj"
 }
