@@ -89,6 +89,10 @@
                 "equals": "[parameters('eventHubLocation')]"
               }
             ]
+          },
+          {
+            "field": "Microsoft.Insights/diagnosticSettings/eventHubName",
+            "equals": "[parameters('eventHubName')]"
           }
         ]
       },
