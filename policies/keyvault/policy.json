@@ -94,133 +94,26 @@
         ]
       },
       "then": {
-        "effect": "deployIfNotExists",
+        "effect": "modify",
         "details": {
-          "type": "Microsoft.Insights/diagnosticSettings",
-          "name": "[parameters('profileName')]",
-          "existenceCondition": {
-            "allOf": [
-              {
-                "count": {
-                  "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
-                  "where": {
-                    "field": "Microsoft.Insights/diagnosticSettings/logs[*].enabled",
-                    "equals": "[parameters('logsEnabled')]"
-                  }
-                },
-                "greaterOrEquals": 1
-              },
-              {
-                "count": {
-                  "field": "Microsoft.Insights/diagnosticSettings/metrics[*]",
-                  "where": {
-                    "field": "Microsoft.Insights/diagnosticSettings/metrics[*].enabled",
-                    "equals": "[parameters('metricsEnabled')]"
-                  }
-                },
-                "greaterOrEquals": 1
-              }
-            ]
-          },
           "roleDefinitionIds": [
             "/providers/Microsoft.Authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293",
             "/providers/Microsoft.Authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa"
           ],
-          "deployment": {
-            "properties": {
-              "mode": "incremental",
-              "template": {
-                "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-                "contentVersion": "1.0.0.0",
-                "parameters": {
-                  "vaultName": {
-                    "type": "string"
-                  },
-                  "location": {
-                    "type": "string"
-                  },
-                  "eventHubAuthRule": {
-                    "type": "string"
-                  },
-                  "eventHubName": {
-                    "type": "string"
-                  },
-                  "metricsEnabled": {
-                    "type": "string"
-                  },
-                  "logsEnabled": {
-                    "type": "string"
-                  },
-                  "profileName": {
-                    "type": "string"
-                  }
-                },
-                "resources": [
-                  {
-                    "type": "Microsoft.KeyVault/vaults/providers/diagnosticSettings",
-                    "apiVersion": "2017-05-01-preview",
-                    "name": "[concat(parameters('vaultName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
-                    "location": "[parameters('location')]",
-                    "dependsOn": [],
-                    "properties": {
-                      "eventHubName": "[parameters('eventHubName')]",
-                      "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
-                      "metrics": [
-                        {
-                          "category": "AllMetrics",
-                          "enabled": "[parameters('metricsEnabled')]",
-                          "retentionPolicy": {
-                            "enabled": false,
-                            "days": 0
-                          }
-                        }
-                      ],
-                      "logs": [
-                        {
-                          "category": "AuditEvent",
-                          "enabled": "[parameters('logsEnabled')]"
-                        }
-                      ]
-                    }
-                  }
-                ],
-                "outputs": {
-                  "policy": {
-                    "type": "string",
-                    "value": "[concat('Enabled diagnostic settings for ', parameters('vaultName'))]"
-                  }
-                }
-              },
-              "parameters": {
-                "location": {
-                  "value": "[field('location')]"
-                },
-                "vaultName": {
-                  "value": "[field('name')]"
-                },
-                "eventHubAuthRule": {
-                  "value": "[parameters('eventHubAuthRule')]"
-                },
-                "eventHubName": {
-                  "value": "[parameters('eventHubName')]"
-                },
-                "metricsEnabled": {
-                  "value": "[parameters('metricsEnabled')]"
-                },
-                "logsEnabled": {
-                  "value": "[parameters('logsEnabled')]"
-                },
-                "profileName": {
-                  "value": "[parameters('profileName')]"
-                }
-              }
+          "operations": [
+            {
+              "operation": "addOrReplace",
+              "field": "Microsoft.Insights/diagnosticSettings/eventHubName",
+              "value": "[parameters('eventHubName')]"
+            },
+            {
+              "operation": "addOrReplace",
+              "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+              "value": "[parameters('eventHubAuthRule')]"
             }
-          }
+          ]
         }
       }
     }
-  },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
-  "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSKeyVault"
+  }
 }
