@@ -10,7 +10,7 @@
         "notScopes": [],
         "parameters": {
             "profileName": {
-                "value": "KeyvaultToEventHubXSIAM"
+                "value": "KeyvaultToEventHubMoj"
             },
             "eventHubName": {
                 "value": "azure-resource-events"
