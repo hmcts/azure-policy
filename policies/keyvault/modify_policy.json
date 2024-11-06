@@ -1,0 +1,123 @@
+{
+    "properties": {
+      "displayName": "HMCTS Keyvault Security Activity Logging (modify)",
+      "policyType": "Custom",
+      "mode": "Indexed",
+      "description": "Forwards all Azure KeyVault Activity Logs to an Azure Event Hub, modifies parameters",
+      "parameters": {
+        "profileName": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+          },
+          "defaultValue": "keyVaultToEventHub   "
+        },
+        "eventHubName": {
+          "type": "String",
+          "metadata": {
+            "displayName": "EventHub Name",
+            "description": "The event hub for Azure Diagnostics"
+          },
+          "defaultValue": "key-vault"
+        },
+        "eventHubAuthRule": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules",
+            "assignPermissions": true
+          },
+          "allowedValues": [
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/eventhubs/azure-activity-events/authorizationrules/DiagnosticSharedAccessKey",
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/eventhubs/azure-resource-events/authorizationrules/DiagnosticSharedAccessKey",
+            "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey",
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey",
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/authorizationrules/soc-xsiam-eventhub-namespace-sender"
+          ],
+          "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
+        },
+        "eventHubLocation": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Event Hub Location",
+            "description": "The location the Event Hub resides in. Only Key Vaults in this location will be linked to this Event Hub.",
+            "strongType": "location"
+          },
+          "defaultValue": ""
+        },
+        "metricsEnabled": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+          },
+          "allowedValues": [
+            "True",
+            "False"
+          ],
+          "defaultValue": "False"
+        },
+        "logsEnabled": {
+          "type": "String",
+          "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+          },
+          "allowedValues": [
+            "True",
+            "False"
+          ],
+          "defaultValue": "True"
+        }
+      },
+      "policyRule": {
+        "if": {
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.KeyVault/vaults"
+            },
+            {
+              "anyOf": [
+                {
+                  "value": "[parameters('eventHubLocation')]",
+                  "equals": ""
+                },
+                {
+                  "field": "location",
+                  "equals": "[parameters('eventHubLocation')]"
+                }
+              ]
+            }
+          ]
+        },
+        "then": {
+          "effect": "modify",
+          "details": {
+            "roleDefinitionIds": [
+              "/providers/Microsoft.Authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293",
+              "/providers/Microsoft.Authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa"
+            ],
+            "operations": [
+              {
+                "operation": "addOrReplace",
+                "field": "Microsoft.Insights/diagnosticSettings/eventHubName",
+                "value": "[parameters('eventHubName')]"
+              },
+              {
+                "operation": "addOrReplace",
+                "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+                "value": "[parameters('eventHubAuthRule')]"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVaultModify",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "HMCTSKeyVaultModify"
+  }
+  
