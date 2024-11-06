@@ -116,8 +116,8 @@
         }
       }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVaultModify",
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVaultModifySandbox",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSKeyVaultModify"
+    "name": "HMCTSKeyVaultModifySandbox"
   }
   
