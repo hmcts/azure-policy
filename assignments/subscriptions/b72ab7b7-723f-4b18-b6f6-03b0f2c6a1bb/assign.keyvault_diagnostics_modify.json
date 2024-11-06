@@ -34,6 +34,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSKVDAGlobal_moj_modify",
-    "name": "HMCTSKVDAGlobal_moj_modify"
+    "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSKVMOJ_DCD-CFTAPPS-SBOX_mod",
+    "name": "HMCTSKVMOJ_DCD-CFTAPPS-SBOX_mod"
 }
