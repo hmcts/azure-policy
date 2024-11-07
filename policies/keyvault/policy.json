@@ -119,6 +119,10 @@
                   }
                 },
                 "greaterOrEquals": 1
+              },
+              {
+                "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+                "equals": "[parameters('eventHubAuthRule')]"
               }
             ]
           },
