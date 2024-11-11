@@ -49,6 +49,10 @@
               {
                 "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
                 "equals": "[parameters('eventHubAuthRule')]"
+              },
+              {
+                "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
+                "equals": "[parameters('eventHubAuthRule')]"
               }
             ]
           },
