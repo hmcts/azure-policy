@@ -22,7 +22,8 @@
       "/subscriptions/17390ec1-5a5e-4a20-afb3-38d8d726ae45/resourceGroups/PCMAN-RG",
       "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-splunk-prod-rg",
       "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/resourceGroups/RG-PRD-ATL-INT-01",
-      "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/juror-er-migration-prod"
+      "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/juror-er-migration-prod",
+      "/subscriptions/b7d2bd5f-b744-4acc-9c73-e068cec2e8d8/resourceGroups/atlassian-nonprod-rg"
     ],
     "parameters": {},
     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSize",
