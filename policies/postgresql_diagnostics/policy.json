@@ -31,7 +31,9 @@
                 "allowedValues": [
                     "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey",
                     "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey",
-                    "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/authorizationrules/soc-xsiam-eventhub-namespace-sender"
+                    "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/authorizationrules/soc-xsiam-eventhub-namespace-sender",
+                    "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/eventhubs/azure-activity-events/authorizationrules/DiagnosticSharedAccessKey",
+                    "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-xsiam-eventhubs-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-xsiam-eventhubns/eventhubs/azure-resource-events/authorizationrules/DiagnosticSharedAccessKey"
                 ],
                 "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
             },
