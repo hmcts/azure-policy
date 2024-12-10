@@ -94,7 +94,16 @@ jobs:
       run: |
         set -e
         echo 'subs<<EOF' >> $GITHUB_OUTPUT
-        az account management-group show --name ${MANAGEMENT_GROUP} --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id' >> $GITHUB_OUTPUT
+        subscriptions=$(az account management-group show --name ${MANAGEMENT_GROUP} --expand -r | jq -r '.children[].children | .. | objects | select( .type == "/subscriptions") | .id')
+
+        # Cross-reference with subscription states
+        for sub in "${subscriptions[@]}"; do
+            sub_id="${sub##*/}"
+            state=$(az account list --query "[?id=='$sub_id'].state" -o tsv)
+            if [[ "$state" != "Disabled" ]]; then
+                echo "$sub" >> $GITHUB_OUTPUT
+            fi
+        done
         echo 'EOF' >> $GITHUB_OUTPUT
 
     - name: Live - Force compliance check
