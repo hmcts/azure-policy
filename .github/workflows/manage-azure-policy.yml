@@ -100,7 +100,7 @@ jobs:
         for sub in "${subscriptions[@]}"; do
             sub_id="${sub##*/}"
             state=$(az account list --query "[?id=='$sub_id'].state" -o tsv)
-            if [[ "$state" != "Disabled" ]]; then
+            if [ "$state" == "Enabled" ] || [ "$state" == "Past Due" ]; then
                 echo "$sub" >> $GITHUB_OUTPUT
             fi
         done
