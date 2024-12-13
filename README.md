@@ -38,13 +38,15 @@ Policies that are to be assigned to a management group are located within the ap
 
 Policies that are to be assigned to a subscription or group of subscriptions are located within the appropriate subscription directory under `assignments/subscriptions`.
 
-When you've decided on a scope, create a policy assignment file in the appropriate directory. Name the file assign.policyname.json e.g. `assign.tagging.json`.
+When you've decided on a scope, create a policy assignment file in the appropriate directory. Name the file assign.policyname.json e.g. `assign.diagnostics.json`.
 
 ## What scope should I choose?
 
 Use a subscription scope when you are testing out a policy or if you only want a policy to apply to a single subscription or group of subscriptions.
 
 Use a management group scope when you want a policy to apply to all subscriptions in the tenant.
+
+**If a tagging policy exception is required, please use the notScopes in assignments/mgmt-groups/mg-HMCTS/assign.tagging.json**
 
 ## How to add a new subscription
 
