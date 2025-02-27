@@ -31,7 +31,8 @@
           "Microsoft.Network/FrontDoorWebApplicationFirewallPolicies",
           "Microsoft.Network/FrontDoors",
           "Microsoft.Cdn/profiles",
-          "Microsoft.Security/automations"
+          "Microsoft.Security/automations",
+          "Microsoft.ResourceGraph/queries"
         ],
         "type": "Array",
         "metadata": {
