@@ -24,10 +24,10 @@
           "allOf": [
             {
               "field": "type",
-              "equals": "Microsoft.Network/IPAddresses"
+              "equals": "Microsoft.Network/publicIPAddresses"
             },
             {
-              "field": "Microsoft.Network/IPAddresses/sku.name",
+              "field": "Microsoft.Network/publicIPAddresses/sku.name",
               "notIn": "[parameters('allowedSKUs')]"
             }
           ]
