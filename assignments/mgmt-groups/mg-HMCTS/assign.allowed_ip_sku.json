@@ -1,0 +1,22 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Approved IP Address SKU sizes",
+      "displayName": "HMCTS Approved IP Address SKU Sizes - (HMCTS MG)",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+          "message": "This IP Address SKU size is not allowed. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_ip_sku/README.md"
+        }
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSIPSkuSize",
+      "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSIPSkuSize",
+    "name": "HMCTSIPSkuSize"
+  }
+  
