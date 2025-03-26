@@ -4,7 +4,7 @@ The policy enables you to specify a the public IP SKUs sizes that can be deploye
 
 ## Required Public IP SKU Sizes
 
-The specific disk SKU sizes that are enforced by the policy:
+The specific IP SKU sizes that are enforced by the policy:
 
 
 | Name             | SKU             |
