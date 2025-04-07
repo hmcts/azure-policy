@@ -1,0 +1,43 @@
+{
+  "properties": {
+    "displayName": "This policy enables you to specify a set of public IP SKUs sizes that can be deployed in HMCTS",
+    "policyType": "Custom",
+    "description": "Restrict the Public IP SKU sizes that can be deployed in HMCTS",
+    "mode": "Indexed",
+    "parameters": {
+      "allowedSKUs": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed Public IP SKU Sizes",
+          "description": "The allowed Public IP SKU sizes in HMCTS"
+        },
+        "allowedValues": [
+          "Standard"
+        ],
+        "defaultValue": [
+          "Standard"
+        ]
+      } 
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Network/publicIPAddresses"
+          },
+          {
+            "field": "Microsoft.Network/publicIPAddresses/sku.name",
+            "notIn": "[parameters('allowedSKUs')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "Deny"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPublicIPSkuSize",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSPublicIPSkuSize"
+}
