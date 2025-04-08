@@ -12,10 +12,12 @@
           "description": "The allowed Load Balancer SKU sizes in HMCTS"
         },
         "allowedValues": [
-          "Standard"
+          "Standard",
+          "Gateway"
         ],
         "defaultValue": [
-          "Standard"
+          "Standard",
+          "Gateway"
         ]
       } 
     },
