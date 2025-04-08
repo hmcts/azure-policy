@@ -16,8 +16,7 @@
           "Gateway"
         ],
         "defaultValue": [
-          "Standard",
-          "Gateway"
+          "Standard"
         ]
       } 
     },
