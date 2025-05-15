@@ -11,7 +11,8 @@
           "microsoft.insights/actiongroups",
           "Microsoft.Insights/activityLogAlerts",
           "microsoft.operationsmanagement/solutions",
-          "Microsoft.ContainerRegistry/registries/tasks"
+          "Microsoft.ContainerRegistry/registries/tasks",
+          "Microsoft.Web/connections"
         ],
         "type": "Array",
         "metadata": {

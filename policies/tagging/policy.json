@@ -32,7 +32,8 @@
           "Microsoft.Network/FrontDoors",
           "Microsoft.Cdn/profiles",
           "Microsoft.Security/automations",
-          "Microsoft.ResourceGraph/queries"
+          "Microsoft.ResourceGraph/queries",
+          "Microsoft.Web/connections"
         ],
         "type": "Array",
         "metadata": {
