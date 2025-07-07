@@ -3,19 +3,16 @@
       "metadata": {
         "assignedBy": "github.com/hmcts/azure-policy"
       },
-      "description": "Policy to check resource locations",
-      "displayName": "Sandbox Location Policy - (mg:CFT-Sandbox)",
+      "description": "Policy to check Azure Container Registry locations",
+      "displayName": "Sandbox ACR Location Policy - (mg:CFT-Sandbox)",
       "enforcementMode": "Default",
       "nonComplianceMessages": [
         {
-            "message": "Resource doesn't meet location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_regions/README.md"
+            "message": "Azure Container Registry doesn't meet location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_regions_acr/README.md"
         }
       ],
-      "notScopes": [
-        "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-acr-rg"
-      ],
       "parameters": {},
-      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSACRLocationPolicy",
       "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
     },
     "sku": {
