@@ -1,8 +1,9 @@
 # HMCTS Azure Container Registry Location Policy
 
 ## Allowed locations for ACR
+HMCTS principle is for all resources within Azure to be deployed into UK south (with some exceptions)
 - **uksouth** (UK South) - Primary region
-- **ukwest** (UK West) - Secondary region
+- **ukwest** (UK West) - Secondary region for ACR HA
 
 ## Policy Details
 - **Resource Type**: Microsoft.ContainerRegistry/registries
