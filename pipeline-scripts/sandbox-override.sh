@@ -1,9 +1,9 @@
 #!/bin/bash
 set -ex
 
-export SUB_ASSIGNMENTS=$(find ./assignments/$SUB  -type f -name 'assign.*.json')
-export MGMT_ASSIGNMENTS=$(find ./assignments/mgmt-groups/mg-cft-sandbox -type f -name 'assign.*.json')
-export POLICIES=$(find ./policies -name policy.json -type f )
+export SUB_ASSIGNMENTS=$(find ./assignments/HMCTS/$SUB  -type f -name 'assign.*.json')
+export MGMT_ASSIGNMENTS=$(find ./assignments/HMCTS/mgmt-groups/mg-cft-sandbox -type f -name 'assign.*.json')
+export POLICIES=$(find ./policies/HMCTS -name policy.json -type f )
 export ENVIRONMENT=${ENVIRONMENT:-Sandbox}
 export ASSIGNMENTS_DIR="./${ENVIRONMENT:-Sandbox}/assignments"
 export POLICIES_DIR="./${ENVIRONMENT:-Sandbox}/policies"
