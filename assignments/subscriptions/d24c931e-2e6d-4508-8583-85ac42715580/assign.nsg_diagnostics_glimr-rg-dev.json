@@ -3,8 +3,8 @@
         "metadata": {
             "assignedBy": "https://github.com/hmcts/azure-policy"
         },
-        "description": "Forwards Network Security Group Logs from glimr-rg-dev resource group to Azure Event Hub - MOJ",
-        "displayName": "HMCTS Collect NSG Logs - glimr-rg-dev (GLIMR Dev Subscription)",
+        "description": "Forwards Network Security Group Logs from glimr dev resource group to Azure Event Hub - MOJ",
+        "displayName": "HMCTS Collect NSG Logs - glimr dev (GLIMR Dev Subscription)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [],
         "notScopes": [],
@@ -40,6 +40,6 @@
         "tier": "Free"
     },
     "type": "Microsoft.Authorization/policyAssignments",
-    "id": "/subscriptions/d24c931e-2e6d-4508-8583-85ac42715580/resourceGroups/glimr-rg-dev/providers/Microsoft.Authorization/policyAssignments/HMCTSNSGDiagnostic_glimr-rg-dev",
-    "name": "HMCTSNSGDiagnostic_glimr-rg-dev"
+    "id": "/subscriptions/d24c931e-2e6d-4508-8583-85ac42715580/resourceGroups/InternalSpoke-rg/providers/Microsoft.Authorization/policyAssignments/HMCTSNSGDiagnostic_dev",
+    "name": "HMCTSNSGDiagnostic_dev"
 }
