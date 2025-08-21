@@ -57,7 +57,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSize",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSize",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "HMCTSDiskSkuSize"
 }
