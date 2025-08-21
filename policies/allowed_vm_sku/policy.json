@@ -59,7 +59,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSVmSkuSize${name_suffix}",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSVmSkuSize",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSVmSkuSize${name_suffix}"
+  "name": "HMCTSVmSkuSize"
 }

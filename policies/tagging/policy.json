@@ -120,7 +120,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging${name_suffix}",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSTagging",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSTagging${name_suffix}"
+  "name": "HMCTSTagging"
 }
