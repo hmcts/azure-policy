@@ -1,6 +1,6 @@
 {
     "properties": {
-      "displayName": "This policy enables you to specify a set of IP addresses SKUs sizes that can be deployed in HMCTS${display_name_suffix}",
+      "displayName": "This policy enables you to specify a set of IP addresses SKUs sizes that can be deployed in HMCTS",
       "policyType": "Custom",
       "description": "Prevent the creation of Basic SKU IP addresses in HMCTS",
       "mode": "Indexed",

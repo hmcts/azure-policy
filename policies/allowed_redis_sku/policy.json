@@ -1,6 +1,6 @@
 {
     "properties": {
-      "displayName": "This policy enables you to specify a set of Redis Cache SKUs that can be deployed in HMCTS${display_name_suffix}",
+      "displayName": "This policy enables you to specify a set of Redis Cache SKUs that can be deployed in HMCTS",
       "policyType": "Custom",
       "description": "Restricts Redis Cache SKUs that can be deployed in HMCTS",
       "mode": "Indexed",
