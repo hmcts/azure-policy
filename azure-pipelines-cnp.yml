@@ -95,7 +95,3 @@ stages:
                   serviceConnection: ${{ deployment.serviceConnection }}
                   terraformInitSubscription: ${{ variables.terraformInitSubscription }}
                   product: ${{ variables.product }}
-                  initCommandOptions: >
-                    -backend-config resource_group_name=${{ deployment.resource_group_name }}
-                  planCommandOptions: >
-                    -lock=false
