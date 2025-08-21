@@ -222,7 +222,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSKeyVault${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSKeyVault"
+  "name": "HMCTSKeyVault${name_suffix}"
 }

@@ -238,7 +238,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSAzureSQLAudit${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSAzureSQLAudit"
+  "name": "HMCTSAzureSQLAudit${name_suffix}"
 }

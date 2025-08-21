@@ -27,7 +27,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/VPNConnectionRequired",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/VPNConnectionRequired${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "VPNConnectionRequired"
+  "name": "VPNConnectionRequired${name_suffix}"
 }

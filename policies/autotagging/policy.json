@@ -75,7 +75,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSAutoTagging${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSAutoTagging"
+  "name": "HMCTSAutoTagging${name_suffix}"
 }

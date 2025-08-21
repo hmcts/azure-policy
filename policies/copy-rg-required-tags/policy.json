@@ -91,7 +91,7 @@
             }
         }
     },
-    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupTags",
+    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyResourceGroupTags${name_suffix}",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSCopyResourceGroupTags"
+    "name": "HMCTSCopyResourceGroupTags${name_suffix}"
 }
