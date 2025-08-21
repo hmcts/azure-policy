@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "Enable Audit Settings for Azure SQL to SOC",
+    "displayName": "Enable Audit Settings for Azure SQL to SOC${display_name_suffix}",
     "policyType": "Custom",
     "mode": "Indexed",
     "description": "Enables auditing settings for Azure SQL servers to stream to the SOC Event Hub. Any Azure SQL server which is missing this settings is updated along with its databases.",

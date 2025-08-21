@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "HMCTS Diagnostic Policy",
+    "displayName": "HMCTS Diagnostic Policy${display_name_suffix}",
     "policyType": "Custom",
     "mode": "All",
     "parameters": {

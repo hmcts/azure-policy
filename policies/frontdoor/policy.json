@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "HMCTS Front Door Security Activity Logging",
+    "displayName": "HMCTS Front Door Security Activity Logging${display_name_suffix}",
     "policyType": "Custom",
     "mode": "Indexed",
     "description": "Forwards all Azure Front Door Activity Logs to an Azure Event Hub",

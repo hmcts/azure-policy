@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "HMCTS Auto-Tagging Policy",
+    "displayName": "HMCTS Auto-Tagging Policy${display_name_suffix}",
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {

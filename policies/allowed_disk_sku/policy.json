@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "This policy enables you to specify a set of disk SKUs that can be deployed in HMCTS",
+    "displayName": "This policy enables you to specify a set of disk SKUs that can be deployed in HMCTS${display_name_suffix}",
     "policyType": "Custom",
     "description": "Restricts disk SKUs that can be deployed in HMCTS and limits sizes to a maximum of 2TiB",
     "mode": "Indexed",

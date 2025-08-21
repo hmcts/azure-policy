@@ -1,6 +1,6 @@
 {
     "properties": {
-        "displayName": "Diagnostic Settings for NSG to SOC",
+        "displayName": "Diagnostic Settings for NSG to SOC${display_name_suffix}",
         "policyType": "Custom",
         "mode": "Indexed",
         "parameters": {
