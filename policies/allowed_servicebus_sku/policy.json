@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "This policy enables you to specify a set of servicebus SKUs that can be deployed in HMCTS",
+    "displayName": "This policy enables you to specify a set of servicebus SKUs that can be deployed in HMCTS${display_name_suffix}",
     "policyType": "Custom",
     "description": "Restricts servicebus SKUs that can be deployed in HMCTS",
     "mode": "Indexed",

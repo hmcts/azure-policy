@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "HMCTS Tagging",
+    "displayName": "HMCTS Tagging${display_name_suffix}",
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {

@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "HMCTS Resource Location Policy",
+    "displayName": "HMCTS Resource Location Policy${display_name_suffix}",
     "policyType": "Custom",
     "mode": "Indexed",
     "parameters": {
