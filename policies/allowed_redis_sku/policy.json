@@ -43,7 +43,7 @@
         }
       }
     },
-    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSRedisCacheSku",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSRedisCacheSku",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSRedisCacheSku"
   }

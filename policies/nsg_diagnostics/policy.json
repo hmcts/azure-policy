@@ -171,7 +171,7 @@
             }
         }
     },
-    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSNSGDiagnostic",
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSNSGDiagnostic",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSNSGDiagnostic"
 }
