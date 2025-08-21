@@ -217,7 +217,7 @@
             }
         }
     },
-    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic",
+    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSAGWDiagnostic${name_suffix}",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSAGWDiagnostic"
+    "name": "HMCTSAGWDiagnostic${name_suffix}"
 }

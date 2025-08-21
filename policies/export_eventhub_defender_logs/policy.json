@@ -601,7 +601,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSDefenderCloud",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSDefenderCloud${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSDefenderCloud"
+  "name": "HMCTSDefenderCloud${name_suffix}"
 }

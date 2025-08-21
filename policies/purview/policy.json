@@ -232,7 +232,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPurview",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPurview${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSPurview"
+  "name": "HMCTSPurview${name_suffix}"
 }

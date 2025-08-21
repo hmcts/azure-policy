@@ -50,7 +50,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSResourceLocationPolicy"
+  "name": "HMCTSResourceLocationPolicy${name_suffix}"
 }

@@ -224,7 +224,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSFrontDoor",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSFrontDoor${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSFrontDoor"
+  "name": "HMCTSFrontDoor${name_suffix}"
 }

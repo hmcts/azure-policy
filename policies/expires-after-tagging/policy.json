@@ -73,7 +73,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging${name_suffix}",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "ExpiresAfterTagging"
+  "name": "ExpiresAfterTagging${name_suffix}"
 }

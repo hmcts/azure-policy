@@ -212,7 +212,7 @@
             }
         }
     },
-    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLFlexDiag",
+    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLFlexDiag${name_suffix}",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSPSQLFlexDiag"
+    "name": "HMCTSPSQLFlexDiag${name_suffix}"
 }
