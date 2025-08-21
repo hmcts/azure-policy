@@ -214,7 +214,7 @@
             }
         }
     },
-    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag${name_suffix}",
+    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "HMCTSPSQLDiag${name_suffix}"
+    "name": "HMCTSPSQLDiag"
 }

@@ -43,7 +43,7 @@
       }
     }
   },
-  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSServiceBusSku${name_suffix}",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSServiceBusSku",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "HMCTSServiceBusSku${name_suffix}"
+  "name": "HMCTSServiceBusSku"
 }
