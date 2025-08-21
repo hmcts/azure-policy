@@ -36,9 +36,9 @@ parameters:
   - name: environment_components
     type: object
     default:
-    - deployment: 'sandbox_subscription'
-      environment: 'sbox'
-      component: 'subscription'
+    - deployment: 'sandbox'
+      environment: 'cnp_sbox'
+      component: 'azure-policy'
       service_connection: 'dcd-cftapps-sbox'
       storage_account_rg: 'core-infra-sbox-rg'
       storage_account_name: 'cftappssbox'

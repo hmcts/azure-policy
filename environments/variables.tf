@@ -13,3 +13,17 @@ variable "location" {
 variable "builtFrom" {
   default = "hmcts/azure-policy"
 }
+
+variable "tenant" {
+  default = "CNP_SBOX"
+}
+
+variable "management_group" {
+  type    = optional(string)
+  default = "/providers/Microsoft.Management/managementGroups/HMCTS"
+}
+
+variable "name_suffix" {
+  type    = optional(string)
+  default = ""
+}
