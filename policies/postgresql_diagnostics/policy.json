@@ -1,6 +1,6 @@
 {
     "properties": {
-        "displayName": "Diagnostic Settings for Single Server PostgreSQL to SOC${display_name_suffix}",
+        "displayName": "Diagnostic Settings for Single Server PostgreSQL to SOC",
         "policyType": "Custom",
         "mode": "Indexed",
         "parameters": {

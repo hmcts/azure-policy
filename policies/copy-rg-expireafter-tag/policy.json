@@ -1,6 +1,6 @@
 {
     "properties": {
-        "displayName": "Append tags and their values from the resource group${display_name_suffix}",
+        "displayName": "Append tags and their values from the resource group",
         "mode": "Indexed",
         "metadata": {
             "category": "Tags"
