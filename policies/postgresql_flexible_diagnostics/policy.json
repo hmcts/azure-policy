@@ -212,7 +212,7 @@
             }
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLFlexDiag",
+    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLFlexDiag",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSPSQLFlexDiag"
 }

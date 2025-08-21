@@ -232,7 +232,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPurview",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPurview",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "HMCTSPurview"
 }

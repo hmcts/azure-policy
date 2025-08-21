@@ -27,7 +27,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/VPNConnectionRequired",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/VPNConnectionRequired",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "VPNConnectionRequired"
 }

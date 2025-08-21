@@ -37,7 +37,7 @@
         }
       }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSIPSkuSize",
+    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSIPSkuSize",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSIPSkuSize"
   }
