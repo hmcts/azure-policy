@@ -140,7 +140,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiagnostic",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "HMCTSDiagnostic"
 }

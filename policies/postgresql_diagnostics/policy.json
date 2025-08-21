@@ -214,7 +214,7 @@
             }
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
+    "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/HMCTSPSQLDiag",
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSPSQLDiag"
 }

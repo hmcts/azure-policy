@@ -73,7 +73,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
+  "id": "${root_scope}/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "ExpiresAfterTagging"
 }
