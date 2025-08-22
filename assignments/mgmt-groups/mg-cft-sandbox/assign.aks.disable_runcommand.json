@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS clusters where Run Command (command invoke) is not disabled.",
+    "displayName": "AKS Disable RunCommand (mg:CFT-Sandbox)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Run Command should be disabled on AKS clusters."
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/89f2d532-c53c-4f8f-9afa-4927b1114a0d",
+    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSDisableRunCmd-sbox",
+  "name": "AKSDisableRunCmd-sbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
