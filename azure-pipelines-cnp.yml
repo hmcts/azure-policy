@@ -90,6 +90,6 @@ stages:
                   overrideAction: ${{ parameters.overrideAction }}
                   environment: ${{ deployment.environment }}
                   component: ${{ deployment.component }}
-                  serviceConnection: ${{ deployment.serviceConnection }}
+                  serviceConnection: ${{ deployment.service_connection }}
                   terraformInitSubscription: ${{ variables.terraformInitSubscription }}
                   product: ${{ variables.product }}
