@@ -35,8 +35,8 @@ parameters:
   - name: environment_components
     type: object
     default:
-      - deployment: 'sandbox'
-        environment: 'cnp_sbox'
+      - deployment: 'CNP - sandbox'
+        environment: 'sbox'
         component: 'azure-policy'
         service_connection: 'dcd-cft-sandbox'
         dependsOn: 'Precheck'
