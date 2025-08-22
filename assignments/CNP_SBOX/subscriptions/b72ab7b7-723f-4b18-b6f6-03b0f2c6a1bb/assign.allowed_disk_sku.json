@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "PlatOps"
+    },
+    "description": "Restrict the Disk SKU sizes that can be deployed in HMCTS",
+    "displayName": "HMCTS Restricted Disk SKU Sizes - CFT SBOX (DCD-CFTAPPS-SBOX) - Sandbox",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "The selected SKU is not permitted or the size is greater than 2TB. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_disk_sku/README.md"
+      }
+    ],
+    "notScopes": [],
+    "parameters": {},
+    "policyDefinitionId": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSizeSandbox",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSDiskSkuSize-Sbox_Sandbox",
+  "name": "HMCTSDiskSkuSize-Sbox_Sandbox"
+}
