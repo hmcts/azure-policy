@@ -18,7 +18,7 @@ resource "azurerm_policy_definition" "policies" {
   parameters  = each.value.parameters
 
   dynamic "management_group" {
-    for_each = var.management_group == null ? [] : [1]
+    for_each = var.management_group == "" ? [] : [1]
     content {
       management_group_id = var.management_group
     }
