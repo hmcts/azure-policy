@@ -37,12 +37,10 @@ resource "azurerm_subscription_policy_assignment" "subscription_assignments" {
   enforce      = each.value.properties.enforcementMode == "Default"
   metadata     = each.value.properties.metadata
 
-  dynamic "non_compliance_messages" {
+  dynamic "non_compliance_message" {
     for_each = each.value.properties.nonComplianceMessages
     content {
-      non_compliance_message {
         content = each.value.message
-      }
     }
   }
 
