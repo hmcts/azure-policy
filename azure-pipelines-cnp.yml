@@ -32,18 +32,16 @@ parameters:
       - plan
       - apply
       - destroy
-
   - name: environment_components
     type: object
     default:
-    - deployment: 'sandbox'
-      environment: 'cnp_sbox'
-      component: 'azure-policy'
-      service_connection: 'dcd-cftapps-sbox'
-      storage_account_rg: 'core-infra-sbox-rg'
-      storage_account_name: 'cftappssbox'
-      dependsOn: 'Precheck'
-      pipeline_tests: false
+      - deployment: 'sandbox'
+        environment: 'cnp_sbox'
+        component: 'azure-policy'
+        service_connection: 'dcd-cft-sandbox'
+        dependsOn: 'Precheck'
+        pipeline_tests: false
+
 
     # - deployment: 'production_subscription'
     #   environment: 'prod'
