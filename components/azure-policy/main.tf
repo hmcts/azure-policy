@@ -17,12 +17,7 @@ resource "azurerm_policy_definition" "policies" {
   policy_rule = each.value.policyRule
   parameters  = each.value.parameters
 
-  dynamic "management_group" {
-    for_each = var.management_group == "" ? [] : [1]
-    content {
-      management_group_id = var.management_group
-    }
-  }
+  management_group_id = var.management_group
 }
 
 # resource "azurerm_management_group_policy_assignment" "mgmt_assignments" {
