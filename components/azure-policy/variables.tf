@@ -19,11 +19,11 @@ variable "tenant" {
 }
 
 variable "management_group" {
-  type    = optional(string)
+  type    = string
   default = "/providers/Microsoft.Management/managementGroups/HMCTS"
 }
 
 variable "name_suffix" {
-  type    = optional(string)
+  type    = string
   default = ""
 }
