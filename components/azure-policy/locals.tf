@@ -9,12 +9,12 @@ locals {
   ]
   policies = {
     for p in local.policy_files :
-    p.name => p
+    join("", [p.name, var.name_suffix]) => p
   }
 
   subscription_assignment_files = [
     for assignment in fileset(local.subscription_dir, "**/*.json") :
-    jsondecode(assignment)
+    jsondecode(file(join("", [local.subscription_dir, assignment])))
   ]
 
   subscription_assignments = {
