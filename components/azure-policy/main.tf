@@ -10,12 +10,12 @@ resource "azurerm_policy_definition" "policies" {
 
   name         = join("", [each.value.name, var.name_suffix])
   display_name = var.name_suffix == "" ? each.value.display_name : join(" - ", [each.value.display_name, var.name_suffix])
-  description  = each.value.description
-  policy_type  = each.value.policyType
-  mode         = each.value.mode
+  description  = each.value.properties.description
+  policy_type  = each.value.properties.policyType
+  mode         = each.value.properties.mode
 
-  policy_rule = each.value.policyRule
-  parameters  = each.value.parameters
+  policy_rule = each.value.properties.policyRule
+  parameters  = each.value.properties.parameters
 
   management_group_id = var.management_group
 }
