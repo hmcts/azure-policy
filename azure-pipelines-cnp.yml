@@ -38,7 +38,7 @@ parameters:
       - deployment: 'CNP_sandbox'
         environment: 'sbox'
         component: 'azure-policy'
-        service_connection: 'dcd-cfapps-sbox'
+        service_connection: 'dcd-cftapps-sbox'
         dependsOn: 'Precheck'
         pipeline_tests: false
 
