@@ -41,6 +41,7 @@ parameters:
         service_connection: 'dcd-cft-sandbox'
         dependsOn: 'Precheck'
         pipeline_tests: false
+        init_subscription: 'b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb'
 
 
     # - deployment: 'production_subscription'
@@ -91,5 +92,5 @@ stages:
                   environment: ${{ deployment.environment }}
                   component: ${{ deployment.component }}
                   serviceConnection: ${{ deployment.service_connection }}
-                  terraformInitSubscription: ${{ variables.terraformInitSubscription }}
+                  terraformInitSubscription: ${{ deployment.init_subscription }}
                   product: ${{ variables.product }}
