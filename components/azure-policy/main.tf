@@ -9,13 +9,13 @@ resource "azurerm_policy_definition" "policies" {
   for_each = local.policies
 
   name         = join("", [each.value.name, var.name_suffix])
-  display_name = var.name_suffix == "" ? each.value.display_name : join(" - ", [each.value.display_name, var.name_suffix])
-  description  = each.value.properties.description
-  policy_type  = each.value.properties.policyType
+  display_name = var.name_suffix == "" ? each.value.properties.displayName : join(" - ", [each.value.properties.displayName, var.name_suffix])
+  description  = try(each.value.properties.description, "")
+  policy_type  = try(each.value.properties.policyType, "Custom")
   mode         = each.value.properties.mode
 
-  policy_rule = each.value.properties.policyRule
-  parameters  = each.value.properties.parameters
+  policy_rule = jsonencode(each.value.properties.policyRule)
+  parameters  = try(jsonencode(each.value.properties.parameters), "{}")
 
   management_group_id = var.management_group
 }
