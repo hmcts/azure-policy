@@ -9,7 +9,7 @@ resource "azurerm_policy_definition" "policies" {
   for_each = local.policies
 
   name         = join("", [each.value.name, var.name_suffix])
-  display_name = var.name_suffix == "" ? each.value.properties.displayName : join(" - ", [each.value.properties.displayName, var.name_suffix])
+  display_name = try(var.name_suffix == "" ? each.value.properties.displayName : join(" - ", [each.value.properties.displayName, var.name_suffix]), join("", [each.value.name, var.name_suffix]))
   description  = try(each.value.properties.description, "")
   policy_type  = try(each.value.properties.policyType, "Custom")
   mode         = each.value.properties.mode
