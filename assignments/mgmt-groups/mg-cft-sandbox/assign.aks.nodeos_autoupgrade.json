@@ -18,8 +18,7 @@
       },
       "allowedNodeOsUpgradeChannels": {
         "value": [
-          "NodeImage",
-          "SecurityPatch"
+          "NodeImage"
         ]
       }
     },
