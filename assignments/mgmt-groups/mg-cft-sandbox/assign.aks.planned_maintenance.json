@@ -16,22 +16,32 @@
       "effect": {
         "value": "DeployIfNotExists"
       },
-      "scheduleFrequency": {
-        "value": "Daily"
+      "configurationType": {
+        "value": "aksManagedNodeOSUpgradeSchedule"
       },
-      "scheduleStartTime": {
-        "value": "16:00"
-      },
-      "scheduleWindowLengthHours": {
-        "value": 4
+      "maintenanceWindow": {
+        "value": {
+          "properties": {
+            "maintenanceWindow": {
+              "startTime": "16:00",
+              "durationHours": 4,
+              "schedule": {
+                "daily": {
+                  "intervalDays": 1
+                }
+              },
+              "utcOffset": "+00:00"
+            }
+          }
+        }
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1352e44-d34d-4e4d-a22e-451a15f759a1",
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSPlannedMaint-sbox",
-  "name": "AKSPlannedMaint-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-sbox",
+  "name": "AKSPlanMaint-sbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",

@@ -14,9 +14,9 @@
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "DeployIfNotExists"
       },
-      "requiredAdminGroupObjectIds": {
+      "adminGroupObjectIDs": {
         "value": [
           "a6ce5b32-e0a5-419e-ba5c-67863c975941",
           "a61704af-0d13-49ce-9ec7-2ad4f5bad9b5"
@@ -27,8 +27,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSAADAdminGroups-sbox",
-  "name": "AKSAADAdminGroups-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-sbox",
+  "name": "AKSAADAdmGrp-sbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",
