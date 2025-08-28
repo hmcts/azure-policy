@@ -46,3 +46,30 @@ resource "azurerm_subscription_policy_assignment" "subscription_assignments" {
   # Need policy assignments to be defined before we can reference them
   depends_on = [azurerm_policy_definition.policies]
 }
+
+resource "azurerm_management_group_policy_assignment" "management_assignments" {
+  for_each = local.management_assignments
+
+  name = each.value.name
+
+  management_group_id = trimprefix(each.value.properties.scope, "/providers/Microsoft.Management/managementGroups/")
+  policy_definition_id = each.value.properties.policyDefinitionId
+
+  description  = each.value.properties.description
+  display_name = each.value.properties.displayName
+  enforce      = each.value.properties.enforcementMode == "Default"
+  metadata     = jsonencode(each.value.properties.metadata)
+
+  dynamic "non_compliance_message" {
+    for_each = try(each.value.properties.nonComplianceMessages, [])
+    content {
+      content = try(each.value.message, "")
+    }
+  }
+
+  not_scopes = each.value.properties.notScopes
+  parameters = each.value.properties.parameters
+
+  # Need policy assignments to be defined before we can reference them
+  depends_on = [azurerm_policy_definition.policies]
+}
