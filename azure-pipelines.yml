@@ -42,6 +42,8 @@ stages:
       platform: nonlive
       environment: NLV
       targetResources: ${{ parameters.targetResources }}
+      serviceName: azure-policy
+      tfvars: null
 
   # Plan Live
   - template: stages/terraform-ws-plan.yaml@cppAzureDevOpsTemplates
@@ -53,6 +55,8 @@ stages:
       platform: live
       environment: LVE
       targetResources: ${{ parameters.targetResources }}
+      serviceName: azure-policy
+      tfvars: null
 
   # Apply Nonlive
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
@@ -65,6 +69,8 @@ stages:
         platform: nonlive
         environment: NLV
         targetResources: ${{ parameters.targetResources }}
+        serviceName: azure-policy
+        tfvars: null
 
   # Apply Live
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
@@ -77,3 +83,5 @@ stages:
         platform: live
         environment: LVE
         targetResources: ${{ parameters.targetResources }}
+        serviceName: azure-policy
+        tfvars: null
