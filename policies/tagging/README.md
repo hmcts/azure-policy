@@ -3,7 +3,7 @@
 ## Required tags
 Required tags, common and specific to subscription of resource.
 
-All environments and resources: 
+All environments and resources:
  - environment
  - application
  - businessArea
@@ -11,7 +11,7 @@ All environments and resources:
 
 Sandbox only:
  - expiresAfter
-     
+
 ## Allowed values
 Tags and their allowed values.
 
@@ -27,19 +27,19 @@ environment:
  - ITHC
  - staging
  - production
- 
+
 businessArea:
  - CFT
  - crime
  - Cross-Cutting
- 
-builtFrom: 
+
+builtFrom:
  - Name or URL of repository
 
 expiresAfter (sandbox only):
  - YYYY-MM-DD
- 
- 
+
+
 ## Check compliance
 
 You can view the current compliance status in the Azure portal.

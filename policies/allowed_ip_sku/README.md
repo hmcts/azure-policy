@@ -11,6 +11,6 @@ The specific IP SKU sizes that are enforced by the policy:
 | --------------   | --------------  |
 | Standard IP SKU  | Standard        |
 
-## Exemptions 
+## Exemptions
 
 Send a pull request to [assignments/mgmt-groups/mg-HMCTS/assign.allowed_ip_sku.json](https://github.com/hmcts/cpp-azure-policy/blob/HEAD/assignments/mgmt-groups/mg-HMCTS/assign.allowed_ip_sku.json) with justification for why you need to use one not on the standard list.

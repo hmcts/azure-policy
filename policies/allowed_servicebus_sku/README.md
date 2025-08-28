@@ -13,6 +13,6 @@ The specific SKUs that are enforced by the policy:
 | Standard | Sandbox, NonProd, Prod |
 | Basic  | Sandbox, NonProd, Prod     |
 
-## Exemptions 
+## Exemptions
 
 Send a pull request to [assignments/mgmt-groups/mg-HMCTS/assign.allowed_servicebus_sku.json](https://github.com/hmcts/cpp-azure-policy/blob/HEAD/assignments/mgmt-groups/mg-HMCTS/assign.allowed_servicebus_sku.json) with justification for why you need to use one that does not meet the above specification.

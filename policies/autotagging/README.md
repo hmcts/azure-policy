@@ -1,4 +1,4 @@
-# HMCTS Auto Tagging Policy 
+# HMCTS Auto Tagging Policy
 
 Automatically applys a tag with a given name/value using the modify effect.
 # Parameters

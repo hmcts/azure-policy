@@ -28,7 +28,7 @@ The following log categories are enabled:
 
 ## Parameters Reference
 
-There are certain parameters and settings in this policy that are required in order for it to work. 
+There are certain parameters and settings in this policy that are required in order for it to work.
 
 The parameter profileName will be what appears on the diagnostic settings page.
 
