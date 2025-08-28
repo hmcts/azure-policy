@@ -52,7 +52,7 @@ resource "azurerm_management_group_policy_assignment" "management_assignments" {
 
   name = each.value.name
 
-  management_group_id = trimprefix(each.value.properties.scope, "/providers/Microsoft.Management/managementGroups/")
+  management_group_id  = trimprefix(each.value.properties.scope, "/providers/Microsoft.Management/managementGroups/")
   policy_definition_id = each.value.properties.policyDefinitionId
 
   description  = each.value.properties.description
