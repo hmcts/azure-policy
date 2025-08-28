@@ -2,9 +2,9 @@ name: CPP Terraform Azure Policy Management
 trigger:
   branches:
     include:
-    - main
+    - master
 pr:
-- main
+- master
 
 resources:
   repositories:
