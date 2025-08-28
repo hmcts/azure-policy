@@ -21,8 +21,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSPolicyAddonEnabled-sbox",
-  "name": "AKSPolicyAddonEnabled-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSPolAddEn-sbox",
+  "name": "AKSPolAddEn-sbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",
