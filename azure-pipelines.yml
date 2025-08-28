@@ -32,6 +32,7 @@ stages:
           - script: |
               pwd
               ls -al
+              ls -al assignments/mgmt-groups
               git status
           - template: steps/terraform/terraform-precommit.yaml@cppAzureDevOpsTemplates
             parameters:
