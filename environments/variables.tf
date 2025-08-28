@@ -11,7 +11,7 @@ variable "location" {
 }
 
 variable "builtFrom" {
-  default = "hmcts/azure-policy"
+  default = "hmcts/cpp-azure-policy"
 }
 
 variable "tenant" {

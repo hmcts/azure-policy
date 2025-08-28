@@ -4,7 +4,7 @@
 HMCTS principle is for all resources within Azure to be deployed into UK south (with some exceptions)
 
 ### Exceptions
-If you require an exception please create a new PR and add the Resource Group in which you plan to add or update infrustructure in [Here](https://github.com/hmcts/azure-policy/blob/f5882400a823866a66eff009336072b4d35d5b50/assignments/mgmt-groups/mg-HMCTS/assign.allowed_regions.json#L14)
+If you require an exception please create a new PR and add the Resource Group in which you plan to add or update infrustructure in [Here](https://github.com/hmcts/cpp-azure-policy/blob/f5882400a823866a66eff009336072b4d35d5b50/assignments/mgmt-groups/mg-HMCTS/assign.allowed_regions.json#L14)
 
 ## Check compliance
 
