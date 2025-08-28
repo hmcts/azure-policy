@@ -59,9 +59,10 @@ stages:
       serviceName: azure-policy
       tfvars: null
       stageName: plan_lve
+      dependsOn: plan_nlv
 
   # Apply Nonlive
-  - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+  - ${{ if and(eq(variables['Build.SourceBranch'], 'refs/heads/master'), succeeded()) }}:
     - template: stages/terraform-ws-apply.yaml@cppAzureDevOpsTemplates
       parameters:
         agentPool: MDV-ADO-AGENTS-01
@@ -74,9 +75,10 @@ stages:
         serviceName: azure-policy
         tfvars: null
         stageName: apply_nlv
+        dependsOn: plan_nlv
 
   # Apply Live
-  - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+  - ${{ if and(eq(variables['Build.SourceBranch'], 'refs/heads/master'), succeeded()) }}:
     - template: stages/terraform-ws-apply.yaml@cppAzureDevOpsTemplates
       parameters:
         agentPool: MPD-ADO-AGENTS-01
