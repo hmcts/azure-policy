@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "displayName": "HMCTS Azure Container Registry Location Policy",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "parameters": {
+      "listOfAllowedLocations": {
+        "defaultValue": [
+          "uksouth",
+          "ukwest"
+        ],
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed Locations for ACR",
+          "description": "Permitted HMCTS Regions for Azure Container Registries",
+          "strongType": "location"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.ContainerRegistry/registries"
+          },
+          {
+            "field": "location",
+            "notIn": "[parameters('listOfAllowedLocations')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSACRLocationPolicy",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSACRLocationPolicy"
+}
