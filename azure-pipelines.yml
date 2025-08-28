@@ -29,6 +29,10 @@ stages:
         condition: eq(variables['Build.Reason'], 'PullRequest')
         steps:
           - checkout: self
+          - script: |
+              pwd
+              ls -al
+              git status
           - template: steps/terraform/terraform-precommit.yaml@cppAzureDevOpsTemplates
             parameters:
               tfversion: ${{ parameters.tfversion }}
