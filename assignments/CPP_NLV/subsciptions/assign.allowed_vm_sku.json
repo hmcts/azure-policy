@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "PlatOps"
+    },
+    "description": "Approved Virtual Machine SKU sizes",
+    "displayName": "HMCTS CPP Approved VM SKU Sizes - (NLV)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "This VM SKU size is not allowed. See https://github.com/hmcts/cpp-azure-policy/blob/master/policies/allowed_vm_sku/README.md"
+      }
+    ],
+    "notScopes": [],
+    "parameters": {},
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSVmSkuSize",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSVmSkuSize",
+  "name": "HMCTSVmSkuSize"
+}

@@ -1,0 +1,79 @@
+name: CPP Terraform Azure Policy Management
+trigger:
+  branches:
+    include:
+    - main
+pr:
+- main
+
+resources:
+  repositories:
+  - repository: cppAzureDevOpsTemplates
+    type: github
+    name: hmcts/cpp-azure-devops-templates
+    ref: 'main'
+    endpoint: 'hmcts'
+
+parameters:
+  - name: tfversion
+    default: 1.12.2
+  - name: targetResources
+    default: null
+
+stages:
+  - stage: precommit
+    pool:
+      name: MDV-ADO-AGENTS-01
+    jobs:
+      - job: pre
+        condition: eq(variables['Build.Reason'], 'PullRequest')
+        steps:
+          - template: steps/terraform/terraform-precommit.yaml@cppAzureDevOpsTemplates
+            parameters:
+              tfversion: ${{ parameters.tfversion }}
+
+  # Plan Nonlive
+  - template: stages/terraform-ws-plan.yaml@cppAzureDevOpsTemplates
+    parameters:
+      agentPool: MDV-ADO-AGENTS-01
+      tfversion: ${{ parameters.tfversion }}
+      azureServiceConnection: ado_nonlive_workload_identity
+      vaultAdminCredentialsVarGroup: cpp-nonlive-vault-admin
+      platform: nonlive
+      environment: NLV
+      targetResources: ${{ parameters.targetResources }}
+
+  # Plan Live
+  - template: stages/terraform-ws-plan.yaml@cppAzureDevOpsTemplates
+    parameters:
+      agentPool: MPD-ADO-AGENTS-01
+      tfversion: ${{ parameters.tfversion }}
+      azureServiceConnection: ado_live_workload_identity
+      vaultAdminCredentialsVarGroup: cpp-live-vault-admin
+      platform: live
+      environment: LVE
+      targetResources: ${{ parameters.targetResources }}
+
+  # Apply Nonlive
+  - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+    - template: stages/terraform-ws-apply.yaml@cppAzureDevOpsTemplates
+      parameters:
+        agentPool: MDV-ADO-AGENTS-01
+        tfversion: ${{ parameters.tfversion }}
+        azureServiceConnection: ado_nonlive_workload_identity
+        vaultAdminCredentialsVarGroup: cpp-nonlive-vault-admin
+        platform: nonlive
+        environment: NLV
+        targetResources: ${{ parameters.targetResources }}
+
+  # Apply Live
+  - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+    - template: stages/terraform-ws-apply.yaml@cppAzureDevOpsTemplates
+      parameters:
+        agentPool: MPD-ADO-AGENTS-01
+        tfversion: ${{ parameters.tfversion }}
+        azureServiceConnection: ado_live_workload_identity
+        vaultAdminCredentialsVarGroup: cpp-live-vault-admin
+        platform: live
+        environment: LVE
+        targetResources: ${{ parameters.targetResources }}
