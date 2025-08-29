@@ -4,7 +4,7 @@ locals {
   management_dir   = "./assignments/${var.tenant}/mgmt-groups/"
 
   policy_files = [
-    for policy in fileset(local.policy_dir, "*.json") :
+    for policy in fileset(local.policy_dir, "**/*.json") :
     jsondecode(file(join("", [local.policy_dir, policy])))
   ]
   policies = {
