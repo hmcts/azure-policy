@@ -49,7 +49,7 @@ stages:
       environment: NLV
       targetResources: ${{ parameters.targetResources }}
       serviceName: azure-policy
-      tfvars: environments/NLV/nlv.tfvars
+      tfvars: null
       stageName: plan_nlv
 
   # Plan Live
@@ -63,7 +63,7 @@ stages:
       environment: LVE
       targetResources: ${{ parameters.targetResources }}
       serviceName: azure-policy
-      tfvars: environments/LVE/lve.tfvars
+      tfvars: null
       stageName: plan_lve
 
   # Apply Nonlive
@@ -78,7 +78,7 @@ stages:
         environment: NLV
         targetResources: ${{ parameters.targetResources }}
         serviceName: azure-policy
-        tfvars: environments/NLV/nlv.tfvars
+        tfvars: null
         stageName: apply_nlv
 
   # Apply Live
@@ -93,5 +93,5 @@ stages:
         environment: LVE
         targetResources: ${{ parameters.targetResources }}
         serviceName: azure-policy
-        tfvars: environments/LVE/lve.tfvars
+        tfvars: null
         stageName: apply_lve
