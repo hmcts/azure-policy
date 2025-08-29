@@ -36,7 +36,7 @@ resource "azurerm_subscription_policy_assignment" "subscription_assignments" {
   dynamic "non_compliance_message" {
     for_each = try(each.value.properties.nonComplianceMessages, [])
     content {
-      content = each.value.message
+      content = non_compliance_message.value.message
     }
   }
 
@@ -63,7 +63,7 @@ resource "azurerm_management_group_policy_assignment" "management_assignments" {
   dynamic "non_compliance_message" {
     for_each = try(each.value.properties.nonComplianceMessages, [])
     content {
-      content = each.value.message
+      content = non_compliance_message.value.message
     }
   }
 
