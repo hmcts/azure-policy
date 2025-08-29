@@ -1,0 +1,95 @@
+trigger:
+  branches:
+    include:
+    - master
+    
+resources:
+  repositories:
+  - repository: cnp-azuredevops-libraries
+    type: github
+    ref: master
+    name: hmcts/cnp-azuredevops-libraries
+    endpoint: 'hmcts'
+
+variables:
+  - name: timeoutInMinutes
+    value: 60
+  - name: agentPool
+    value: ubuntu-latest
+  - name: build
+    value: $(Build.BuildNumber)
+  - name: product
+    value: cnp-platform
+  - name: terraformInitSubscription
+    value: 04d27a32-7a07-48b3-95b8-3c8691e1a263
+  - template: vars/input-variables.yaml@cnp-azuredevops-libraries
+
+parameters:
+  - name: overrideAction
+    type: string
+    default: plan
+    values:
+      - plan
+      - apply
+      - destroy
+  - name: environment_components
+    type: object
+    default:
+      - deployment: 'CNP_sandbox'
+        environment: 'sbox'
+        component: 'azure-policy'
+        service_connection: 'dcd-cftapps-sbox'
+        dependsOn: 'Precheck'
+        pipeline_tests: false
+
+
+    # - deployment: 'production_subscription'
+    #   environment: 'prod'
+    #   component: 'subscription'
+    #   service_connection: 'dcd-cftapps-prod'
+    #   storage_account_rg: 'core-infra-prod-rg'
+    #   storage_account_name: 'cftappsprod'
+    #   dependsOn: 'sandbox_subscription'
+    #   pipeline_tests: false
+
+    # - deployment: 'production_mgmt_group'
+    #   environment: 'prod'
+    #   component: 'mgmt-group'
+    #   service_connection: 'dcd-cftapps-prod'
+    #   storage_account_rg: 'core-infra-prod-rg'
+    #   storage_account_name: 'cftappsprod'
+    #   dependsOn: 'production_subscription'
+    #   pipeline_tests: false
+
+stages:
+  - stage: Precheck
+    jobs:
+      - job:
+        pool:
+          vmImage: ${{ variables.agentPool }}
+        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+        steps:
+          - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
+            parameters:
+              keyvaultName: 'infra-vault-nonprod'
+              keyvaultSecret: 'azure-devops-sp-token'
+              serviceConnection: 'azurerm-sandbox'
+              overrideAction: ${{ parameters.overrideAction }}
+
+  - ${{ each deployment in parameters.environment_components }}:
+      - stage: ${{ deployment.deployment }}
+        dependsOn: ${{ deployment.dependsOn }}
+        jobs:
+          - job: TerraformPlanApply
+            pool:
+              vmImage: ${{ variables.agentPool }}
+            timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+            steps:
+              - template: steps/terraform.yaml@cnp-azuredevops-libraries
+                parameters:
+                  overrideAction: ${{ parameters.overrideAction }}
+                  environment: ${{ deployment.environment }}
+                  component: ${{ deployment.component }}
+                  serviceConnection: ${{ deployment.service_connection }}
+                  terraformInitSubscription: ${{ variables.terraformInitSubscription }}
+                  product: ${{ variables.product }}
