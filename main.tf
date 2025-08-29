@@ -36,7 +36,7 @@ resource "azurerm_subscription_policy_assignment" "subscription_assignments" {
   dynamic "non_compliance_message" {
     for_each = try(each.value.properties.nonComplianceMessages, [])
     content {
-      content = try(each.value.message, "")
+      content = each.value.message
     }
   }
 
@@ -52,7 +52,7 @@ resource "azurerm_management_group_policy_assignment" "management_assignments" {
 
   name = each.value.name
 
-  management_group_id  = trimprefix(each.value.properties.scope, "/providers/Microsoft.Management/managementGroups/")
+  management_group_id  = each.value.properties.scope
   policy_definition_id = each.value.properties.policyDefinitionId
 
   description  = each.value.properties.description
@@ -63,7 +63,7 @@ resource "azurerm_management_group_policy_assignment" "management_assignments" {
   dynamic "non_compliance_message" {
     for_each = try(each.value.properties.nonComplianceMessages, [])
     content {
-      content = try(each.value.message, "")
+      content = each.value.message
     }
   }
 
