@@ -1,7 +1,7 @@
 locals {
-  policy_dir       = "../../policies/"
-  subscription_dir = "../../assignments/${var.tenant}/subscriptions"
-  management_dir   = "../../assignments/${var.tenant}/mgmt-groups"
+  policy_dir       = "./policies/"
+  subscription_dir = "./assignments/${var.tenant}/subscriptions"
+  management_dir   = "./assignments/${var.tenant}/mgmt-groups"
 
   policy_files = [
     for policy in fileset(local.policy_dir, "**/*.json") :
