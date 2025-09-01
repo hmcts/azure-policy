@@ -93,6 +93,9 @@ stages:
   # Trigger compliance scan
   - stage: trigger_scan
     displayName: Trigger Policy State Scan
+    dependsOn:
+      - apply_nlv
+      - apply_lve
     pool:
       name: MDV-ADO-AGENTS-01
     jobs:
