@@ -89,3 +89,32 @@ stages:
         serviceName: azure-policy
         tfvars: null
         stageName: apply_lve
+
+  # Trigger compliance scan
+  - stage: trigger_scan
+    displayName: Trigger Policy State Scan
+    pool:
+      name: MDV-ADO-AGENTS-01
+    jobs:
+      - job: scan
+        condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+        steps:
+          - task: AzureCLI@2
+            displayName: Trigger Policy State Scan - Non Live
+            inputs:
+              scriptType: bash
+              azureSubscription: 'ado_nonlive_workload_identity'
+              scriptLocation: inlineScript
+              inlineScript: |
+                az policy state scan --subscription 0511a7fe-771b-4ffa-9348-c59e9c4a87bd
+                az policy state scan --subscription 8cdb5405-7535-4349-92e9-f52bddc7833a
+                az policy state scan --subscription e6b5053b-4c38-4475-a835-a025aeb3d8c7
+          - task: AzureCLI@2
+            displayName: Trigger Policy State Scan - Live
+            inputs:
+              scriptType: bash
+              azureSubscription: 'ado_live_workload_identity'
+              scriptLocation: inlineScript
+              inlineScript: |
+                az policy state scan --subscription e7819cdc-66af-4611-9dba-b9958e5b6d7d
+                az policy state scan --subscription 9ab65d81-930d-4cc0-a93d-367e14676bc0
