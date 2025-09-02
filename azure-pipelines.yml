@@ -44,6 +44,19 @@ stages:
       serviceName: azure-policy
       targetResources: null
 
+  # Apply Nonlive
+  - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+    - template: stages/terraform-ws-apply.yaml@cppAzureDevOpsTemplates
+      parameters:
+        agentPool: MDV-ADO-AGENTS-01
+        tfversion: ${{ parameters.tfversion }}
+        azureServiceConnection: ado_nonlive_workload_identity
+        vaultAdminCredentialsVarGroup: cpp-nonlive-vault-admin
+        platform: nonlive
+        environment: NLV
+        tfvars: null
+        stageName: apply_nlv
+
   # Plan Live
   - template: stages/terraform-ws-plan.yaml@cppAzureDevOpsTemplates
     parameters:
@@ -57,19 +70,6 @@ stages:
       stageName: plan_lve
       serviceName: azure-policy
       targetResources: null
-
-  # Apply Nonlive
-  - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
-    - template: stages/terraform-ws-apply.yaml@cppAzureDevOpsTemplates
-      parameters:
-        agentPool: MDV-ADO-AGENTS-01
-        tfversion: ${{ parameters.tfversion }}
-        azureServiceConnection: ado_nonlive_workload_identity
-        vaultAdminCredentialsVarGroup: cpp-nonlive-vault-admin
-        platform: nonlive
-        environment: NLV
-        tfvars: null
-        stageName: apply_nlv
 
   # Apply Live
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
