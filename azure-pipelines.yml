@@ -11,7 +11,7 @@ resources:
   - repository: cppAzureDevOpsTemplates
     type: github
     name: hmcts/cpp-azure-devops-templates
-    ref: 'main'
+    ref: 'DTSPO-26989-flexible-stages'
     endpoint: 'hmcts'
 
 parameters:
@@ -59,6 +59,8 @@ stages:
       serviceName: azure-policy
       tfvars: null
       stageName: plan_lve
+      dependsOn:
+        - plan_nlv
 
   # Apply Nonlive
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
@@ -74,6 +76,8 @@ stages:
         serviceName: azure-policy
         tfvars: null
         stageName: apply_nlv
+        dependsOn:
+          - plan_nlv
 
   # Apply Live
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
@@ -89,35 +93,37 @@ stages:
         serviceName: azure-policy
         tfvars: null
         stageName: apply_lve
+        dependsOn:
+          - plan_nlv
 
   # Trigger compliance scan
-  - stage: trigger_scan
-    displayName: Trigger Policy State Scan
-    dependsOn:
-      - apply_nlv
-      - apply_lve
-    pool:
-      name: MDV-ADO-AGENTS-01
-    jobs:
-      - job: scan
-        condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
-        steps:
-          - task: AzureCLI@2
-            displayName: Trigger Policy State Scan - Non Live
-            inputs:
-              scriptType: bash
-              azureSubscription: 'ado_nonlive_workload_identity'
-              scriptLocation: inlineScript
-              inlineScript: |
-                az policy state scan --subscription 0511a7fe-771b-4ffa-9348-c59e9c4a87bd
-                az policy state scan --subscription 8cdb5405-7535-4349-92e9-f52bddc7833a
-                az policy state scan --subscription e6b5053b-4c38-4475-a835-a025aeb3d8c7
-          - task: AzureCLI@2
-            displayName: Trigger Policy State Scan - Live
-            inputs:
-              scriptType: bash
-              azureSubscription: 'ado_live_workload_identity'
-              scriptLocation: inlineScript
-              inlineScript: |
-                az policy state scan --subscription e7819cdc-66af-4611-9dba-b9958e5b6d7d
-                az policy state scan --subscription 9ab65d81-930d-4cc0-a93d-367e14676bc0
+  - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
+    - stage: trigger_scan
+      displayName: Trigger Policy State Scan
+      dependsOn:
+        - apply_nlv
+        - apply_lve
+      pool:
+        name: MDV-ADO-AGENTS-01
+      jobs:
+        - job: scan
+          steps:
+            - task: AzureCLI@2
+              displayName: Trigger Policy State Scan - Non Live
+              inputs:
+                scriptType: bash
+                azureSubscription: 'ado_nonlive_workload_identity'
+                scriptLocation: inlineScript
+                inlineScript: |
+                  az policy state scan --subscription 0511a7fe-771b-4ffa-9348-c59e9c4a87bd
+                  az policy state scan --subscription 8cdb5405-7535-4349-92e9-f52bddc7833a
+                  az policy state scan --subscription e6b5053b-4c38-4475-a835-a025aeb3d8c7
+            - task: AzureCLI@2
+              displayName: Trigger Policy State Scan - Live
+              inputs:
+                scriptType: bash
+                azureSubscription: 'ado_live_workload_identity'
+                scriptLocation: inlineScript
+                inlineScript: |
+                  az policy state scan --subscription e7819cdc-66af-4611-9dba-b9958e5b6d7d
+                  az policy state scan --subscription 9ab65d81-930d-4cc0-a93d-367e14676bc0

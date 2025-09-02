@@ -11,7 +11,7 @@
             "message": "Resource doesn't meet location requirements. See https://github.com/hmcts/cpp-azure-policy/blob/master/policies/allowed_regions/README.md"
         }
       ],
-      "notScopes": [],
+      "notScopes": [ /* TODO */ ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
       "scope": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e"
