@@ -59,8 +59,7 @@ stages:
       serviceName: azure-policy
       tfvars: null
       stageName: plan_lve
-      dependsOn:
-        - plan_nlv
+      dependsOn: [ precommit, plan_nlv ]
 
   # Apply Nonlive
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
@@ -76,8 +75,7 @@ stages:
         serviceName: azure-policy
         tfvars: null
         stageName: apply_nlv
-        dependsOn:
-          - plan_nlv
+        dependsOn: [ plan_nlv ]
 
   # Apply Live
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
@@ -93,8 +91,7 @@ stages:
         serviceName: azure-policy
         tfvars: null
         stageName: apply_lve
-        dependsOn:
-          - plan_nlv
+        dependsOn: [ plan_nlv ]
 
   # Trigger compliance scan
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
