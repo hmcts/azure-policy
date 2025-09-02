@@ -17,8 +17,6 @@ resources:
 parameters:
   - name: tfversion
     default: 1.12.2
-  - name: targetResources
-    default: null
 
 stages:
   - stage: precommit
@@ -41,8 +39,6 @@ stages:
       vaultAdminCredentialsVarGroup: cpp-nonlive-vault-admin
       platform: nonlive
       environment: NLV
-      targetResources: ${{ parameters.targetResources }}
-      serviceName: azure-policy
       tfvars: null
       stageName: plan_nlv
 
@@ -55,8 +51,6 @@ stages:
       vaultAdminCredentialsVarGroup: cpp-live-vault-admin
       platform: live
       environment: LVE
-      targetResources: ${{ parameters.targetResources }}
-      serviceName: azure-policy
       tfvars: null
       stageName: plan_lve
 
@@ -70,8 +64,6 @@ stages:
         vaultAdminCredentialsVarGroup: cpp-nonlive-vault-admin
         platform: nonlive
         environment: NLV
-        targetResources: ${{ parameters.targetResources }}
-        serviceName: azure-policy
         tfvars: null
         stageName: apply_nlv
 
@@ -85,8 +77,6 @@ stages:
         vaultAdminCredentialsVarGroup: cpp-live-vault-admin
         platform: live
         environment: LVE
-        targetResources: ${{ parameters.targetResources }}
-        serviceName: azure-policy
         tfvars: null
         stageName: apply_lve
 
