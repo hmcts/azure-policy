@@ -1,4 +1,4 @@
-env       = "nlv"
+env       = "nonlive"
 product   = "azure-policy"
 location  = "uksouth"
 builtFrom = "hmcts/cpp-azure-policy"
