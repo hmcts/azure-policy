@@ -38,7 +38,7 @@ stages:
       azureServiceConnection: ado_nonlive_workload_identity
       vaultAdminCredentialsVarGroup: cpp-nonlive-vault-admin
       platform: nonlive
-      environment: NLV
+      environment: nonlive
       tfvars: null
       stageName: plan_nlv
       serviceName: azure-policy
@@ -53,7 +53,7 @@ stages:
         azureServiceConnection: ado_nonlive_workload_identity
         vaultAdminCredentialsVarGroup: cpp-nonlive-vault-admin
         platform: nonlive
-        environment: NLV
+        environment: nonlive
         tfvars: null
         stageName: apply_nlv
 
@@ -65,7 +65,7 @@ stages:
       azureServiceConnection: ado_live_workload_identity
       vaultAdminCredentialsVarGroup: cpp-live-vault-admin
       platform: live
-      environment: LVE
+      environment: live
       tfvars: null
       stageName: plan_lve
       serviceName: azure-policy
@@ -80,7 +80,7 @@ stages:
         azureServiceConnection: ado_live_workload_identity
         vaultAdminCredentialsVarGroup: cpp-live-vault-admin
         platform: live
-        environment: LVE
+        environment: live
         tfvars: null
         stageName: apply_lve
 
