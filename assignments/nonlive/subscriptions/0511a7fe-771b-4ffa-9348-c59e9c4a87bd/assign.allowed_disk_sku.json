@@ -1,0 +1,22 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Restrict the Disk SKU sizes that can be deployed in HMCTS",
+      "displayName": "HMCTS Restricted Disk SKU Sizes - MoJ-HMCTS-Crime-IdAM-NLE",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+          "message": "The selected SKU is not permitted or the size is greater than 2TB. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_disk_sku/README.md"
+        }
+      ],
+      "notScopes": [],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSize",
+      "scope": "/subscriptions/0511a7fe-771b-4ffa-9348-c59e9c4a87bd"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/0511a7fe-771b-4ffa-9348-c59e9c4a87bd/providers/Microsoft.Authorization/policyAssignments/HMCTSDiskSkuSize-idam",
+    "name": "HMCTSDiskSkuSize-idam"
+  }
