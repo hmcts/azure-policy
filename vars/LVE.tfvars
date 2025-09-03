@@ -1,4 +1,4 @@
-env       = "lve"
+env       = "live"
 product   = "azure-policy"
 location  = "uksouth"
 builtFrom = "hmcts/cpp-azure-policy"
