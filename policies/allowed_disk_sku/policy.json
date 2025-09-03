@@ -46,7 +46,7 @@
               },
               {
                 "field": "Microsoft.Compute/disks/diskSizeGB",
-                "greater": 2048 
+                "greater": 2048
               }
             ]
           }
