@@ -1,0 +1,26 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "https://github.com/hmcts/cpp-azure-policy"
+        },
+        "description": "Policy to check resource locations",
+        "displayName": "HMCTS Location Policy - (CPP NLV IdAM)",
+        "enforcementMode": "DoNotEnforce",
+        "nonComplianceMessages": [
+            {
+                "message": "Resource doesn't meet location requirements. See https://github.com/hmcts/cpp-azure-policy/blob/master/policies/allowed_regions/README.md"
+            }
+        ],
+        "notScopes": [],
+        "parameters": {},
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
+        "scope": "/subscriptions/0511a7fe-771b-4ffa-9348-c59e9c4a87bd"
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyAssignments/Location_Global",
+    "name": "Location_NLV_IdAM"
+}
