@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which allow endpoint edit permissions of ClusterRole/system:aggregate-to-edit.",
+    "displayName": "AKS No Endpoint Edit Permissions (mg:CFT-Sandbox)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "AKS Clusters should not allow endpoint edit permissions of ClusterRole/system:aggregate-to-edit."
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1ddac26b-ed48-4c30-8cc5-3a68c79b8001",
+    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sNoEndpointEdit-sbox",
+  "name": "K8sNoEndpointEdit-sbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
