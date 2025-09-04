@@ -6,11 +6,6 @@
     "description": "Audit AKS clusters which do not follow the principle of least privilege when using admin role.",
     "displayName": "AKS Cluster-Admin Role Restriction (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Clusters should ensure that the cluster-admin role is only used where required."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

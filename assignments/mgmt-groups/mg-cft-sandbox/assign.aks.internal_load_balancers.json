@@ -6,15 +6,10 @@
     "description": "Audit AKS Clusters which do not use internal load balancers.",
     "displayName": "AKS Use Internal Load Balancers (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "AKS Clusters should use internal load balancers."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/3fc4dc25-5baf-40d8-9b05-7fe74c1bc64e",

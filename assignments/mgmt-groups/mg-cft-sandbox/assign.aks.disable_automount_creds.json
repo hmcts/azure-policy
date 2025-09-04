@@ -6,11 +6,6 @@
     "description": "Audit AKS clusters which do not have automounting API credentials disabled.",
     "displayName": "AKS Disable Automount API Credentials (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Clusters should disable automounting API credentials."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

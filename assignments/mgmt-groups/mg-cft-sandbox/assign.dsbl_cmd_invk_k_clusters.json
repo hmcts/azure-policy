@@ -6,11 +6,6 @@
     "description": "Audit AKS clusters where Run Command (command invoke) is not disabled.",
     "displayName": "AKS Disable Command Invoke (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Command invoke should be disabled on AKS clusters."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {
@@ -27,5 +22,11 @@
   "sku": {
     "name": "A0",
     "tier": "Free"
+  },
+  "identity": {
+    "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourcegroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-sbox-mi": {}
+    }
   }
 }
