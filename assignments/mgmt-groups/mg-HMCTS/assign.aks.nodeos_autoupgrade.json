@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters that do not have allowed node OS auto-upgrade channels configured when cluster channel is node-image.",
-    "displayName": "AKS Node OS Auto-upgrade (mg:CFT-Sandbox)",
+    "displayName": "AKS Node OS Auto-upgrade - HMCTS-MG",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

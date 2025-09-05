@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters not using Azure CNI.",
-    "displayName": "AKS Use Azure CNI (mg:CFT-Sandbox)",
+    "displayName": "AKS Use Azure CNI - HMCTS-MG",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

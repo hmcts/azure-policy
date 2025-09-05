@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters that have SSH access enabled (should be disabled or local user only).",
-    "displayName": "AKS Disable SSH (mg:CFT-Sandbox)",
+    "displayName": "AKS Disable SSH - HMCTS-MG",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

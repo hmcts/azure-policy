@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters that do not have an allowed cluster auto-upgrade channel configured.",
-    "displayName": "AKS Cluster Auto-upgrade (mg:CFT-Sandbox)",
+    "displayName": "AKS Cluster Auto-upgrade - HMCTS-MG",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
