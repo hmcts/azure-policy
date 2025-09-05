@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters that do not have CSI drivers enabled as per parameters (Disk/File/Snapshot).",
-    "displayName": "AKS Enable CSI (mg:CFT-Sandbox)",
+    "displayName": "AKS Enable CSI - HMCTS-MG",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

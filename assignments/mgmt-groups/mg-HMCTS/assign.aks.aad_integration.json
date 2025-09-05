@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters without Microsoft Entra ID (AAD) managed integration enabled.",
-    "displayName": "AKS Entra ID Integration (mg:CFT-Sandbox)",
+    "displayName": "AKS Entra ID Integration - HMCTS-MG",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

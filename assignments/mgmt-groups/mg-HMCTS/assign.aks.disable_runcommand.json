@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters where Run Command (command invoke) is not disabled.",
-    "displayName": "AKS Disable RunCommand (mg:CFT-Sandbox)",
+    "displayName": "AKS Disable RunCommand - HMCTS-MG",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
