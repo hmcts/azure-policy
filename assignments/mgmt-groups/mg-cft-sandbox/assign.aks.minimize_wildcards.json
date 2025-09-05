@@ -6,11 +6,6 @@
     "description": "Audit AKS Clusters which do not minimise wildcard use in role and cluster role.",
     "displayName": "AKS Minimize Wildcard Permissions (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Clusters should minimise wildcard use in role and cluster role."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

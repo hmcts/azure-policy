@@ -6,11 +6,6 @@
     "description": "Audit AKS Clusters which allow endpoint edit permissions of ClusterRole/system:aggregate-to-edit.",
     "displayName": "AKS No Endpoint Edit Permissions (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "AKS Clusters should not allow endpoint edit permissions of ClusterRole/system:aggregate-to-edit."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

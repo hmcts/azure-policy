@@ -44,6 +44,9 @@ When you've decided on a scope, create a policy assignment file in the appropria
 
 Use a subscription scope when you are testing out a policy or if you only want a policy to apply to a single subscription or group of subscriptions.
 
+When testing policy assignments against Sandbox, if the policy you are assigning is a built in Azure policy make sure to prefix the policy file with `builtin.assign.*`
+so that the policy definition id is not overriden like it is done for custom policies, you can view how this works in sandbox-override.sh
+
 Use a management group scope when you want a policy to apply to all subscriptions in the tenant.
 
 **If a tagging policy exception is required, please use the notScopes in assignments/mgmt-groups/mg-HMCTS/assign.tagging.json**
