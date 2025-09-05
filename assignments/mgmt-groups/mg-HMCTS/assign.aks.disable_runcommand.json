@@ -18,11 +18,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/89f2d532-c53c-4f8f-9afa-4927b1114a0d",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSDisableRunCmd-sbox",
-  "name": "AKSDisableRunCmd-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSDisableRunCommand",
+  "name": "AKSDisableRunCommand",
   "location": "uksouth",
   "sku": {
     "name": "A0",
