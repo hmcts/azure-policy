@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not minimise wildcard use in role and cluster role.",
-    "displayName": "AKS Minimize Wildcard Permissions (mg:CFT-Sandbox)",
+    "displayName": "AKS Minimize Wildcard Permissions - HMCTS-MG",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -13,11 +13,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ca8d5704-aa2b-40cf-b110-dc19052825ad",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sMinmiseWildcards-sbox",
-  "name": "K8sMinmiseWildcards-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sMinimiseWildcardUse",
+  "name": "K8sMinimiseWildcardUse",
   "location": "uksouth",
   "sku": {
     "name": "A0",

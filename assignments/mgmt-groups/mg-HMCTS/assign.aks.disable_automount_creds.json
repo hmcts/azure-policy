@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters which do not have automounting API credentials disabled.",
-    "displayName": "AKS Disable Automount API Credentials (mg:CFT-Sandbox)",
+    "displayName": "AKS Disable Automount API Credentials - HMCTS-MG",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -13,11 +13,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/423dd1ba-798e-40e4-9c4d-b6902674b423",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sDsblAutomntCreds-sbox",
-  "name": "K8sDsblAutomntCreds-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sDisableAutomountCreds",
+  "name": "K8sDisableAutomountCreds",
   "location": "uksouth",
   "sku": {
     "name": "A0",

@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which use the default namespace.",
-    "displayName": "AKS No Default Namespace (mg:CFT-Sandbox)",
+    "displayName": "AKS No Default Namespace - HMCTS-MG",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -13,11 +13,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/9f061a12-e40d-4183-a00e-171812443373",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sNoDfltNamespace-sbox",
-  "name": "K8sNoDfltNamespace-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sNoDefaultNamespace",
+  "name": "K8sNoDefaultNamespace",
   "location": "uksouth",
   "sku": {
     "name": "A0",
