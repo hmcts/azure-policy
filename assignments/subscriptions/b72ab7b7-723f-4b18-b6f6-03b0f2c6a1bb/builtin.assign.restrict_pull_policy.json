@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which do not restrict allowed container pull policy to IfNotPresent only",
+    "displayName": "AKS Restrict Allowed Container Pull Policy",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedPullPolicy": {
+        "value": "IfNotPresent"
+      }
+
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/50c83470-d2f0-4dda-a716-1938a4825f62",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/AKSRstrctPullPolicy-sbox",
+  "name": "AKSRstrctPullPolicy-sbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
