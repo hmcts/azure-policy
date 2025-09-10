@@ -21,8 +21,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSUseManagedIdent-sbox",
-  "name": "AKSUseManagedIdent-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSUseManagedIdent",
+  "name": "AKSUseManagedIdent",
   "location": "uksouth",
   "sku": {
     "name": "A0",

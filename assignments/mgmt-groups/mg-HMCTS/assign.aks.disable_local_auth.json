@@ -21,8 +21,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSDisableLocalAuth-sbox",
-  "name": "AKSDisableLocalAuth-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSDisableLocalAuth",
+  "name": "AKSDisableLocalAuth",
   "location": "uksouth",
   "sku": {
     "name": "A0",
