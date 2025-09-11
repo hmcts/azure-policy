@@ -37,7 +37,7 @@
   "identity": {
     "type": "UserAssigned",
     "userAssignedIdentities": {
-      "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-prod-mi": {}
+      "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-preview-mi": {}
     }
   }
 }
