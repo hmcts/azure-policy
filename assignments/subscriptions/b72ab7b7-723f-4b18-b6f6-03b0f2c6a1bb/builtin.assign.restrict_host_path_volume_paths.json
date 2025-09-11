@@ -12,7 +12,9 @@
         "value": "Audit"
       },
       "allowedHostPaths": {
-        "value": []
+        "value": {
+          "paths": []
+        }
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/098fc59e-46c7-4d99-9b16-64990e543d75",
