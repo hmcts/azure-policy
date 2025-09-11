@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed container syscalls",
-    "displayName": "AKS Restrict Allowed Seccomp Profiles",
+    "displayName": "AKS Restrict Allowed Seccomp Profiles - DCD-CFTAPPS-SBOX",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {

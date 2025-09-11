@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed container User and Group IDs",
-    "displayName": "AKS Restrict User and Group IDs",
+    "displayName": "AKS Restrict User and Group IDs - DCD-CFTAPPS-SBOX",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {

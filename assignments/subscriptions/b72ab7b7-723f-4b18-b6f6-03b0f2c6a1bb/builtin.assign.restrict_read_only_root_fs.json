@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which allow containers with non-read-only root file systems",
-    "displayName": "AKS Restrict Root File System to Read-Only",
+    "displayName": "AKS Restrict Root File System to Read-Only - DCD-CFTAPPS-SBOX",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {

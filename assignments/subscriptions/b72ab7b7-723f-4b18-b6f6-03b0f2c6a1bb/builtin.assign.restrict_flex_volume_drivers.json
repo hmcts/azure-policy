@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict FlexVolume drivers",
-    "displayName": "AKS Restrict FlexVolume Drivers",
+    "displayName": "AKS Restrict FlexVolume Drivers - DCD-CFTAPPS-SBOX",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {

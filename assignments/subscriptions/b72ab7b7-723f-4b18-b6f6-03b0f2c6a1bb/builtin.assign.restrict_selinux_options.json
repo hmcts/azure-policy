@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed selinux pod and container options",
-    "displayName": "AKS Restrict SELinux Options",
+    "displayName": "AKS Restrict SELinux Options - DCD-CFTAPPS-SBOX",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {

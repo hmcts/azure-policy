@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed container pull policy to IfNotPresent only",
-    "displayName": "AKS Restrict Allowed Container Pull Policy",
+    "displayName": "AKS Restrict Allowed Container Pull Policy - DCD-CFTAPPS-SBOX",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {

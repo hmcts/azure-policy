@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed HostPath Volume paths",
-    "displayName": "AKS Restrict HostPath Volume Paths",
+    "displayName": "AKS Restrict HostPath Volume Paths - DCD-CFTAPPS-SBOX",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {

@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict container ProcMountType to standard only",
-    "displayName": "AKS Restrict Allowed Container ProcMountTypes",
+    "displayName": "AKS Restrict Allowed Container ProcMountTypes - DCD-CFTAPPS-SBOX",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
