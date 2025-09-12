@@ -3,7 +3,7 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS Clusters which use the default namespace.",
+    "description": "Deny AKS Clusters which use the default namespace.",
     "displayName": "AKS No Default Namespace - HMCTS-MG",
     "enforcementMode": "Default",
     "notScopes": [],
