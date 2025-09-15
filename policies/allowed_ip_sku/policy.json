@@ -25,12 +25,12 @@
             "description": "Names of Public IP resources to exempt from SKU enforcement"
           },
           "defaultValue": [
-            "IP-MGT-OPS-SHS-OVPN-01",
-            "IP-MGT-VPN-01",
-            "IP-MLV-DMZ-FW-VPN-ENDPOINT-01",
-            "IP-PRD-DMZ-FW-PUBLIC-ENDPOINT-01",
-            "IP-PRD-DMZ-FW-VPN-ENDPOINT-01",
-            "IP-PRD-SHS-SPGateway-01"
+            "IP-MGT-OPS-SHS-OVPN-01-basic",
+            "IP-MGT-VPN-01-basic",
+            "IP-MLV-DMZ-FW-VPN-ENDPOINT-01-basic",
+            "IP-PRD-DMZ-FW-PUBLIC-ENDPOINT-01-basic",
+            "IP-PRD-DMZ-FW-VPN-ENDPOINT-01-basic",
+            "IP-PRD-SHS-SPGateway-01-basic"
           ]
         }
       },
@@ -62,4 +62,3 @@
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSIPSkuSize"
   }
-  
