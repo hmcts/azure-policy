@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS clusters that have local accounts enabled (should be disabled).",
+    "displayName": "AKS Disable Local Accounts (mg:HMCTS)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Cluster should have local accounts disabled."
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/993c2fcd-2b29-49d2-9eb0-df2c3a730c32",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSDisableLocalAuth",
+  "name": "AKSDisableLocalAuth",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

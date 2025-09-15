@@ -17,6 +17,21 @@
           "defaultValue": [
             "Standard"
           ]
+        },
+        "exemptResourceNames": {
+          "type": "Array",
+          "metadata": {
+            "displayName": "Exempt Resource Names",
+            "description": "Names of Public IP resources to exempt from SKU enforcement"
+          },
+          "defaultValue": [
+            "IP-MGT-OPS-SHS-OVPN-01-basic",
+            "IP-MGT-VPN-01-basic",
+            "IP-MLV-DMZ-FW-VPN-ENDPOINT-01-basic",
+            "IP-PRD-DMZ-FW-PUBLIC-ENDPOINT-01-basic",
+            "IP-PRD-DMZ-FW-VPN-ENDPOINT-01-basic",
+            "IP-PRD-SHS-SPGateway-01-basic"
+          ]
         }
       },
       "policyRule": {
@@ -25,6 +40,12 @@
             {
               "field": "type",
               "equals": "Microsoft.Network/publicIPAddresses"
+            },
+            {
+              "not": {
+                "field": "name",
+                "in": "[parameters('exemptResourceNames')]"
+              }
             },
             {
               "field": "Microsoft.Network/publicIPAddresses/sku.name",
@@ -41,3 +62,4 @@
     "type": "Microsoft.Authorization/policyDefinitions",
     "name": "HMCTSIPSkuSize"
   }
+  
