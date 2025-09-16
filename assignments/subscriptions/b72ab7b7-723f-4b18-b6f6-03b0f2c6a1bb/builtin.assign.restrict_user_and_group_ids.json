@@ -23,6 +23,12 @@
             }
           ]
         }
+      },
+      "excludedNamespaces": {
+        "value": [
+          "admin",
+          "monitoring"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f06ddb64-5fa3-4b77-b166-acb36f7f6042",
