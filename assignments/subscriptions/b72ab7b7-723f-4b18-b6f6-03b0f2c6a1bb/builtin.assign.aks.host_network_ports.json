@@ -18,7 +18,7 @@
         "value": 0
       },
       "maxPort": {
-        "value": 0
+        "value": 10000
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/82985f06-dc18-4a48-bc1c-b9f4f0098cfe",
