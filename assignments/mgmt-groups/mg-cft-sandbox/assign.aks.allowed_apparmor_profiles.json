@@ -6,11 +6,6 @@
     "description": "Audit AKS containers using AppArmor profiles outside allowed list.",
     "displayName": "AKS Allowed AppArmor Profiles (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Containers should use only approved AppArmor profiles."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

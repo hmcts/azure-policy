@@ -6,11 +6,6 @@
     "description": "Audit AKS containers whose CPU/memory limits exceed specified maximums.",
     "displayName": "AKS Container Resource Limits (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Container CPU or memory limit exceeds sanctioned maximum."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

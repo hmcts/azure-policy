@@ -6,11 +6,6 @@
     "description": "Audit AKS containers using forbidden sysctl interfaces.",
     "displayName": "AKS No Forbidden Sysctls (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Containers should not use forbidden sysctl interfaces."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {
@@ -21,8 +16,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSNoForbiddenSysctl-sbox",
-  "name": "AKSNoForbiddenSysctl-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSNoForbidSysctl-sbx",
+  "name": "AKSNoForbidSysctl-sbx",
   "location": "uksouth",
   "sku": {
     "name": "A0",

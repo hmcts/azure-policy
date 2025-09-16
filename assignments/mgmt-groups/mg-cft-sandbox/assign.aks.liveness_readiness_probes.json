@@ -6,11 +6,6 @@
     "description": "Audit AKS pods/containers without readiness or liveness probes.",
     "displayName": "AKS Liveness / Readiness Probes (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Containers should define readiness and/or liveness probes."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {
