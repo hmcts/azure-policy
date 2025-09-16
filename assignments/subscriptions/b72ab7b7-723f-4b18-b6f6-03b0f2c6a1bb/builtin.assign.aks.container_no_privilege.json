@@ -11,9 +11,6 @@
       "effect": {
         "value": "Audit"
       },
-      "excludedImages": {
-        "value": []
-      },
       "excludedContainers": {
         "value": ["node-problem-detector", "neuvector-enforcer-pod"]
       }
