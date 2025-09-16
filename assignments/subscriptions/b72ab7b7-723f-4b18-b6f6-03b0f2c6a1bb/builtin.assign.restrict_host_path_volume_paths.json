@@ -16,10 +16,13 @@
           "paths": []
         }
       },
-      "excludedNamespaces": {
+      "excludedImages": {
         "value": [
-          "admin",
-          "monitoring"
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/mic:*",
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
+          "quay.io/prometheus/node-exporter:*",
+          "k8s.gcr.io/node-problem-detector/node-problem-detector:*",
+          "hmctspublic.azurecr.io/imported/neuvector/enforcer:*"
         ]
       }
     },

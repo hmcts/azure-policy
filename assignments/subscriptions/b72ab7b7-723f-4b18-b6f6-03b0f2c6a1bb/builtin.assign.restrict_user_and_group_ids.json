@@ -24,10 +24,10 @@
           ]
         }
       },
-      "excludedNamespaces": {
+      "excludedImages": {
         "value": [
-          "admin",
-          "monitoring"
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/mic:*",
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*"
         ]
       }
     },
