@@ -12,7 +12,14 @@
         "value": "Audit"
       },
       "allowedVolumeTypes": {
-        "value": ["secret", "projected", "configMap"]
+        "value": [
+          "secret",
+          "projected",
+          "configMap",
+          "hostPath",
+          "csi",
+          "emptyDir"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/16697877-1118-4fb1-9b65-9898ec2509ec",
