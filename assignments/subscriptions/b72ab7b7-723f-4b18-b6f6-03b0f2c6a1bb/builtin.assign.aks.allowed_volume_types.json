@@ -13,9 +13,6 @@
       },
       "allowedVolumeTypes": {
         "value": ["secret", "projected"]
-      },
-      "excludedImages": {
-        "value": []
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/16697877-1118-4fb1-9b65-9898ec2509ec",
