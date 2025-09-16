@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed container User and Group IDs",
-    "displayName": "AKS Restrict User and Group IDs - DCD-CFTAPPS-SBOX",
+    "displayName": "AKS Restrict User and Group IDs - (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -32,10 +32,10 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f06ddb64-5fa3-4b77-b166-acb36f7f6042",
-    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/AKSLimitGroupUsrIds-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSLimitGroupUsrIds-sbox",
   "name": "AKSLimitGroupUsrIds-sbox",
   "location": "uksouth",
   "sku": {
