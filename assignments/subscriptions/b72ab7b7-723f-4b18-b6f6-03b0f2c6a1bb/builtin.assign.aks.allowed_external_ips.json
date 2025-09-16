@@ -10,9 +10,6 @@
     "parameters": {
       "effect": {
         "value": "Audit"
-      },
-      "allowedExternalIps": {
-        "value": []
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d46c275d-1680-448d-b2ec-e495a3b6cc89",
