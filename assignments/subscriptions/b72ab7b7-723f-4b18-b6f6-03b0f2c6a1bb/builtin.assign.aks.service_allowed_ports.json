@@ -12,7 +12,7 @@
         "value": "Audit"
       },
       "allowedServicePortsList": {
-        "value": []
+        "value": [443, 80, 8443, 9402, 9094, 2115, 9093, 8080, 9090, 10443]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/233a2a17-77ca-4fb1-9b6b-69223d272a44",
