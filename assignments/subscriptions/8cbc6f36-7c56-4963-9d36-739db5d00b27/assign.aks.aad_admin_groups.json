@@ -1,0 +1,43 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS clusters that do not include the required Entra ID admin group(s).",
+    "displayName": "AKS AAD Admin Groups (mg:HMCTS)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Cluster should include the required Entra ID admin groups."
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "DeployIfNotExists"
+      },
+      "adminGroupObjectIDs": {
+        "value": [
+          "a6ce5b32-e0a5-419e-ba5c-67863c975941",
+          "b9e4deb7-c192-4759-b55d-4acbb8d56937"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/36a27de4-199b-40fb-b336-945a8475d6c5",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp",
+  "name": "AKSAADAdmGrp",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  },
+  "identity": {
+    "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-prod-mi": {}
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Configure planned maintenance window for AKS clusters.",
+    "displayName": "AKS Planned Maintenance (mg:HMCTS)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Cluster should have the planned maintenance window configured."
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "DeployIfNotExists"
+      },
+      "configurationType": {
+        "value": "aksManagedNodeOSUpgradeSchedule"
+      },
+      "maintenanceWindow": {
+        "value": {
+          "properties": {
+            "maintenanceWindow": {
+              "startTime": "16:00",
+              "durationHours": 4,
+              "schedule": {
+                "daily": {
+                  "intervalDays": 1
+                }
+              },
+              "utcOffset": "+00:00"
+            }
+          }
+        }
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1352e44-d34d-4e4d-a22e-451a15f759a1",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint",
+  "name": "AKSPlanMaint",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  },
+  "identity": {
+    "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-ptl-mi": {}
+    }
+  }
+}
