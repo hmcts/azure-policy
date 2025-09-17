@@ -19,7 +19,7 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/AKSLimitFlexVolumDrivers",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitFlexVolumDrivers",
   "name": "AKSLimitFlexVolumDrivers",
   "location": "uksouth",
   "sku": {
