@@ -11,6 +11,15 @@
       "effect": {
         "value": "Audit"
       },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin"
+        ]
+      },
       "allowedCapabilities": {
         "value": []
       }
