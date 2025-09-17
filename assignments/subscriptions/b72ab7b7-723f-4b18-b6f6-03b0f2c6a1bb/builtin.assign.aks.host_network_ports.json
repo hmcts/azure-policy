@@ -12,7 +12,7 @@
         "value": "Audit"
       },
       "allowHostNetwork": {
-        "value": true
+        "value": false
       },
       "minPort": {
         "value": 0
