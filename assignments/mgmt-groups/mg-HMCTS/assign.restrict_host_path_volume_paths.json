@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed HostPath Volume paths",
-    "displayName": "AKS Restrict HostPath Volume Paths - (mg:CFT-Sandbox)",
+    "displayName": "AKS Restrict HostPath Volume Paths - (HMCTS MG)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -27,11 +27,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/098fc59e-46c7-4d99-9b16-64990e543d75",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSLimitHostPathVol-sbox",
-  "name": "AKSLimitHostPathVol-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitHostPathVolPaths",
+  "name": "AKSLimitHostPathVolPaths",
   "location": "uksouth",
   "sku": {
     "name": "A0",

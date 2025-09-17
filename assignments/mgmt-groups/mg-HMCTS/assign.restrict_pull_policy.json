@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed container pull policy to IfNotPresent only",
-    "displayName": "AKS Restrict Allowed Container Pull Policy - (mg:CFT-Sandbox)",
+    "displayName": "AKS Restrict Allowed Container Pull Policy - (HMCTS MG)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -19,11 +19,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/50c83470-d2f0-4dda-a716-1938a4825f62",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSRstrctPullPolicy-sbox",
-  "name": "AKSRstrctPullPolicy-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSNoAlwaysPullPolicy",
+  "name": "AKSNoAlwaysPullPolicy",
   "location": "uksouth",
   "sku": {
     "name": "A0",
