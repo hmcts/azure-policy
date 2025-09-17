@@ -11,9 +11,6 @@
       "effect": {
         "value": "Audit"
       },
-      "allowHostNetwork": {
-        "value": false
-      },
       "minPort": {
         "value": 0
       },
