@@ -28,7 +28,7 @@
   },
   "type": "Microsoft.Authorization/policyAssignments",
   "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-prod",
-  "name": "AKSAADAdmGrp",
+  "name": "AKSAADAdmGrp-prod",
   "location": "uksouth",
   "sku": {
     "name": "A0",

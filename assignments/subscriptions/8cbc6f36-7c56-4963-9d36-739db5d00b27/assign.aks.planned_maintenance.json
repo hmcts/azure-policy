@@ -41,7 +41,7 @@
   },
   "type": "Microsoft.Authorization/policyAssignments",
   "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-prod",
-  "name": "AKSPlanMaint",
+  "name": "AKSPlanMaint-prod",
   "location": "uksouth",
   "sku": {
     "name": "A0",

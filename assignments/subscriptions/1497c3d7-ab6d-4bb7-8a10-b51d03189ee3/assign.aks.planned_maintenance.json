@@ -41,7 +41,7 @@
   },
   "type": "Microsoft.Authorization/policyAssignments",
   "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-ptlsbox",
-  "name": "AKSPlanMaint",
+  "name": "AKSPlanMaint-ptlsbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",
