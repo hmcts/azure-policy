@@ -10,6 +10,14 @@
     "parameters": {
       "effect": {
         "value": "Audit"
+      },
+      "forbiddenSysctls": {
+        "value": [
+          "kernel.shm*",
+          "kernel.msg*",
+          "kernel.sem",
+          "fs.mqueue.*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/56d0a13f-712f-466b-8416-56fb354fb823",
