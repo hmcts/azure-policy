@@ -6,11 +6,6 @@
     "description": "Audit AKS containers using Linux capabilities outside allowed set.",
     "displayName": "AKS Allowed Capabilities (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Containers should use only approved Linux capabilities."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

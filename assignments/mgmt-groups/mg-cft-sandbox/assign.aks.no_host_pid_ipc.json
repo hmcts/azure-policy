@@ -6,11 +6,6 @@
     "description": "Audit AKS pods sharing host PID or IPC namespaces.",
     "displayName": "AKS No Host PID/IPC (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Containers should not share host PID or IPC namespaces."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

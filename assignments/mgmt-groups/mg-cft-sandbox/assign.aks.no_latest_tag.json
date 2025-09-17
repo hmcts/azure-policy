@@ -6,11 +6,6 @@
     "description": "Audit AKS containers using the 'latest' image tag.",
     "displayName": "AKS No Latest Image Tag (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Container images should not use the 'latest' tag."
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {
