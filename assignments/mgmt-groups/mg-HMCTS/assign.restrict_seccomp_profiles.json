@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict allowed container syscalls",
-    "displayName": "AKS Restrict Allowed Seccomp Profiles - (mg:CFT-Sandbox)",
+    "displayName": "AKS Restrict Allowed Seccomp Profiles - (HMCTS MG)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -18,11 +18,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/975ce327-682c-4f2e-aa46-b9598289b86c",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSRstrctSeccompPfl-sbox",
-  "name": "AKSRstrctSeccompPfl-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitSeccompProfiles",
+  "name": "AKSLimitSeccompProfiles",
   "location": "uksouth",
   "sku": {
     "name": "A0",

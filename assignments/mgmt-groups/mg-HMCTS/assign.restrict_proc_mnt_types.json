@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict container ProcMountType to standard only",
-    "displayName": "AKS Restrict Allowed Container ProcMountTypes - (mg:CFT-Sandbox)",
+    "displayName": "AKS Restrict Allowed Container ProcMountTypes - (HMCTS MG)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -17,11 +17,11 @@
 
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f85eb0dd-92ee-40e9-8a76-db25a507d6d3",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSRstrctPrcMntType-sbox",
-  "name": "AKSRstrctPrcMntType-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitProcMountTypes",
+  "name": "AKSLimitProcMountTypes",
   "location": "uksouth",
   "sku": {
     "name": "A0",
