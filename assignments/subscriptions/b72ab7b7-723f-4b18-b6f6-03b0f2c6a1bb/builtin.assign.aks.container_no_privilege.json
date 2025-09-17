@@ -10,7 +10,11 @@
     "parameters": {
       "effect": {
         "value": "Audit"
-      }
+      },
+      "excludedImages": {
+        "value": [
+          "k8s.gcr.io/node-problem-detector/node-problem-detector:*"
+        ]
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/95edb821-ddaf-4404-9732-666045e056b4",
     "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
