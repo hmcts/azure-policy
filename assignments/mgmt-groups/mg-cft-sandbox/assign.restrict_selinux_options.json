@@ -1,0 +1,33 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which do not restrict allowed selinux pod and container options",
+    "displayName": "AKS Restrict SELinux Options - (mg:CFT-Sandbox)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedSELinuxOptions": {
+        "value": {
+          "options": [{
+            "level": "s0:c123,c456"
+          }]
+        }
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1e6c427-07d9-46ab-9689-bfa85431e636",
+    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSLimitSelinuxOpts-sbox",
+  "name": "AKSLimitSelinuxOpts-sbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
