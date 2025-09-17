@@ -16,6 +16,12 @@
       },
       "maxPort": {
         "value": 10000
+      },
+      "excludedImages": {
+        "value": [
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
+          "quay.io/prometheus/node-exporter:*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/82985f06-dc18-4a48-bc1c-b9f4f0098cfe",
