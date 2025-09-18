@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which allow containers with non-read-only root file systems",
-    "displayName": "AKS Restrict Root File System to Read-Only - (mg:CFT-Sandbox)",
+    "displayName": "AKS Restrict Root File System to Read-Only - (HMCTS MG)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -13,11 +13,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/df49d893-a74c-421d-bc95-c663042e5b80",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSReadOnlyRootFs-sbox",
-  "name": "AKSReadOnlyRootFs-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSReadOnlyRootFileSys",
+  "name": "AKSReadOnlyRootFileSys",
   "location": "uksouth",
   "sku": {
     "name": "A0",

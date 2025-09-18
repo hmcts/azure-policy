@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS Clusters which do not restrict FlexVolume drivers",
-    "displayName": "AKS Restrict FlexVolume Drivers - (mg:CFT-Sandbox)",
+    "displayName": "AKS Restrict FlexVolume Drivers - (HMCTS MG)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -16,11 +16,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f4a8fce0-2dd5-4c21-9a36-8f0ec809d663",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSLimitFlexVolDrv-sbox",
-  "name": "AKSLimitFlexVolDrv-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitFlexVolumDrivers",
+  "name": "AKSLimitFlexVolumDrivers",
   "location": "uksouth",
   "sku": {
     "name": "A0",
