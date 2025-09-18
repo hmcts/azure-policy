@@ -10,6 +10,17 @@
     "parameters": {
       "effect": {
         "value": "Audit"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin",
+          "monitoring",
+          "cert-manager"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b1a9997f-2883-4f12-bdff-2280f99b5915",
