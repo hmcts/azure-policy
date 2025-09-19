@@ -28,8 +28,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSRstrctHostNetwork-hmcts",
-  "name": "AKSRstrctHostNetwork-hmcts",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSRstrctHostNwrk-hmcts",
+  "name": "AKSRstrctHostNwrk-hmcts",
   "location": "uksouth",
   "sku": {
     "name": "A0",
