@@ -1,0 +1,32 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS containers whose CPU/memory limits exceed specified maximums.",
+    "displayName": "AKS Container Resource Limits (mg:CFT-Sandbox)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "cpuLimit": {
+        "value": "1.5"
+      },
+      "memoryLimit": {
+        "value": "2Gi"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e345eecc-fa47-480f-9e88-67dcc122b164",
+    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSResLimitMax-sbox",
+  "name": "AKSResLimitMax-sbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

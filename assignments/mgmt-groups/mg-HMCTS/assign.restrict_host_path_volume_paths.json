@@ -1,0 +1,40 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which do not restrict allowed HostPath Volume paths",
+    "displayName": "AKS Restrict HostPath Volume Paths - (HMCTS MG)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedHostPaths": {
+        "value": {
+          "paths": []
+        }
+      },
+      "excludedImages": {
+        "value": [
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/mic:*",
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
+          "quay.io/prometheus/node-exporter:*",
+          "k8s.gcr.io/node-problem-detector/node-problem-detector:*",
+          "hmctspublic.azurecr.io/imported/neuvector/enforcer:*"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/098fc59e-46c7-4d99-9b16-64990e543d75",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitHostPathVolPaths",
+  "name": "AKSLimitHostPathVolPaths",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

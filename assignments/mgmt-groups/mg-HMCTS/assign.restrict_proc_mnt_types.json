@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which do not restrict container ProcMountType to standard only",
+    "displayName": "AKS Restrict Allowed Container ProcMountTypes - (HMCTS MG)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "procMountType": {
+        "value": "Default"
+      }
+
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f85eb0dd-92ee-40e9-8a76-db25a507d6d3",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitProcMountTypes",
+  "name": "AKSLimitProcMountTypes",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
