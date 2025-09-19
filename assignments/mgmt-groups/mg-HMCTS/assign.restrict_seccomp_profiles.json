@@ -15,6 +15,29 @@
         "value": [
           "runtime/default"
         ]
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin",
+          "azure-devops",
+          "azureserviceoperator-system",
+          "backstage",
+          "camunda",
+          "clamav-mirror",
+          "cortex",
+          "dynatrace",
+          "flux-system",
+          "jenkins",
+          "keda",
+          "monitoring",
+          "neuvector",
+          "pact-broker",
+          "ipam"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/975ce327-682c-4f2e-aa46-b9598289b86c",

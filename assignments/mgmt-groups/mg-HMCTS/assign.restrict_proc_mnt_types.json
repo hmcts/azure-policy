@@ -3,13 +3,13 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS Clusters which do not restrict container ProcMountType to standard only",
+    "description": "Deny AKS Clusters which do not restrict container ProcMountType to standard only",
     "displayName": "AKS Restrict Allowed Container ProcMountTypes - (HMCTS MG)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "procMountType": {
         "value": "Default"
