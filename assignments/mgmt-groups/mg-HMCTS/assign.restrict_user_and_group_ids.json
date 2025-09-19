@@ -24,10 +24,22 @@
           ]
         }
       },
-      "excludedImages": {
+      "excludedNamespaces": {
         "value": [
-          "mcr.microsoft.com/oss/azure/aad-pod-identity/mic:*",
-          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*"
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "neuvector",
+          "monitoring",
+          "jenkins",
+          "dynatrace",
+          "cortex",
+          "azure-devops",
+          "admin",
+          "backstage",
+          "ipam",
+          "pact-broker"
         ]
       }
     },
