@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters where services do not listen on approved ports",
+    "displayName": "AKS Restrict Service Allowed Ports (mg:HMCTS) ",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedServicePortsList": {
+        "value": [
+          "443",
+          "80",
+          "8443",
+          "9402",
+          "9094",
+          "2115",
+          "9093",
+          "8080",
+          "9090",
+          "9100",
+          "10443"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/233a2a17-77ca-4fb1-9b6b-69223d272a44",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSRstrctSvcPorts-hmcts",
+  "name": "AKSRstrctSvcPorts-hmcts",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
