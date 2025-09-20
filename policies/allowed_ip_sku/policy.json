@@ -30,7 +30,8 @@
             "IP-MLV-DMZ-FW-VPN-ENDPOINT-01-basic",
             "IP-PRD-DMZ-FW-PUBLIC-ENDPOINT-01-basic",
             "IP-PRD-DMZ-FW-VPN-ENDPOINT-01-basic",
-            "IP-PRD-SHS-SPGateway-01-basic"
+            "IP-PRD-SHS-SPGateway-01-basic",
+            "IP-PRD-DMZ-FW-VPN-ENDPOINT-01"
           ]
         }
       },
