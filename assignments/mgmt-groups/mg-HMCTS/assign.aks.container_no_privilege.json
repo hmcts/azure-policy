@@ -12,7 +12,12 @@
         "value": "Audit"
       },
       "excludedImages": {
-        "value": ["k8s.gcr.io/node-problem-detector/node-problem-detector:*"]
+        "value": [
+          "k8s.gcr.io/node-problem-detector/node-problem-detector:*",
+          "hmctspublic.azurecr.io/imported/neuvector/enforcer:*",
+          "hmctspublic.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "mcr.microsoft.com/oss/kubernetes-csi/secrets-store/driver:*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/95edb821-ddaf-4404-9732-666045e056b4",
