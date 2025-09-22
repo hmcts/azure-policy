@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS containers using forbidden sysctl interfaces.",
-    "displayName": "AKS No Forbidden Sysctls (mg:CFT-Sandbox)",
+    "displayName": "AKS No Forbidden Sysctls (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -21,11 +21,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/56d0a13f-712f-466b-8416-56fb354fb823",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSNoForbidSysctl-sbx",
-  "name": "AKSNoForbidSysctl-sbx",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSNoForbidSysctl-hmcts",
+  "name": "AKSNoForbidSysctl-hmcts",
   "location": "uksouth",
   "sku": {
     "name": "A0",
