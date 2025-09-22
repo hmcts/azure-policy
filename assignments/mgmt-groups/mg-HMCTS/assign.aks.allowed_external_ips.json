@@ -3,13 +3,13 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS Clusters which do not use allowed external IPs",
+    "description": "Deny AKS Clusters which do not use allowed external IPs",
     "displayName": "AKS Restrict External IPs (mg:HMCTS) ",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d46c275d-1680-448d-b2ec-e495a3b6cc89",
