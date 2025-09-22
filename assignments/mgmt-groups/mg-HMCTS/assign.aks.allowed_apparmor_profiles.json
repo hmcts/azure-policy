@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS containers using AppArmor profiles outside allowed list.",
-    "displayName": "AKS Allowed AppArmor Profiles (mg:CFT-Sandbox)",
+    "displayName": "AKS Allowed AppArmor Profiles (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -19,11 +19,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/511f5417-5d12-434d-ab2e-816901e72a5e",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSAllowedAppArmor-sbox",
-  "name": "AKSAllowedAppArmor-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAllowedAppArmor-hmcts",
+  "name": "AKSAllowedAppArmor-hmcts",
   "location": "uksouth",
   "sku": {
     "name": "A0",

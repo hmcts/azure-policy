@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS containers using Linux capabilities outside allowed set.",
-    "displayName": "AKS Allowed Capabilities (mg:CFT-Sandbox)",
+    "displayName": "AKS Allowed Capabilities (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -25,11 +25,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c26596ff-4d70-4e6a-9a30-c2506bd2f80c",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSAllowedCaps-sbox",
-  "name": "AKSAllowedCaps-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAllowedCaps-hmcts",
+  "name": "AKSAllowedCaps-hmcts",
   "location": "uksouth",
   "sku": {
     "name": "A0",
