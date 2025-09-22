@@ -3,13 +3,13 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS Clusters which use naked pods",
+    "description": "Deny AKS Clusters which use naked pods",
     "displayName": "AKS Restrict Naked Pods (mg:HMCTS) ",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/65280eef-c8b4-425e-9aec-af55e55bf581",
