@@ -6,11 +6,6 @@
     "description": "Kubernetes clusters should not use specific security capabilities",
     "displayName": "K8s clusters should not use specific security capabilities (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "K8s clusters should not use specific security capabilities"
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

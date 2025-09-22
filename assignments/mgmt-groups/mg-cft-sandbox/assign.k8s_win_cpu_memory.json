@@ -6,11 +6,6 @@
     "description": "Kubernetes cluster Windows containers should not overcommit CPU and memory",
     "displayName": "K8s Win CPU and Memory not overcommited (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "Kubernetes cluster Windows containers should not overcommit CPU and memory"
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

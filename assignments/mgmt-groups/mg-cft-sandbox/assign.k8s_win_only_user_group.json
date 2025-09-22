@@ -6,11 +6,6 @@
     "description": "Kubernetes cluster Windows containers should only run with approved user and domain user group",
     "displayName": "K8s Win only run with approved user and domain user group (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "K8s Win only run with approved user and domain user group"
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {
@@ -21,8 +16,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sWinOnlyRunApprovedUserOrGroup-sbox",
-  "name": "K8sWinOnlyRunApprovedUserOrGroup-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sWinOnlyUserGroup-sbox",
+  "name": "K8sWinOnlyUserGroup-sbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",

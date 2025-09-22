@@ -6,11 +6,6 @@
     "description": "Kubernetes cluster Windows pods should not run HostProcess containers",
     "displayName": "K8s cluster Windows pods should not run HostProcess containers (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "K8s cluster Windows pods should not run HostProcess containers"
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {
@@ -21,8 +16,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sNotRunHostProcess-sbox",
-  "name": "K8sNotRunHostProcess-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sNotHostProcess-sbox",
+  "name": "K8sNotHostProcess-sbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",
