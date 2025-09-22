@@ -6,11 +6,6 @@
     "description": "Kubernetes clusters should be accessible only over HTTPS",
     "displayName": "K8s clusters should be accessible only over HTTPS (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "K8s clusters should be accessible only over HTTPS"
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {

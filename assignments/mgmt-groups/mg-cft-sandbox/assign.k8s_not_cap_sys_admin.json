@@ -6,11 +6,6 @@
     "description": "Kubernetes clusters should not grant CAP_SYS_ADMIN security capabilities",
     "displayName": "K8s clusters should not grant CAP_SYS_ADMIN security capabilities (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
-    "nonComplianceMessages": [
-      {
-        "message": "K8s clusters should not grant CAP_SYS_ADMIN security capabilities"
-      }
-    ],
     "notScopes": [],
     "parameters": {
       "effect": {
@@ -21,8 +16,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sNotGrantCapSysAdmin-sbox",
-  "name": "K8sNotGrantCapSysAdmin-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sNotCapSysAdmin-sbox",
+  "name": "K8sNotCapSysAdmin-sbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",
