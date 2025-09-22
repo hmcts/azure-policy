@@ -3,13 +3,13 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS Clusters which do not restrict FlexVolume drivers",
+    "description": "Deny AKS Clusters which do not restrict FlexVolume drivers",
     "displayName": "AKS Restrict FlexVolume Drivers - (HMCTS MG)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "allowedFlexVolumeDrivers": {
         "value": []
@@ -19,7 +19,7 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/AKSLimitFlexVolumDrivers",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitFlexVolumDrivers",
   "name": "AKSLimitFlexVolumDrivers",
   "location": "uksouth",
   "sku": {

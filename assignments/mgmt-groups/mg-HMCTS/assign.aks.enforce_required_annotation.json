@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which do not use required annotations",
+    "displayName": "AKS Enforce Required Annotations (mg:HMCTS) ",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "kind": {
+        "value": "Pod"
+      },
+      "annotations": {
+        "value": {
+          "annotations": []
+        }
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/9a5f4e39-e427-4d5d-ae73-93db00328bec",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSEnfrceAnnoPod-hmcts",
+  "name": "AKSEnfrceAnnoPod-hmcts",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

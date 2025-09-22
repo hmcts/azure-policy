@@ -16,6 +16,21 @@
           "IfNotPresent",
           "Never"
         ]
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "azureserviceoperator-system",
+          "admin",
+          "monitoring",
+          "neuvector",
+          "dynatrace",
+          "jenkins",
+          "ipam"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/50c83470-d2f0-4dda-a716-1938a4825f62",

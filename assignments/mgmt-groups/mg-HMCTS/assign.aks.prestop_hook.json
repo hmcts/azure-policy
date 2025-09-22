@@ -4,20 +4,20 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS containers whose images do not include a preStop hook.",
-    "displayName": "AKS PreStop Hook (mg:CFT-Sandbox)",
+    "displayName": "AKS PreStop Hook (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Disabled"
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1a3b9003-eac6-4d39-a184-4a567ace7645",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSPreStopHook-sbox",
-  "name": "AKSPreStopHook-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSPreStopHook-hmcts",
+  "name": "AKSPreStopHook-hmcts",
   "location": "uksouth",
   "sku": {
     "name": "A0",

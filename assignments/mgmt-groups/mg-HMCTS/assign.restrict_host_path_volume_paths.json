@@ -16,6 +16,19 @@
           "paths": []
         }
       },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin",
+          "monitoring",
+          "cortex",
+          "dynatrace",
+          "jenkins"
+        ]
+      },
       "excludedImages": {
         "value": [
           "mcr.microsoft.com/oss/azure/aad-pod-identity/mic:*",

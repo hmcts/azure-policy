@@ -4,20 +4,31 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS pods/containers without readiness or liveness probes.",
-    "displayName": "AKS Liveness / Readiness Probes (mg:CFT-Sandbox)",
+    "displayName": "AKS Liveness / Readiness Probes (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
       "effect": {
         "value": "Audit"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin",
+          "monitoring",
+          "cert-manager"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b1a9997f-2883-4f12-bdff-2280f99b5915",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSReadLiveProbe-sbox",
-  "name": "AKSReadLiveProbe-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSReadLiveProbe-hmcts",
+  "name": "AKSReadLiveProbe-hmcts",
   "location": "uksouth",
   "sku": {
     "name": "A0",

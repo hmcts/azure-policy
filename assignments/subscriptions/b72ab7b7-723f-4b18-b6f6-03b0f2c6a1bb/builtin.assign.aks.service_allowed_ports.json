@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters where services do not listen on approved ports",
+    "displayName": "AKS Restrict Service Allowed Ports - DCD-CFTAPPS-SBOX",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedServicePortsList": {
+        "value": [
+          "443",
+          "80",
+          "8443",
+          "9402",
+          "9094",
+          "2115",
+          "9093",
+          "8080",
+          "9090",
+          "9100",
+          "10443"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/233a2a17-77ca-4fb1-9b6b-69223d272a44",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/AKSRstrctSvcPorts-sbox",
+  "name": "AKSRstrctSvcPorts-sbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
