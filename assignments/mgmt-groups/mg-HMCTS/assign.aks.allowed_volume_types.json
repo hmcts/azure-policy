@@ -18,7 +18,10 @@
           "configMap",
           "hostPath",
           "csi",
-          "emptyDir"
+          "emptyDir",
+          "downwardAPI",
+          "azureFile",
+          "persistentVolumeClaim"
         ]
       }
     },
