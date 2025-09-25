@@ -10,6 +10,15 @@
     "parameters": {
       "effect": {
         "value": "Deny"
+      },
+      "excludedNamespaces" {
+        "value": [
+        "kube-system",
+        "gatekeeper-system",
+        "azure-arc",
+        "azure-extensions-usage-system",
+        "admin"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/65280eef-c8b4-425e-9aec-af55e55bf581",
