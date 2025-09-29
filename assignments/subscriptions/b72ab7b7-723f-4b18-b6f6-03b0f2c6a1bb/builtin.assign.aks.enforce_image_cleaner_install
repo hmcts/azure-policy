@@ -9,7 +9,7 @@
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "DeployIfNotExists"
+        "value": "Disabled"
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/7e49285c-4bed-4564-b26a-5225ccc311f3",
