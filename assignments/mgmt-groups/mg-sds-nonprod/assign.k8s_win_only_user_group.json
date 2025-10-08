@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes cluster Windows containers should only run with approved user and domain user group",
+    "displayName": "K8s Win only run with approved user and domain user group (mg:SDS-NonProd)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedUserNames": {
+        "value": [
+          "ContainerUser"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/57dde185-5c62-4063-b965-afbb201e9c1c",
+    "scope": "/providers/Microsoft.Management/managementGroups/SDS-NonProd"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/SDS-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sWinOnlyUserGroup-nonprod",
+  "name": "K8sWinOnlyUserGroup-nonprod",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
