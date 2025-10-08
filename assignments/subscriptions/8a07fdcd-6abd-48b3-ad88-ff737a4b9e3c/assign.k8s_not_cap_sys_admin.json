@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes clusters should not grant CAP_SYS_ADMIN security capabilities",
+    "displayName": "K8s clusters should not grant CAP_SYS_ADMIN security capabilities (sub:CFT-perftest)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d2e7ea85-6b44-4317-a0be-1b951587f626",
+    "scope": "/subscriptions/8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c/providers/Microsoft.Authorization/policyAssignments/K8sNotCapSysAdmin-perftest",
+  "name": "K8sNotCapSysAdmin-perftest",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

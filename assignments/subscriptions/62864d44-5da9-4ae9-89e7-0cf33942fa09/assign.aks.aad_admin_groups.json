@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters that do not include the required Entra ID admin group(s).",
-    "displayName": "AKS AAD Admin Groups (mg:HMCTS)",
+    "displayName": "AKS AAD Admin Groups (sub:CFT-ithc)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
@@ -24,10 +24,10 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/36a27de4-199b-40fb-b336-945a8475d6c5",
-    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    "scope": "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-ithc",
+  "id": "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-ithc",
   "name": "AKSAADAdmGrp-ithc",
   "location": "uksouth",
   "sku": {

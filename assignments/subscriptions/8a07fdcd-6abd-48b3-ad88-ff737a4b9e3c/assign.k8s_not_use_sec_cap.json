@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes clusters should not use specific security capabilities",
+    "displayName": "K8s clusters should not use specific security capabilities (sub:CFT-perftest)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a27c700f-8a22-44ec-961c-41625264370b",
+    "scope": "/subscriptions/8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c/providers/Microsoft.Authorization/policyAssignments/K8sNotUseSecCap-perftest",
+  "name": "K8sNotUseSecCap-perftest",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Configure planned maintenance window for AKS clusters.",
-    "displayName": "AKS Planned Maintenance (mg:HMCTS)",
+    "displayName": "AKS Planned Maintenance (sub:CFT-ptlsbox)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
@@ -37,10 +37,10 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1352e44-d34d-4e4d-a22e-451a15f759a1",
-    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    "scope": "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-ptlsbox",
+  "id": "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-ptlsbox",
   "name": "AKSPlanMaint-ptlsbox",
   "location": "uksouth",
   "sku": {

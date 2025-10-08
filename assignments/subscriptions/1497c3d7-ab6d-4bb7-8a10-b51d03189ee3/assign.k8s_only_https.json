@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes clusters should be accessible only over HTTPS",
+    "displayName": "K8s clusters should be accessible only over HTTPS (sub:CFT-ptlsbox)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d",
+    "scope": "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3/providers/Microsoft.Authorization/policyAssignments/K8sOnlyHttps-ptlsbox",
+  "name": "K8sOnlyHttps-ptlsbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

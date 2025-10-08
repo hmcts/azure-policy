@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes clusters should use Container Storage Interface (CSI) driver StorageClass",
+    "displayName": "K8s clusters should use Container Storage Interface (CSI) driver StorageClass (sub:CFT-ptlsbox)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4f3823b6-6dac-4b5a-9c61-ce1afb829f17",
+    "scope": "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3/providers/Microsoft.Authorization/policyAssignments/K8sNotUseCsi-ptlsbox",
+  "name": "K8sNotUseCsi-ptlsbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

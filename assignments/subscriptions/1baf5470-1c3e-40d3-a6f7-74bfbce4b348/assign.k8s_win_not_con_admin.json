@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes cluster Windows containers should not run as Container Administrator",
+    "displayName": "K8s Win not run as ContainerAdministrator (sub:CFT-ptl)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/5485eac0-7e8f-4964-998b-a44f4f0c1e75",
+    "scope": "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/providers/Microsoft.Authorization/policyAssignments/K8sWinNotConAdmin-ptl",
+  "name": "K8sWinNotConAdmin-ptl",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
