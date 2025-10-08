@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes clusters should use Container Storage Interface (CSI) driver StorageClass",
+    "displayName": "K8s clusters should use Container Storage Interface (CSI) driver StorageClass (mg:SDS-NonProd)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4f3823b6-6dac-4b5a-9c61-ce1afb829f17",
+    "scope": "/providers/Microsoft.Management/managementGroups/SDS-NonProd"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/SDS-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sNotUseCsi-sds-np",
+  "name": "K8sNotUseCsi-sds-np",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
