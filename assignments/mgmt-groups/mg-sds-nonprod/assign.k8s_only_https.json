@@ -16,8 +16,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/SDS-NonProd"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/SDS-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sOnlyHttps-sds-np",
-  "name": "K8sOnlyHttps-sds-np",
+  "id": "/providers/Microsoft.Management/managementGroups/SDS-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sOnlyHttps-nonprod",
+  "name": "K8sOnlyHttps-nonprod",
   "location": "uksouth",
   "sku": {
     "name": "A0",

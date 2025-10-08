@@ -16,8 +16,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-NonProd"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sNotCapSysAdmin-cft-np",
-  "name": "K8sNotCapSysAdmin-cft-np",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sNotCapSysAdmin-nonprod",
+  "name": "K8sNotCapSysAdmin-nonprod",
   "location": "uksouth",
   "sku": {
     "name": "A0",
