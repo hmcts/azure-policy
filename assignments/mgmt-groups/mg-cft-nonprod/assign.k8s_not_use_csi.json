@@ -16,8 +16,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-NonProd"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sNotUseCsi-nonprod",
-  "name": "K8sNotUseCsi-nonprod",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sNotUseCsi-np",
+  "name": "K8sNotUseCsi-np",
   "location": "uksouth",
   "sku": {
     "name": "A0",

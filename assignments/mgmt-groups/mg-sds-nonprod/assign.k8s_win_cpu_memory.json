@@ -16,8 +16,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/SDS-NonProd"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/SDS-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sWinCPUMemory-nonprod",
-  "name": "K8sWinCPUMemory-nonprod",
+  "id": "/providers/Microsoft.Management/managementGroups/SDS-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sWinCPUMemory-np",
+  "name": "K8sWinCPUMemory-np",
   "location": "uksouth",
   "sku": {
     "name": "A0",

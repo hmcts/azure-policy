@@ -21,8 +21,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/SDS-NonProd"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/SDS-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sNotAllowConEsc-nonprod",
-  "name": "K8sNotAllowConEsc-nonprod",
+  "id": "/providers/Microsoft.Management/managementGroups/SDS-NonProd/providers/Microsoft.Authorization/policyAssignments/K8sNotAllowConEsc-np",
+  "name": "K8sNotAllowConEsc-np",
   "location": "uksouth",
   "sku": {
     "name": "A0",
