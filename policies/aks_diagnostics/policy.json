@@ -1,0 +1,146 @@
+{
+    "properties": {
+        "displayName": "Diagnostic Settings for AKS to Log Analytics",
+        "policyType": "Custom",
+        "mode": "Indexed",
+        "parameters": {
+            "profileName": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Profile name",
+                    "description": "The diagnostic settings profile name"
+                },
+                "defaultValue": "DiagLogAnalytics"
+            },
+            "logAnalytics": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Log Analytics workspace",
+                    "description": "Resource ID of the Log Analytics workspace",
+                    "strongType": "omsWorkspace",
+                    "assignPermissions": true
+                }
+            },
+            "logsEnabled": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Enable logs",
+                    "description": "Whether to enable logs stream to Log Analytics - True or False"
+                },
+                "allowedValues": [
+                    "True",
+                    "False"
+                ],
+                "defaultValue": "True"
+            }
+        },
+        "policyRule": {
+            "if": {
+                "field": "type",
+                "equals": "Microsoft.ContainerService/managedClusters"
+            },
+            "then": {
+                "effect": "deployIfNotExists",
+                "details": {
+                    "type": "Microsoft.Insights/diagnosticSettings",
+                    "name": "[parameters('profileName')]",
+                    "existenceCondition": {
+                        "allOf": [{
+                            "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
+                            "equals": "[parameters('logAnalytics')]"
+                        }]
+                    },
+                    "roleDefinitionIds": [
+                        "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+                        "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293"
+                    ],
+                    "deployment": {
+                        "properties": {
+                            "mode": "Incremental",
+                            "template": {
+                                "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                                "contentVersion": "1.0.0.0",
+                                "parameters": {
+                                    "resourceName": {
+                                        "type": "String"
+                                    },
+                                    "logAnalytics": {
+                                        "type": "string"
+                                    },
+                                    "location": {
+                                        "type": "String"
+                                    },
+                                    "profileName": {
+                                        "type": "String"
+                                    },
+                                    "logsEnabled": {
+                                        "type": "String"
+                                    }
+                                },
+                                "variables": {},
+                                "resources": [{
+                                    "type": "Microsoft.ContainerService/managedClusters/providers/diagnosticSettings",
+                                    "apiVersion": "2021-05-01-preview",
+                                    "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                                    "location": "[parameters('location')]",
+                                    "dependsOn": [],
+                                    "properties": {
+                                        "workspaceId": "[parameters('logAnalytics')]",
+                                        "logs": [
+                                            {
+                                                "category": "kube-apiserver",
+                                                "enabled": "[parameters('logsEnabled')]"
+                                            },
+                                            {
+                                                "category": "kube-controller-manager",
+                                                "enabled": "[parameters('logsEnabled')]"
+                                            },
+                                            {
+                                                "category": "kube-scheduler",
+                                                "enabled": "[parameters('logsEnabled')]"
+                                            },
+                                            {
+                                                "category": "guard",
+                                                "enabled": "[parameters('logsEnabled')]"
+                                            },
+                                            {
+                                                "category": "cluster-autoscaler",
+                                                "enabled": "[parameters('logsEnabled')]"
+                                            }
+                                        ]
+                                    }
+                                }],
+                                "outputs": {
+                                    "policy": {
+                                        "type": "string",
+                                        "value": "[concat('Enabled diagnostic settings for ', parameters('resourceName'))]"
+                                    }
+                                }
+                            },
+                            "parameters": {
+                                "location": {
+                                    "value": "[field('location')]"
+                                },
+                                "resourceName": {
+                                    "value": "[field('name')]"
+                                },
+                                "logAnalytics": {
+                                    "value": "[parameters('logAnalytics')]"
+                                },
+                                "profileName": {
+                                    "value": "[parameters('profileName')]"
+                                },
+                                "logsEnabled": {
+                                    "value": "[parameters('logsEnabled')]"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAKSDiagnostic",
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "HMCTSAKSDiagnostic"
+}
