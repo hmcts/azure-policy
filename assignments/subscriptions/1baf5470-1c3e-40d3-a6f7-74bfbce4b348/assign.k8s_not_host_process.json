@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes cluster Windows pods should not run HostProcess containers",
+    "displayName": "K8s cluster Windows pods should not run HostProcess containers (sub:CFT-ptl)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/077f0ce1-86d6-4058-bc60-de05067e8622",
+    "scope": "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/providers/Microsoft.Authorization/policyAssignments/K8sNotHostProcess-ptl",
+  "name": "K8sNotHostProcess-ptl",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes cluster Windows containers should only run with approved user and domain user group",
+    "displayName": "K8s Win only run with approved user and domain user group (sub:CFT-ptlsbox)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedUserNames": {
+        "value": [
+          "ContainerUser"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/57dde185-5c62-4063-b965-afbb201e9c1c",
+    "scope": "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3/providers/Microsoft.Authorization/policyAssignments/K8sWinOnlyUserGroup-ptlsbox",
+  "name": "K8sWinOnlyUserGroup-ptlsbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

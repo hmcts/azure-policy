@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes cluster Windows containers should not overcommit CPU and memory",
+    "displayName": "K8s Win CPU and Memory not overcommited (sub:CFT-ithc)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a2abc456-f0ae-464b-bd3a-07a3cdbd7fb1",
+    "scope": "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09/providers/Microsoft.Authorization/policyAssignments/K8sWinCPUMemory-ithc",
+  "name": "K8sWinCPUMemory-ithc",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

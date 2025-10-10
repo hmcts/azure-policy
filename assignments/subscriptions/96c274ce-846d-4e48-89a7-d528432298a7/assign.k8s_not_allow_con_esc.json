@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes clusters should not allow container privilege escalation",
+    "displayName": "K8s clusters should not allow container privilege escalation (sub:CFT-aat)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1c6e92c9-99f0-4e55-9cf2-0c234dc48f99",
+    "scope": "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7/providers/Microsoft.Authorization/policyAssignments/K8sNotAllowConEsc-aat",
+  "name": "K8sNotAllowConEsc-aat",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
