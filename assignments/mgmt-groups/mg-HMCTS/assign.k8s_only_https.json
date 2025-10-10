@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Kubernetes clusters should be accessible only over HTTPS",
-    "displayName": "K8s clusters should be accessible only over HTTPS (mg:CFT-Sandbox)",
+    "displayName": "K8s clusters should be accessible only over HTTPS (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -13,11 +13,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sOnlyHttps-sbox",
-  "name": "K8sOnlyHttps-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sOnlyHttps",
+  "name": "K8sOnlyHttps",
   "location": "uksouth",
   "sku": {
     "name": "A0",

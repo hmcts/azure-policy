@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Kubernetes clusters should not use specific security capabilities",
-    "displayName": "K8s clusters should not use specific security capabilities (mg:CFT-Sandbox)",
+    "displayName": "K8s clusters should not use specific security capabilities (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {
@@ -13,11 +13,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a27c700f-8a22-44ec-961c-41625264370b",
-    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/K8sNotUseSecCap-sbox",
-  "name": "K8sNotUseSecCap-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sNotUseSecCap",
+  "name": "K8sNotUseSecCap",
   "location": "uksouth",
   "sku": {
     "name": "A0",
