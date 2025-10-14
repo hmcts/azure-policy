@@ -121,52 +121,60 @@ This report reviews the 33 AKS security policies deployed in Parts 1-4 based on 
 | 8 | ✅ No Specific Security Capabilities | Compliant | 97% (28 out of 29) | 0 | Ready to Enforce |
 | 9 | ✅ Use CSI Driver StorageClass | Compliant | 97% (28 out of 29) | 0 | Ready to Enforce |
 
-
 ---
 
-## Summary (Based on Azure Portal Classification)
+## Discussion Points & Decisions Needed
 
+### 1. Immediate Enforcement Decision
+**Question:** Should we enforce the 11 compliant policies now?
+- ✅ **Recommendation:** YES - These have 0 non-compliant resources and are ready
+- **Impact:** No disruption to teams (already compliant)
+- **Action if approved:** Change enforcement mode from Audit to Deny
 
-### Azure Portal Classification:
-- **Compliant:** 0
-0 policies
-- **Non-compliant:** 0
-0 policies
+### 2. Remediation Approach for 20 Non-Compliant Policies
+**Question:** What is our approach and timeline for the 20 non-compliant policies?
 
-### Recommended Actions:
-- ✅ **Ready to Enforce:** 11 policies (Compliant with 0 non-compliant resources)
-- ⚠️ **Minor Fixes Needed:** 0
-0 policies (Compliant but some resources need fixing)
-- 🔴 **Remediation Required:** 20 policies (Non-compliant)
-- ❌ **Keep Audit Only:** 2 policies (Not suitable for enforcement)
+**Options to discuss:**
+- **Option A - Phased Approach:** Group by severity/complexity, tackle in phases (3-6 months)
+- **Option B - Big Bang:** Set single deadline for all policies (e.g., 90 days)
+- **Option C - Priority-Based:** Enforce critical security policies first, others later
 
-**Total:** 33 policies reviewed
+**Decisions needed:**
+- Which approach do we take?
+- What are the deadlines?
+- Who owns creating remediation guides?
+- How do we track progress?
 
----
+### 3. Team Communication Plan
+**Question:** How do we communicate this to development teams?
 
-## Recommended Next Steps
+**Decisions needed:**
+- When do we announce the enforcement plan?
+- What communication channels? (Email, Slack, Wiki, All-hands?)
+- Who is the point of contact for questions?
+- Do we need training sessions or office hours?
 
-### Week 1: Enforce Compliant Policies
-**Action:** Move policies marked "Ready to Enforce" to Deny mode
-- These have Azure Portal "Compliant" status
-- Zero non-compliant resources
-- No team impact
+**Draft communication should include:**
+- List of policies being enforced
+- Deadlines for remediation
+- How to check compliance for their clusters
+- Remediation guides/documentation links
+- Support contacts
 
-### Weeks 2-4: Minor Fixes
-**Action:** Fix specific non-compliant resources in "Compliant" policies
-- Contact teams with non-compliant resources
-- Small number of resources to fix
-- Then move to Deny mode
+### 4. Monitoring & Compliance Tracking
+**Question:** How do we track remediation progress?
 
-### Months 1-3: Remediation Campaign
-**Action:** Work with teams on "Non-compliant" policies
-- Create remediation guides
-- Set deadlines for teams
-- Track progress weekly
-- Move to Deny after reaching "Compliant" status
+**Decisions needed:**
+- Weekly/monthly compliance reports?
+- Dashboard for teams to self-serve?
+- Escalation process for teams missing deadlines?
+- Exception/waiver process for valid cases?
 
-### Ongoing: Keep Audit
-**Action:** Review quarterly but do not enforce
-- Policies not suitable for enforcement
-- Use as advisory/educational
+### 5. The 2 "Keep Audit" Policies
+**Question:** What do we do with PreStop Hook and Pod Labels policies?
+
+**Options:**
+- Keep in Audit mode indefinitely
+- Disable these policies entirely
+- Revisit quarterly to see if circumstances change
 
