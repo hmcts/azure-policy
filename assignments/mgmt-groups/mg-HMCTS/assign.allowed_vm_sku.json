@@ -197,7 +197,8 @@
       "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/libragob-prod-rg",
       "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/darts-migration-prod-rg",
       "/subscriptions/b7d2bd5f-b744-4acc-9c73-e068cec2e8d8/resourceGroups/atlassian-nonprod-rg",
-      "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/resourceGroups/atlassian-prod-rg"
+      "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/resourceGroups/atlassian-prod-rg",
+      "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/CCD-ELASTIC-SEARCH-DEMO-INT"
     ],
     "parameters": {},
     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSVmSkuSize",
