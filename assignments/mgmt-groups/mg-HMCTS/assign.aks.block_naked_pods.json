@@ -6,7 +6,9 @@
     "description": "Deny AKS Clusters which use naked pods",
     "displayName": "AKS Restrict Naked Pods (mg:HMCTS) ",
     "enforcementMode": "Default",
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourcegroups/cft-preview-01-rg/providers/Microsoft.ContainerService/managedClusters/cft-preview-01-aks"
+    ],
     "parameters": {
       "effect": {
         "value": "Deny"
