@@ -27,7 +27,7 @@
     "scope": "/subscriptions/d025fece-ce99-4df2-b7a9-b649d3ff2060"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-demo",
+  "id": "/subscriptions/d025fece-ce99-4df2-b7a9-b649d3ff2060/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-demo",
   "name": "AKSAADAdmGrp-demo",
   "location": "uksouth",
   "sku": {

@@ -27,7 +27,7 @@
     "scope": "/subscriptions/8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-perftest",
+  "id": "/subscriptions/8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-perftest",
   "name": "AKSAADAdmGrp-perftest",
   "location": "uksouth",
   "sku": {
