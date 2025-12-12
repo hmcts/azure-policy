@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS clusters that do not include the required Entra ID admin group(s).",
-    "displayName": "AKS AAD Admin Groups (mg:HMCTS)",
+    "displayName": "AKS AAD Admin Groups (DCD-CFTAPPS-DEMO)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
