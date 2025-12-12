@@ -24,7 +24,7 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/36a27de4-199b-40fb-b336-945a8475d6c5",
-    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    "scope": "/subscriptions/d025fece-ce99-4df2-b7a9-b649d3ff2060"
   },
   "type": "Microsoft.Authorization/policyAssignments",
   "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAADAdmGrp-demo",
