@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Configure planned maintenance window for AKS clusters.",
-    "displayName": "AKS Planned Maintenance (mg:HMCTS)",
+    "displayName": "AKS Planned Maintenance (DCD-CFTAPPS-STG)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
@@ -37,10 +37,10 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1352e44-d34d-4e4d-a22e-451a15f759a1",
-    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    "scope": "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-aat",
+  "id": "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-aat",
   "name": "AKSPlanMaint-aat",
   "location": "uksouth",
   "sku": {
