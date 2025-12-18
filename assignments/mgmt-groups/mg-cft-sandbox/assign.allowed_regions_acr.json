@@ -1,0 +1,25 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "PlatOps"
+      },
+      "description": "Policy to Restrict Azure Container Registry locations",
+      "displayName": "Sandbox ACR Location Policy - (mg:CFT-Sandbox)",
+      "enforcementMode": "Default",
+      "nonComplianceMessages": [
+        {
+            "message": "Azure Container Registry doesn't meet location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_regions_acr/README.md"
+        }
+      ],
+      "parameters": {},
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSACRLocationPolicy",
+      "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSACRLocationPolicy",
+    "name": "Location_Global-Sbox"
+  }
