@@ -20,8 +20,7 @@
       "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/ingest-mgmt-rg-sbox",
       "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/ingest00-logging-sbox",
       "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/ingest00-metadata-sbox",
-      "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/ajb-logic-app-test",
-      "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/Ai-fabric-service-solirius-rg"
+      "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/ajb-logic-app-test"
     ],
     "parameters": {},
     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/ExpiresAfterTagging",
