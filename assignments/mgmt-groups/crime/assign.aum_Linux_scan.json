@@ -30,7 +30,7 @@
             }
         },
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
-        "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+        "scope": "/providers/Microsoft.Management/managementGroups/Crime"
     },
     "location": "uksouth",
     "identity": {
