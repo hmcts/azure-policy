@@ -4,7 +4,7 @@
             "assignedBy": "github.com/hmcts/azure-policy"
         },
         "description": "Configure periodic checking for missing system updates on Linux Azure virtual machines in Crime",
-        "displayName": "Scan Linux VMs for Missing Patches - (HMCTS MG)",
+        "displayName": "Scan Linux VMs for Missing Patches - (Crime MG)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [
             {
@@ -39,7 +39,7 @@
             "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-eventhub-azure-policy": {}
         }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSaum_scan_Linux",
+    "id": "/providers/Microsoft.Management/managementGroups/Crime/providers/Microsoft.Authorization/policyAssignments/CrimeAumScanLinux",
     "type": "Microsoft.Authorization/policyAssignments",
-    "name": "HMCTSaum_scan_Linux"
+    "name": "CrimeAumScanLinux"
 }
