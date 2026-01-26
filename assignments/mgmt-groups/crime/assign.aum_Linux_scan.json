@@ -3,7 +3,7 @@
         "metadata": {
             "assignedBy": "github.com/hmcts/azure-policy"
         },
-        "description": "Configure periodic checking for missing system updates on Linux Azure virtual machines",
+        "description": "Configure periodic checking for missing system updates on Linux Azure virtual machines in Crime",
         "displayName": "Scan Linux VMs for Missing Patches - (HMCTS MG)",
         "enforcementMode": "Default",
         "nonComplianceMessages": [
