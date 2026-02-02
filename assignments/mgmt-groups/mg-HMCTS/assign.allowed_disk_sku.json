@@ -25,12 +25,13 @@
       "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/juror-er-migration-prod",
       "/subscriptions/b7d2bd5f-b744-4acc-9c73-e068cec2e8d8/resourceGroups/atlassian-nonprod-rg",
       "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/resourceGroups/atlassian-prod-rg",
+      "/subscriptions/79898897-729c-41a0-a5ca-53c764839d95/resourceGroups/atlassian-nonprod-rg",
       "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/darts-migration-stg-rg",
       "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/darts-migration-prod-rg",
       "/subscriptions/2b1afc19-5ca9-4796-a56f-574a58670244/resourceGroups/bastion-prod-rg",
       "/subscriptions/df72bb30-d6fb-47bd-82ee-5eb87473ddb3/resourceGroups/ingest05-main-sbox",
       "/subscriptions/da8a21e5-d260-4162-9391-6bdadf9103f8/resourceGroups/ingest05-main-stg",
-      "/subscriptions/e9674938-57cb-43ff-a440-1917658e468c/resourceGroups/ingest05-main-prod"  
+      "/subscriptions/e9674938-57cb-43ff-a440-1917658e468c/resourceGroups/ingest05-main-prod"
     ],
     "parameters": {},
     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDiskSkuSize",
