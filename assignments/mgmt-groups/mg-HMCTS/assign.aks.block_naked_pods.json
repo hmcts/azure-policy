@@ -19,7 +19,8 @@
           "gatekeeper-system",
           "azure-arc",
           "azure-extensions-usage-system",
-          "admin"
+          "admin",
+          "jenkins"
         ]
       }
     },
