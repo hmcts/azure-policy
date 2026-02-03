@@ -1,7 +1,7 @@
 {
   "properties": {
-    "displayName": "Enable logging by category group for Microsoft Purview accounts (microsoft.purview/accounts) to Event Hub",
-    "policyType": "BuiltIn",
+    "displayName": "HMCTS Purview Security Activity Logging",
+    "policyType": "Custom",
     "mode": "Indexed",
     "description": "Resource logs should be enabled to track activities and events that take place on your resources and give you visibility and insights into any changes that occur. This policy deploys a diagnostic setting using a category group to route logs to an Event Hub for Microsoft Purview accounts (microsoft.purview/accounts).",
     "metadata": {
@@ -9,6 +9,14 @@
       "version": "1.1.0"
     },
     "parameters": {
+      "profileName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Profile name",
+          "description": "The diagnostic settings profile name"
+        },
+        "defaultValue": "keyVaultToEventHub"
+      },
       "effect": {
         "type": "String",
         "metadata": {
@@ -48,16 +56,22 @@
           "displayName": "Resource Location",
           "description": "Resource Location must be in the same location as the Event Hub Namespace.",
           "strongType": "location"
-        }
+        },
+        "defaultValue": "UK South"
       },
-      "eventHubAuthorizationRuleId": {
+      "eventHubAuthRule": {
         "type": "String",
         "metadata": {
           "displayName": "Event Hub Authorization Rule Id",
-          "description": "Event Hub Authorization Rule Id - the authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+          "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
           "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules",
           "assignPermissions": true
-        }
+        },
+        "allowedValues": [
+          "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey",
+          "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.EventHub/namespaces/soc-prod-eventhubns/authorizationRules/RootManageSharedAccessKey"
+        ],
+        "defaultValue": "/subscriptions/2307d175-7e49-434b-9ac2-515529b845f2/resourceGroups/soc-core-infra-sbox-rg/providers/Microsoft.EventHub/namespaces/soc-sbox-eventhubns/authorizationRules/RootManageSharedAccessKey"
       },
       "eventHubName": {
         "type": "String",
@@ -65,7 +79,40 @@
           "displayName": "Event Hub Name",
           "description": "Event Hub Name."
         },
-        "defaultValue": "Monitoring"
+        "defaultValue": "purview_audit"
+      },
+      "eventHubLocation": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Event Hub Location",
+          "description": "The location the Event Hub resides in. Only Key Vaults in this location will be linked to this Event Hub.",
+          "strongType": "location"
+        },
+        "defaultValue": ""
+      },
+      "logsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Enable logs",
+          "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "metricsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Enable metrics",
+          "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "False"
       }
     },
     "policyRule": {
@@ -78,6 +125,10 @@
           {
             "field": "location",
             "equals": "[parameters('resourceLocation')]"
+          },
+          {
+            "field": "location",
+            "equals": "[parameters('eventHubLocation')]"
           },
           {
             "anyOf": [
@@ -97,6 +148,7 @@
         "effect": "[parameters('effect')]",
         "details": {
           "type": "Microsoft.Insights/diagnosticSettings",
+          "name": "[parameters('profileName')]",
           "existenceCondition": {
             "allOf": [
               {
@@ -137,11 +189,31 @@
               },
               {
                 "field": "Microsoft.Insights/diagnosticSettings/eventHubAuthorizationRuleId",
-                "equals": "[parameters('eventHubAuthorizationRuleId')]"
+                "equals": "[parameters('eventHubAuthRule')]"
               },
               {
                 "field": "Microsoft.Insights/diagnosticSettings/eventHubName",
                 "equals": "[parameters('eventHubName')]"
+              },
+              {
+                "count": {
+                  "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
+                  "where": {
+                    "field": "Microsoft.Insights/diagnosticSettings/logs[*].enabled",
+                    "equals": "[parameters('logsEnabled')]"
+                  }
+                },
+                "greaterOrEquals": 1
+              },
+              {
+                "count": {
+                  "field": "Microsoft.Insights/diagnosticSettings/metrics[*]",
+                  "where": {
+                    "field": "Microsoft.Insights/diagnosticSettings/metrics[*].enabled",
+                    "equals": "[parameters('metricsEnabled')]"
+                  }
+                },
+                "greaterOrEquals": 1
               }
             ]
           },
@@ -165,13 +237,22 @@
                   "eventHubName": {
                     "type": "string"
                   },
-                  "eventHubAuthorizationRuleId": {
+                  "eventHubAuthRule": {
                     "type": "string"
                   },
                   "resourceLocation": {
                     "type": "string"
                   },
                   "resourceName": {
+                    "type": "string"
+                  },
+                  "profileName": {
+                    "type": "string"
+                  },
+                  "logsEnabled": {
+                    "type": "string"
+                  },
+                  "metricsEnabled": {
                     "type": "string"
                   }
                 },
@@ -184,25 +265,30 @@
                     "location": "[parameters('resourceLocation')]",
                     "properties": {
                       "eventHubName": "[parameters('eventHubName')]",
-                      "eventHubAuthorizationRuleId": "[parameters('eventHubAuthorizationRuleId')]",
+                      "eventHubAuthorizationRuleId": "[parameters('eventHubAuthRule')]",
                       "logs": [
                         {
-                          "categoryGroup": "audit",
-                          "enabled": "[equals(parameters('categoryGroup'), 'audit')]"
-                        },
-                        {
-                          "categoryGroup": "allLogs",
-                          "enabled": "[equals(parameters('categoryGroup'), 'allLogs')]"
+                          "category": "AuditEvent",
+                          "enabled": "[parameters('logsEnabled')]"
                         }
                       ],
-                      "metrics": []
+                      "metrics": [
+                        {
+                          "category": "AllMetrics",
+                          "enabled": "[parameters('metricsEnabled')]",
+                          "retentionPolicy": {
+                            "enabled": false,
+                            "days": 0
+                          }
+                        }
+                      ]
                     }
                   }
                 ],
                 "outputs": {
                   "policy": {
                     "type": "string",
-                    "value": "[concat('Diagnostic setting ', parameters('diagnosticSettingName'), ' for type Microsoft Purview accounts (microsoft.purview/accounts), resourceName ', parameters('resourceName'), ' to EventHub ', parameters('eventHubAuthorizationRuleId'), ':', parameters('eventHubName'), ' configured')]"
+                    "value": "[concat('Diagnostic setting ', parameters('diagnosticSettingName'), ' for type Microsoft Purview accounts (microsoft.purview/accounts), resourceName ', parameters('resourceName'), ' to EventHub ', parameters('eventHubAuthRule'), ':', parameters('eventHubName'), ' configured')]"
                   }
                 }
               },
@@ -216,14 +302,23 @@
                 "eventHubName": {
                   "value": "[parameters('eventHubName')]"
                 },
-                "eventHubAuthorizationRuleId": {
-                  "value": "[parameters('eventHubAuthorizationRuleId')]"
+                "eventHubAuthRule": {
+                  "value": "[parameters('eventHubAuthRule')]"
                 },
                 "resourceLocation": {
                   "value": "[field('location')]"
                 },
                 "resourceName": {
                   "value": "[field('name')]"
+                },
+                "profileName": {
+                  "value": "[parameters('profileName')]"
+                },
+                "logsEnabled": {
+                  "value": "[parameters('logsEnabled')]"
+                },
+                "metricsEnabled": {
+                  "type": "string"
                 }
               }
             }
