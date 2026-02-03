@@ -20,7 +20,11 @@
       "excludedImages": {
         "value": [
           "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
-          "quay.io/prometheus/node-exporter:*"
+          "hmctspublic.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "quay.io/prometheus/node-exporter:*",
+          "ebe20728.live.dynatrace.com/linux/oneagent:*",
+          "yrk32651.live.dynatrace.com/linux/oneagent:*",
+          "mcr.microsoft.com/oss/azure/secrets-store/provider-azure:*"
         ]
       }
     },
