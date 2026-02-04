@@ -8,10 +8,13 @@ The specific disk SKU sizes that are enforced by the policy:
 
 
 | Name             | SKU             | Max Size (GB) |
-| --------------   | --------------  | ------------- |
+|------------------|-----------------|---------------|
 | Standard HDD LRS | Standard_LRS    | 2048          |
 | Standard SSD LRS | StandardSSD_LRS | 2048          |
 | Premium SSD LRS  | Premium_LRS     | 2048          |
+| Standard HDD ZRS | Standard_ZRS    | 2048          |
+| Standard SSD ZRS | StandardSSD_ZRS | 2048          |
+| Premium ZRS      | Premium_ZRS     | 2048          |
 
 ## Exemptions 
 
