@@ -8,7 +8,8 @@
     "enforcementMode": "Default",
     "notScopes": [
       "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourcegroups/cft-preview-01-rg/providers/Microsoft.ContainerService/managedClusters/cft-preview-01-aks",
-      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589"
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589",
+      "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/resourcegroups/a360-c2x2555-uat"
     ],
     "parameters": {
       "effect": {

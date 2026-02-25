@@ -7,7 +7,8 @@
     "displayName": "AKS Win CPU and Memory not overcommited (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [
-      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589"
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589",
+      "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/resourcegroups/a360-c2x2555-uat"
     ],
     "parameters": {
       "effect": {
