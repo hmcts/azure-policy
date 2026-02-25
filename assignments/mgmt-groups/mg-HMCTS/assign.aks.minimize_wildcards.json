@@ -6,7 +6,9 @@
     "description": "Audit AKS Clusters which do not minimise wildcard use in role and cluster role.",
     "displayName": "AKS Minimize Wildcard Permissions - HMCTS-MG",
     "enforcementMode": "Default",
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589"
+    ],
     "parameters": {
       "effect": {
         "value": "Audit"

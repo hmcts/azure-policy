@@ -4,9 +4,11 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Kubernetes clusters should not allow container privilege escalation",
-    "displayName": "K8s clusters should not allow container privilege escalation (mg:HMCTS)",
+    "displayName": "AKS clusters should not allow container privilege escalation (mg:HMCTS)",
     "enforcementMode": "Default",
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589"
+    ],
     "parameters": {
       "effect": {
         "value": "Audit"
@@ -21,8 +23,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sNotAllowConEsc",
-  "name": "K8sNotAllowConEsc",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSNotAllowConEsc",
+  "name": "AKSNotAllowConEsc",
   "location": "uksouth",
   "sku": {
     "name": "A0",
