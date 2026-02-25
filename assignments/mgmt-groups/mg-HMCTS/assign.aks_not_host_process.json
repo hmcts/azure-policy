@@ -4,9 +4,11 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Kubernetes cluster Windows pods should not run HostProcess containers",
-    "displayName": "K8s cluster Windows pods should not run HostProcess containers (mg:HMCTS)",
+    "displayName": "AKS cluster Windows pods should not run HostProcess containers (mg:HMCTS)",
     "enforcementMode": "Default",
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589"
+    ],
     "parameters": {
       "effect": {
         "value": "Audit"
@@ -16,8 +18,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sNotHostProcess",
-  "name": "K8sNotHostProcess",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSNotHostProcess",
+  "name": "AKSNotHostProcess",
   "location": "uksouth",
   "sku": {
     "name": "A0",

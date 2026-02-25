@@ -4,9 +4,11 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Kubernetes cluster Windows containers should not run as Container Administrator",
-    "displayName": "K8s Win not run as ContainerAdministrator (mg:HMCTS)",
+    "displayName": "AKS Win not run as ContainerAdministrator (mg:HMCTS)",
     "enforcementMode": "Default",
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589"
+    ],
     "parameters": {
       "effect": {
         "value": "Audit"
@@ -16,8 +18,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sWinNotConAdmin",
-  "name": "K8sWinNotConAdmin",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSWinNotConAdmin",
+  "name": "AKSWinNotConAdmin",
   "location": "uksouth",
   "sku": {
     "name": "A0",

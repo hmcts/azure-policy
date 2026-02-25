@@ -4,9 +4,11 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Kubernetes clusters should be accessible only over HTTPS",
-    "displayName": "K8s clusters should be accessible only over HTTPS (mg:HMCTS)",
+    "displayName": "AKS clusters should be accessible only over HTTPS (mg:HMCTS)",
     "enforcementMode": "Default",
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589"
+    ],
     "parameters": {
       "effect": {
         "value": "Audit"
@@ -16,8 +18,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sOnlyHttps",
-  "name": "K8sOnlyHttps",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSOnlyHttps",
+  "name": "AKSOnlyHttps",
   "location": "uksouth",
   "sku": {
     "name": "A0",

@@ -6,7 +6,9 @@
     "description": "Audit AKS clusters which do not follow the principle of least privilege when using admin role.",
     "displayName": "AKS Cluster-Admin Role Restriction - HMCTS-MG",
     "enforcementMode": "Default",
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589"
+    ],
     "parameters": {
       "effect": {
         "value": "Audit"
