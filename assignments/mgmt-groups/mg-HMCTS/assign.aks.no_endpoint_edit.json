@@ -19,8 +19,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sNoEndpointEdit",
-  "name": "K8sNoEndpointEdit",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSNoEndpointEdit",
+  "name": "AKSNoEndpointEdit",
   "location": "uksouth",
   "sku": {
     "name": "A0",
