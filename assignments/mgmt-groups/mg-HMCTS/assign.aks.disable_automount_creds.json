@@ -19,8 +19,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sDisableAutomountCreds",
-  "name": "K8sDisableAutomountCreds",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSDisableAutomountCreds",
+  "name": "AKSDisableAutomountCreds",
   "location": "uksouth",
   "sku": {
     "name": "A0",
