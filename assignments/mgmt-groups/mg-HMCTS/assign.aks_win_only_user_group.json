@@ -16,7 +16,9 @@
       },
       "allowedUserNames": {
         "value": [
-          "ContainerUser"
+          "ContainerUser",
+          "containeruser",
+          "user manager\\containeruser"
         ]
       }
     },
