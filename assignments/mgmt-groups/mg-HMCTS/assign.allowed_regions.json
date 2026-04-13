@@ -141,6 +141,7 @@
         "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/fabric-sbox",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/fact-poc-sandbox-rg",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/cnp-acr-rg",
+        "/subscriptions/e9674938-57cb-43ff-a440-1917658e468c/resourceGroups/dlrm-ingest-ai-prod",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/plum-db-sandbox-backup-restore-cross-region-testing"
       ],
       "parameters": {},
