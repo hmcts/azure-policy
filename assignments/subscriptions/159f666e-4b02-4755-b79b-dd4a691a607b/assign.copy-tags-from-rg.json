@@ -1,0 +1,24 @@
+{
+    "properties": {
+      "metadata": {
+        "assignedBy": "https://github.com/hmcts/azure-policy"
+      },
+      "description": "Policy to copy all resource group tags to resources on create and update",
+      "displayName": "HMCTS Copy All ResourceGroup Tags - 159f666e-4b02-4755-b79b-dd4a691a607b",
+      "enforcementMode": "Default",
+      "notScopes": [],
+      "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyRGTagsAll",
+      "scope": "/subscriptions/159f666e-4b02-4755-b79b-dd4a691a607b"
+    },
+    "location": "uksouth",
+    "identity": {
+        "type": "SystemAssigned"
+    },
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/159f666e-4b02-4755-b79b-dd4a691a607b/providers/Microsoft.Authorization/policyAssignments/HMCTSCopyRGTagsAll_159f666e",
+    "name": "HMCTSCopyRGTagsAll_159f666e"
+}
