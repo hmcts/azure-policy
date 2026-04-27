@@ -144,7 +144,11 @@
         "/subscriptions/e9674938-57cb-43ff-a440-1917658e468c/resourceGroups/dlrm-ingest-ai-prod",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/plum-db-sandbox-backup-restore-cross-region-testing",
         "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/fis-demo",
-        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/fis-perftest"
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/fis-perftest",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/ia-perftest",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/ia-ithc",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/ia-demo"
+
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
