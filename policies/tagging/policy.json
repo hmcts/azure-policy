@@ -33,7 +33,8 @@
           "Microsoft.Cdn/profiles",
           "Microsoft.Security/automations",
           "Microsoft.ResourceGraph/queries",
-          "Microsoft.Web/connections"
+          "Microsoft.Web/connections",
+          "Microsoft.CognitiveServices/accounts/projects"
         ],
         "type": "Array",
         "metadata": {

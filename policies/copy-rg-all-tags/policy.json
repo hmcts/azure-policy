@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "displayName": "HMCTS Copy All ResourceGroup Tags",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "Copies all tags from the parent resource group to resources on create or update by merging resource group tags into the resource tags.",
+    "metadata": {
+      "category": "Tags"
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "notEquals": "Microsoft.Resources/subscriptions/resourceGroups"
+          }
+        ]
+      },
+      "then": {
+        "effect": "modify",
+        "details": {
+          "roleDefinitionIds": [
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+          ],
+          "operations": [
+            {
+              "operation": "addOrReplace",
+              "field": "tags",
+              "value": "[if(empty(field('tags')), resourceGroup().tags, union(field('tags'), resourceGroup().tags))]"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSCopyRGTagsAll",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSCopyRGTagsAll"
+}

@@ -52,6 +52,7 @@
         "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourcegroups/ia-redis-cache-demo/providers/microsoft.cache/redis/ia-redis-demo",
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/adoption-web-session-storage-cache-perftest/providers/Microsoft.Cache/Redis/adoption-web-session-storage-perftest",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/plum-recipe-backend-session-storage-cache-sandbox/providers/Microsoft.Cache/Redis/plum-recipe-backend-session-storage-sandbox",
+        "/subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourcegroups/pip-v6-cache-test/providers/microsoft.cache/redis/pip-v6-test",
         "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/crumble-recipe-backend-session-storage-cache-sandbox/providers/Microsoft.Cache/Redis/crumble-recipe-backend-session-storage-sandbox"
       ],
       "parameters": {},

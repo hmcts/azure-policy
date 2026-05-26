@@ -34,7 +34,8 @@
           "Microsoft.Network/FrontDoors",
           "Microsoft.Cdn/profiles",
           "Microsoft.Security/automations",
-          "Microsoft.Web/connections"
+          "Microsoft.Web/connections",
+          "Microsoft.CognitiveServices/accounts/projects"
         ],
         "type": "Array",
         "metadata": {

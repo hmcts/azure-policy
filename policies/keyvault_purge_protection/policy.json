@@ -1,0 +1,54 @@
+{
+  "properties": {
+    "displayName": "HMCTS Key Vault Soft Delete and Purge Protection",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Ensures Azure Key Vaults have soft delete and purge protection enabled to support recovery and prevent permanent deletion.",
+    "metadata": {
+      "category": "Key Vault"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable policy enforcement"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Audit"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.KeyVault/vaults"
+          },
+          {
+            "anyOf": [
+              {
+                "field": "Microsoft.KeyVault/vaults/enableSoftDelete",
+                "notEquals": true
+              },
+              {
+                "field": "Microsoft.KeyVault/vaults/enablePurgeProtection",
+                "notEquals": true
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSKvSoftDeletePurge",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSKvSoftDeletePurge"
+}

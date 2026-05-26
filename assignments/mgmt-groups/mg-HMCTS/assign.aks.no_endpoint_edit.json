@@ -6,7 +6,10 @@
     "description": "Audit AKS Clusters which allow endpoint edit permissions of ClusterRole/system:aggregate-to-edit.",
     "displayName": "AKS No Endpoint Edit Permissions - HMCTS-MG",
     "enforcementMode": "Default",
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589",
+      "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/resourcegroups/a360-c2x2555-uat"
+    ],
     "parameters": {
       "effect": {
         "value": "Audit"
@@ -16,8 +19,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/K8sNoEndpointEdit",
-  "name": "K8sNoEndpointEdit",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSNoEndpointEdit",
+  "name": "AKSNoEndpointEdit",
   "location": "uksouth",
   "sku": {
     "name": "A0",
