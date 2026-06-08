@@ -1,9 +1,9 @@
 {
   "properties": {
-    "displayName": "HMCTS Restrict Direct User RBAC Assignments at Subscription and Management Group Scope",
+    "displayName": "HMCTS Restrict Direct User RBAC Assignments",
     "policyType": "Custom",
     "mode": "All",
-    "description": "Audits or denies direct Azure RBAC role assignments to individual user identities at any scope (management group, subscription, resource group, or resource). Role assignments must be made through Microsoft Entra ID Groups, Service Principals, or Managed Identities to enforce governed access pathways and reduce standing privilege risk.",
+    "description": "Audits or denies direct Azure RBAC role assignments (both permanent active and PIM eligible) to individual user identities at any scope. Role assignments must be made through Microsoft Entra ID Groups, Service Principals, or Managed Identities to enforce governed access pathways and reduce standing privilege risk.",
     "metadata": {
       "category": "Authorization"
     },
@@ -24,14 +24,30 @@
     },
     "policyRule": {
       "if": {
-        "allOf": [
+        "anyOf": [
           {
-            "field": "type",
-            "equals": "Microsoft.Authorization/roleAssignments"
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Authorization/roleAssignments"
+              },
+              {
+                "field": "Microsoft.Authorization/roleAssignments/principalType",
+                "equals": "User"
+              }
+            ]
           },
           {
-            "field": "Microsoft.Authorization/roleAssignments/principalType",
-            "equals": "User"
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Authorization/roleEligibilityScheduleRequests"
+              },
+              {
+                "field": "Microsoft.Authorization/roleEligibilityScheduleRequests/principalType",
+                "equals": "User"
+              }
+            ]
           }
         ]
       },
