@@ -11,7 +11,9 @@
         "message": "Direct user RBAC role assignments are not permitted. Time-bound PIM eligible assignments for restricted privileged administrator roles are also not permitted. Assign roles through Entra ID Groups, Service Principals, or Managed Identities. See https://github.com/hmcts/azure-policy/blob/master/policies/rbac_no_direct_user_assignment/README.md"
       }
     ],
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-neuvector-sbox-rg/providers/Microsoft.KeyVault/vaults/cftneuvector-sbox"
+    ],
     "parameters": {
       "effect": {
         "value": "Deny"
