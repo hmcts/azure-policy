@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audits direct Azure RBAC role assignments to individual user identities at subscription or management group scope. Role assignments must be made through Entra ID Groups, Service Principals, or Managed Identities.",
+    "displayName": "HMCTS Restrict Direct User RBAC Assignments",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Direct user RBAC role assignments at subscription or management group scope are not permitted. Assign roles through Entra ID Groups, Service Principals, or Managed Identities. See https://github.com/hmcts/azure-policy/blob/master/policies/rbac_no_direct_user_assignment/README.md"
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSNoDirectUserRbac",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSNoDirectUserRbac",
+  "name": "HMCTSNoDirectUserRbac"
+}
