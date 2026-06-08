@@ -3,12 +3,12 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audits direct Azure RBAC role assignments and PIM active or eligible role schedule requests for individual user identities at subscription or management group scope. Role access must be made through Entra ID Groups, Service Principals, or Managed Identities.",
+    "description": "Audits direct Azure RBAC role assignments to individual user identities and time-bound PIM eligible assignments for configured privileged administrator roles at subscription or management group scope.",
     "displayName": "HMCTS Restrict Direct User RBAC Assignments - CFT SBOX (DCD-CFTAPPS-SBOX)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
-        "message": "Direct user RBAC role assignments, including PIM active or eligible time-bound role assignments, are not permitted. Assign roles through Entra ID Groups, Service Principals, or Managed Identities. See https://github.com/hmcts/azure-policy/blob/master/policies/rbac_no_direct_user_assignment/README.md"
+        "message": "Direct user RBAC role assignments are not permitted. Time-bound PIM eligible assignments for restricted privileged administrator roles are also not permitted. Assign roles through Entra ID Groups, Service Principals, or Managed Identities. See https://github.com/hmcts/azure-policy/blob/master/policies/rbac_no_direct_user_assignment/README.md"
       }
     ],
     "notScopes": [],
