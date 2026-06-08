@@ -3,7 +3,7 @@
     "displayName": "HMCTS Restrict Direct User RBAC Assignments",
     "policyType": "Custom",
     "mode": "All",
-    "description": "Audits or denies direct Azure RBAC role assignments (both permanent active and PIM eligible) to individual user identities at any scope. Role assignments must be made through Microsoft Entra ID Groups, Service Principals, or Managed Identities to enforce governed access pathways and reduce standing privilege risk.",
+    "description": "Denies direct Azure RBAC role assignments and PIM active or eligible role schedule requests for individual user identities at any scope. Role access must be granted through Microsoft Entra ID Groups, Service Principals, or Managed Identities to enforce governed access pathways and reduce standing privilege risk.",
     "metadata": {
       "category": "Authorization"
     },
@@ -12,7 +12,7 @@
         "type": "String",
         "metadata": {
           "displayName": "Effect",
-          "description": "Audit logs non-compliant assignments. Deny prevents new direct user assignments. Disabled turns off the policy."
+          "description": "Audit logs non-compliant assignments. Deny prevents new direct user assignments and PIM schedule requests. Disabled turns off the policy."
         },
         "allowedValues": [
           "Audit",
@@ -44,8 +44,57 @@
                 "equals": "Microsoft.Authorization/roleEligibilityScheduleRequests"
               },
               {
-                "field": "Microsoft.Authorization/roleEligibilityScheduleRequests/principalType",
-                "equals": "User"
+                "anyOf": [
+                  {
+                    "field": "Microsoft.Authorization/roleEligibilityScheduleRequests/principalType",
+                    "equals": "User"
+                  },
+                  {
+                    "field": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.principal.type",
+                    "equals": "User"
+                  }
+                ]
+              },
+              {
+                "field": "Microsoft.Authorization/roleEligibilityScheduleRequests/requestType",
+                "in": [
+                  "AdminAssign",
+                  "AdminUpdate",
+                  "AdminExtend",
+                  "AdminRenew"
+                ]
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Authorization/roleAssignmentScheduleRequests"
+              },
+              {
+                "anyOf": [
+                  {
+                    "field": "Microsoft.Authorization/roleAssignmentScheduleRequests/principalType",
+                    "equals": "User"
+                  },
+                  {
+                    "field": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.principal.type",
+                    "equals": "User"
+                  }
+                ]
+              },
+              {
+                "field": "Microsoft.Authorization/roleAssignmentScheduleRequests/requestType",
+                "in": [
+                  "AdminAssign",
+                  "AdminUpdate",
+                  "AdminExtend",
+                  "AdminRenew",
+                  "SelfActivate",
+                  "SelfExtend",
+                  "SelfRenew"
+                ]
               }
             ]
           }
