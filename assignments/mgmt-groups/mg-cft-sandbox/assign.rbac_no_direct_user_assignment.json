@@ -21,6 +21,6 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSNoDirectUserRbac-Sbox",
-  "name": "HMCTSNoDirectUserRbac-Sbox"
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/HMCTSNoDirectUserRbac",
+  "name": "HMCTSNoDirectUserRbac"
 }
