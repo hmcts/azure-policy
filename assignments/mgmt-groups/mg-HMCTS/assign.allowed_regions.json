@@ -147,8 +147,11 @@
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/fis-perftest",
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/ia-perftest",
         "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/ia-ithc",
-        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/ia-demo"
-
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/ia-demo",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/nfdiv-aat",
+        "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/nfdiv-demo",
+        "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/nfdiv-ithc",
+        "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourceGroups/nfdiv-prod"
       ],
       "parameters": {},
       "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSResourceLocationPolicy",
