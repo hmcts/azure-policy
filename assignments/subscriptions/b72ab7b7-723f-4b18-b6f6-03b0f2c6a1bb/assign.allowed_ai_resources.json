@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit Azure AI Services accounts that do not meet HMCTS network, authentication, and location requirements.",
+    "displayName": "HMCTS Allowed AI Resources Policy - CFT SBOX",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Azure AI Services accounts must meet HMCTS network, authentication, and location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_ai_resources/README.md"
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAllowedAIResources",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSAllowedAIResources-Sbox",
+  "name": "HMCTSAllowedAIResources-Sbox"
+}
