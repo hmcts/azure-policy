@@ -64,7 +64,7 @@
                 "equals": "Microsoft.CognitiveServices/accounts/deployments"
               },
               {
-                "field": "sku.name",
+                "field": "Microsoft.CognitiveServices/accounts/deployments/sku.name",
                 "notEquals": "Standard"
               }
             ]
