@@ -1,0 +1,26 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit Azure AI Services accounts that do not meet HMCTS network, authentication, and location requirements.",
+    "displayName": "HMCTS Allowed AI Resources Policy - (HMCTS MG)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Azure AI Services accounts must meet HMCTS network, authentication, and location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_ai_resources/README.md"
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAllowedAIResources",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSAllowedAIResources",
+  "name": "HMCTSAllowedAIResources"
+}
