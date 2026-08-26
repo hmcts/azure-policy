@@ -2,8 +2,8 @@
   "properties": {
     "displayName": "HMCTS Allowed AI Resources Policy",
     "policyType": "Custom",
-    "mode": "Indexed",
-    "description": "Ensures Azure AI Services accounts use HMCTS-approved security and location settings.",
+    "mode": "All",
+    "description": "Ensures Azure AI Services accounts use HMCTS-approved security and location settings, and model deployments use regional processing.",
     "metadata": {
       "category": "AI Services"
     },
@@ -24,32 +24,48 @@
     },
     "policyRule": {
       "if": {
-        "allOf": [
+        "anyOf": [
           {
-            "field": "type",
-            "equals": "Microsoft.CognitiveServices/accounts"
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.CognitiveServices/accounts"
+              },
+              {
+                "anyOf": [
+                  {
+                    "field": "location",
+                    "notEquals": "uksouth"
+                  },
+                  {
+                    "field": "Microsoft.CognitiveServices/accounts/disableLocalAuth",
+                    "notEquals": true
+                  },
+                  {
+                    "field": "Microsoft.CognitiveServices/accounts/networkAcls.defaultAction",
+                    "notEquals": "Deny"
+                  },
+                  {
+                    "field": "Microsoft.CognitiveServices/accounts/restrictOutboundNetworkAccess",
+                    "notEquals": true
+                  },
+                  {
+                    "field": "Microsoft.CognitiveServices/accounts/publicNetworkAccess",
+                    "notEquals": "Disabled"
+                  }
+                ]
+              }
+            ]
           },
           {
-            "anyOf": [
+            "allOf": [
               {
-                "field": "location",
-                "notEquals": "uksouth"
+                "field": "type",
+                "equals": "Microsoft.CognitiveServices/accounts/deployments"
               },
               {
-                "field": "Microsoft.CognitiveServices/accounts/disableLocalAuth",
-                "notEquals": true
-              },
-              {
-                "field": "Microsoft.CognitiveServices/accounts/networkAcls.defaultAction",
-                "notEquals": "Deny"
-              },
-              {
-                "field": "Microsoft.CognitiveServices/accounts/restrictOutboundNetworkAccess",
-                "notEquals": true
-              },
-              {
-                "field": "Microsoft.CognitiveServices/accounts/publicNetworkAccess",
-                "notEquals": "Disabled"
+                "field": "Microsoft.CognitiveServices/accounts/deployments/sku.name",
+                "notEquals": "Standard"
               }
             ]
           }
