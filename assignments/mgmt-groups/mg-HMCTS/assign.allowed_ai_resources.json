@@ -58,7 +58,9 @@
       "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/Doc-Int-OCRNew1/providers/Microsoft.CognitiveServices/accounts/docuintdiv",
       "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/rg-greenteam/providers/Microsoft.CognitiveServices/accounts/greenteam-openai",
       "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/ai-openai-pocs/providers/Microsoft.CognitiveServices/accounts/ai-openai-pocs",
-      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/platops-hackathon-sept25/providers/Microsoft.CognitiveServices/accounts/platops-hackathon-sept25"
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/platops-hackathon-sept25/providers/Microsoft.CognitiveServices/accounts/platops-hackathon-sept25",
+      "/subscriptions/df72bb30-d6fb-47bd-82ee-5eb87473ddb3/resourceGroups/dlrm-ingest-ai-sbox/providers/Microsoft.CognitiveServices/accounts/dlrm-ingest-openai-sbox",
+      "/subscriptions/da8a21e5-d260-4162-9391-6bdadf9103f8/resourceGroups/dlrm-ingest-ai-stg/providers/Microsoft.CognitiveServices/accounts/dlrm-ingest-openai-stg"
     ],
     "parameters": {
       "effect": {
