@@ -45,7 +45,6 @@ process_subscription_assignment() {
         -e 'this.name=this.name + "_" + process.env.ENVIRONMENT' \
         -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
         -e 'this.properties.policyDefinitionId=this.properties.policyDefinitionId' \
-        -e 'this.properties.notScopes=[]' \
         -e 'this.id=process.env.SUB + "/providers/Microsoft.Authorization/policyAssignments/" + this.name' > ${ASSIGNMENTS_DIR}/${DIR}/${NORMALISED_FILE_NAME}
     else
         echo "Creating file for custom policy: ${ASSIGNMENTS_DIR}/${DIR}/${FILE}"
@@ -54,7 +53,6 @@ process_subscription_assignment() {
         -e 'this.name=this.name + "_" + process.env.ENVIRONMENT' \
         -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
         -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' \
-        -e 'this.properties.notScopes=[]' \
         -e 'this.id=process.env.SUB + "/providers/Microsoft.Authorization/policyAssignments/" + this.name' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
     fi
 }
