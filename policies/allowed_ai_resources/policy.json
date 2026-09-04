@@ -1,0 +1,82 @@
+{
+  "properties": {
+    "displayName": "HMCTS Allowed AI Resources Policy",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Ensures Azure AI Services accounts use HMCTS-approved security and location settings, and model deployments use regional processing.",
+    "metadata": {
+      "category": "AI Services"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable policy enforcement"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Audit"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "anyOf": [
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.CognitiveServices/accounts"
+              },
+              {
+                "anyOf": [
+                  {
+                    "field": "location",
+                    "notEquals": "uksouth"
+                  },
+                  {
+                    "field": "Microsoft.CognitiveServices/accounts/disableLocalAuth",
+                    "notEquals": true
+                  },
+                  {
+                    "field": "Microsoft.CognitiveServices/accounts/networkAcls.defaultAction",
+                    "notEquals": "Deny"
+                  },
+                  {
+                    "field": "Microsoft.CognitiveServices/accounts/restrictOutboundNetworkAccess",
+                    "notEquals": true
+                  },
+                  {
+                    "field": "Microsoft.CognitiveServices/accounts/publicNetworkAccess",
+                    "notEquals": "Disabled"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.CognitiveServices/accounts/deployments"
+              },
+              {
+                "field": "Microsoft.CognitiveServices/accounts/deployments/sku.name",
+                "notEquals": "Standard"
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAllowedAIResources",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSAllowedAIResources"
+}

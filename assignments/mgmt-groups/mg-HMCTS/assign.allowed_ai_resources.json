@@ -1,0 +1,79 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit Azure AI Services accounts that do not meet HMCTS network, authentication, and location requirements.",
+    "displayName": "HMCTS Allowed AI Resources Policy - (HMCTS MG)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Azure AI Services accounts must meet HMCTS network, authentication, and location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_ai_resources/README.md"
+      }
+    ],
+    "notScopes": [
+      "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7/resourceGroups/batch-audio-transcription-stg-rg/providers/Microsoft.CognitiveServices/accounts/batch-audio-transcription-stg-speech",
+      "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7/resourceGroups/courtstranscribe-stg-rg/providers/Microsoft.CognitiveServices/accounts/hmcts-transcribe-ai-stg",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/dasi-ai-pov/providers/Microsoft.CognitiveServices/accounts/dasi-di-pov",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/dasi-ai-pov/providers/Microsoft.CognitiveServices/accounts/dasi-ai-srvc-pov",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACS-SBOX-FFMPEG-CONV/providers/Microsoft.CognitiveServices/accounts/dacs-lab-speechtotext",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACSlab-HW003-rg/providers/Microsoft.CognitiveServices/accounts/hw003-oai1",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACSlab-HW008-rg/providers/Microsoft.CognitiveServices/accounts/hw008-oai1",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACSlab-HW006-rg/providers/Microsoft.CognitiveServices/accounts/hw006-oai1",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/danny-ai-rg/providers/Microsoft.CognitiveServices/accounts/ai-dannyhub2024185306179595",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/jaiaplat-rg-sbox/providers/Microsoft.CognitiveServices/accounts/jaiaplat-docint-pmcin",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/jaiaplat-rg-sbox/providers/Microsoft.CognitiveServices/accounts/jaiaplat-aoai-pmcin",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/jaiaplat-rg-sbox/providers/Microsoft.CognitiveServices/accounts/jaiaplat-speech-pmcin",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/jaiaplat-rg-sbox/providers/Microsoft.CognitiveServices/accounts/jaiaplat-translator-pmcin",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/jaiaplat-rg-demo/providers/Microsoft.CognitiveServices/accounts/jaiaplat-aoai-imciq",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/jaiaplat-rg-demo/providers/Microsoft.CognitiveServices/accounts/jaiaplat-speech-imciq",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/jaiaplat-rg-demo/providers/Microsoft.CognitiveServices/accounts/jaiaplat-docint-imciq",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/jaiaplat-rg-demo/providers/Microsoft.CognitiveServices/accounts/jaiaplat-translator-imciq",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/infoasst-km-genie/providers/Microsoft.CognitiveServices/accounts/infoasst-fr-yhhhw",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/infoasst-km-genie/providers/Microsoft.CognitiveServices/accounts/infoasst-aoaiv2-yhhhw",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/infoasst-km-genie/providers/Microsoft.CognitiveServices/accounts/infoasst-enrichment-cog-yhhhw",
+      "/subscriptions/21965399-c365-4539-9e1b-4d226d9eab74/resourceGroups/infoasst-km-genie/providers/Microsoft.CognitiveServices/accounts/infoasst-aoai-yhhhw",
+      "/subscriptions/159f666e-4b02-4755-b79b-dd4a691a607b/resourceGroups/rg-001-innovation-prod/providers/Microsoft.CognitiveServices/accounts/spch-001-innovation-prod",
+      "/subscriptions/159f666e-4b02-4755-b79b-dd4a691a607b/resourceGroups/rg-001-innovation-prod/providers/Microsoft.CognitiveServices/accounts/hmctsbbfoundry",
+      "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/DTS-OCR-POC-PROJECT/providers/Microsoft.CognitiveServices/accounts/dts-ocr-doc-intel",
+      "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/DTS-OCR-POC-PROJECT/providers/Microsoft.CognitiveServices/accounts/dts-ocr-poc-project-ai-foundry",
+      "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/ai-fabric-foundry-poc/providers/Microsoft.CognitiveServices/accounts/ai-foundry-mi-poc",
+      "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourceGroups/batch-audio-transcription-dev-rg/providers/Microsoft.CognitiveServices/accounts/batch-audio-transcription-dev-speech",
+      "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/ai-leading-weevil/providers/Microsoft.CognitiveServices/accounts/my-ai-services",
+      "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/resourceGroups/slack-help-bot-cftptl-intsvc-rg/providers/Microsoft.CognitiveServices/accounts/platops-slack-help-bot-ptl",
+      "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourceGroups/cft-platform-dev-rg/providers/Microsoft.CognitiveServices/accounts/ocrdev-ai-form",
+      "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourceGroups/courtstranscribe-dev-rg/providers/Microsoft.CognitiveServices/accounts/hmcts-transcribe-ai-dev",
+      "/subscriptions/e9674938-57cb-43ff-a440-1917658e468c/resourceGroups/dlrm-ingest-ai-prod/providers/Microsoft.CognitiveServices/accounts/dlrm-aria-document-migration-sweden",
+      "/subscriptions/e9674938-57cb-43ff-a440-1917658e468c/resourceGroups/dlrm-ingest-ai-prod/providers/Microsoft.CognitiveServices/accounts/dlrm-aria-document-migration-res",
+      "/subscriptions/e9674938-57cb-43ff-a440-1917658e468c/resourceGroups/dlrm-ingest-ai-prod/providers/Microsoft.CognitiveServices/accounts/dlrm-ingest-cognitive-standard-prod",
+      "/subscriptions/df72bb30-d6fb-47bd-82ee-5eb87473ddb3/resourceGroups/dlrm-ingest-ai-sbox/providers/Microsoft.CognitiveServices/accounts/dlrm-ingest-cognitive-account-sbox",
+      "/subscriptions/df72bb30-d6fb-47bd-82ee-5eb87473ddb3/resourceGroups/ingest00-main-sbox/providers/Microsoft.CognitiveServices/accounts/dlrm-techspike-ai-services",
+      "/subscriptions/df72bb30-d6fb-47bd-82ee-5eb87473ddb3/resourceGroups/ingest00-main-sbox/providers/Microsoft.CognitiveServices/accounts/dlrm-doc-tech-spike",
+      "/subscriptions/df72bb30-d6fb-47bd-82ee-5eb87473ddb3/resourceGroups/ingest00-main-sbox/providers/Microsoft.CognitiveServices/accounts/dlrm-di-tech-spike",
+      "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/Ai-fabric-service-solirius-rg/providers/Microsoft.CognitiveServices/accounts/ai-foundry-solirius-poc",
+      "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/rg-depmap-sbox/providers/Microsoft.CognitiveServices/accounts/depmap-sbox-ai",
+      "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.CognitiveServices/accounts/sbox-foundry",
+      "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/batch-audio-transcription-prod-rg/providers/Microsoft.CognitiveServices/accounts/batch-audio-transcription-prod-speech",
+      "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/courtstranscribe-prod-rg/providers/Microsoft.CognitiveServices/accounts/hmcts-transcribe-ai-prod",
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/Doc-Int-OCRNew1/providers/Microsoft.CognitiveServices/accounts/docuintdiv",
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/rg-greenteam/providers/Microsoft.CognitiveServices/accounts/greenteam-openai",
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/ai-openai-pocs/providers/Microsoft.CognitiveServices/accounts/ai-openai-pocs",
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/platops-hackathon-sept25/providers/Microsoft.CognitiveServices/accounts/platops-hackathon-sept25",
+      "/subscriptions/df72bb30-d6fb-47bd-82ee-5eb87473ddb3/resourceGroups/dlrm-ingest-ai-sbox/providers/Microsoft.CognitiveServices/accounts/dlrm-ingest-openai-sbox",
+      "/subscriptions/da8a21e5-d260-4162-9391-6bdadf9103f8/resourceGroups/dlrm-ingest-ai-stg/providers/Microsoft.CognitiveServices/accounts/dlrm-ingest-openai-stg",
+      "/subscriptions/da8a21e5-d260-4162-9391-6bdadf9103f8/resourcegroups/dlrm-ingest-ai-stg/providers/microsoft.cognitiveservices/accounts/dlrm-ingest-cognitive-account-stg",
+      "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/crumble-shared-infrastructure-sandbox/providers/microsoft.cognitiveservices/accounts/crumble-cognitive-account-sandbox",
+      "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/plum-shared-infrastructure-sandbox/providers/microsoft.cognitiveservices/accounts/plum-cognitive-account-sandbox"
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAllowedAIResources",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/HMCTSAllowedAIResources",
+  "name": "HMCTSAllowedAIResources"
+}

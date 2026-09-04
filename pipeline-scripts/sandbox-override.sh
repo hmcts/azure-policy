@@ -21,7 +21,7 @@ for policy in ${POLICIES}; do
     mkdir -p ${POLICIES_DIR}/${DIR}
 
     echo "Creating file: ${POLICIES_DIR}/${DIR}/${FILE}"
-    npx json -f ${policy} \
+    npx --yes json -f ${policy} \
     -e 'this.name=this.name + process.env.ENVIRONMENT' \
     -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
     -e 'this.id=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.name' > ${POLICIES_DIR}/${DIR}/${FILE}
@@ -40,21 +40,19 @@ process_subscription_assignment() {
         # Manage-azure-policy action will only process files with assign. prefix so remove builtin prefix
         NORMALISED_FILE_NAME=$(echo ${FILE} | sed 's/^builtin\.//')
         CUSTOM_POLICY_DEFINITION_ID=""
-        npx json -f ${assignment} \
+        npx --yes json -f ${assignment} \
         -e 'this.properties.scope=process.env.SUB' \
         -e 'this.name=this.name + "_" + process.env.ENVIRONMENT' \
         -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
         -e 'this.properties.policyDefinitionId=this.properties.policyDefinitionId' \
-        -e 'this.properties.notScopes=[]' \
         -e 'this.id=process.env.SUB + "/providers/Microsoft.Authorization/policyAssignments/" + this.name' > ${ASSIGNMENTS_DIR}/${DIR}/${NORMALISED_FILE_NAME}
     else
         echo "Creating file for custom policy: ${ASSIGNMENTS_DIR}/${DIR}/${FILE}"
-        npx json -f ${assignment} \
+        npx --yes json -f ${assignment} \
         -e 'this.properties.scope=process.env.SUB' \
         -e 'this.name=this.name + "_" + process.env.ENVIRONMENT' \
         -e 'this.properties.displayName=this.properties.displayName + " - " + process.env.ENVIRONMENT ' \
         -e 'this.properties.policyDefinitionId=process.env.SUB + "/providers/Microsoft.Authorization/policyDefinitions/" + this.properties.policyDefinitionId.split("/").pop() + process.env.ENVIRONMENT' \
-        -e 'this.properties.notScopes=[]' \
         -e 'this.id=process.env.SUB + "/providers/Microsoft.Authorization/policyAssignments/" + this.name' > ${ASSIGNMENTS_DIR}/${DIR}/${FILE}
     fi
 }

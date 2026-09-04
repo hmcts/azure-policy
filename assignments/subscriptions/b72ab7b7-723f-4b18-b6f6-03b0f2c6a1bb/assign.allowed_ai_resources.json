@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit Azure AI Services accounts that do not meet HMCTS network, authentication, and location requirements.",
+    "displayName": "HMCTS Allowed AI Resources Policy - CFT SBOX",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Azure AI Services accounts must meet HMCTS network, authentication, and location requirements. See https://github.com/hmcts/azure-policy/blob/master/policies/allowed_ai_resources/README.md"
+      }
+    ],
+    "notScopes": [
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/rg-greenteam/providers/Microsoft.CognitiveServices/accounts/greenteam-openai",
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/Doc-Int-OCRNew1/providers/Microsoft.CognitiveServices/accounts/docuintdiv",
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/ai-openai-pocs/providers/Microsoft.CognitiveServices/accounts/ai-openai-pocs",
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/platops-hackathon-sept25/providers/Microsoft.CognitiveServices/accounts/platops-hackathon-sept25"
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSAllowedAIResources",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/HMCTSAllowedAIResources-Sbox",
+  "name": "HMCTSAllowedAIResources-Sbox"
+}
