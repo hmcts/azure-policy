@@ -27,8 +27,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSDiagnostic-sbox",
-  "name": "AKSDiagnostic-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSDiagnostic-sdssbox",
+  "name": "AKSDiagnostic-sdssbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",

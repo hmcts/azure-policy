@@ -4,7 +4,7 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Configure AKS clusters to disable the Run Command (command invoke).",
-    "displayName": "AKS Disable Command Invoke - HMCTS-MG",
+    "displayName": "AKS Disable Command Invoke (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
     "parameters": {

@@ -27,8 +27,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSDiagnostic-sbox",
-  "name": "AKSDiagnostic-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSDiagnostic-cftsbox",
+  "name": "AKSDiagnostic-cftsbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",

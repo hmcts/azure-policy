@@ -1,0 +1,54 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which do not restrict allowed container syscalls",
+    "displayName": "AKS Restrict Allowed Seccomp Profiles (mg:HMCTS)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedProfiles": {
+        "value": [
+          "runtime/default"
+        ]
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin",
+          "azure-devops",
+          "azureserviceoperator-system",
+          "backstage",
+          "camunda",
+          "clamav-mirror",
+          "cortex",
+          "dynatrace",
+          "flux-system",
+          "jenkins",
+          "keda",
+          "monitoring",
+          "neuvector",
+          "pact-broker",
+          "ipam"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/975ce327-682c-4f2e-aa46-b9598289b86c",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSLimitSeccompProfiles",
+  "name": "AKSLimitSeccompProfiles",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
