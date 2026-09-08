@@ -8,7 +8,8 @@
         "enforcementMode": "Default",
         "notScopes": [
             "/subscriptions/28d33a47-7c14-456d-9a40-ce9c9b5a3937",
-            "/subscriptions/55c2f45e-1381-4b17-9bd0-f85215b8bb4f"
+            "/subscriptions/55c2f45e-1381-4b17-9bd0-f85215b8bb4f",
+            "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/vwan-poc-core-sbox-rg"
         ],
         "parameters": {},
         "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/VPNConnectionRequired",
