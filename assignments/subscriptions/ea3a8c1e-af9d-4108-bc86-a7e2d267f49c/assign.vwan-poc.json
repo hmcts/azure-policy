@@ -1,0 +1,21 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Policy to add any virtual network tagged with “project: vwan-poc” to vwan-poc Network Group",
+        "displayName": "HMCTS vWAN PoC Network Group",
+        "enforcementMode": "Default",
+        "notScopes": [],
+        "parameters": {},
+        "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/VwanPocNetworkGroup",
+        "scope": "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/vwan-poc-core-sbox-rg"
+    },
+    "sku": {
+        "name": "A0",
+        "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments",
+    "id": "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/vwan-poc-core-sbox-rg/providers/Microsoft.Authorization/policyAssignments/VwanPocNetworkGroup",
+    "name": "VwanPocNetworkGroup"
+}
