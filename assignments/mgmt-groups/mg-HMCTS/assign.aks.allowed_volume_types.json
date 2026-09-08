@@ -19,12 +19,21 @@
           "secret",
           "projected",
           "configMap",
-          "hostPath",
           "csi",
           "emptyDir",
           "persistentVolumeClaim",
           "downwardAPI",
           "azureFile"
+        ]
+      },
+      "excludedImages": {
+        "value": [
+          "europe-west2-docker.pkg.dev/xdr-uk-2104535898207/agent-docker/cortex-agent:*",
+          "ebe20728.live.dynatrace.com/linux/oneagent:*",
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "hmctsprod.azurecr.io/imported/neuvector/enforcer:*",
+          "quay.io/prometheus/node-exporter:*",
+          "hmctsprod.azurecr.io/jenkins/jenkins:*"
         ]
       }
     },
