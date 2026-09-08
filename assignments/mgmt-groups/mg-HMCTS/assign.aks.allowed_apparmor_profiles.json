@@ -1,7 +1,8 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "Run script in PlatOps-Scripts-and-Templates, AKS Policy/assign.aks.allowed_apparmor_profiles.json_audit.sh, use excludedContainers in this policy assignment"
     },
     "description": "Audit AKS containers using AppArmor profiles outside allowed list.",
     "displayName": "AKS Allowed AppArmor Profiles (mg:HMCTS)",
@@ -18,6 +19,12 @@
         "value": [
           "runtime/default",
           "localhost/*"
+        ]
+      },
+      "excludedContainers": {
+        "value": [
+          "dynatrace-oneagent",
+          "cortex-agent"
         ]
       }
     },
