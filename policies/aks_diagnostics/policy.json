@@ -3,6 +3,10 @@
         "displayName": "Diagnostic Settings for AKS to Log Analytics",
         "policyType": "Custom",
         "mode": "Indexed",
+        "metadata": {
+            "category": "Kubernetes",
+            "remediation": "terraform:aks-module-kubernetes/diagnostics.tf var.monitor_diagnostic_setting / var.monitor_diagnostic_setting_metrics / var.kube_audit_admin_logs_enabled -> azurerm_monitor_diagnostic_setting resources (already wired)"
+        },
         "parameters": {
             "profileName": {
                 "type": "String",
