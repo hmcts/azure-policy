@@ -1,10 +1,11 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "terraform:aks-module-kubernetes - no storage_profile block set; disk_driver_enabled/file_driver_enabled/snapshot_controller_enabled default true in azurerm provider, so likely already compliant"
     },
     "description": "Audit AKS clusters that do not have CSI drivers enabled as per parameters (Disk/File/Snapshot).",
-    "displayName": "AKS Enable CSI - HMCTS-MG",
+    "displayName": "AKS Enable CSI (mg:HMCTS)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

@@ -1,10 +1,11 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "terraform:aks-module-kubernetes/12-kubernetes-cluster.tf - GAP. linux_profile.ssh_key is unconditionally set; make the linux_profile block dynamic/optional to omit it and disable SSH"
     },
     "description": "Audit AKS clusters that have SSH access enabled (should be disabled or local user only).",
-    "displayName": "AKS Disable SSH - HMCTS-MG",
+    "displayName": "AKS Disable SSH (mg:HMCTS)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

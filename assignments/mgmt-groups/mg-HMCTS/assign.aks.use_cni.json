@@ -1,10 +1,11 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "terraform:aks-module-kubernetes var.kubernetes_cluster_network_plugin -> network_profile.network_plugin (set to 'azure' in environment tfvars for compliance)"
     },
     "description": "Audit AKS clusters not using Azure CNI.",
-    "displayName": "AKS Use Azure CNI - HMCTS-MG",
+    "displayName": "AKS Use Azure CNI (mg:HMCTS)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

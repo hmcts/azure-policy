@@ -1,7 +1,8 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "terraform:aks-module-kubernetes/12-kubernetes-cluster.tf - already enforced (identity { type = \"UserAssigned\" }, hardcoded)"
     },
     "description": "Audit AKS clusters not using managed identities.",
     "displayName": "AKS Use Managed Identities (mg:HMCTS)",

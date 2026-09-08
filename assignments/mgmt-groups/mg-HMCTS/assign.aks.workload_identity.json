@@ -1,7 +1,8 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "terraform:aks-module-kubernetes/12-kubernetes-cluster.tf - already enforced (workload_identity_enabled = true, oidc_issuer_enabled = true, hardcoded)"
     },
     "description": "Audit AKS clusters that do not have workload identity enabled.",
     "displayName": "AKS Workload Identity (mg:HMCTS)",
