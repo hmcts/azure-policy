@@ -1,7 +1,8 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "terraform:aks-module-kubernetes var.azure_policy_enabled -> azure_policy_enabled (defaults false; override to true in environment tfvars for compliance)"
     },
     "description": "Audit AKS clusters that do not have the Azure Policy addon enabled.",
     "displayName": "AKS Policy Add-on Enabled (mg:HMCTS)",

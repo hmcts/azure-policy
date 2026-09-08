@@ -1,10 +1,11 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "terraform:aks-module-kubernetes var.enable_automatic_channel_upgrade_patch -> automatic_channel_upgrade (defaults false/null; set true in environment tfvars for compliance)"
     },
     "description": "Audit AKS clusters that do not have an allowed cluster auto-upgrade channel configured.",
-    "displayName": "AKS Cluster Auto-upgrade - HMCTS-MG",
+    "displayName": "AKS Cluster Auto-upgrade (mg:HMCTS)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {

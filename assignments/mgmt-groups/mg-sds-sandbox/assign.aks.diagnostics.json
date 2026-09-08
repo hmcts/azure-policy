@@ -1,7 +1,8 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "terraform:aks-module-kubernetes/diagnostics.tf var.monitor_diagnostic_setting / var.monitor_diagnostic_setting_metrics / var.kube_audit_admin_logs_enabled -> azurerm_monitor_diagnostic_setting resources (already wired)"
     },
     "description": "Deploy diagnostic settings for AKS clusters to send logs to Log Analytics workspace - matching production configuration",
     "displayName": "AKS Diagnostic Settings to Log Analytics (mg:SDS-Sandbox)",
@@ -27,8 +28,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSDiagnostic-sbox",
-  "name": "AKSDiagnostic-sbox",
+  "id": "/providers/Microsoft.Management/managementGroups/SDS-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSDiagnostic-sdssbox",
+  "name": "AKSDiagnostic-sdssbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",

@@ -1,7 +1,8 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "effect=DeployIfNotExists - self-remediated by Azure Policy identity (creates maintenanceConfigurations sub-resource); aks-module-kubernetes only wires maintenance_window_node_os (var.enable_node_os_channel_upgrade_nodeimage), not a general maintenance_window block"
     },
     "description": "Configure planned maintenance window for AKS clusters.",
     "displayName": "AKS Planned Maintenance (DCD-CFTAPPS-PROD)",
