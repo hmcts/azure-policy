@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Enforce minimum TLS version 1.2 for Azure Storage accounts",
+    "displayName": "Storage Account Minimum TLS 1.2",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "minimumTlsVersion": {
+        "value": "TLS1_2"
+      },
+      "effect": {
+        "value": "Deny"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/fe83a0eb-a853-422d-aac2-1bffd182c5d0",
+    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/StorageTLS12",
+  "name": "StorageTLS12",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
