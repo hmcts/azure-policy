@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "displayName": "Fixture Good Policy",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.Storage/storageAccounts"
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/FixtureGoodPolicy",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "FixtureGoodPolicy"
+}

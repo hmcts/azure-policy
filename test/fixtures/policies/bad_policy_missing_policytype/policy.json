@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "displayName": "Fixture Bad Policy Missing PolicyType",
+    "mode": "Indexed",
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.Storage/storageAccounts"
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/FixtureBadPolicy",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "FixtureBadPolicy"
+}

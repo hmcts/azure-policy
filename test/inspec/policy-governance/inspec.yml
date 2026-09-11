@@ -1,0 +1,17 @@
+name: policy-governance
+title: Azure Policy Governance Structural Checks
+maintainer: platformops
+license: Apache-2.0
+summary: >
+  Static structural checks for Azure Policy definitions and assignments stored
+  in this repository. These controls do not call Azure; they validate the
+  JSON files on disk against the repository's own conventions (see README.md
+  and .github/copilot-instructions.md).
+version: 0.1.0
+inputs:
+  - name: repo_root
+    description: >
+      Absolute or relative path to the root of the azure-policy repository,
+      used to locate the policies/ and assignments/ directories.
+    type: string
+    value: "../../.."

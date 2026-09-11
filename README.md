@@ -4,6 +4,58 @@
 
 This repo stores azure policy definitions and assignments.
 
+## Local policy tests with Inspec
+
+`test/inspec/policy-governance` is a Chef Inspec profile that runs static,
+offline checks against every `policies/**/policy.json` and
+`assignments/**/{assign,builtin.assign}.*.json` file in this repo. It does
+not call Azure and does not require credentials, so it is safe to run on
+any branch before opening a PR.
+
+Checks include:
+
+- JSON validity
+- required top-level fields (`id`, `name`, `type`, `properties`) and the
+  expected `type` value for definitions vs. assignments
+- required `properties` fields (`displayName`, `policyType`/`policyRule`/`mode`
+  for definitions; `displayName`, `policyDefinitionId`, `scope` for
+  assignments)
+- `id`/`scope` coherence for assignments, and that management-group vs.
+  subscription assignments use a scope that matches the folder they live in
+
+### Prerequisites
+
+Install Chef Inspec locally (not vendored in this repo). Any recent 4.x or
+5.x release works; newer `inspec-bin` releases (7.x) require contacting a
+Chef licensing server which may not be reachable from CI/sandboxed
+environments, so an older release avoids that dependency:
+
+```bash
+gem install inspec-bin -v 4.56.20 --no-document
+```
+
+### Running the tests
+
+```bash
+# Run every control against this repository
+./test/inspec/run.sh
+
+# Run a single control (e.g. while iterating on one policy)
+./test/inspec/run.sh --controls policy-definition-tagging
+
+# Run against the bundled fixtures instead of the real repo, to see the
+# harness catch deliberately broken policy/assignment files
+./test/inspec/run.sh --input repo_root=test/fixtures
+```
+
+`test/fixtures/` contains a small set of known-good and known-bad
+policy/assignment files used to prove the controls actually fail when a
+file violates a convention (see `test/fixtures/policies/bad_policy_missing_policytype`
+and `test/fixtures/assignments/mgmt-groups/mg-example/assign.fixture_bad.json`).
+
+This phase is local-only: it is not yet wired into GitHub Actions. See the
+rollout plan for later phases that add a non-blocking, then blocking, CI job.
+
 ## Overview of Azure Policy Definitions
 
 In Azure Policy, definitions describe resource compliance conditions and the effect to take if a condition is met.
