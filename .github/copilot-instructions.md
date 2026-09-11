@@ -32,6 +32,22 @@ PR touching policy or assignment files:
 ./test/inspec/run.sh --controls policy-definition-tagging  # single control
 ```
 
+**Inspec version constraint:** use `inspec-bin` **4.56.20**, not the latest
+7.x release. Inspec 7.x bundles the newer `chef-licensing` gem, which always
+calls out to a Chef license server on every run — even with
+`--chef-license accept-no-persist` — and fails with
+`ERROR: Unable to connect to the licensing server` in restricted/offline
+networks. Inspec 4.56.20 uses the older `license-acceptance` gem, which only
+requires a local EULA acceptance and makes no network call by default:
+
+```bash
+gem install inspec-bin -v 4.56.20 --no-document
+```
+
+If a fully current release is required, use **CINC Auditor** instead of
+Chef Inspec — it is DSL-compatible with the profile in this repo and has no
+Chef license requirement at any version.
+
 For a targeted single-file JSON sanity check, use a JSON validator on the specific file rather than trying to run a full project suite. Examples:
 
 ```bash
