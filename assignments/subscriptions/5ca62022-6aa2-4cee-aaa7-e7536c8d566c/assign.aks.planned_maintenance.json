@@ -5,7 +5,7 @@
       "remediation": "effect=DeployIfNotExists - self-remediated by Azure Policy identity (creates maintenanceConfigurations sub-resource); aks-module-kubernetes only wires maintenance_window_node_os (var.enable_node_os_channel_upgrade_nodeimage), not a general maintenance_window block"
     },
     "description": "Configure planned maintenance window for AKS clusters.",
-    "displayName": "AKS Planned Maintenance (DCD-CFTAPPS-PROD)",
+    "displayName": "AKS Planned Maintenance (DTS-SHAREDSERVICES-PROD)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
@@ -38,10 +38,10 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1352e44-d34d-4e4d-a22e-451a15f759a1",
-    "scope": "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27"
+    "scope": "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-prod",
+  "id": "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-prod",
   "name": "AKSPlanMaint-prod",
   "location": "uksouth",
   "sku": {
@@ -51,7 +51,7 @@
   "identity": {
     "type": "UserAssigned",
     "userAssignedIdentities": {
-      "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-prod-mi": {}
+      "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-prod-mi": {}
     }
   }
 }
