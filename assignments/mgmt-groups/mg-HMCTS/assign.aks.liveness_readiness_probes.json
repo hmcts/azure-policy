@@ -31,7 +31,7 @@
         "value": {
           "matchExpressions": [
             {
-              "key": "job-name",
+              "key": "batch.kubernetes.io/job-name",
               "operator": "DoesNotExist"
             }
           ]
