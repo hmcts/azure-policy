@@ -16,7 +16,16 @@
       },
       "excludedNamespaces": {
         "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
           "monitoring"
+        ]
+      },
+      "excludedImages": {
+        "value": [
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*"
         ]
       }
     },
