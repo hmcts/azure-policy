@@ -3,8 +3,8 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS containers whose CPU/memory limits exceed specified maximums.",
-    "displayName": "AKS Container Resource Limits (mg:HMCTS)",
+    "description": "Audit CPU/memory limits for containers in the ccd namespace against a higher ceiling than the fleet default, matching ccd's actual production sizing (excluded from AKSResLimitMax-hmcts).",
+    "displayName": "AKS Container Resource Limits - ccd namespace (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [
       "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589",
@@ -17,29 +17,14 @@
         "value": "Audit"
       },
       "cpuLimit": {
-        "value": "1.5"
+        "value": "4"
       },
       "memoryLimit": {
-        "value": "2Gi"
+        "value": "8Gi"
       },
-      "excludedNamespaces": {
+      "namespaces": {
         "value": [
-          "kube-system",
-          "gatekeeper-system",
-          "azure-arc",
-          "azure-extensions-usage-system",
-          "dynatrace",
-          "monitoring",
-          "neuvector",
-          "cert-manager",
           "ccd"
-        ]
-      },
-      "excludedImages": {
-        "value": [
-          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
-          "ebe20728.live.dynatrace.com/linux/oneagent:*",
-          "quay.io/prometheus/node-exporter:*"
         ]
       }
     },
@@ -47,8 +32,8 @@
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSResLimitMax-hmcts",
-  "name": "AKSResLimitMax-hmcts",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSResLimitMax-ccd",
+  "name": "AKSResLimitMax-ccd",
   "location": "uksouth",
   "sku": {
     "name": "A0",

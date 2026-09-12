@@ -3,24 +3,19 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS containers whose CPU/memory limits exceed specified maximums.",
-    "displayName": "AKS Container Resource Limits (mg:HMCTS)",
+    "description": "Audit AKS containers whose CPU/memory limits exceed specified maximums. Raised ceiling vs. the HMCTS fleet default (this subscription is excluded from AKSResLimitMax-hmcts) because most namespaces on cft-preview-00-aks host per-PR review-app copies of the ccd stack alongside their own workloads, making a namespace-by-namespace carve-out impractical.",
+    "displayName": "AKS Container Resource Limits (DCD-CFTAPPS-DEV)",
     "enforcementMode": "Default",
-    "notScopes": [
-      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589",
-      "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/resourcegroups/a360-c2x2555-uat",
-      "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4",
-      "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6"
-    ],
+    "notScopes": [],
     "parameters": {
       "effect": {
         "value": "Audit"
       },
       "cpuLimit": {
-        "value": "1.5"
+        "value": "4"
       },
       "memoryLimit": {
-        "value": "2Gi"
+        "value": "8Gi"
       },
       "excludedNamespaces": {
         "value": [
@@ -31,8 +26,7 @@
           "dynatrace",
           "monitoring",
           "neuvector",
-          "cert-manager",
-          "ccd"
+          "cert-manager"
         ]
       },
       "excludedImages": {
@@ -44,11 +38,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e345eecc-fa47-480f-9e88-67dcc122b164",
-    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    "scope": "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSResLimitMax-hmcts",
-  "name": "AKSResLimitMax-hmcts",
+  "id": "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/providers/Microsoft.Authorization/policyAssignments/AKSResLimitMax-preview",
+  "name": "AKSResLimitMax-preview",
   "location": "uksouth",
   "sku": {
     "name": "A0",
