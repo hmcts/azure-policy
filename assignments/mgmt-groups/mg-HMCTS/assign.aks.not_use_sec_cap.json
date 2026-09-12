@@ -13,6 +13,12 @@
     "parameters": {
       "effect": {
         "value": "Audit"
+      },
+      "excludedNamespaces": {
+        "value": ["kube-system", "gatekeeper-system", "azure-arc", "azure-extensions-usage-system", "admin", "dynatrace"]
+      },
+      "disallowedCapabilities": {
+        "value": ["NET_ADMIN", "SYS_PTRACE", "SYS_MODULE", "SYS_RAWIO", "SYS_BOOT", "MAC_ADMIN", "MAC_OVERRIDE", "DAC_READ_SEARCH"]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a27c700f-8a22-44ec-961c-41625264370b",
