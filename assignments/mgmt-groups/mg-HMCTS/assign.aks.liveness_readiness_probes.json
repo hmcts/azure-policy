@@ -22,7 +22,9 @@
           "azure-extensions-usage-system",
           "admin",
           "monitoring",
-          "cert-manager"
+          "cert-manager",
+          "dynatrace",
+          "neuvector"
         ]
       }
     },
