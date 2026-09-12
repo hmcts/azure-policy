@@ -19,6 +19,25 @@
       },
       "memoryLimit": {
         "value": "2Gi"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "dynatrace",
+          "monitoring",
+          "neuvector",
+          "cert-manager"
+        ]
+      },
+      "excludedImages": {
+        "value": [
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "ebe20728.live.dynatrace.com/linux/oneagent:*",
+          "quay.io/prometheus/node-exporter:*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e345eecc-fa47-480f-9e88-67dcc122b164",
