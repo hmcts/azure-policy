@@ -47,11 +47,5 @@
   "sku": {
     "name": "A0",
     "tier": "Free"
-  },
-  "identity": {
-    "type": "UserAssigned",
-    "userAssignedIdentities": {
-      "/subscriptions/d025fece-ce99-4df2-b7a9-b649d3ff2060/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-demo-mi": {}
-    }
   }
 }
