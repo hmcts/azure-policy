@@ -63,6 +63,9 @@ jobs:
         paths: |
           policies/**
           assignments/subscriptions/**
+        assignments: |
+          assign.*.json
+          builtin.assign.*.json
 
   apply-azure-policy-mgmt-group:
     if: ${{ github.ref == 'refs/heads/master' }}
