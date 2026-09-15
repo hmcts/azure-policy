@@ -2,10 +2,10 @@
   "properties": {
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy",
-      "remediation": "effect=AuditIfNotExists - audit only; Terraform (aks-cft-deploy/aks-sds-deploy) is the sole owner of the maintenanceConfigurations sub-resource via maintenance_window_node_os (var.enable_node_os_channel_upgrade_nodeimage). This assignment exists to satisfy the AKS Policy Add-on recommendation and never writes to the resource"
+      "remediation": "effect=DeployIfNotExists - self-remediated by Azure Policy identity (creates maintenanceConfigurations sub-resource); aks-module-kubernetes only wires maintenance_window_node_os (var.enable_node_os_channel_upgrade_nodeimage), not a general maintenance_window block"
     },
     "description": "Configure planned maintenance window for AKS clusters.",
-    "displayName": "AKS Planned Maintenance (DTS-SHAREDSERVICES-DEV)",
+    "displayName": "AKS Planned Maintenance (mg:CFT-Sandbox)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
@@ -15,7 +15,7 @@
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "AuditIfNotExists"
+        "value": "DeployIfNotExists"
       },
       "configurationType": {
         "value": "aksManagedNodeOSUpgradeSchedule"
@@ -38,11 +38,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1352e44-d34d-4e4d-a22e-451a15f759a1",
-    "scope": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6"
+    "scope": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-dev",
-  "name": "AKSPlanMaint-dev",
+  "id": "/providers/Microsoft.Management/managementGroups/CFT-Sandbox/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-sbox",
+  "name": "AKSPlanMaint-sbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",
@@ -51,7 +51,7 @@
   "identity": {
     "type": "UserAssigned",
     "userAssignedIdentities": {
-      "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-dev-mi": {}
+      "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourcegroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-sbox-mi": {}
     }
   }
 }
