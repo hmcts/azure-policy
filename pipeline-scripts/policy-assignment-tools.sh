@@ -3,16 +3,22 @@
 #
 # Usage:
 #   ./pipeline-scripts/policy-assignment-tools.sh check-compliance <name-substring> [name-substring...]
+#   ./pipeline-scripts/policy-assignment-tools.sh check-remediation-text <name-substring> [name-substring...]
 #   ./pipeline-scripts/policy-assignment-tools.sh fix-display-name <name-substring> <subscription-id>
 #
 # Examples:
 #   ./pipeline-scripts/policy-assignment-tools.sh check-compliance aad_admin_groups use_managed_identities workload_identity
+#   ./pipeline-scripts/policy-assignment-tools.sh check-remediation-text aad_admin_groups use_managed_identities
 #   ./pipeline-scripts/policy-assignment-tools.sh fix-display-name aad_admin_groups 8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c
 #
 # check-compliance requires `az login` with at least Reader access on the
 # assignment scopes being checked. It reads the most recent policy
 # evaluation via `az policy state summarize` — it does not trigger a new
 # scan (see README.md/Inspec harness for other validation options).
+#
+# check-remediation-text is purely local/static (no `az` calls): it checks
+# that each matched assignment's properties.metadata.remediation is present,
+# non-empty, and free of placeholder markers (TODO/TBD/FIXME).
 #
 # fix-display-name only rewrites the local assign.*.json file; it does not
 # call Azure. The updated file is applied to Azure the normal way, via the
@@ -155,6 +161,65 @@ check_compliance() {
   exit "${overall_status}"
 }
 
+# --- check-remediation-text -------------------------------------------------
+#
+# For every assignment file matching any of the given name substrings,
+# checks that properties.metadata.remediation is present, non-empty, and
+# free of placeholder markers (TODO/TBD/FIXME). Purely local/static - does
+# not call Azure. Exits non-zero if any matched assignment fails, so this
+# can be used as a pass/fail gate.
+check_remediation_text() {
+  if [ "$#" -eq 0 ]; then
+    echo "ERROR: check-remediation-text requires at least one name substring" >&2
+    exit 1
+  fi
+
+  require_command jq
+
+  local overall_status=0
+  local matched_any=false
+  local name_substring
+
+  for name_substring in "$@"; do
+    local files
+    files="$(find_assignment_files "${name_substring}")"
+    echo "## Checking remediation text for assignments matching '*${name_substring}*'"
+    if [ -z "${files}" ]; then
+      echo "WARN: no assignment files matched '*${name_substring}*'" >&2
+      continue
+    fi
+
+    local file
+    while IFS= read -r file; do
+      matched_any=true
+
+      local remediation
+      remediation="$(jq -r '.properties.metadata.remediation // ""' "${file}")"
+
+      if [ -z "${remediation}" ] || [ "${remediation}" = "null" ]; then
+        echo "FAIL  ${file}: properties.metadata.remediation is missing or empty"
+        overall_status=1
+        continue
+      fi
+
+      if echo "${remediation}" | grep -Eiq '\b(todo|tbd|fixme)\b'; then
+        echo "FAIL  ${file}: remediation text contains a placeholder marker - \"${remediation}\""
+        overall_status=1
+        continue
+      fi
+
+      echo "PASS  ${file}: \"${remediation}\""
+    done <<< "${files}"
+  done
+
+  if [ "${matched_any}" = false ]; then
+    echo "ERROR: no assignment files matched any of the given name substrings: $*" >&2
+    exit 1
+  fi
+
+  exit "${overall_status}"
+}
+
 # --- fix-display-name --------------------------------------------------------
 #
 # Looks up the real display name of a subscription via Azure CLI and
@@ -240,6 +305,7 @@ usage() {
   cat <<'EOF'
 Usage:
   policy-assignment-tools.sh check-compliance <name-substring> [name-substring...]
+  policy-assignment-tools.sh check-remediation-text <name-substring> [name-substring...]
   policy-assignment-tools.sh fix-display-name <name-substring> <subscription-id>
 EOF
 }
@@ -251,6 +317,9 @@ main() {
   case "${command}" in
     check-compliance)
       check_compliance "$@"
+      ;;
+    check-remediation-text)
+      check_remediation_text "$@"
       ;;
     fix-display-name)
       fix_display_name "$@"

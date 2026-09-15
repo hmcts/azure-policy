@@ -28,13 +28,18 @@ python -m json.tool assignments/mgmt-groups/mg-HMCTS/assign.tagging.json >/dev/n
 
 If you need to validate generated sandbox files, use the same pattern against the relevant JSON file before committing.
 
-`pipeline-scripts/policy-assignment-tools.sh` provides two ad hoc maintenance operations against existing assignments (requires `az` and `jq`):
+`pipeline-scripts/policy-assignment-tools.sh` provides three ad hoc maintenance operations against existing assignments (requires `jq`; `check-compliance` also requires `az`):
 
 ```bash
 # Check whether assignments matching one or more filename substrings currently
 # have 0 non-compliant resources (reads the latest Azure Policy evaluation;
 # does not trigger a new scan). Requires `az login` with Reader access.
 ./pipeline-scripts/policy-assignment-tools.sh check-compliance aad_admin_groups use_managed_identities
+
+# Check that assignments matching one or more filename substrings have a
+# non-empty properties.metadata.remediation with no placeholder markers
+# (TODO/TBD/FIXME). Purely local/static - no `az` calls.
+./pipeline-scripts/policy-assignment-tools.sh check-remediation-text aad_admin_groups use_managed_identities
 
 # Rewrite an assignment's displayName suffix to match the subscription's real
 # Azure display name. Only edits the local assign.*.json file; it does not
