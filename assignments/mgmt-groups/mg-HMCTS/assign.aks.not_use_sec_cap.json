@@ -15,7 +15,10 @@
         "value": "Audit"
       },
       "excludedNamespaces": {
-        "value": ["kube-system", "gatekeeper-system", "azure-arc", "azure-extensions-usage-system", "admin", "dynatrace"]
+        "value": ["kube-system", "gatekeeper-system", "azure-arc", "azure-extensions-usage-system"]
+      },
+      "excludedContainers": {
+        "value": ["nmi", "dynatrace-oneagent"]
       },
       "disallowedCapabilities": {
         "value": ["NET_ADMIN", "SYS_PTRACE", "SYS_MODULE", "SYS_RAWIO", "SYS_BOOT", "MAC_ADMIN", "MAC_OVERRIDE", "DAC_READ_SEARCH"]
