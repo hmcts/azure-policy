@@ -28,18 +28,6 @@
           "description": "The minimum number of days required for blob, container and file share soft delete retention"
         },
         "defaultValue": 14
-      },
-      "nonProductionIdentifiers": {
-        "type": "Array",
-        "metadata": {
-          "displayName": "Non-production identifiers",
-          "description": "Deprecated and no longer used by this policy. Retained because Azure Policy does not allow parameters to be removed from an existing definition on update.",
-          "deprecated": true
-        },
-        "defaultValue": [
-          "stg",
-          "preview"
-        ]
       }
     },
     "policyRule": {
