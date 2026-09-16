@@ -1,0 +1,21 @@
+{
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/CppStorageNonLiveSoftDelete",
+  "name": "CppStorageNonLiveSoftDelete",
+  "properties": {
+    "description": "Non live storage accounts must have blob, container and file soft delete enabled with a minimum retention period",
+    "displayName": "CPP Storage Account Non Live Soft Delete - (CPP Non Live)",
+    "enforcementMode": "Audit",
+    "metadata": {
+      "assignedBy": "hmcts/cpp-azure-policy"
+    },
+    "nonComplianceMessages": [
+      {
+        "message": "This storage account is treated as non-live and must have blob, container and file soft delete enabled with a minimum retention period. See https://github.com/hmcts/cpp-azure-policy/blob/master/policies/storage_account_soft_delete/README.md"
+      }
+    ],
+    "parameters": {},
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyDefinitions/CppStorageNonLiveSoftDelete",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments"
+}

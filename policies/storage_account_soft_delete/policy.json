@@ -1,0 +1,130 @@
+{
+  "properties": {
+    "displayName": "Non live storage accounts must have blob, container and file soft delete enabled with a minimum retention period",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Denies configuration of a non live storage account's blob, container or file share soft delete unless it is enabled with a retention period of at least the configured minimum number of days. A storage account is considered non live unless its name, resource group, or 'environment' tag contains one of the configured non-production identifiers (e.g. prp, prx).",
+    "metadata": {
+      "category": "Storage"
+    },
+    "parameters": {
+      "minimumRetentionDays": {
+        "type": "Integer",
+        "metadata": {
+          "displayName": "Minimum retention days",
+          "description": "The minimum number of days required for blob, container and file share soft delete retention"
+        },
+        "defaultValue": 14
+      },
+      "nonProductionIdentifiers": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Non-production identifiers",
+          "description": "Substrings that, when found in the storage account name, resource group name, or 'environment' tag, identify the storage account as non-production"
+        },
+        "defaultValue": [
+          "prp",
+          "prx"
+        ]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Storage/storageAccounts/blobServices"
+              },
+              {
+                "field": "type",
+                "equals": "Microsoft.Storage/storageAccounts/fileServices"
+              }
+            ]
+          },
+          {
+            "count": {
+              "value": "[parameters('nonProductionIdentifiers')]",
+              "name": "identifier",
+              "where": {
+                "field": "id",
+                "contains": "[current('identifier')]"
+              }
+            },
+            "equals": 0
+          },
+          {
+            "count": {
+              "value": "[parameters('nonProductionIdentifiers')]",
+              "name": "identifier",
+              "where": {
+                "field": "tags['environment']",
+                "contains": "[current('identifier')]"
+              }
+            },
+            "equals": 0
+          },
+          {
+            "anyOf": [
+              {
+                "allOf": [
+                  {
+                    "field": "type",
+                    "equals": "Microsoft.Storage/storageAccounts/blobServices"
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/blobServices/containerDeleteRetentionPolicy.enabled",
+                        "notEquals": true
+                      },
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/blobServices/containerDeleteRetentionPolicy.days",
+                        "less": "[parameters('minimumRetentionDays')]"
+                      },
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.enabled",
+                        "notEquals": true
+                      },
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.days",
+                        "less": "[parameters('minimumRetentionDays')]"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "field": "type",
+                    "equals": "Microsoft.Storage/storageAccounts/fileServices"
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/fileServices/shareDeleteRetentionPolicy.enabled",
+                        "notEquals": true
+                      },
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/fileServices/shareDeleteRetentionPolicy.days",
+                        "less": "[parameters('minimumRetentionDays')]"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "Deny"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyDefinitions/CppStorageNonLiveSoftDelete",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "CppStorageNonLiveSoftDelete"
+}
