@@ -5,7 +5,7 @@
       "remediation": "effect=AuditIfNotExists - audit only; Terraform (aks-cft-deploy/aks-sds-deploy) is the sole owner of the maintenanceConfigurations sub-resource via maintenance_window_node_os (var.enable_node_os_channel_upgrade_nodeimage). This assignment exists to satisfy the AKS Policy Add-on recommendation and never writes to the resource"
     },
     "description": "Configure planned maintenance window for AKS clusters.",
-    "displayName": "AKS Planned Maintenance (DCD-CFTAPPS-DEV)",
+    "displayName": "AKS Planned Maintenance (DTS-SHAREDSERVICESPTL-SBOX)",
     "enforcementMode": "Default",
     "nonComplianceMessages": [
       {
@@ -38,11 +38,11 @@
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1352e44-d34d-4e4d-a22e-451a15f759a1",
-    "scope": "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4"
+    "scope": "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-preview",
-  "name": "AKSPlanMaint-preview",
+  "id": "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-ptlsbox",
+  "name": "AKSPlanMaint-ptlsbox",
   "location": "uksouth",
   "sku": {
     "name": "A0",
@@ -51,7 +51,7 @@
   "identity": {
     "type": "UserAssigned",
     "userAssignedIdentities": {
-      "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-preview-mi": {}
+      "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-ptlsbox-mi": {}
     }
   }
 }
