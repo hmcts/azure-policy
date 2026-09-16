@@ -1,0 +1,13 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "fixture"
+    },
+    "displayName": "Fixture Bad Management Group Assignment (wrong scope type)",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/mg-example/providers/Microsoft.Authorization/policyDefinitions/FixtureGoodPolicy",
+    "scope": "/subscriptions/00000000-0000-0000-0000-000000000000"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/policyAssignments/FixtureBadAssignment",
+  "name": "FixtureBadAssignment"
+}
