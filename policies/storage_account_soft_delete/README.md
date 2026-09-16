@@ -16,8 +16,6 @@ For each storage account, the following must all be true:
 | ------------------------ | -------------- | ----------------------------------------------------------------------------- |
 | `minimumRetentionDays`   | `14`           | Minimum required soft delete retention period, in days                        |
 
-`nonProductionIdentifiers` also still appears on the policy definition, marked `deprecated: true`. It no longer has any effect — it's kept only because Azure Policy doesn't allow parameters to be removed from an existing definition on update.
-
 ## Exemptions
 
 Send a pull request to the relevant assignment file under [assignments](https://github.com/hmcts/azure-policy/tree/HEAD/assignments) with justification if a storage account needs to be excluded via `notScopes`.
