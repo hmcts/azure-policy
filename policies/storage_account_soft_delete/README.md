@@ -1,10 +1,6 @@
-# Production Storage Account Soft Delete Policy
+# Storage Account Soft Delete Policy
 
-This policy denies configuration of a **production** storage account's blob, container, or file share soft delete unless it is enabled with a retention period of at least `minimumRetentionDays` (default 14 days). It is only assigned in live subscriptions.
-
-## Identifying production
-
-A storage account is treated as **production** unless its name, resource group name, or `environment` tag contains one of the `nonProductionIdentifiers` (default ``, ``). Matching is case-insensitive.
+This policy denies configuration of a storage account's blob, container, or file share soft delete unless it is enabled with a retention period of at least `minimumRetentionDays` (default 14 days).
 
 ## What is checked
 
@@ -19,8 +15,7 @@ For each storage account, the following must all be true:
 | Parameter                | Default        | Description                                                                 |
 | ------------------------ | -------------- | ----------------------------------------------------------------------------- |
 | `minimumRetentionDays`   | `14`           | Minimum required soft delete retention period, in days                        |
-| `nonProductionIdentifiers` | `["", ""]` | Substrings identifying a storage account/resource group/tag as non-production |
 
 ## Exemptions
 
-Send a pull request to the relevant assignment file under [assignments/live/subscriptions](https://github.com/hmcts/azure-policy/tree/HEAD/assignments/live/subscriptions) with justification if a production storage account needs to be excluded via `notScopes`.
+Send a pull request to the relevant assignment file under [assignments](https://github.com/hmcts/azure-policy/tree/HEAD/assignments) with justification if a storage account needs to be excluded via `notScopes`.
