@@ -1,9 +1,9 @@
 {
   "properties": {
-    "displayName": "Non live storage accounts must have blob, container and file soft delete enabled with a minimum retention period",
+    "displayName": "Storage accounts must have blob, container and file soft delete enabled with a minimum retention period",
     "policyType": "Custom",
     "mode": "All",
-    "description": "Audits or denies configuration of a non live storage account's blob, container or file share soft delete unless it is enabled with a retention period of at least the configured minimum number of days. A storage account is considered non live unless its name, resource group, or 'environment' tag contains one of the configured non-production identifiers (e.g. prp, prx).",
+    "description": "Audits or denies configuration of a storage account's blob, container or file share soft delete unless it is enabled with a retention period of at least the configured minimum number of days.",
     "metadata": {
       "category": "Storage"
     },
@@ -28,7 +28,8 @@
           "description": "The minimum number of days required for blob, container and file share soft delete retention"
         },
         "defaultValue": 14
-      },
+      }
+    },
     "policyRule": {
       "if": {
         "allOf": [
@@ -43,28 +44,6 @@
                 "equals": "Microsoft.Storage/storageAccounts/fileServices"
               }
             ]
-          },
-          {
-            "count": {
-              "value": "[parameters('nonProductionIdentifiers')]",
-              "name": "identifier",
-              "where": {
-                "field": "id",
-                "contains": "[current('identifier')]"
-              }
-            },
-            "equals": 0
-          },
-          {
-            "count": {
-              "value": "[parameters('nonProductionIdentifiers')]",
-              "name": "identifier",
-              "where": {
-                "field": "tags['environment']",
-                "contains": "[current('identifier')]"
-              }
-            },
-            "equals": 0
           },
           {
             "anyOf": [
