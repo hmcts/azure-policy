@@ -10,7 +10,7 @@
     },
     "nonComplianceMessages": [
       {
-        "message": "This storage account is treated as non-live and must have blob, container and file soft delete enabled with a minimum retention period. See https://github.com/hmcts/cpp-azure-policy/blob/master/policies/storage_account_soft_delete/README.md"
+        "message": "This storage account is treated as non-live and must have blob, container and file soft delete enabled with a minimum retention period. See https://github.com/hmcts/azure-policy/blob/master/policies/storage_account_soft_delete/README.md"
       }
     ],
     "parameters": {
