@@ -4,7 +4,7 @@ This policy denies configuration of a **production** storage account's blob, con
 
 ## Identifying production
 
-A storage account is treated as **production** unless its name, resource group name, or `environment` tag contains one of the `nonProductionIdentifiers` (default `prp`, `prx`). Matching is case-insensitive.
+A storage account is treated as **production** unless its name, resource group name, or `environment` tag contains one of the `nonProductionIdentifiers` (default ``, ``). Matching is case-insensitive.
 
 ## What is checked
 
@@ -19,8 +19,8 @@ For each storage account, the following must all be true:
 | Parameter                | Default        | Description                                                                 |
 | ------------------------ | -------------- | ----------------------------------------------------------------------------- |
 | `minimumRetentionDays`   | `14`           | Minimum required soft delete retention period, in days                        |
-| `nonProductionIdentifiers` | `["prp", "prx"]` | Substrings identifying a storage account/resource group/tag as non-production |
+| `nonProductionIdentifiers` | `["", ""]` | Substrings identifying a storage account/resource group/tag as non-production |
 
 ## Exemptions
 
-Send a pull request to the relevant assignment file under [assignments/live/subscriptions](https://github.com/hmcts/cpp-azure-policy/tree/HEAD/assignments/live/subscriptions) with justification if a production storage account needs to be excluded via `notScopes`.
+Send a pull request to the relevant assignment file under [assignments/live/subscriptions](https://github.com/hmcts/azure-policy/tree/HEAD/assignments/live/subscriptions) with justification if a production storage account needs to be excluded via `notScopes`.
