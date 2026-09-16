@@ -28,17 +28,6 @@
           "description": "The minimum number of days required for blob, container and file share soft delete retention"
         },
         "defaultValue": 14
-      },
-      "nonProductionIdentifiers": {
-        "type": "Array",
-        "metadata": {
-          "displayName": "Non-production identifiers",
-          "description": "Substrings that, when found in the storage account name, resource group name, or 'environment' tag, identify the storage account as non-production"
-        },
-        "defaultValue": [
-          "",
-          ""
-        ]
       }
     },
     "policyRule": {
