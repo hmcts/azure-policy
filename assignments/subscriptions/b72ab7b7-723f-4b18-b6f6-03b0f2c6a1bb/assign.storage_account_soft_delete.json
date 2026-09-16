@@ -1,9 +1,9 @@
 {
-  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/CppStorageNonLiveSoftDelete",
-  "name": "CppStorageNonLiveSoftDelete",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/StorageSoftDelete",
+  "name": "StorageSoftDelete",
   "properties": {
     "description": "Non live storage accounts must have blob, container and file soft delete enabled with a minimum retention period",
-    "displayName": "CNP Storage Account Non Live Soft Delete",
+    "displayName": "Storage Account Non Live Soft Delete",
     "enforcementMode": "DoNotEnforce",
     "metadata": {
       "assignedBy": "hmcts/azure-policy"
@@ -18,7 +18,7 @@
         "value": "Audit"
       }
     },
-    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyDefinitions/CppStorageNonLiveSoftDelete",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyDefinitions/StorageSoftDelete",
     "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
   },
   "type": "Microsoft.Authorization/policyAssignments"
