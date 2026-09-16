@@ -28,8 +28,7 @@
           "description": "The minimum number of days required for blob, container and file share soft delete retention"
         },
         "defaultValue": 14
-      }
-    },
+      },
     "policyRule": {
       "if": {
         "allOf": [
