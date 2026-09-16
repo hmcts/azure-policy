@@ -80,6 +80,25 @@ scope_to_az_args() {
 # scope and reports whether it currently has 0 non-compliant resources.
 # Exits non-zero if any matched assignment has non-compliant resources, so
 # this can be used as a pass/fail gate.
+#
+# NOTE on az CLI scope handling: `--policy-assignment`/`-a` and
+# `--management-group`/`-m` (and `--resource-group`/`-g`) are all "scope
+# argument" flags that each independently build the resource ID the query
+# runs against. They do not compose - passing `--policy-assignment <name>`
+# together with `--management-group <mg>` silently ignores the management
+# group and queries the *current subscription* instead (confirmed via the
+# `odataContext` in the raw response), so it always finds nothing for
+# assignments that live at a management-group or different-subscription
+# scope. That previously caused this command to report a false "0
+# non-compliant resources" PASS for every assignment.
+#
+# The fix is to keep the real scope flag (`-m`/`--subscription`/`-g`, as
+# derived from the assignment file's `properties.scope`) and instead filter
+# by assignment name via `--filter "PolicyAssignmentName eq '<name>'"`,
+# which composes correctly with scope. If that still returns an empty
+# `policyAssignments` array, the name/scope genuinely doesn't resolve to a
+# live assignment (e.g. stale file), and this is reported as a FAIL
+# ("no matching assignment found") rather than a silent PASS.
 check_compliance() {
   if [ "$#" -eq 0 ]; then
     echo "ERROR: check-compliance requires at least one name substring" >&2
@@ -131,9 +150,12 @@ check_compliance() {
         scope_args+=("${scope_arg}")
       done <<< "${scope_args_raw}"
 
-      local summary non_compliant
+      # OData string literals escape a single quote by doubling it.
+      local assignment_name_odata="${assignment_name//\'/\'\'}"
+
+      local summary matched_assignments non_compliant
       if ! summary="$(az policy state summarize \
-        --policy-assignment "${assignment_name}" \
+        --filter "PolicyAssignmentName eq '${assignment_name_odata}'" \
         "${scope_args[@]}" \
         --output json 2>&1)"; then
         echo "FAIL  ${assignment_name} (${scope}): unable to query policy state - ${summary}"
@@ -141,8 +163,23 @@ check_compliance() {
         continue
       fi
 
-      non_compliant="$(echo "${summary}" \
-        | jq -r '[.results.policyAssignments[]?.results.nonCompliantResources // 0] | add // 0')"
+      # An empty/null `policyAssignments` array means the given name doesn't
+      # actually resolve to a live assignment at this scope (e.g. the file's
+      # `name`/`properties.scope` no longer matches what's deployed in
+      # Azure). Treat that as "unable to verify" rather than a false PASS -
+      # otherwise a stale/incorrect assignment file silently reports 0
+      # non-compliant resources even though the assignment (and its real
+      # violations) were never actually queried.
+      matched_assignments="$(echo "${summary}" \
+        | jq -r '.policyAssignments // [] | length')"
+
+      if [ "${matched_assignments}" -eq 0 ] 2>/dev/null; then
+        echo "FAIL  ${assignment_name} (${scope}): no matching policy assignment found in Azure for this name/scope - the file's 'name' or 'properties.scope' likely no longer matches what is deployed; verify with 'az policy assignment show --name \"${assignment_name}\"' before trusting this result"
+        overall_status=1
+        continue
+      fi
+
+      non_compliant="$(echo "${summary}" | jq -r '.results.nonCompliantResources // 0')"
 
       if [ "${non_compliant}" -eq 0 ] 2>/dev/null; then
         echo "PASS  ${assignment_name} (${scope}): 0 non-compliant resources"
