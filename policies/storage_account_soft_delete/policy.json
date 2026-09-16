@@ -3,11 +3,24 @@
     "displayName": "Non live storage accounts must have blob, container and file soft delete enabled with a minimum retention period",
     "policyType": "Custom",
     "mode": "All",
-    "description": "Denies configuration of a non live storage account's blob, container or file share soft delete unless it is enabled with a retention period of at least the configured minimum number of days. A storage account is considered non live unless its name, resource group, or 'environment' tag contains one of the configured non-production identifiers (e.g. prp, prx).",
+    "description": "Audits or denies configuration of a non live storage account's blob, container or file share soft delete unless it is enabled with a retention period of at least the configured minimum number of days. A storage account is considered non live unless its name, resource group, or 'environment' tag contains one of the configured non-production identifiers (e.g. prp, prx).",
     "metadata": {
       "category": "Storage"
     },
     "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Audit logs non-compliant storage accounts. Deny prevents non-compliant storage account changes. Disabled turns off the policy."
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Audit"
+      },
       "minimumRetentionDays": {
         "type": "Integer",
         "metadata": {
@@ -23,8 +36,8 @@
           "description": "Substrings that, when found in the storage account name, resource group name, or 'environment' tag, identify the storage account as non-production"
         },
         "defaultValue": [
-          "prp",
-          "prx"
+          "",
+          ""
         ]
       }
     },
@@ -120,7 +133,7 @@
         ]
       },
       "then": {
-        "effect": "Deny"
+        "effect": "[parameters('effect')]"
       }
     }
   },
