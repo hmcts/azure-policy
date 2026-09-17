@@ -81,35 +81,6 @@ scope_to_az_args() {
 # Exits non-zero if any matched assignment has non-compliant resources, so
 # this can be used as a pass/fail gate.
 #
-# NOTE on az CLI scope handling: `--policy-assignment`/`-a` and
-# `--management-group`/`-m` (and `--resource-group`/`-g`) are all "scope
-# argument" flags that each independently build the resource ID the query
-# runs against. They do not compose - passing `--policy-assignment <name>`
-# together with `--management-group <mg>` silently ignores the management
-# group and queries the *current subscription* instead (confirmed via the
-# `odataContext` in the raw response), so it always finds nothing for
-# assignments that live at a management-group or different-subscription
-# scope. That previously caused this command to report a false "0
-# non-compliant resources" PASS for every assignment.
-#
-# The fix is to keep the real scope flag (`-m`/`--subscription`/`-g`, as
-# derived from the assignment file's `properties.scope`) and instead filter
-# by the assignment's unique resource ID via
-# `--filter "PolicyAssignmentId eq '<id>'"`, which composes correctly with
-# scope. `PolicyAssignmentId` (not `PolicyAssignmentName`) must be used:
-# a `name` is only unique within its own scope, and a management-group-scope
-# summarize query aggregates policy states across the whole subtree, so
-# filtering on name alone can silently pick up an unrelated assignment that
-# happens to share the same name at a different (e.g. child-subscription)
-# scope, while the non-empty-results guard below would still pass. The
-# resource ID embeds both scope and name, so it uniquely identifies one
-# assignment. Azure Policy Insights returns `policyAssignmentId` lower-cased,
-# so the local ID (whether read from the file's `.id` or constructed from
-# `scope` + `name`) is lower-cased before filtering to match. If that still
-# returns an empty `policyAssignments` array, the name/scope genuinely
-# doesn't resolve to a live assignment (e.g. stale file), and this is
-# reported as a FAIL ("no matching assignment found") rather than a silent
-# PASS.
 check_compliance() {
   if [ "$#" -eq 0 ]; then
     echo "ERROR: check-compliance requires at least one name substring" >&2
