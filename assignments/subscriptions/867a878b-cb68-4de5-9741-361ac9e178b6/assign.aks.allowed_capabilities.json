@@ -36,7 +36,7 @@
   },
   "type": "Microsoft.Authorization/policyAssignments",
   "id": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/providers/Microsoft.Authorization/policyAssignments/AKSAllowedCaps-ssdev",
-  "name": "AKSAllowedCaps-shrdev",
+  "name": "AKSAllowedCaps-ssdev",
   "location": "uksouth",
   "sku": {
     "name": "A0",
