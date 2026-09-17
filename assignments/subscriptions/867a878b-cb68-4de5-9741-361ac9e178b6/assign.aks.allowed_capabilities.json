@@ -1,0 +1,45 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS containers using Linux capabilities outside allowed set.",
+    "displayName": "AKS Allowed Capabilities (DTS-SHAREDSERVICES-DEV)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin"
+        ]
+      },
+      "allowedCapabilities": {
+        "value": []
+      },
+      "excludedContainers": {
+        "value": [
+          "dynatrace-oneagent",
+          "cortex-agent",
+          "mirrord-agent"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c26596ff-4d70-4e6a-9a30-c2506bd2f80c",
+    "scope": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/providers/Microsoft.Authorization/policyAssignments/AKSAllowedCaps-shrdev",
+  "name": "AKSAllowedCaps-shrdev",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
