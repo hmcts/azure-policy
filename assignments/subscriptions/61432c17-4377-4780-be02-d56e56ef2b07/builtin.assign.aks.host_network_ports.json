@@ -13,11 +13,10 @@
       "effect": {
         "value": "Audit"
       },
-      "minPort": {
-        "value": 0
-      },
-      "maxPort": {
-        "value": 10000
+      "allowedHostPorts": {
+        "value": [
+          "1-10000"
+        ]
       },
       "excludedImages": {
         "value": [
