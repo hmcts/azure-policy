@@ -4,14 +4,9 @@
       "assignedBy": "github.com/hmcts/azure-policy"
     },
     "description": "Audit AKS containers using Linux capabilities outside allowed set.",
-    "displayName": "AKS Allowed Capabilities (mg:HMCTS)",
+    "displayName": "AKS Allowed Capabilities (DTS-SHAREDSERVICES-DEV)",
     "enforcementMode": "Default",
-    "notScopes": [
-      "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589",
-      "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/resourcegroups/a360-c2x2555-uat",
-      "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4",
-      "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6"
-    ],
+    "notScopes": [],
     "parameters": {
       "effect": {
         "value": "Audit"
@@ -31,16 +26,17 @@
       "excludedContainers": {
         "value": [
           "dynatrace-oneagent",
-          "cortex-agent"
+          "cortex-agent",
+          "mirrord-agent"
         ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c26596ff-4d70-4e6a-9a30-c2506bd2f80c",
-    "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
+    "scope": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSAllowedCaps-hmcts",
-  "name": "AKSAllowedCaps-hmcts",
+  "id": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/providers/Microsoft.Authorization/policyAssignments/AKSAllowedCaps-ssdev",
+  "name": "AKSAllowedCaps-ssdev",
   "location": "uksouth",
   "sku": {
     "name": "A0",
