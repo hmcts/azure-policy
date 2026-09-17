@@ -94,11 +94,22 @@ scope_to_az_args() {
 #
 # The fix is to keep the real scope flag (`-m`/`--subscription`/`-g`, as
 # derived from the assignment file's `properties.scope`) and instead filter
-# by assignment name via `--filter "PolicyAssignmentName eq '<name>'"`,
-# which composes correctly with scope. If that still returns an empty
-# `policyAssignments` array, the name/scope genuinely doesn't resolve to a
-# live assignment (e.g. stale file), and this is reported as a FAIL
-# ("no matching assignment found") rather than a silent PASS.
+# by the assignment's unique resource ID via
+# `--filter "PolicyAssignmentId eq '<id>'"`, which composes correctly with
+# scope. `PolicyAssignmentId` (not `PolicyAssignmentName`) must be used:
+# a `name` is only unique within its own scope, and a management-group-scope
+# summarize query aggregates policy states across the whole subtree, so
+# filtering on name alone can silently pick up an unrelated assignment that
+# happens to share the same name at a different (e.g. child-subscription)
+# scope, while the non-empty-results guard below would still pass. The
+# resource ID embeds both scope and name, so it uniquely identifies one
+# assignment. Azure Policy Insights returns `policyAssignmentId` lower-cased,
+# so the local ID (whether read from the file's `.id` or constructed from
+# `scope` + `name`) is lower-cased before filtering to match. If that still
+# returns an empty `policyAssignments` array, the name/scope genuinely
+# doesn't resolve to a live assignment (e.g. stale file), and this is
+# reported as a FAIL ("no matching assignment found") rather than a silent
+# PASS.
 check_compliance() {
   if [ "$#" -eq 0 ]; then
     echo "ERROR: check-compliance requires at least one name substring" >&2
@@ -150,12 +161,24 @@ check_compliance() {
         scope_args+=("${scope_arg}")
       done <<< "${scope_args_raw}"
 
+      # Prefer the file's explicit `.id` (the assignment's full, unique
+      # resource ID); fall back to constructing it from scope + name for
+      # files that don't carry an `.id` field. Azure returns
+      # `policyAssignmentId` lower-cased in Policy Insights responses, so
+      # lower-case here to ensure the OData comparison matches.
+      local assignment_id
+      assignment_id="$(jq -r '.id // empty' "${file}")"
+      if [ -z "${assignment_id}" ]; then
+        assignment_id="${scope%/}/providers/Microsoft.Authorization/policyAssignments/${assignment_name}"
+      fi
+      assignment_id="$(echo "${assignment_id}" | tr '[:upper:]' '[:lower:]')"
+
       # OData string literals escape a single quote by doubling it.
-      local assignment_name_odata="${assignment_name//\'/\'\'}"
+      local assignment_id_odata="${assignment_id//\'/\'\'}"
 
       local summary matched_assignments non_compliant
       if ! summary="$(az policy state summarize \
-        --filter "PolicyAssignmentName eq '${assignment_name_odata}'" \
+        --filter "PolicyAssignmentId eq '${assignment_id_odata}'" \
         "${scope_args[@]}" \
         --output json 2>&1)"; then
         echo "FAIL  ${assignment_name} (${scope}): unable to query policy state - ${summary}"
@@ -163,18 +186,18 @@ check_compliance() {
         continue
       fi
 
-      # An empty/null `policyAssignments` array means the given name doesn't
-      # actually resolve to a live assignment at this scope (e.g. the file's
-      # `name`/`properties.scope` no longer matches what's deployed in
-      # Azure). Treat that as "unable to verify" rather than a false PASS -
-      # otherwise a stale/incorrect assignment file silently reports 0
-      # non-compliant resources even though the assignment (and its real
-      # violations) were never actually queried.
+      # An empty/null `policyAssignments` array means the given assignment ID
+      # doesn't actually resolve to a live assignment at this scope (e.g. the
+      # file's `name`/`properties.scope`/`id` no longer matches what's
+      # deployed in Azure). Treat that as "unable to verify" rather than a
+      # false PASS - otherwise a stale/incorrect assignment file silently
+      # reports 0 non-compliant resources even though the assignment (and
+      # its real violations) were never actually queried.
       matched_assignments="$(echo "${summary}" \
         | jq -r '.policyAssignments // [] | length')"
 
       if [ "${matched_assignments}" -eq 0 ] 2>/dev/null; then
-        echo "FAIL  ${assignment_name} (${scope}): no matching policy assignment found in Azure for this name/scope - the file's 'name' or 'properties.scope' likely no longer matches what is deployed; verify with 'az policy assignment show --name \"${assignment_name}\"' before trusting this result"
+        echo "FAIL  ${assignment_name} (${scope}): no matching policy assignment found in Azure for this id/scope (${assignment_id}) - the file's 'name', 'properties.scope', or 'id' likely no longer matches what is deployed; verify with 'az policy assignment show --name \"${assignment_name}\"' before trusting this result"
         overall_status=1
         continue
       fi
