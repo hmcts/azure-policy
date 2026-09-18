@@ -191,9 +191,38 @@ You may be required to rotate the **clientSecret** value which can be done as fo
 - Copy the JSON object(You only need the 4 values from above) and paste this into the AZURE_CREDENTIALS GitHub secret.
 - Save and test the GitHub workflow.
 
+## Pipeline - GH Workflows
+
+### manage-azure-policy.yml
+
+Triggers: push to master, any pull_request, or manual workflow_dispatch. Three independent jobs:
+
+1. apply-azure-policy-sandbox (PRs only) Logs into Azure, runs sandbox-override.sh to generate retargeted copies of `policies/`, and assignments under `Sandbox/` (pointed at a test subscription),
+deploys just those via azure/manage-azure-policy, then kicks off an async compliance scan on that sandbox subscription. Lets a PR be validated live without touching production.
+
+2. apply-azure-policy-subscription (push to master only) Deploys real policies/ and assignments/subscriptions/ (matching assign..json / builtin.assign..json) straight to their live subscription scopes.
+
+3. apply-azure-policy-mgmt-group (push to master only)
+   
+- Deploys policies/ and assignments/mgmt-groups/ to the HMCTS management group.
+- Then queries all subscriptions nested under HMCTS (via az account management-group show --expand), filters to Enabled/Past Due ones (explicitly skipping one hardcoded dev subscription), and collects their IDs.
+- Kicks off an async policy-compliance scan across all those subscriptions so compliance data reflects the just-deployed policy changes.
+   All three jobs use azure/manage-azure-policy@v0 in mode: complete (i.e. it reconciles state — removing definitions/assignments no longer present in the given paths, not just adding new ones).
+
+### pipeline scripts
+
+**pipeline-scripts/sandbox-override.sh** 
+
+It's a PR-time build step that takes the repo's real policy definitions and subscription-level assignments and rewrites copies of them into a Sandbox/ folder, retargeted at a test subscription ($SUB), 
+so a pull request can be validated against a live sandbox environment without touching production policies/assignments.
+
+**pipeline-scripts/policy-assignment-tools.sh**
+
+Utilities for working with existing Azure Policy assignments in this repo.
+
 ## Troubleshooting
 
-### Appling Policies
+### Applying Policies
 
 #### 1. Github Action completes successfully but nothing happens
 
