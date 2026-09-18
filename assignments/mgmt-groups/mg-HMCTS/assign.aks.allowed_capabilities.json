@@ -30,6 +30,7 @@
       },
       "excludedContainers": {
         "value": [
+          "dynakube-oneagent",
           "dynatrace-oneagent",
           "cortex-agent"
         ]
