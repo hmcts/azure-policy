@@ -12,15 +12,15 @@
     ],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4f3823b6-6dac-4b5a-9c61-ce1afb829f17",
     "scope": "/providers/Microsoft.Management/managementGroups/HMCTS"
   },
   "type": "Microsoft.Authorization/policyAssignments",
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSNotUseCsi",
-  "name": "AKSNotUseCsi",
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyAssignments/AKSUseCsiStorageClass",
+  "name": "AKSUseCsiStorageClass",
   "location": "uksouth",
   "sku": {
     "name": "A0",
