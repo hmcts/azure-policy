@@ -12,16 +12,15 @@
         "value": "Audit"
       },
       "allowedHostPorts": {
-        "value": [
-          "1-10000"
-        ]
+        "value": []
       },
       "excludedImages": {
         "value": [
           "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
           "quay.io/prometheus/node-exporter:*",
           "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
-          "yrk32651.apps.dynatrace.com/linux/oneagent:*"
+          "public.ecr.aws/dynatrace/dynatrace-operator:*",
+          "yrk32651.live.dynatrace.com/linux/oneagent:*"
         ]
       }
     },
