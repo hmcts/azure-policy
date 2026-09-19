@@ -22,6 +22,12 @@
           "azure-extensions-usage-system",
           "monitoring"
         ]
+      },
+      "excludedImages": {
+        "value": [
+          "ebe20728.live.dynatrace.com/linux/oneagent:*",
+          "hmctsprod.azurecr.io/imported/neuvector/enforcer:*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/47a1ee2f-2a2a-4576-bf2a-e0e36709c2b8",
