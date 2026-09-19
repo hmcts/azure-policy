@@ -13,6 +13,12 @@
     "parameters": {
       "effect": {
         "value": "Audit"
+      },
+      "excludedImages": {
+        "value": [
+          "yrk32651.live.dynatrace.com/linux/oneagent:*",
+          "ebe20728.live.dynatrace.com/linux/oneagent:*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d2e7ea85-6b44-4317-a0be-1b951587f626",
