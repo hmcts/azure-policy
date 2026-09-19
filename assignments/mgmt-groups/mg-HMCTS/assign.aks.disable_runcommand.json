@@ -2,7 +2,7 @@
   "properties": {
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy",
-      "remediation": "terraform:aks-module-kubernetes - GAP, not implemented. Same underlying setting as AKSDisableCommandInvoke: run_command_enabled = false"
+      "remediation": "terraform:aks-module-kubernetes - implemented. Set run_command_enabled = false by default; override to true only for approved exception clusters."
     },
     "description": "Audit AKS clusters where Run Command (command invoke) is not disabled.",
     "displayName": "AKS Disable RunCommand (mg:HMCTS)",
