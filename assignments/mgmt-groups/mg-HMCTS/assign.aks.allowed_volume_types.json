@@ -26,6 +26,15 @@
           "azureFile"
         ]
       },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin"
+        ]
+      },
       "excludedImages": {
         "value": [
           "europe-west2-docker.pkg.dev/xdr-uk-2104535898207/agent-docker/cortex-agent:*",
