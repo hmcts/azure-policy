@@ -12,7 +12,7 @@
     ],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4f3823b6-6dac-4b5a-9c61-ce1afb829f17",
