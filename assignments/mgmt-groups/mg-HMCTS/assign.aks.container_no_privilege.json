@@ -15,7 +15,14 @@
         "value": "Audit"
       },
       "excludedImages": {
-        "value": ["k8s.gcr.io/node-problem-detector/node-problem-detector:*"]
+        "value": [
+          "k8s.gcr.io/node-problem-detector/node-problem-detector:*",
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "public.ecr.aws/dynatrace/dynatrace-operator:*",
+          "hmctsprod.azurecr.io/imported/neuvector/enforcer:*",
+          "hmctsprod.azurecr.io/imported/elastic/elasticsearch:*",
+          "docker.elastic.co/elasticsearch/elasticsearch:*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/95edb821-ddaf-4404-9732-666045e056b4",
