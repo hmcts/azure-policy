@@ -18,6 +18,11 @@
           "azure-extensions-usage-system",
           "dynatrace"
         ]
+      },
+      "excludedImages": {
+        "value": [
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d2e7ea85-6b44-4317-a0be-1b951587f626",
