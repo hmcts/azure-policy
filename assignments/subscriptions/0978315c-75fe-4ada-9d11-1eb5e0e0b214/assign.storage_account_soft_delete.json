@@ -16,7 +16,7 @@
         "value": "Audit"
       }
     },
-    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyDefinitions/StorageSoftDelete",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/StorageSoftDelete",
     "scope": "/subscriptions/0978315c-75fe-4ada-9d11-1eb5e0e0b214"
   },
   "sku": {
