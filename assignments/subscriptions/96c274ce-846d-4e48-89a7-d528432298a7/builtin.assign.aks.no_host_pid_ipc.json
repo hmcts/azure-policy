@@ -23,6 +23,7 @@
       },
       "excludedImages": {
         "value": [
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
           "yrk32651.live.dynatrace.com/linux/oneagent:*",
           "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
           "public.ecr.aws/dynatrace/dynatrace-operator:*",
