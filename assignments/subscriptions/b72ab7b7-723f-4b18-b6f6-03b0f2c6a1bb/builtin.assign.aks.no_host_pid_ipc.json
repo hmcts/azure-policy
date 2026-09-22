@@ -16,7 +16,9 @@
           "gatekeeper-system",
           "azure-arc",
           "azure-extensions-usage-system",
-          "monitoring"
+          "monitoring",
+          "dynatrace",
+          "neuvector"
         ]
       },
       "excludedImages": {
