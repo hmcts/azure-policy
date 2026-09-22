@@ -32,7 +32,11 @@
           "gatekeeper-system",
           "azure-arc",
           "azure-extensions-usage-system",
-          "admin"
+          "admin",
+          "monitoring",
+          "cortex",
+          "dynatrace",
+          "jenkins"
         ]
       },
       "excludedImages": {
