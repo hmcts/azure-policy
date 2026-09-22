@@ -18,7 +18,8 @@
           "azure-extensions-usage-system",
           "monitoring",
           "dynatrace",
-          "neuvector"
+          "neuvector",
+          "cortex"
         ]
       },
       "excludedImages": {
