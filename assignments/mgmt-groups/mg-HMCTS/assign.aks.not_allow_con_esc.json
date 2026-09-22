@@ -25,7 +25,8 @@
       },
       "excludedImages": {
         "value": [
-          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*"
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "public.ecr.aws/dynatrace/dynatrace-operator:*"
         ]
       }
     },
