@@ -19,7 +19,7 @@
           "Deny",
           "Disabled"
         ],
-        "defaultValue": "Audit"
+        "defaultValue": "Deny"
       },
       "minimumRetentionDays": {
         "type": "Integer",
@@ -28,6 +28,15 @@
           "description": "The minimum number of days required for blob, container and file share soft delete retention"
         },
         "defaultValue": 14
+      },
+      "nonProductionIdentifiers": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Non-production identifiers",
+          "description": "Deprecated and no longer used by this policy. Retained for compatibility because Azure Policy does not allow parameters to be removed during an update.",
+          "deprecated": true
+        },
+        "defaultValue": []
       }
     },
     "policyRule": {
@@ -99,10 +108,12 @@
           }
         ]
       },
-      "then": { "effect": "Deny" }
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
     }
   },
-  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/StorageSoftDelete",
+  "id": "/providers/Microsoft.Management/managementGroups/e2995d11-9947-4e78-9de6-d44e0603518e/providers/Microsoft.Authorization/policyDefinitions/StorageSoftDelete",
   "type": "Microsoft.Authorization/policyDefinitions",
   "name": "StorageSoftDelete"
 }
