@@ -1,0 +1,108 @@
+{
+  "properties": {
+    "displayName": "Storage accounts must have blob, container and file soft delete enabled with a minimum retention period",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Audits or denies configuration of a storage account's blob, container or file share soft delete unless it is enabled with a retention period of at least the configured minimum number of days.",
+    "metadata": {
+      "category": "Storage"
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Audit logs non-compliant storage accounts. Deny prevents non-compliant storage account changes. Disabled turns off the policy."
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Deny"
+      },
+      "minimumRetentionDays": {
+        "type": "Integer",
+        "metadata": {
+          "displayName": "Minimum retention days",
+          "description": "The minimum number of days required for blob, container and file share soft delete retention"
+        },
+        "defaultValue": 14
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Storage/storageAccounts/blobServices"
+              },
+              {
+                "field": "type",
+                "equals": "Microsoft.Storage/storageAccounts/fileServices"
+              }
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "allOf": [
+                  {
+                    "field": "type",
+                    "equals": "Microsoft.Storage/storageAccounts/blobServices"
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/blobServices/containerDeleteRetentionPolicy.enabled",
+                        "notEquals": true
+                      },
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/blobServices/containerDeleteRetentionPolicy.days",
+                        "less": "[parameters('minimumRetentionDays')]"
+                      },
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.enabled",
+                        "notEquals": true
+                      },
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.days",
+                        "less": "[parameters('minimumRetentionDays')]"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "allOf": [
+                  {
+                    "field": "type",
+                    "equals": "Microsoft.Storage/storageAccounts/fileServices"
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/fileServices/shareDeleteRetentionPolicy.enabled",
+                        "notEquals": true
+                      },
+                      {
+                        "field": "Microsoft.Storage/storageAccounts/fileServices/shareDeleteRetentionPolicy.days",
+                        "less": "[parameters('minimumRetentionDays')]"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "then": { "effect": "[parameters('effect')]" }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/StorageSoftDelete",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "StorageSoftDelete"
+}
