@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Kubernetes clusters should not grant CAP_SYS_ADMIN security capabilities",
+    "displayName": "AKS clusters should not grant CAP_SYS_ADMIN security capabilities (DCD-CFTAPPS-SBOX)",
+    "enforcementMode": "Default",
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "dynatrace"
+        ]
+      },
+      "excludedImages": {
+        "value": [
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d2e7ea85-6b44-4317-a0be-1b951587f626",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/AKSNotCapSysAdmin-cftsbox",
+  "name": "AKSNotCapSysAdmin-cftsbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

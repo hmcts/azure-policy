@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Prod storage accounts must have blob, container and file soft delete enabled with a minimum retention period",
+    "displayName": "Storage Account Prod Soft Delete",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "This storage account is treated as prod and must have blob, container and file soft delete enabled with a minimum retention period. See https://github.com/hmcts/azure-policy/blob/master/policies/storage_account_soft_delete/README.md"
+      }
+    ],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/StorageSoftDelete",
+    "scope": "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1"
+  },
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/providers/Microsoft.Authorization/policyAssignments/StorageSoftDelete",
+  "name": "StorageSoftDelete"
+}
