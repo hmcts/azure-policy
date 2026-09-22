@@ -99,7 +99,7 @@
           }
         ]
       },
-      "then": { "effect": "Deny" }
+      "then": { "effect": "[parameters('effect')]" }
     }
   },
   "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/StorageSoftDelete",
