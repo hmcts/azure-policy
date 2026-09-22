@@ -19,7 +19,7 @@
           "Deny",
           "Disabled"
         ],
-        "defaultValue": "Audit"
+        "defaultValue": "Deny"
       },
       "minimumRetentionDays": {
         "type": "Integer",
