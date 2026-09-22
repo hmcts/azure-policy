@@ -16,7 +16,7 @@ For each storage account, the following must all be true:
 | ------------------------ | -------------- | ----------------------------------------------------------------------------- |
 | `minimumRetentionDays`   | `14`           | Minimum required soft delete retention period, in days                        |
 
-`nonProductionIdentifiers` remains as a deprecated, unused parameter for compatibility with the existing Azure Policy definition. Azure Policy does not allow parameters to be removed during an update. CNP assignments do not need to provide a value for it.
+`ProductionIdentifiers` remains as a deprecated, unused parameter for compatibility with the existing Azure Policy definition. Azure Policy does not allow parameters to be removed during an update. CNP assignments do not need to provide a value for it.
 
 ## Exemptions
 

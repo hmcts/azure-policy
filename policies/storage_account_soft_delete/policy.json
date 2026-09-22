@@ -29,10 +29,10 @@
         },
         "defaultValue": 14
       },
-      "nonProductionIdentifiers": {
+      "ProductionIdentifiers": {
         "type": "Array",
         "metadata": {
-          "displayName": "Non-production identifiers",
+          "displayName": "Production identifiers",
           "description": "Deprecated and no longer used by this policy. Retained for compatibility because Azure Policy does not allow parameters to be removed during an update.",
           "deprecated": true
         },
