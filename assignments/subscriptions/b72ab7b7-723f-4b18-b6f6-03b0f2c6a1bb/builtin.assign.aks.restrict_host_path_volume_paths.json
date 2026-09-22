@@ -1,0 +1,58 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which do not restrict allowed HostPath Volume paths",
+    "displayName": "AKS Restrict HostPath Volume Paths (DCD-CFTAPPS-SBOX)",
+    "enforcementMode": "Default",
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedHostPaths": {
+        "value": {
+          "paths": [
+            {
+              "pathPrefix": "/var/log",
+              "readOnly": true
+            }
+          ]
+        }
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "admin",
+          "monitoring",
+          "cortex",
+          "dynatrace",
+          "jenkins"
+        ]
+      },
+      "excludedImages": {
+        "value": [
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/mic:*",
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
+          "quay.io/prometheus/node-exporter:*",
+          "k8s.gcr.io/node-problem-detector/node-problem-detector:*",
+          "hmctspublic.azurecr.io/imported/neuvector/enforcer:*",
+          "hmctsprod.azurecr.io/imported/neuvector/*"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/098fc59e-46c7-4d99-9b16-64990e543d75",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/AKSLimitHostPathVolPaths-cftsbox",
+  "name": "AKSLimitHostPathVolPaths-cftsbox",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
