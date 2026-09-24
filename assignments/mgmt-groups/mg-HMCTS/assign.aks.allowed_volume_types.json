@@ -23,7 +23,8 @@
           "emptyDir",
           "persistentVolumeClaim",
           "downwardAPI",
-          "azureFile"
+          "azureFile",
+          "hostPath"
         ]
       },
       "excludedNamespaces": {
@@ -32,11 +33,7 @@
           "gatekeeper-system",
           "azure-arc",
           "azure-extensions-usage-system",
-          "admin",
-          "monitoring",
-          "cortex",
-          "dynatrace",
-          "jenkins"
+          "monitoring"
         ]
       },
       "excludedImages": {

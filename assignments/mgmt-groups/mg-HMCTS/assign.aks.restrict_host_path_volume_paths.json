@@ -24,12 +24,7 @@
           "kube-system",
           "gatekeeper-system",
           "azure-arc",
-          "azure-extensions-usage-system",
-          "admin",
-          "monitoring",
-          "cortex",
-          "dynatrace",
-          "jenkins"
+          "azure-extensions-usage-system"
         ]
       },
       "excludedImages": {
@@ -39,7 +34,11 @@
           "quay.io/prometheus/node-exporter:*",
           "k8s.gcr.io/node-problem-detector/node-problem-detector:*",
           "hmctspublic.azurecr.io/imported/neuvector/enforcer:*",
-          "hmctsprod.azurecr.io/imported/neuvector/*"
+          "hmctsprod.azurecr.io/imported/neuvector/*",
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "europe-west2-docker.pkg.dev/xdr-uk-2104535898207/agent-docker/cortex-agent:*",
+          "hmctsprod.azurecr.io/jenkins/jenkins:*",
+          "hmctsprod.azurecr.io/imported/kiwigrid/k8s-sidecar:*"
         ]
       }
     },
