@@ -1,0 +1,38 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters which have pods that do not use approved host network and port range.",
+    "displayName": "AKS Restrict Host Network Ports (DTS-CFTPTL-INTSVC)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      },
+      "allowedHostPorts": {
+        "value": []
+      },
+      "excludedImages": {
+        "value": [
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
+          "quay.io/prometheus/node-exporter:*",
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "public.ecr.aws/dynatrace/dynatrace-operator:*",
+          "yrk32651.live.dynatrace.com/linux/oneagent:*"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/82985f06-dc18-4a48-bc1c-b9f4f0098cfe",
+    "scope": "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348/providers/Microsoft.Authorization/policyAssignments/AKSRstrctHostNwrk-cftptl",
+  "name": "AKSRstrctHostNwrk-cftptl",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

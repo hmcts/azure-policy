@@ -1,0 +1,57 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "effect=AuditIfNotExists - audit only; Terraform (aks-cft-deploy/aks-sds-deploy) is the sole owner of the maintenanceConfigurations sub-resource via maintenance_window_node_os (var.enable_node_os_channel_upgrade_nodeimage). This assignment exists to satisfy the AKS Policy Add-on recommendation and never writes to the resource"
+    },
+    "description": "Configure planned maintenance window for AKS clusters.",
+    "displayName": "AKS Planned Maintenance (DTS-SHAREDSERVICES-DEMO)",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Cluster should have the planned maintenance window configured."
+      }
+    ],
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "AuditIfNotExists"
+      },
+      "configurationType": {
+        "value": "aksManagedNodeOSUpgradeSchedule"
+      },
+      "maintenanceWindow": {
+        "value": {
+          "properties": {
+            "maintenanceWindow": {
+              "startTime": "16:00",
+              "durationHours": 4,
+              "schedule": {
+                "daily": {
+                  "intervalDays": 1
+                }
+              },
+              "utcOffset": "+00:00"
+            }
+          }
+        }
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e1352e44-d34d-4e4d-a22e-451a15f759a1",
+    "scope": "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/providers/Microsoft.Authorization/policyAssignments/AKSPlanMaint-demo",
+  "name": "AKSPlanMaint-demo",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  },
+  "identity": {
+    "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-demo-mi": {}
+    }
+  }
+}

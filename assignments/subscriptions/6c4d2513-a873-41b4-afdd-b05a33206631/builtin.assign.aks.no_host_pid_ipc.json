@@ -1,0 +1,45 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS pods sharing host PID or IPC namespaces.",
+    "displayName": "AKS No Host PID/IPC (DTS-SHAREDSERVICESPTL)",
+    "enforcementMode": "Default",
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "monitoring",
+          "dynatrace",
+          "neuvector"
+        ]
+      },
+      "excludedImages": {
+        "value": [
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
+          "yrk32651.live.dynatrace.com/linux/oneagent:*",
+          "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "public.ecr.aws/dynatrace/dynatrace-operator:*",
+          "hmctsprod.azurecr.io/imported/neuvector/enforcer:*"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/47a1ee2f-2a2a-4576-bf2a-e0e36709c2b8",
+    "scope": "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/providers/Microsoft.Authorization/policyAssignments/AKSNoHostNS-ssptl",
+  "name": "AKSNoHostNS-ssptl",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
