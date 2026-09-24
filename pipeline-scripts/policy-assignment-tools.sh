@@ -27,12 +27,25 @@
 # only matches assignments deployed straight from that file (e.g. via the
 # live subscription/management-group jobs, not the sandbox job).
 #
-# --environment only affects subscription-scoped assignment files (those
-# under assignments/subscriptions/**). sandbox-override.sh's rename/rebuild
-# logic for management-group-scoped assignments is currently disabled, so
-# assignments under assignments/mgmt-groups/** are never deployed with a
-# suffix - check-compliance always queries those using their unsuffixed
-# name/id, even when --environment is passed.
+# --environment only affects subscription-scoped assignment files that live
+# directly under assignments/subscriptions/<sandbox-subscription-id>/ - the
+# only directory pipeline-scripts/sandbox-override.sh actually redeploys
+# from (`find ./assignments/$SUB -name 'assign.*.json'`). For those files,
+# check-compliance also flattens the queried scope to that bare sandbox
+# subscription (dropping any resource group), since sandbox-override.sh
+# unconditionally overwrites `properties.scope` with the sandbox
+# subscription ID before deploying - the sandbox copy is always
+# subscription-scoped, even if the source file is resource-group-scoped.
+# A subscription-scoped file living under a *different* subscription's
+# directory is never redeployed with a suffix at all, so --environment
+# rejects it explicitly (FAIL) instead of silently querying a scope/id that
+# was never deployed.
+#
+# sandbox-override.sh's rename/rebuild logic for management-group-scoped
+# assignments is currently disabled, so assignments under
+# assignments/mgmt-groups/** are never deployed with a suffix -
+# check-compliance always queries those using their unsuffixed name/id/scope,
+# even when --environment is passed.
 #
 # check-remediation-text is purely local/static (no `az` calls): it checks
 # that each matched assignment's properties.metadata.remediation is present,
@@ -48,6 +61,11 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 # Overridable so tests can point at a fixture directory instead of the
 # repo's real assignments/.
 ASSIGNMENTS_DIR="${ASSIGNMENTS_DIR:-${REPO_ROOT}/assignments}"
+# Subscription that pipeline-scripts/sandbox-override.sh actually deploys
+# sandbox copies into - the "SUB" value hardcoded for the
+# apply-azure-policy-sandbox job in .github/workflows/manage-azure-policy.yml.
+# Overridable so tests can point at a fixture subscription id instead.
+SANDBOX_SUBSCRIPTION_ID="${SANDBOX_SUBSCRIPTION_ID:-b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb}"
 
 require_command() {
   local cmd="$1"
@@ -102,6 +120,25 @@ scope_to_az_args() {
 is_subscription_scope() {
   local scope="${1%/}"
   [[ "${scope}" =~ ^/subscriptions/([^/]+)(/resourceGroups/([^/]+))?$ ]]
+}
+
+# True if the given assignment file lives directly under
+# assignments/subscriptions/<SANDBOX_SUBSCRIPTION_ID>/ - the only directory
+# pipeline-scripts/sandbox-override.sh actually reads assignments from
+# (`find ./assignments/$SUB -name 'assign.*.json'`, where $SUB is the
+# sandbox subscription's SUB env value). A file living anywhere else - e.g.
+# under a different subscription's directory - is never redeployed with a
+# "_<ENVIRONMENT>" suffix, no matter what its own `properties.scope` says.
+is_under_sandbox_subscription_dir() {
+  local file="$1"
+  local sandbox_dir
+  sandbox_dir="$(cd "${ASSIGNMENTS_DIR}/subscriptions/${SANDBOX_SUBSCRIPTION_ID}" 2>/dev/null && pwd)"
+  if [ -z "${sandbox_dir}" ]; then
+    return 1
+  fi
+  local file_dir
+  file_dir="$(cd "$(dirname "${file}")" && pwd)"
+  [ "${file_dir}" = "${sandbox_dir}" ]
 }
 
 # --- check-compliance ------------------------------------------------------
@@ -166,26 +203,33 @@ check_compliance() {
         continue
       fi
 
-      # sandbox-override.sh appends "_<ENVIRONMENT>" to the assignment name
-      # and always rebuilds `id` from scope + that new name before deploying
-      # a sandbox copy - it never keeps the file's original `.id`. Mirror
-      # that here so --environment queries the assignment actually deployed.
-      # This only ever happens for subscription-scoped assignments:
-      # sandbox-override.sh's management-group renaming block is commented
-      # out, so management-group-scoped assignments are never suffixed and
-      # must keep using their default (unsuffixed) name/id.
+      # sandbox-override.sh appends "_<ENVIRONMENT>" to sandbox assignment names
+      # and rebuilds the deployed ID from scope + name; it also overwrites
+      # properties.scope with the sandbox subscription ID. Match that here for
+      # subscription-scoped files only.
+      #
+      # --environment applies only to files under
+      # assignments/subscriptions/${SANDBOX_SUBSCRIPTION_ID}/; other
+      # subscription-scoped files are rejected, and MG assignments stay unsuffixed.
       local apply_environment_suffix=false
+      local effective_scope="${scope}"
       if [ -n "${environment}" ] && is_subscription_scope "${scope}"; then
+        if ! is_under_sandbox_subscription_dir "${file}"; then
+          echo "FAIL  ${file}: --environment ${environment} does not apply - this file is not under assignments/subscriptions/${SANDBOX_SUBSCRIPTION_ID}/, so pipeline-scripts/sandbox-override.sh never redeploys it with a '_${environment}' suffix; rerun without --environment to check its real deployed scope/id"
+          overall_status=1
+          continue
+        fi
         apply_environment_suffix=true
         assignment_name="${assignment_name}_${environment}"
+        effective_scope="/subscriptions/${SANDBOX_SUBSCRIPTION_ID}"
       fi
 
       echo ""
-      echo "## Checking ${assignment_name} at scope ${scope} (${file})"
+      echo "## Checking ${assignment_name} at scope ${effective_scope} (${file})"
 
       local scope_args_raw
-      if ! scope_args_raw="$(scope_to_az_args "${scope}")"; then
-        echo "FAIL  ${assignment_name} (${scope}): unrecognized scope format, cannot map to az CLI arguments"
+      if ! scope_args_raw="$(scope_to_az_args "${effective_scope}")"; then
+        echo "FAIL  ${assignment_name} (${effective_scope}): unrecognized scope format, cannot map to az CLI arguments"
         overall_status=1
         continue
       fi
@@ -198,17 +242,17 @@ check_compliance() {
       # resource ID); fall back to constructing it from scope + name for
       # files that don't carry an `.id` field. When --environment applies to
       # this file (subscription-scoped, see above), always rebuild from
-      # scope + suffixed name instead, since that's what sandbox-override.sh
-      # actually deploys. Azure returns `policyAssignmentId` lower-cased in
-      # Policy Insights responses, so lower-case here to ensure the OData
-      # comparison matches.
+      # effective_scope + suffixed name instead, since that's what
+      # sandbox-override.sh actually deploys. Azure returns
+      # `policyAssignmentId` lower-cased in Policy Insights responses, so
+      # lower-case here to ensure the OData comparison matches.
       local assignment_id
       if [ "${apply_environment_suffix}" = true ]; then
-        assignment_id="${scope%/}/providers/Microsoft.Authorization/policyAssignments/${assignment_name}"
+        assignment_id="${effective_scope%/}/providers/Microsoft.Authorization/policyAssignments/${assignment_name}"
       else
         assignment_id="$(jq -r '.id // empty' "${file}")"
         if [ -z "${assignment_id}" ]; then
-          assignment_id="${scope%/}/providers/Microsoft.Authorization/policyAssignments/${assignment_name}"
+          assignment_id="${effective_scope%/}/providers/Microsoft.Authorization/policyAssignments/${assignment_name}"
         fi
       fi
       assignment_id="$(echo "${assignment_id}" | tr '[:upper:]' '[:lower:]')"
@@ -221,7 +265,7 @@ check_compliance() {
         --filter "PolicyAssignmentId eq '${assignment_id_odata}'" \
         "${scope_args[@]}" \
         --output json 2>&1)"; then
-        echo "FAIL  ${assignment_name} (${scope}): unable to query policy state - ${summary}"
+        echo "FAIL  ${assignment_name} (${effective_scope}): unable to query policy state - ${summary}"
         overall_status=1
         continue
       fi
@@ -237,7 +281,7 @@ check_compliance() {
         | jq -r '.policyAssignments // [] | length')"
 
       if [ "${matched_assignments}" -eq 0 ] 2>/dev/null; then
-        echo "FAIL  ${assignment_name} (${scope}): no matching policy assignment found in Azure for this id/scope (${assignment_id}) - the file's 'name', 'properties.scope', or 'id' likely no longer matches what is deployed; verify with 'az policy assignment show --name \"${assignment_name}\"' before trusting this result"
+        echo "FAIL  ${assignment_name} (${effective_scope}): no matching policy assignment found in Azure for this id/scope (${assignment_id}) - the file's 'name', 'properties.scope', or 'id' likely no longer matches what is deployed; verify with 'az policy assignment show --name \"${assignment_name}\"' before trusting this result"
         overall_status=1
         continue
       fi
@@ -245,9 +289,9 @@ check_compliance() {
       non_compliant="$(echo "${summary}" | jq -r '.results.nonCompliantResources // 0')"
 
       if [ "${non_compliant}" -eq 0 ] 2>/dev/null; then
-        echo "PASS  ${assignment_name} (${scope}): 0 non-compliant resources"
+        echo "PASS  ${assignment_name} (${effective_scope}): 0 non-compliant resources"
       else
-        echo "FAIL  ${assignment_name} (${scope}): ${non_compliant} non-compliant resource(s)"
+        echo "FAIL  ${assignment_name} (${effective_scope}): ${non_compliant} non-compliant resource(s)"
         overall_status=1
       fi
     done <<< "${files}"
@@ -406,9 +450,11 @@ usage() {
 Usage:
   policy-assignment-tools.sh check-compliance <name-substring> [name-substring...]
   policy-assignment-tools.sh check-compliance --environment <name> <name-substring> [name-substring...]
-      (--environment only affects subscription-scoped assignment files;
-      management-group-scoped assignments are always checked unsuffixed,
-      since sandbox-override.sh never renames them)
+      (--environment only affects subscription-scoped assignment files under
+      assignments/subscriptions/<sandbox-subscription-id>/, flattening their
+      queried scope to that bare subscription; files elsewhere are rejected
+      explicitly, and management-group-scoped assignments are always
+      checked unsuffixed, since sandbox-override.sh never renames them)
   policy-assignment-tools.sh check-remediation-text <name-substring> [name-substring...]
   policy-assignment-tools.sh fix-display-name <name-substring> <subscription-id>
 EOF
