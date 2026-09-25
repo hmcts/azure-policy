@@ -36,6 +36,8 @@
           "hmctspublic.azurecr.io/imported/neuvector/enforcer:*",
           "hmctsprod.azurecr.io/imported/neuvector/*",
           "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
+          "yrk32651.live.dynatrace.com/linux/oneagent:*",
+          "ebe20728.live.dynatrace.com/linux/oneagent:*",
           "europe-west2-docker.pkg.dev/xdr-uk-2104535898207/agent-docker/cortex-agent:*",
           "hmctsprod.azurecr.io/jenkins/jenkins:*",
           "hmctsprod.azurecr.io/imported/kiwigrid/k8s-sidecar:*"
