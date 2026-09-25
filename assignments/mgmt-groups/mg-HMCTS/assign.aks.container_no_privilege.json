@@ -3,7 +3,7 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS Clusters which use privileged containers",
+    "description": "Deny AKS pods which use privileged containers, except approved images",
     "displayName": "AKS Restrict Privileged Containers (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [
@@ -12,7 +12,7 @@
     ],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "excludedImages": {
         "value": [
