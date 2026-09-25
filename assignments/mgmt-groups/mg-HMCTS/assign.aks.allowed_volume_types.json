@@ -23,7 +23,17 @@
           "emptyDir",
           "persistentVolumeClaim",
           "downwardAPI",
-          "azureFile"
+          "azureFile",
+          "hostPath"
+        ]
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "monitoring"
         ]
       },
       "excludedImages": {
