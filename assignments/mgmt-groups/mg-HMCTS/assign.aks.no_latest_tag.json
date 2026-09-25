@@ -13,6 +13,14 @@
     "parameters": {
       "effect": {
         "value": "Audit"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "jenkins"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/021f8078-41a0-40e6-81b6-c6597da9f3ee",
