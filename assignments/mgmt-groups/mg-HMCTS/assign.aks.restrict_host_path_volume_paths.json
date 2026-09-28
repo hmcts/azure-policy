@@ -16,7 +16,9 @@
       },
       "allowedHostPaths": {
         "value": {
-          "paths": []
+          "paths": [
+            "/var/lib/kubelet/pods/"
+          ]
         }
       },
       "excludedNamespaces": {
