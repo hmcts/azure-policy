@@ -12,12 +12,7 @@
       },
       "allowedHostPaths": {
         "value": {
-          "paths": [
-            {
-              "pathPrefix": "/var/lib/kubelet/pods/",
-              "readOnly": true
-            }
-          ]
+          "paths": []
         }
       },
       "excludedNamespaces": {
@@ -40,7 +35,8 @@
           "yrk32651.live.dynatrace.com/linux/oneagent:*",
           "europe-west2-docker.pkg.dev/xdr-uk-2104535898207/agent-docker/cortex-agent:*",
           "hmctsprod.azurecr.io/jenkins/jenkins:*",
-          "hmctsprod.azurecr.io/imported/kiwigrid/k8s-sidecar:*"
+          "hmctsprod.azurecr.io/imported/kiwigrid/k8s-sidecar:*",
+          "public.ecr.aws/dynatrace/dynatrace-operator:*"
         ]
       }
     },
