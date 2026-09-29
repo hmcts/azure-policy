@@ -21,7 +21,8 @@
           "public.ecr.aws/dynatrace/dynatrace-operator:*",
           "hmctsprod.azurecr.io/imported/neuvector/enforcer:*",
           "hmctsprod.azurecr.io/imported/elastic/elasticsearch:*",
-          "docker.elastic.co/elasticsearch/elasticsearch:*"
+          "docker.elastic.co/elasticsearch/elasticsearch:*",
+          "mcr.microsoft.com/oss/azure/workload-identity/proxy-init:*"
         ]
       }
     },
