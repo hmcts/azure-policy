@@ -20,7 +20,8 @@
           "gatekeeper-system",
           "azure-arc",
           "azure-extensions-usage-system",
-          "dynatrace"
+          "dynatrace",
+          "cortex"
         ]
       },
       "excludedImages": {
