@@ -1,0 +1,45 @@
+{
+    "properties": {
+        "metadata": {
+            "assignedBy": "github.com/hmcts/azure-policy"
+        },
+        "description": "Configure periodic checking for missing system updates on Linux Azure virtual machines in Crime",
+        "displayName": "Scan Linux VMs for Missing Patches - (Crime MG)",
+        "enforcementMode": "Default",
+        "nonComplianceMessages": [
+            {
+                "message": "VM doesn't meet the update scanning requirement."
+            }
+        ],
+        "notScopes": [],
+        "parameters": {
+            "tagValues": {
+                "value": {}
+            },
+            "tagOperator": {
+                "value": "Any"
+            },
+            "locations": {
+                "value": []
+            },
+            "assessmentMode": {
+                "value": "AutomaticByPlatform"
+            },
+            "osType": {
+                "value": "Linux"
+            }
+        },
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/59efceea-0c96-497e-a4a1-4eb2290dac15",
+        "scope": "/providers/Microsoft.Management/managementGroups/Crime"
+    },
+    "location": "uksouth",
+    "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "/subscriptions/8ae5b3b6-0b12-4888-b894-4cec33c92292/resourceGroups/soc-core-infra-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/soc-prod-eventhub-azure-policy": {}
+        }
+    },
+    "id": "/providers/Microsoft.Management/managementGroups/Crime/providers/Microsoft.Authorization/policyAssignments/CrimeAumScanLinux",
+    "type": "Microsoft.Authorization/policyAssignments",
+    "name": "CrimeAumScanLinux"
+}
