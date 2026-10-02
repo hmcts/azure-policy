@@ -1,0 +1,44 @@
+{
+  "properties": {
+    "displayName": "This policy enables you to specify a set of load balancer SKUs sizes that can be deployed in HMCTS",
+    "policyType": "Custom",
+    "description": "Restrict the Load Balancer SKU sizes that can be deployed in HMCTS",
+    "mode": "Indexed",
+    "parameters": {
+      "allowedSKUs": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "Allowed Load Balancer SKU Sizes",
+          "description": "The allowed Load Balancer SKU sizes in HMCTS"
+        },
+        "allowedValues": [
+          "Standard",
+          "Gateway"
+        ],
+        "defaultValue": [
+          "Standard"
+        ]
+      } 
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Network/loadBalancers"
+          },
+          {
+            "field": "Microsoft.Network/loadBalancers/sku.name",
+            "notIn": "[parameters('allowedSKUs')]"
+          }
+        ]
+      },
+      "then": {
+        "effect": "Deny"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSLoadBalancerSkuSize",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSLoadBalancerSkuSize"
+}
