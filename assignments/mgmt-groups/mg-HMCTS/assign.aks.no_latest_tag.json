@@ -21,7 +21,8 @@
           "kube-system",
           "gatekeeper-system",
           "azure-arc",
-          "jenkins"
+          "jenkins",
+          "neuvector"
         ]
       }
     },
