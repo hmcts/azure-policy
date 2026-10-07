@@ -12,7 +12,7 @@
     ],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "excludedNamespaces": {
         "value": [
