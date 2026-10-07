@@ -14,7 +14,7 @@
     ],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "excludedNamespaces": {
         "value": [
@@ -22,7 +22,8 @@
           "gatekeeper-system",
           "azure-arc",
           "azure-extensions-usage-system",
-          "admin"
+          "admin",
+          "docmosis"
         ]
       },
       "allowedCapabilities": {
