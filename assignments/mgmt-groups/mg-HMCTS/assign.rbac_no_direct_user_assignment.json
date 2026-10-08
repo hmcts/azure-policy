@@ -12,7 +12,10 @@
       }
     ],
     "notScopes": [
-      "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/central-app-registration-rg/providers/Microsoft.KeyVault/vaults/central-app-reg-kv"
+      "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/central-app-registration-rg/providers/Microsoft.KeyVault/vaults/central-app-reg-kv",
+      "/subscriptions/bd2864ed-4f3e-45ed-9c6a-8d179674bab1/resourceGroups/rg-sps-platform-extid-sbox",
+      "/subscriptions/890625e2-7a8b-445c-81b4-8044a062cef3/resourceGroups/rg-sps-platform-extid-prod",
+      "/subscriptions/70bea6e3-384f-4cf4-b551-743a78d716cd/resourceGroups/rg-sps-platform-extid-aat"
     ],
     "parameters": {
       "effect": {
