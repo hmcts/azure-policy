@@ -8,7 +8,7 @@
     "enforcementMode": "Default",
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "excludedNamespaces": {
         "value": [
@@ -16,11 +16,14 @@
           "gatekeeper-system",
           "azure-arc",
           "azure-extensions-usage-system",
-          "monitoring"
+          "monitoring",
+          "dynatrace",
+          "neuvector"
         ]
       },
       "excludedImages": {
         "value": [
+          "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:*",
           "yrk32651.live.dynatrace.com/linux/oneagent:*",
           "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
           "public.ecr.aws/dynatrace/dynatrace-operator:*",

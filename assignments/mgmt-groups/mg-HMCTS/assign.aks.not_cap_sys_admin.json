@@ -12,7 +12,7 @@
     ],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "excludedNamespaces": {
         "value": [
@@ -20,7 +20,8 @@
           "gatekeeper-system",
           "azure-arc",
           "azure-extensions-usage-system",
-          "dynatrace"
+          "dynatrace",
+          "cortex"
         ]
       },
       "excludedImages": {

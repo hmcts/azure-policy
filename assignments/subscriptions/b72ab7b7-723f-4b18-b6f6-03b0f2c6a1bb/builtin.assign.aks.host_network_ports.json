@@ -9,7 +9,7 @@
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "allowedHostPorts": {
         "value": []
