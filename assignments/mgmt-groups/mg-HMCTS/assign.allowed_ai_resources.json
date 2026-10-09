@@ -63,7 +63,8 @@
       "/subscriptions/da8a21e5-d260-4162-9391-6bdadf9103f8/resourceGroups/dlrm-ingest-ai-stg/providers/Microsoft.CognitiveServices/accounts/dlrm-ingest-openai-stg",
       "/subscriptions/da8a21e5-d260-4162-9391-6bdadf9103f8/resourcegroups/dlrm-ingest-ai-stg/providers/microsoft.cognitiveservices/accounts/dlrm-ingest-cognitive-account-stg",
       "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/crumble-shared-infrastructure-sandbox/providers/microsoft.cognitiveservices/accounts/crumble-cognitive-account-sandbox",
-      "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/plum-shared-infrastructure-sandbox/providers/microsoft.cognitiveservices/accounts/plum-cognitive-account-sandbox"
+      "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourcegroups/plum-shared-infrastructure-sandbox/providers/microsoft.cognitiveservices/accounts/plum-cognitive-account-sandbox",
+      "/subscriptions/1fe7db01-9981-4ed3-983c-163dd50ba43a/resourceGroups/DACSlab-HW009-rg"
     ],
     "parameters": {
       "effect": {
