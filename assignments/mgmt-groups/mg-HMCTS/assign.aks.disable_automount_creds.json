@@ -8,11 +8,31 @@
     "enforcementMode": "Default",
     "notScopes": [
       "/subscriptions/61432c17-4377-4780-be02-d56e56ef2b07/resourceGroups/a360-c2x2589",
-      "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/resourcegroups/a360-c2x2555-uat"
+      "/subscriptions/cad00ede-36df-4e04-ad0b-d34a1e94ef76/resourcegroups/a360-c2x2555-uat",
+      "/subscriptions/1baf5470-1c3e-40d3-a6f7-74bfbce4b348",
+      "/subscriptions/1497c3d7-ab6d-4bb7-8a10-b51d03189ee3",
+      "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c",
+      "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6",
+      "/subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631",
+      "/subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768"
     ],
     "parameters": {
       "effect": {
         "value": "Audit"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "azureserviceoperator-system",
+          "neuvector",
+          "monitoring",
+          "keda",
+          "cert-manager",
+          "dynatrace",
+          "admin",
+          "gatekeeper-system",
+          "flux-system",
+          "kube-system"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/423dd1ba-798e-40e4-9c4d-b6902674b423",
