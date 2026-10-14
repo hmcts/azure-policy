@@ -191,6 +191,9 @@
       "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/ccd-elastic-search-upgrade-ithc",
       "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/caseman-caps-rg-stg/providers/Microsoft.Compute/virtualMachines/caseman-caps-db01-stg",
       "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/caseman-caps-rg-stg/providers/Microsoft.Compute/virtualMachines/caseman-caps-db02-stg",
+      "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/caseman-caps-rg-stg/providers/Microsoft.Compute/virtualMachines/NCMAN-APP-VM01-RESTORE",
+      "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/caseman-caps-rg-stg/providers/Microsoft.Compute/virtualMachines/NCMAN-WEB-VM01-RESTORE",
+      "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/caseman-caps-rg-stg/providers/Microsoft.Compute/virtualMachines/NCMAN-DB-VM01-RESTORE",
       "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/vwan-poc-vion-sbox-rg"
     ],
     "parameters": {},
