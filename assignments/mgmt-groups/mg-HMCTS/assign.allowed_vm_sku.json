@@ -194,7 +194,12 @@
       "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/caseman-caps-rg-stg/providers/Microsoft.Compute/virtualMachines/NCMAN-APP-VM01-RESTORE",
       "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/caseman-caps-rg-stg/providers/Microsoft.Compute/virtualMachines/NCMAN-WEB-VM01-RESTORE",
       "/subscriptions/ae75b9fb-7d34-4112-82ff-64bd3855ce27/resourceGroups/caseman-caps-rg-stg/providers/Microsoft.Compute/virtualMachines/NCMAN-DB-VM01-RESTORE",
-      "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/vwan-poc-vion-sbox-rg"
+      "/subscriptions/ea3a8c1e-af9d-4108-bc86-a7e2d267f49c/resourceGroups/vwan-poc-vion-sbox-rg",
+      "/subscriptions/9c604868-4643-43b8-9eb1-4c348c739a3e/resourceGroups/mcol-rg-stg/providers/Microsoft.Compute/virtualMachines/mcol-db-vm01-stg",
+      "/subscriptions/9c604868-4643-43b8-9eb1-4c348c739a3e/resourceGroups/mcol-rg-stg/providers/Microsoft.Compute/virtualMachines/mcol-dbmig-vm01-stg",
+      "/subscriptions/c170c61a-f00f-4295-a718-634e27af1597/resourceGroups/mcol-rg-prod/providers/Microsoft.Compute/virtualMachines/mcol-db-vm01-prod",
+      "/subscriptions/c170c61a-f00f-4295-a718-634e27af1597/resourceGroups/mcol-rg-prod/providers/Microsoft.Compute/virtualMachines/mcol-db-vm02-prod",
+      "/subscriptions/c170c61a-f00f-4295-a718-634e27af1597/resourceGroups/mcol-rg-prod/providers/Microsoft.Compute/virtualMachines/mcol-dbmig-vm01-prod"
     ],
     "parameters": {},
     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSVmSkuSize",
