@@ -31,7 +31,8 @@
           "admin",
           "gatekeeper-system",
           "flux-system",
-          "kube-system"
+          "kube-system",
+          "dtsse"
         ]
       }
     },
