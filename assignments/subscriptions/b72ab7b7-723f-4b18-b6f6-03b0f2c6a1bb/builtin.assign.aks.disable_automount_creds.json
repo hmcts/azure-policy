@@ -17,7 +17,7 @@
             {
               "key": "hmcts.github.com/automount-token-exception",
               "operator": "NotIn",
-              "values": ["env-injector-lifecycle"]
+              "values": ["chart-tests"]
             }
           ]
         }
