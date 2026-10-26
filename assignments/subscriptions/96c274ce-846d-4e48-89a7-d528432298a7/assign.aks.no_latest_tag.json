@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS containers using the 'latest' image tag.",
+    "displayName": "AKS No Latest Image Tag (DCD-CFTAPPS-STG)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "jenkins",
+          "neuvector"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/021f8078-41a0-40e6-81b6-c6597da9f3ee",
+    "scope": "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7/providers/Microsoft.Authorization/policyAssignments/AKSNoLatestTag-CFT-STG",
+  "name": "AKSNoLatestTag-CFT-STG",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

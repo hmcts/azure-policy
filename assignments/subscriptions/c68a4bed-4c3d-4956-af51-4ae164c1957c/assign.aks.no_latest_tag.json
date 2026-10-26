@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS containers using the 'latest' image tag.",
+    "displayName": "AKS No Latest Image Tag (DTS-SHAREDSERVICES-DEMO)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "jenkins",
+          "neuvector"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/021f8078-41a0-40e6-81b6-c6597da9f3ee",
+    "scope": "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/providers/Microsoft.Authorization/policyAssignments/AKSNoLatestTag-SHRS-DEMO",
+  "name": "AKSNoLatestTag-SHRS-DEMO",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
