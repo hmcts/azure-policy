@@ -1,0 +1,52 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS clusters which do not have automounting API credentials disabled.",
+    "displayName": "AKS Disable Automount API Credentials (DCD-CFTAPPS-SBOX)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "labelSelector": {
+        "value": {
+          "matchExpressions": [
+            {
+              "key": "hmcts.github.com/automount-token-exception",
+              "operator": "NotIn",
+              "values": ["env-injector-lifecycle"]
+            }
+          ]
+        }
+      },
+      "excludedNamespaces": {
+        "value": [
+          "azureserviceoperator-system",
+          "neuvector",
+          "monitoring",
+          "keda",
+          "cert-manager",
+          "dynatrace",
+          "admin",
+          "gatekeeper-system",
+          "flux-system",
+          "kube-system",
+          "dtsse"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/423dd1ba-798e-40e4-9c4d-b6902674b423",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/AKSNoAutomount-cftapps",
+  "name": "AKSNoAutomount-cftapps",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
