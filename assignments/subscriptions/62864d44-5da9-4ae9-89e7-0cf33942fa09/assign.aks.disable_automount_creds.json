@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS clusters which do not have automounting API credentials disabled.",
+    "displayName": "AKS Disable Automount API Credentials (DCD-CFTAPPS-ITHC)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "excludedNamespaces": {
+        "value": [
+          "azureserviceoperator-system",
+          "neuvector",
+          "monitoring",
+          "keda",
+          "cert-manager",
+          "dynatrace",
+          "admin",
+          "gatekeeper-system",
+          "flux-system",
+          "kube-system",
+          "dtsse"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/423dd1ba-798e-40e4-9c4d-b6902674b423",
+    "scope": "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09/providers/Microsoft.Authorization/policyAssignments/AKSDisableAutomountCreds-DCD-CFTAPPS-ITHC",
+  "name": "AKSDisableAutomountCreds-DCD-CFTAPPS-ITHC",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
