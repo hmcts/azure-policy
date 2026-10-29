@@ -6,6 +6,11 @@
     "description": "Deny App Service sites, slots, and configuration requests that set FTPS state to AllAllowed.",
     "displayName": "Deny AllAllowed FTPS State (HMCTS MG)",
     "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Set FTPS state to FtpsOnly or Disabled. AllAllowed is denied for App Service sites, Function Apps, and slots."
+      }
+    ],
     "notScopes": [],
     "parameters": {},
     "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDenyFTPSAllAllowed",
