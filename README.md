@@ -49,6 +49,8 @@ so that the policy definition id is not overriden like it is done for custom pol
 
 Use a management group scope when you want a policy to apply to all subscriptions in the tenant.
 
+The AKS Disable Automount API Credentials policy is assigned per subscription under `assignments/subscriptions`, rather than at the HMCTS management group. Maintain namespace exclusions in each subscription's assignment; new AKS subscriptions need their own assignment.
+
 **If a tagging policy exception is required, please use the notScopes in assignments/mgmt-groups/mg-HMCTS/assign.tagging.json**
 
 ## How to add a new subscription
