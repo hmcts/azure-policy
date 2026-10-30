@@ -17,7 +17,8 @@
           "gatekeeper-system",
           "azure-arc",
           "jenkins",
-          "neuvector"
+          "neuvector",
+          "chart-tests"
         ]
       }
     },
