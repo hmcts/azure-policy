@@ -53,6 +53,8 @@ The AKS Disable Automount API Credentials policy is assigned per subscription un
 
 The automount policy uses `Deny`, except for `DCD-CFTAPPS-DEV`, `DCD-CFTAPPS-PROD`, and `DTS-SHAREDSERVICES-PROD`, which remain on `Audit`.
 
+Do not set `nonComplianceMessages` on these assignments: Azure does not support this property for the `Microsoft.Kubernetes.Data` policy mode.
+
 **If a tagging policy exception is required, please use the notScopes in assignments/mgmt-groups/mg-HMCTS/assign.tagging.json**
 
 ## How to add a new subscription
