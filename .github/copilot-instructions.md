@@ -13,6 +13,8 @@ The repo is mostly declarative Azure Policy JSON and shell scripts, not applicat
 
 ## Validation and local checks
 
+Use ASD-STE100 as practical guidance, not a strict compliance requirement, for agent-created human-readable text. Prefer short, direct sentences, active voice, one instruction per sentence, and consistent terms. Explain specialist terms when needed. Preserve technical accuracy, exact names, commands, identifiers, quotations, and required formats.
+
 The repo's CI validation is defined in `.github/workflows/lint.yml`:
 
 - GitHub Actions runs on push and pull request
