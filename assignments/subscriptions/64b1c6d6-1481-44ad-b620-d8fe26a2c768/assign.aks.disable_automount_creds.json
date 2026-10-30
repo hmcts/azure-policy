@@ -3,13 +3,18 @@
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy"
     },
-    "description": "Audit AKS clusters which do not have automounting API credentials disabled.",
+    "description": "Deny AKS workloads which do not have automounting API credentials disabled.",
     "displayName": "AKS Disable Automount API Credentials (DTS-SHAREDSERVICESPTL-SBOX)",
     "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Mounting Kubernetes API service account tokens is blocked by policy. If your workload uses the default service account, configure it to use the service account named after its namespace. If Kubernetes API access is required, contact the Platform team to discuss an exemption."
+      }
+    ],
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Audit"
+        "value": "Deny"
       },
       "excludedNamespaces": {
         "value": [

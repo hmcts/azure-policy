@@ -51,6 +51,8 @@ Use a management group scope when you want a policy to apply to all subscription
 
 The AKS Disable Automount API Credentials policy is assigned per subscription under `assignments/subscriptions`, rather than at the HMCTS management group. Maintain namespace exclusions in each subscription's assignment; new AKS subscriptions need their own assignment.
 
+The automount policy uses `Deny`, except for `DCD-CFTAPPS-DEV`, `DCD-CFTAPPS-PROD`, and `DTS-SHAREDSERVICES-PROD`, which remain on `Audit`.
+
 **If a tagging policy exception is required, please use the notScopes in assignments/mgmt-groups/mg-HMCTS/assign.tagging.json**
 
 ## How to add a new subscription
