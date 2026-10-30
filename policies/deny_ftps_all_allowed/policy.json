@@ -1,0 +1,69 @@
+{
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSDenyFTPSAllAllowed",
+  "name": "HMCTSDenyFTPSAllAllowed",
+  "properties": {
+    "displayName": "Deny AllAllowed FTPS State",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Deny App Service sites, site slots, and site configuration requests that set FTPS state to AllAllowed.",
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "anyOf": [
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Web/sites"
+              },
+              {
+                "field": "Microsoft.Web/sites/siteConfig.ftpsState",
+                "equals": "AllAllowed"
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Web/sites/config"
+              },
+              {
+                "field": "Microsoft.Web/sites/config/ftpsState",
+                "equals": "AllAllowed"
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Web/sites/slots"
+              },
+              {
+                "field": "Microsoft.Web/sites/slots/siteConfig.ftpsState",
+                "equals": "AllAllowed"
+              }
+            ]
+          },
+          {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Web/sites/slots/config"
+              },
+              {
+                "field": "Microsoft.Web/sites/slots/config/ftpsState",
+                "equals": "AllAllowed"
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "type": "Microsoft.Authorization/policyDefinitions"
+}
