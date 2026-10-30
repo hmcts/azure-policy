@@ -9,7 +9,7 @@
     "notScopes": [],
     "parameters": {
       "effect": {
-        "value": "Deny"
+        "value": "Audit"
       },
       "excludedNamespaces": {
         "value": [
