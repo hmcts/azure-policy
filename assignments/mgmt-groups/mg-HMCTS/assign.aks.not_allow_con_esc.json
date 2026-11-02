@@ -26,7 +26,9 @@
       "excludedImages": {
         "value": [
           "hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*",
-          "public.ecr.aws/dynatrace/dynatrace-operator:*"
+          "public.ecr.aws/dynatrace/dynatrace-operator:*",
+          "yrk32651.live.dynatrace.com/linux/oneagent:*",
+          "ebe20728.live.dynatrace.com/linux/oneagent:*"
         ]
       }
     },
