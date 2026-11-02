@@ -1,0 +1,49 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "Set allowPrivilegeEscalation to false on all containers in the selected probateman Logstash pods. To roll back enforcement, set only this assignment effect to Audit. See the DTSPO-35033 section in README.md."
+    },
+    "description": "DTSPO-35033: prevent privilege escalation only for ccd-logstash-probateman in ccd on cft-demo-00-aks.",
+    "displayName": "Deny probateman privilege escalation - cft-demo-00 (DCD-CFTAPPS-DEMO)",
+    "enforcementMode": "Default",
+    "parameters": {
+      "effect": {
+        "value": "Deny"
+      },
+      "namespaces": {
+        "value": ["ccd"]
+      },
+      "labelSelector": {
+        "value": {
+          "matchLabels": {
+            "app": "ccd-logstash-probateman-logstash",
+            "release": "ccd-logstash-probateman"
+          }
+        }
+      },
+      "excludedNamespaces": {
+        "value": ["kube-system", "gatekeeper-system", "azure-arc", "azure-extensions-usage-system", "monitoring"]
+      },
+      "excludedImages": {
+        "value": ["hmctsprod.azurecr.io/imported/dynatrace/dynatrace-operator:*", "public.ecr.aws/dynatrace/dynatrace-operator:*"]
+      },
+      "source": {
+        "value": "Original"
+      },
+      "forcePrivilegeEscalationToBeFalse": {
+        "value": false
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1c6e92c9-99f0-4e55-9cf2-0c234dc48f99",
+    "scope": "/subscriptions/d025fece-ce99-4df2-b7a9-b649d3ff2060/resourceGroups/cft-demo-00-rg"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/d025fece-ce99-4df2-b7a9-b649d3ff2060/resourceGroups/cft-demo-00-rg/providers/Microsoft.Authorization/policyAssignments/NoEscD0Pman",
+  "name": "NoEscD0Pman",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}

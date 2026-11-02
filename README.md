@@ -55,6 +55,124 @@ The automount policy uses `Deny`, except for `DCD-CFTAPPS-DEV`, `DCD-CFTAPPS-PRO
 
 Do not set `nonComplianceMessages` on these assignments: Azure does not support this property for the `Microsoft.Kubernetes.Data` policy mode.
 
+### DTSPO-35033: Scoped privilege-escalation enforcement
+
+These are proposed Deny assignments on
+`daniel-christou/dtspo-35033-scoped-deny`. They have not been deployed.
+Publishing this branch does not authorise a PR or deployment.
+Do not open a PR, run a deployment workflow or create test resources without
+separate approval. The existing HMCTS `AKSNotAllowConEsc` assignment
+stays in Audit. No application manifests, policy definitions or workflows change.
+
+Each new `builtin.assign.aks.not_allow_con_esc.*.json` assignment uses the
+existing built-in definition `1c6e92c9-99f0-4e55-9cf2-0c234dc48f99`.
+It intersects one resource group, one namespace and the exact stable selector
+of one ticket-fixed controller. There are five assignments per demo cluster
+and one for the PTLSBOX Jenkins controller. There is no namespace-wide Deny.
+
+#### Target inventory
+
+Read-only Azure inventory on 30 October 2026 confirmed one AKS cluster in
+each resource group below. Recheck this before deployment and after any
+resource-group or controller-label change. A new matching workload or cluster
+in the same resource group would also be covered.
+
+| Cluster | Subscription | Resource group |
+| --- | --- | --- |
+| `cft-demo-00-aks` | `d025fece-ce99-4df2-b7a9-b649d3ff2060` | `cft-demo-00-rg` |
+| `cft-demo-01-aks` | `d025fece-ce99-4df2-b7a9-b649d3ff2060` | `cft-demo-01-rg` |
+| `ss-ptlsbox-00-aks` | `64b1c6d6-1481-44ad-b620-d8fe26a2c768` | `ss-ptlsbox-00-rg` |
+
+The following rows apply separately to both demo resource groups.
+Assignment names use `NoEscD0` for demo00 and `NoEscD1` for demo01.
+All selector entries in a row must match.
+
+| Assignment suffix | Namespace | Controller | Pod selector | Ticket PR |
+| --- | --- | --- | --- | --- |
+| `Mailhog` | `money-claims` | Deployment `mailhog` | `app=mailhog` | cnp-flux-config #48627 |
+| `Intdemo` | `ccd` | StatefulSet `ccd-logstash-intdemo-logstash` | `app=ccd-logstash-intdemo-logstash`, `release=ccd-logstash-intdemo` | cnp-flux-config #48296, #48633 |
+| `Ccd` | `ccd` | StatefulSet `ccd-logstash-logstash` | `app=ccd-logstash-logstash`, `release=ccd-logstash` | cnp-flux-config #47758 |
+| `Pman` | `ccd` | StatefulSet `ccd-logstash-probateman-logstash` | `app=ccd-logstash-probateman-logstash`, `release=ccd-logstash-probateman` | cnp-flux-config #47758 |
+| `Sptribs` | `sptribs` | StatefulSet `sptribs-logstash-logstash` | `app=sptribs-logstash-logstash`, `release=sptribs-logstash` | cnp-flux-config #47758 |
+
+`NoEscPtlsJenkins` selects only the StatefulSet `jenkins` in namespace
+`jenkins` on PTLSBOX. Its selector is
+`app.kubernetes.io/component=jenkins-controller` AND
+`app.kubernetes.io/instance=jenkins` (sds-flux-config #9088).
+Agents, other Jenkins environments, other Logstash releases, production,
+and shared-chart preview consumers are not selected. Jake's shared-CCD
+release/testing handoff is still required before adding preview consumers.
+
+All containers in selected pods are evaluated, including init, injected and
+ephemeral containers. These drafts retain the parent's namespace and
+Dynatrace image exceptions. They keep `source=Original` and
+`forcePrivilegeEscalationToBeFalse=false`. Missing escalation fields therefore
+keep the existing UID-dependent behaviour. The parent's a360 `notScopes`
+lie outside these resource groups and are not copied into the narrower files.
+Labels are a scope filter, not an immutable security boundary. Changing a
+controller's selector can leave its pods under the parent Audit rule only.
+
+#### Validation and deferred rollout
+
+Read-only checks on 30 October confirmed the live parent effect is Audit and
+the built-in definition is version 8.0.0 with namespace/label filtering.
+The exact parent-linked constraint was `dryrun` on all three clusters.
+Demo00's audit at 15:53:04 UTC and demo01's at 15:52:29 UTC each exposed
+all 34 findings, with none for the selected ticket workloads. PTLSBOX's audit
+at 15:50:44 UTC reported zero findings. These are Audit observations, not
+proof of Deny admission or rollback. Existing application evidence remains
+separate from this local policy proposal.
+
+Local validation passed for all 11 JSON drafts and 121 pairwise scope/selector
+checks. A subsequent read-only membership check matched exactly five pods on
+each demo cluster and one PTLSBOX controller pod. All matched pods were Ready,
+had zero restarts and had false escalation flags on every regular, init and
+injected container. Their selectors matched their owning controllers.
+The rules excluded 1,153 other pods on demo00, 1,028 on demo01 and 94 on
+PTLSBOX at the time of the check. These counts are a snapshot, not an admission
+test or a guarantee against future selector changes.
+
+Local checks must parse all 11 JSON files, check identities and short unique
+names, preserve parent exceptions, and test namespace/selector isolation.
+Recheck selected live pods and controller selectors using read-only queries.
+Use the existing static `policy-assignment-tools.sh check-remediation-text`
+operation and `git diff --check`. Do not run deployment scripts to validate
+these drafts.
+
+Before any later publication, get platform and workload-owner approval.
+Prove positive, negative and non-target admission plus rollback in an isolated
+sandbox fixture first. Reject explicit escalation in a main or init container
+and admit the compliant control. Inspect actual pod admission and controller
+events, not only successful Job or Deployment creation. Do not send email,
+run Logstash ingestion or force application restarts for this policy test.
+
+The PR sandbox generator processes only the CFTAPPS-SBOX subscription directory.
+It does not deploy these demo or PTLSBOX drafts. It also rewrites input scopes
+to the whole sandbox subscription and adds `_Sandbox` to assignment names.
+Use a separately reviewed, fixture-only namespace and selector for sandbox
+testing. Do not copy these workload selectors there as a test shortcut.
+Do not hand-edit generated output or assume a draft PR prevents deployment.
+
+The files describe the intended final Deny state. Before the first actual
+workload rollout, stage only approved pilot assignments in Audit and confirm
+their live membership, then promote demo00 to Deny in a controlled change.
+Observe actual admission, workload health and policy synchronisation before
+any separate demo01 or PTLSBOX promotion. Recheck that unrelated findings
+remain outside the new assignments. No wider rollout is implied.
+
+#### Rollback
+
+Set only the affected new assignment's effect back to Audit. Keep the parent
+Audit assignment, workload fixes and existing exceptions unchanged.
+Each exact assignment ID is recorded in its JSON file. Also inventory any
+generated `_Sandbox` or duplicate assignments before rollback.
+Verify the matching live constraint no longer denies, then verify admission
+and workload recovery. Add-on propagation is asynchronous, so a successful
+pipeline alone is not rollback proof. Do not disable Gatekeeper or add a
+namespace-wide bypass. Do not assume deleting a JSON file or closing a PR
+removes the Azure assignment. Confirm cleanup by exact ID and use an approved
+targeted removal if needed. No remediation task is required for Audit/Deny.
+
 **If a tagging policy exception is required, please use the notScopes in assignments/mgmt-groups/mg-HMCTS/assign.tagging.json**
 
 ## How to add a new subscription
