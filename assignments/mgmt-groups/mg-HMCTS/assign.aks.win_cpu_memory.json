@@ -13,6 +13,11 @@
     "parameters": {
       "effect": {
         "value": "Audit"
+      },
+      "excludedImages": {
+        "value": [
+          "public.ecr.aws/dynatrace/dynatrace-operator:*"
+        ]
       }
     },
     "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a2abc456-f0ae-464b-bd3a-07a3cdbd7fb1",
