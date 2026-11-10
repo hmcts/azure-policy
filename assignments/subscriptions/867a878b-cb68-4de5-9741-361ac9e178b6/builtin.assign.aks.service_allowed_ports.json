@@ -1,0 +1,43 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "github.com/hmcts/azure-policy"
+    },
+    "description": "Audit AKS Clusters where services do not listen on approved ports",
+    "displayName": "AKS Restrict Service Allowed Ports (DTS-SHAREDSERVICES-DEV)",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Audit"
+      },
+      "allowedServicePortsList": {
+        "value": [
+          "80",
+          "443",
+          "1024-65535"
+        ]
+      },
+      "excludedNamespaces": {
+        "value": [
+          "kube-system",
+          "gatekeeper-system",
+          "azure-arc",
+          "azure-extensions-usage-system",
+          "mailrelay",
+          "mailrelay2"
+        ]
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/233a2a17-77ca-4fb1-9b6b-69223d272a44",
+    "scope": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/providers/Microsoft.Authorization/policyAssignments/AKSRstrctSvcPorts-ssdev",
+  "name": "AKSRstrctSvcPorts-ssdev",
+  "location": "uksouth",
+  "sku": {
+    "name": "A0",
+    "tier": "Free"
+  }
+}
