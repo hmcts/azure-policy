@@ -1,9 +1,10 @@
 {
   "properties": {
     "metadata": {
-      "assignedBy": "github.com/hmcts/azure-policy"
+      "assignedBy": "github.com/hmcts/azure-policy",
+      "remediation": "flux-config HelmRelease/Deployment: remove explicit imagePullPolicy: Always (chart-java defaults to IfNotPresent); camunda chart defaults to Always, so set java.imagePullPolicy: IfNotPresent"
     },
-    "description": "Audit AKS Clusters which do not restrict allowed container pull policy to IfNotPresent only",
+    "description": "Audit AKS containers using the Always image pull policy. Allowed: IfNotPresent, Never.",
     "displayName": "AKS Restrict Allowed Container Pull Policy (mg:HMCTS)",
     "enforcementMode": "Default",
     "notScopes": [],
