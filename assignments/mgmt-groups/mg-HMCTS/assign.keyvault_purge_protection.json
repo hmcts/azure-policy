@@ -11,7 +11,9 @@
         "message": "Azure Key Vaults must have soft delete and purge protection enabled."
       }
     ],
-    "notScopes": [],
+    "notScopes": [
+      "/subscriptions/df72bb30-d6fb-47bd-82ee-5eb87473ddb3"
+    ],
     "parameters": {
       "effect": {
         "value": "Deny"
