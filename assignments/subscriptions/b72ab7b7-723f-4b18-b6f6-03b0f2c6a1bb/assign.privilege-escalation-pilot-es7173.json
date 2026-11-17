@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "PlatOps"
+    },
+    "description": "DTSPO-35033 pilot mutation for the exact cluster and reviewed namespaces in the referenced definition.",
+    "displayName": "DTSPO-35033 privilege escalation pilot - ES7173",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Mutate"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSNoPrivEscPilotES7173",
+    "scope": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/providers/Microsoft.Authorization/policyAssignments/AP-P-ES7173",
+  "name": "AP-P-ES7173"
+}
