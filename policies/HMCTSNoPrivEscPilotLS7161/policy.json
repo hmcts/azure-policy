@@ -1,0 +1,64 @@
+{
+  "properties": {
+    "displayName": "DTSPO-35033 privilege escalation pilot - LS7161",
+    "policyType": "Custom",
+    "mode": "Microsoft.Kubernetes.Data",
+    "description": "Disabled pilot for one reviewed image and container role. No assignment is included. Do not enable before mutation-engine and targeting acceptance.",
+    "metadata": {
+      "category": "Kubernetes",
+      "version": "0.1.0",
+      "preview": true
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Keep Disabled until the disposable pilot contract and engine checks pass."
+        },
+        "allowedValues": [
+          "Mutate",
+          "Disabled"
+        ],
+        "defaultValue": "Disabled"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.ContainerService/managedClusters"
+          },
+          {
+            "field": "id",
+            "equals": "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-sbox-01-rg/providers/Microsoft.ContainerService/managedClusters/cft-sbox-01-aks"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "source": "Original",
+          "namespaces": [
+            "dtspo-35033-mutation-pilot"
+          ],
+          "excludedNamespaces": [
+            "kube-system",
+            "gatekeeper-system",
+            "azure-arc",
+            "azure-extensions-usage-system",
+            "monitoring"
+          ],
+          "mutationInfo": {
+            "sourceType": "Base64Encoded",
+            "content": "eyJhcGlWZXJzaW9uIjoibXV0YXRpb25zLmdhdGVrZWVwZXIuc2gvdjEiLCJraW5kIjoiQXNzaWduIiwibWV0YWRhdGEiOnsibmFtZSI6ImhtY3Rzbm9wcml2ZXNjcGlsb3RsczcxNjEifSwic3BlYyI6eyJhcHBseVRvIjpbeyJncm91cHMiOlsiIl0sImtpbmRzIjpbIlBvZCJdLCJ2ZXJzaW9ucyI6WyJ2MSJdLCJvcGVyYXRpb25zIjpbIkNSRUFURSJdfV0sIm1hdGNoIjp7InNjb3BlIjoiTmFtZXNwYWNlZCIsInNvdXJjZSI6Ik9yaWdpbmFsIiwia2luZHMiOlt7ImFwaUdyb3VwcyI6WyIiXSwia2luZHMiOlsiUG9kIl19XSwibmFtZXNwYWNlcyI6WyJkdHNwby0zNTAzMy1tdXRhdGlvbi1waWxvdCJdLCJleGNsdWRlZE5hbWVzcGFjZXMiOlsia3ViZS1zeXN0ZW0iLCJnYXRla2VlcGVyLXN5c3RlbSIsImF6dXJlLWFyYyIsImF6dXJlLWV4dGVuc2lvbnMtdXNhZ2Utc3lzdGVtIiwibW9uaXRvcmluZyJdLCJsYWJlbFNlbGVjdG9yIjp7Im1hdGNoTGFiZWxzIjp7ImhtY3RzLm5ldC9tdXRhdGlvbi1waWxvdCI6ImR0c3BvLTM1MDMzIn19fSwibG9jYXRpb24iOiJzcGVjLmNvbnRhaW5lcnNbaW1hZ2U6XCJobWN0c3Byb2QuYXp1cmVjci5pby9pbXBvcnRlZC9sb2dzdGFzaC9sb2dzdGFzaDo3LjE2LjFcIl0uc2VjdXJpdHlDb250ZXh0LmFsbG93UHJpdmlsZWdlRXNjYWxhdGlvbiIsInBhcmFtZXRlcnMiOnsicGF0aFRlc3RzIjpbeyJzdWJQYXRoIjoic3BlYy5jb250YWluZXJzW2ltYWdlOlwiaG1jdHNwcm9kLmF6dXJlY3IuaW8vaW1wb3J0ZWQvbG9nc3Rhc2gvbG9nc3Rhc2g6Ny4xNi4xXCJdIiwiY29uZGl0aW9uIjoiTXVzdEV4aXN0In1dLCJhc3NpZ24iOnsidmFsdWUiOmZhbHNlfX19fQ=="
+          }
+        }
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSNoPrivEscPilotLS7161",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSNoPrivEscPilotLS7161"
+}
