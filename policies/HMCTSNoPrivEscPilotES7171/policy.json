@@ -3,7 +3,7 @@
     "displayName": "DTSPO-35033 privilege escalation pilot - ES7171",
     "policyType": "Custom",
     "mode": "Microsoft.Kubernetes.Data",
-    "description": "Disabled pilot for one reviewed image and container role. No assignment is included. Do not enable before mutation-engine and targeting acceptance.",
+    "description": "Pilot mutation for one reviewed image and container role. Enable only for isolated disposable sandbox tests after targeting acceptance. Reviewed workload opt-out: hmcts.net/privilege-escalation-exception=approved. The marker does not verify approval.",
     "metadata": {
       "category": "Kubernetes",
       "version": "0.1.0",
@@ -14,7 +14,7 @@
         "type": "String",
         "metadata": {
           "displayName": "Effect",
-          "description": "Keep Disabled until the disposable pilot contract and engine checks pass."
+          "description": "Enable only for isolated disposable sandbox tests after targeting acceptance."
         },
         "allowedValues": [
           "Mutate",
@@ -52,7 +52,7 @@
           ],
           "mutationInfo": {
             "sourceType": "Base64Encoded",
-            "content": "eyJhcGlWZXJzaW9uIjoibXV0YXRpb25zLmdhdGVrZWVwZXIuc2gvdjEiLCJraW5kIjoiQXNzaWduIiwibWV0YWRhdGEiOnsibmFtZSI6ImhtY3Rzbm9wcml2ZXNjcGlsb3RlczcxNzEifSwic3BlYyI6eyJhcHBseVRvIjpbeyJncm91cHMiOlsiIl0sImtpbmRzIjpbIlBvZCJdLCJ2ZXJzaW9ucyI6WyJ2MSJdLCJvcGVyYXRpb25zIjpbIkNSRUFURSJdfV0sIm1hdGNoIjp7InNjb3BlIjoiTmFtZXNwYWNlZCIsInNvdXJjZSI6Ik9yaWdpbmFsIiwia2luZHMiOlt7ImFwaUdyb3VwcyI6WyIiXSwia2luZHMiOlsiUG9kIl19XSwibmFtZXNwYWNlcyI6WyJkdHNwby0zNTAzMy1tdXRhdGlvbi1waWxvdCJdLCJleGNsdWRlZE5hbWVzcGFjZXMiOlsia3ViZS1zeXN0ZW0iLCJnYXRla2VlcGVyLXN5c3RlbSIsImF6dXJlLWFyYyIsImF6dXJlLWV4dGVuc2lvbnMtdXNhZ2Utc3lzdGVtIiwibW9uaXRvcmluZyJdLCJsYWJlbFNlbGVjdG9yIjp7Im1hdGNoTGFiZWxzIjp7ImhtY3RzLm5ldC9tdXRhdGlvbi1waWxvdCI6ImR0c3BvLTM1MDMzIn19fSwibG9jYXRpb24iOiJzcGVjLmNvbnRhaW5lcnNbaW1hZ2U6XCJkb2NrZXIuZWxhc3RpYy5jby9lbGFzdGljc2VhcmNoL2VsYXN0aWNzZWFyY2g6Ny4xNy4xXCJdLnNlY3VyaXR5Q29udGV4dC5hbGxvd1ByaXZpbGVnZUVzY2FsYXRpb24iLCJwYXJhbWV0ZXJzIjp7InBhdGhUZXN0cyI6W3sic3ViUGF0aCI6InNwZWMuY29udGFpbmVyc1tpbWFnZTpcImRvY2tlci5lbGFzdGljLmNvL2VsYXN0aWNzZWFyY2gvZWxhc3RpY3NlYXJjaDo3LjE3LjFcIl0iLCJjb25kaXRpb24iOiJNdXN0RXhpc3QifV0sImFzc2lnbiI6eyJ2YWx1ZSI6ZmFsc2V9fX19"
+            "content": "eyJhcGlWZXJzaW9uIjoibXV0YXRpb25zLmdhdGVrZWVwZXIuc2gvdjEiLCJraW5kIjoiQXNzaWduIiwibWV0YWRhdGEiOnsibmFtZSI6ImhtY3Rzbm9wcml2ZXNjcGlsb3RlczcxNzEifSwic3BlYyI6eyJhcHBseVRvIjpbeyJncm91cHMiOlsiIl0sImtpbmRzIjpbIlBvZCJdLCJ2ZXJzaW9ucyI6WyJ2MSJdLCJvcGVyYXRpb25zIjpbIkNSRUFURSJdfV0sIm1hdGNoIjp7InNjb3BlIjoiTmFtZXNwYWNlZCIsInNvdXJjZSI6Ik9yaWdpbmFsIiwia2luZHMiOlt7ImFwaUdyb3VwcyI6WyIiXSwia2luZHMiOlsiUG9kIl19XSwibmFtZXNwYWNlcyI6WyJkdHNwby0zNTAzMy1tdXRhdGlvbi1waWxvdCJdLCJleGNsdWRlZE5hbWVzcGFjZXMiOlsia3ViZS1zeXN0ZW0iLCJnYXRla2VlcGVyLXN5c3RlbSIsImF6dXJlLWFyYyIsImF6dXJlLWV4dGVuc2lvbnMtdXNhZ2Utc3lzdGVtIiwibW9uaXRvcmluZyJdLCJsYWJlbFNlbGVjdG9yIjp7Im1hdGNoTGFiZWxzIjp7ImhtY3RzLm5ldC9tdXRhdGlvbi1waWxvdCI6ImR0c3BvLTM1MDMzIn0sIm1hdGNoRXhwcmVzc2lvbnMiOlt7ImtleSI6ImhtY3RzLm5ldC9wcml2aWxlZ2UtZXNjYWxhdGlvbi1leGNlcHRpb24iLCJvcGVyYXRvciI6Ik5vdEluIiwidmFsdWVzIjpbImFwcHJvdmVkIl19XX19LCJsb2NhdGlvbiI6InNwZWMuY29udGFpbmVyc1tpbWFnZTpcImRvY2tlci5lbGFzdGljLmNvL2VsYXN0aWNzZWFyY2gvZWxhc3RpY3NlYXJjaDo3LjE3LjFcIl0uc2VjdXJpdHlDb250ZXh0LmFsbG93UHJpdmlsZWdlRXNjYWxhdGlvbiIsInBhcmFtZXRlcnMiOnsicGF0aFRlc3RzIjpbeyJzdWJQYXRoIjoic3BlYy5jb250YWluZXJzW2ltYWdlOlwiZG9ja2VyLmVsYXN0aWMuY28vZWxhc3RpY3NlYXJjaC9lbGFzdGljc2VhcmNoOjcuMTcuMVwiXSIsImNvbmRpdGlvbiI6Ik11c3RFeGlzdCJ9XSwiYXNzaWduIjp7InZhbHVlIjpmYWxzZX19fX0="
           }
         }
       }

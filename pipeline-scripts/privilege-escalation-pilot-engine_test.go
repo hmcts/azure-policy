@@ -5,6 +5,7 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"reflect"
 	"strconv"
@@ -16,9 +17,13 @@ import (
 	"github.com/open-policy-agent/gatekeeper/v3/pkg/mutation/mutators/assign"
 	"github.com/open-policy-agent/gatekeeper/v3/pkg/mutation/types"
 	admissionv1 "k8s.io/api/admission/v1"
+	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/apimachinery/pkg/runtime/serializer"
+	clientscheme "k8s.io/client-go/kubernetes/scheme"
 )
 
 const pilotNamespace = "dtspo-35033-mutation-pilot"
@@ -29,12 +34,16 @@ type cohort struct {
 }
 
 func loadCohorts(t *testing.T) []cohort {
+	return loadStageCohorts(t, "Pilot")
+}
+
+func loadStageCohorts(t *testing.T, stage string) []cohort {
 	t.Helper()
 	root := os.Getenv("POLICY_REPO_ROOT")
 	if root == "" {
 		t.Fatal("POLICY_REPO_ROOT must identify the policy repository")
 	}
-	paths, err := filepath.Glob(filepath.Join(root, "policies", "HMCTSNoPrivEscPilot*", "policy.json"))
+	paths, err := filepath.Glob(filepath.Join(root, "policies", "HMCTSNoPrivEsc"+stage+"*", "policy.json"))
 	if err != nil || len(paths) != 8 {
 		t.Fatalf("expected eight definitions, got %d: %v", len(paths), err)
 	}
@@ -355,8 +364,145 @@ func TestConflictingListKeyIsDetected(t *testing.T) {
 	}
 }
 
-func TestKnownUnsafeSelectionsRemainActivationBlockers(t *testing.T) {
+func TestRenderedPilotFixtures(t *testing.T) {
 	cohorts := loadCohorts(t)
+	active := newSystem(t, cohorts, nil)
+	disabled := newSystem(t, nil, nil)
+	codecs := serializer.NewCodecFactory(clientscheme.Scheme, serializer.EnableStrict)
+	for _, candidate := range cohorts {
+		name := strings.TrimPrefix(candidate.name, "HMCTSNoPrivEscPilot")
+		for _, phase := range []string{"prepare", "baseline", "mutated", "recovery"} {
+			t.Run(name+"/"+phase, func(t *testing.T) {
+				command := exec.Command("node", filepath.Join(os.Getenv("POLICY_REPO_ROOT"), "pipeline-scripts", "privilege-escalation-pilot-fixtures.mjs"), "--cohort", name, "--phase", phase)
+				command.Env = append(os.Environ(), "DTSPO_JDBC_SHA256="+strings.Repeat("1", 64))
+				content, err := command.CombinedOutput()
+				if err != nil {
+					t.Fatalf("render fixture: %v\n%s", err, content)
+				}
+				var list corev1.List
+				if err := json.Unmarshal(content, &list); err != nil {
+					t.Fatal(err)
+				}
+				for _, item := range list.Items {
+					decoded, _, err := codecs.UniversalDeserializer().Decode(item.Raw, nil, nil)
+					if err != nil {
+						t.Fatalf("strict Kubernetes type decoding: %v", err)
+					}
+					workload, ok := decoded.(*appsv1.StatefulSet)
+					if !ok {
+						continue
+					}
+					pod := &corev1.Pod{TypeMeta: metav1.TypeMeta{APIVersion: "v1", Kind: "Pod"}, ObjectMeta: workload.Spec.Template.ObjectMeta, Spec: workload.Spec.Template.Spec}
+					pod.Name, pod.Namespace = workload.Name+"-0", workload.Namespace
+					objectMap, err := runtime.DefaultUnstructuredConverter.ToUnstructured(pod)
+					if err != nil {
+						t.Fatal(err)
+					}
+					object := &unstructured.Unstructured{Object: objectMap}
+					want := object.DeepCopy()
+					expectChange := false
+					if phase == "mutated" {
+						for _, target := range cohorts {
+							entries, _, err := unstructured.NestedSlice(want.Object, "spec", target.role)
+							if err != nil {
+								t.Fatal(err)
+							}
+							for _, entry := range entries {
+								container := entry.(map[string]any)
+								if container["image"] == target.image {
+									container["securityContext"].(map[string]any)["allowPrivilegeEscalation"] = false
+									expectChange = true
+								}
+							}
+							if entries != nil {
+								if err := unstructured.SetNestedSlice(want.Object, entries, "spec", target.role); err != nil {
+									t.Fatal(err)
+								}
+							}
+						}
+					}
+					system := active
+					if phase == "recovery" {
+						system = disabled
+					}
+					if changed := mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal); changed != expectChange {
+						t.Fatalf("fixture %s: changed=%t, want=%t", workload.Name, changed, expectChange)
+					}
+					assertObject(t, object, want)
+					if mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal) {
+						t.Fatal("rendered fixture mutation must be idempotent")
+					}
+				}
+			})
+		}
+	}
+	t.Log("Strict type decoding and local engine simulation only, not API validation, actual admission or policy-disable propagation")
+}
+
+func TestReviewedWorkloadExceptions(t *testing.T) {
+	const key = "hmcts.net/privilege-escalation-exception"
+	for _, stage := range []string{"Pilot", "Preview"} {
+		cohorts := loadStageCohorts(t, stage)
+		system := newSystem(t, cohorts, nil)
+		withoutGuard := newSystem(t, cohorts, func(object map[string]any) {
+			selector := object["spec"].(map[string]any)["match"].(map[string]any)["labelSelector"].(map[string]any)
+			delete(selector, "matchExpressions")
+		})
+		for _, candidate := range cohorts {
+			t.Run(stage+"/"+candidate.name, func(t *testing.T) {
+				object := fixture(candidate)
+				if stage == "Preview" {
+					object.SetNamespace("ccd")
+					object.SetLabels(nil)
+				}
+				labels := object.GetLabels()
+				if labels == nil {
+					labels = map[string]string{}
+				}
+				labels[key] = "approved"
+				object.SetLabels(labels)
+				want := object.DeepCopy()
+				if mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal) {
+					t.Fatal("explicit workload exception was mutated")
+				}
+				assertObject(t, object, want)
+				causal := want.DeepCopy()
+				if !mutate(t, withoutGuard, causal, admissionv1.Create, types.SourceTypeOriginal) {
+					t.Fatal("exception did not causally protect an otherwise selected Pod")
+				}
+				for _, state := range []string{"pending", "absent"} {
+					control := want.DeepCopy()
+					controlLabels := control.GetLabels()
+					if state == "absent" {
+						delete(controlLabels, key)
+					} else {
+						controlLabels[key] = state
+					}
+					control.SetLabels(controlLabels)
+					if !mutate(t, system, control, admissionv1.Create, types.SourceTypeOriginal) {
+						t.Fatalf("%s marker must not silently exempt a selected Pod", state)
+					}
+				}
+			})
+		}
+	}
+}
+
+func TestRolloutExclusions(t *testing.T) {
+	for _, stage := range []string{"Pilot", "Preview"} {
+		t.Run(stage, func(t *testing.T) { testRolloutExclusions(t, stage, false) })
+	}
+}
+
+func TestReviewedUnsafeVariantExceptions(t *testing.T) {
+	for _, stage := range []string{"Pilot", "Preview"} {
+		t.Run(stage, func(t *testing.T) { testRolloutExclusions(t, stage, true) })
+	}
+}
+
+func testRolloutExclusions(t *testing.T, stage string, reviewedException bool) {
+	t.Helper()
+	cohorts := loadStageCohorts(t, stage)
 	system := newSystem(t, cohorts, nil)
 	regular, init := cohorts[0], cohorts[0]
 	for _, candidate := range cohorts {
@@ -388,14 +534,217 @@ func TestKnownUnsafeSelectionsRemainActivationBlockers(t *testing.T) {
 	for _, control := range controls {
 		t.Run(control.name, func(t *testing.T) {
 			object := fixture(control.candidate)
+			if stage == "Preview" {
+				object.SetNamespace("ccd")
+				object.SetLabels(nil)
+			}
 			control.edit(object)
-			if !mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal) {
-				t.Fatal("known selection behavior changed, reassess the documented activation blocker")
+			if reviewedException {
+				labels := object.GetLabels()
+				if labels == nil {
+					labels = map[string]string{}
+				}
+				labels["hmcts.net/privilege-escalation-exception"] = "approved"
+				object.SetLabels(labels)
 			}
-			if selected(object, control.candidate.role)["securityContext"].(map[string]any)["allowPrivilegeEscalation"] != false {
-				t.Fatal("expected unsafe selection was not reproduced")
+			want := object.DeepCopy()
+			changed := mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal)
+			if !reviewedException && os.Getenv("DTSPO_CHARACTERIZE_UNSAFE_SELECTIONS") == "1" {
+				if !changed {
+					t.Fatal("selection behavior changed, reassess the documented blocker")
+				}
+				t.Log("REPRODUCED ACTIVATION BLOCKER, not a safety acceptance result")
+				return
 			}
-			t.Log("REPRODUCED ACTIVATION BLOCKER, not a safety acceptance result")
+			if changed {
+				t.Error("unsafe target was mutated: rollout must remain blocked")
+			}
+			assertObject(t, object, want)
+		})
+	}
+}
+
+func TestCapturedPreviewAndCrossEnvironmentExceptions(t *testing.T) {
+	path := os.Getenv("DTSPO_BASELINE_PATH")
+	if path == "" {
+		t.Skip("set DTSPO_BASELINE_PATH to the read-only capture, never commit cluster evidence")
+	}
+	content, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var capture struct {
+		Clusters []struct {
+			Name       string
+			Comparison struct {
+				Cohorts []struct {
+					Namespace, Role, Container, Image, NodeOS, PodOS, OSSelector, Exception string
+					AllowPrivilegeEscalation                                                *bool
+					RunAsUser                                                               *int64
+					Privileged, Violation                                                   bool
+					AddedCapabilities                                                       []string
+					Count                                                                   int
+				}
+			}
+		}
+	}
+	if err := json.Unmarshal(content, &capture); err != nil {
+		t.Fatal(err)
+	}
+	system := newSystem(t, loadStageCohorts(t, "Preview"), nil)
+	previewNamespaces := map[string]bool{
+		"ccd": true, "civil": true, "family-public-law": true, "financial-remedy": true,
+		"ia": true, "money-claims": true, "pcs": true, "private-law": true,
+		"probate": true, "pt": true, "sptribs": true, "sscs": true,
+	}
+	changedContainers, protectedContainers, sysctlContainers := 0, 0, 0
+	previewFound := false
+	for _, cluster := range capture.Clusters {
+		preview := cluster.Name == "cft-preview-00-aks"
+		previewFound = previewFound || preview
+		for _, row := range cluster.Comparison.Cohorts {
+			protected := row.Privileged || row.Exception != ""
+			for _, capability := range row.AddedCapabilities {
+				protected = protected || capability == "SYS_ADMIN"
+			}
+			if !preview && !protected {
+				continue
+			}
+			role := "containers"
+			if row.Role == "init" {
+				role = "initContainers"
+			} else if row.Role != "regular" {
+				t.Fatalf("unsupported captured role %q", row.Role)
+			}
+			object := fixture(cohort{role: role, image: row.Image})
+			object.SetNamespace(row.Namespace)
+			object.SetLabels(nil)
+			container := selected(object, role)
+			container["name"] = row.Container
+			security := map[string]any{"privileged": row.Privileged}
+			if row.AllowPrivilegeEscalation != nil {
+				security["allowPrivilegeEscalation"] = *row.AllowPrivilegeEscalation
+			}
+			if row.RunAsUser != nil {
+				security["runAsUser"] = *row.RunAsUser
+			}
+			if len(row.AddedCapabilities) > 0 {
+				capabilities := make([]any, len(row.AddedCapabilities))
+				for index, capability := range row.AddedCapabilities {
+					capabilities[index] = capability
+				}
+				security["capabilities"] = map[string]any{"add": capabilities}
+			}
+			container["securityContext"] = security
+			spec := object.Object["spec"].(map[string]any)
+			if row.PodOS != "" {
+				spec["os"] = map[string]any{"name": row.PodOS}
+			}
+			if row.OSSelector != "" {
+				spec["nodeSelector"] = map[string]any{"kubernetes.io/os": row.OSSelector}
+			}
+			want := object.DeepCopy()
+			expectChange := preview && previewNamespaces[row.Namespace] && row.Violation
+			if expectChange {
+				if protected || row.NodeOS != "linux" || row.Container == "configure-sysctl" {
+					t.Fatalf("captured exception requires review: %s/%s/%s", cluster.Name, row.Namespace, row.Container)
+				}
+				selected(want, role)["securityContext"].(map[string]any)["allowPrivilegeEscalation"] = false
+				changedContainers += row.Count
+			} else if protected {
+				protectedContainers += row.Count
+			}
+			if preview && row.Container == "configure-sysctl" {
+				sysctlContainers += row.Count
+			}
+			if changed := mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal); changed != expectChange {
+				t.Fatalf("%s/%s/%s (%s): changed=%t, want=%t", cluster.Name, row.Namespace, row.Container, row.Image, changed, expectChange)
+			}
+			assertObject(t, object, want)
+			if mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal) {
+				t.Fatal("captured security-context projection is not idempotent")
+			}
+		}
+	}
+	if !previewFound || changedContainers == 0 || protectedContainers == 0 || sysctlContainers == 0 {
+		t.Fatal("capture must include preview findings and real cross-environment and sysctl exceptions")
+	}
+	t.Logf("Captured security-context projections: %d preview findings changed, %d protected containers unchanged, %d preview configure-sysctl unchanged", changedContainers, protectedContainers, sysctlContainers)
+	t.Log("Historical aggregated projections only, not full Pod replay, fresh inventory, admission or application acceptance")
+}
+
+func TestJDBCNameSelectorTradeoff(t *testing.T) {
+	cohorts := loadCohorts(t)
+	var jdbc cohort
+	for _, candidate := range cohorts {
+		if candidate.role == "initContainers" {
+			jdbc = candidate
+		}
+	}
+	if jdbc.name == "" {
+		t.Fatal("JDBC cohort is missing")
+	}
+	system := newSystem(t, cohorts, func(object map[string]any) {
+		spec := object["spec"].(map[string]any)
+		if !strings.HasPrefix(spec["location"].(string), "spec.initContainers[") {
+			return
+		}
+		path := "spec.initContainers[name:download-postgres-jdbc]"
+		spec["location"] = path + ".securityContext.allowPrivilegeEscalation"
+		spec["parameters"].(map[string]any)["pathTests"] = []any{
+			map[string]any{"subPath": path, "condition": "MustExist"},
+		}
+	})
+	t.Run("different-name-helper-is-protected", func(t *testing.T) {
+		object := fixture(jdbc)
+		selected(object, jdbc.role)["name"] = "unreviewed-helper"
+		want := object.DeepCopy()
+		if mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal) {
+			t.Fatal("name selector should leave a different-name helper unchanged")
+		}
+		assertObject(t, object, want)
+	})
+	t.Run("same-name-vendor-image-is-still-unsafe", func(t *testing.T) {
+		object := fixture(jdbc)
+		selected(object, jdbc.role)["name"] = "download-postgres-jdbc"
+		selected(object, jdbc.role)["image"] = "public.ecr.aws/dynatrace/dynatrace-operator:1.0"
+		if !mutate(t, system, object, admissionv1.Create, types.SourceTypeOriginal) {
+			t.Fatal("selector behavior changed, reassess whether this alternative protects vendor images")
+		}
+		t.Log("REJECTED ALTERNATIVE: name-only selection loses the approved-image boundary")
+	})
+}
+
+func TestSiblingGuardsAreNotSupportedPathTests(t *testing.T) {
+	cohorts := loadCohorts(t)
+	containerPath := "spec." + cohorts[0].role + "[image:" + strconv.Quote(cohorts[0].image) + "]"
+	for _, path := range []string{
+		"spec.os.name",
+		"spec.nodeSelector.\"kubernetes.io/os\"",
+		containerPath + ".securityContext.privileged",
+		containerPath + ".securityContext.capabilities",
+	} {
+		t.Run(path, func(t *testing.T) {
+			var object map[string]any
+			if err := json.Unmarshal(cohorts[0].definition, &object); err != nil {
+				t.Fatal(err)
+			}
+			object["spec"].(map[string]any)["parameters"].(map[string]any)["pathTests"] = []any{
+				map[string]any{"subPath": path, "condition": "MustNotExist"},
+			}
+			content, err := json.Marshal(object)
+			if err != nil {
+				t.Fatal(err)
+			}
+			var resource mutations.Assign
+			if err := json.Unmarshal(content, &resource); err != nil {
+				t.Fatal(err)
+			}
+			if _, err := assign.MutatorForAssign(&resource); err == nil {
+				t.Fatal("sibling guard unexpectedly accepted, reassess the targeting design")
+			} else if !strings.Contains(strings.ToLower(err.Error()), "prefix") {
+				t.Fatalf("guard was rejected for an unexpected reason: %v", err)
+			}
 		})
 	}
 }
