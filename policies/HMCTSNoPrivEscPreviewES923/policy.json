@@ -1,0 +1,75 @@
+{
+  "properties": {
+    "displayName": "DTSPO-35033 privilege escalation preview - ES923",
+    "policyType": "Custom",
+    "mode": "Microsoft.Kubernetes.Data",
+    "description": "Preview mutation for one reviewed image and container role. Enable only after sandbox targeting, application and recovery acceptance. Reviewed workload opt-out: hmcts.net/privilege-escalation-exception=approved. The marker does not verify approval.",
+    "metadata": {
+      "category": "Kubernetes",
+      "version": "0.1.0",
+      "preview": true
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable only after sandbox targeting, application and recovery acceptance."
+        },
+        "allowedValues": [
+          "Mutate",
+          "Disabled"
+        ],
+        "defaultValue": "Disabled"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.ContainerService/managedClusters"
+          },
+          {
+            "field": "id",
+            "equals": "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourceGroups/cft-preview-00-rg/providers/Microsoft.ContainerService/managedClusters/cft-preview-00-aks"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "source": "Original",
+          "namespaces": [
+            "ccd",
+            "civil",
+            "family-public-law",
+            "financial-remedy",
+            "ia",
+            "money-claims",
+            "pcs",
+            "private-law",
+            "probate",
+            "pt",
+            "sptribs",
+            "sscs"
+          ],
+          "excludedNamespaces": [
+            "kube-system",
+            "gatekeeper-system",
+            "azure-arc",
+            "azure-extensions-usage-system",
+            "monitoring"
+          ],
+          "mutationInfo": {
+            "sourceType": "Base64Encoded",
+            "content": "eyJhcGlWZXJzaW9uIjoibXV0YXRpb25zLmdhdGVrZWVwZXIuc2gvdjEiLCJraW5kIjoiQXNzaWduIiwibWV0YWRhdGEiOnsibmFtZSI6ImhtY3Rzbm9wcml2ZXNjcHJldmlld2VzOTIzIn0sInNwZWMiOnsiYXBwbHlUbyI6W3siZ3JvdXBzIjpbIiJdLCJraW5kcyI6WyJQb2QiXSwidmVyc2lvbnMiOlsidjEiXSwib3BlcmF0aW9ucyI6WyJDUkVBVEUiXX1dLCJtYXRjaCI6eyJzY29wZSI6Ik5hbWVzcGFjZWQiLCJzb3VyY2UiOiJPcmlnaW5hbCIsImtpbmRzIjpbeyJhcGlHcm91cHMiOlsiIl0sImtpbmRzIjpbIlBvZCJdfV0sIm5hbWVzcGFjZXMiOlsiY2NkIiwiY2l2aWwiLCJmYW1pbHktcHVibGljLWxhdyIsImZpbmFuY2lhbC1yZW1lZHkiLCJpYSIsIm1vbmV5LWNsYWltcyIsInBjcyIsInByaXZhdGUtbGF3IiwicHJvYmF0ZSIsInB0Iiwic3B0cmlicyIsInNzY3MiXSwiZXhjbHVkZWROYW1lc3BhY2VzIjpbImt1YmUtc3lzdGVtIiwiZ2F0ZWtlZXBlci1zeXN0ZW0iLCJhenVyZS1hcmMiLCJhenVyZS1leHRlbnNpb25zLXVzYWdlLXN5c3RlbSIsIm1vbml0b3JpbmciXSwibGFiZWxTZWxlY3RvciI6eyJtYXRjaEV4cHJlc3Npb25zIjpbeyJrZXkiOiJobWN0cy5uZXQvcHJpdmlsZWdlLWVzY2FsYXRpb24tZXhjZXB0aW9uIiwib3BlcmF0b3IiOiJOb3RJbiIsInZhbHVlcyI6WyJhcHByb3ZlZCJdfV19fSwibG9jYXRpb24iOiJzcGVjLmNvbnRhaW5lcnNbaW1hZ2U6XCJobWN0c3Byb2QuYXp1cmVjci5pby9pbXBvcnRlZC9lbGFzdGljL2VsYXN0aWNzZWFyY2g6OS4yLjNcIl0uc2VjdXJpdHlDb250ZXh0LmFsbG93UHJpdmlsZWdlRXNjYWxhdGlvbiIsInBhcmFtZXRlcnMiOnsicGF0aFRlc3RzIjpbeyJzdWJQYXRoIjoic3BlYy5jb250YWluZXJzW2ltYWdlOlwiaG1jdHNwcm9kLmF6dXJlY3IuaW8vaW1wb3J0ZWQvZWxhc3RpYy9lbGFzdGljc2VhcmNoOjkuMi4zXCJdIiwiY29uZGl0aW9uIjoiTXVzdEV4aXN0In1dLCJhc3NpZ24iOnsidmFsdWUiOmZhbHNlfX19fQ=="
+          }
+        }
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSNoPrivEscPreviewES923",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "HMCTSNoPrivEscPreviewES923"
+}

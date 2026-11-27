@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "metadata": {
+      "assignedBy": "PlatOps"
+    },
+    "description": "DTSPO-35033 preview mutation for the exact cluster and reviewed namespaces in the referenced definition.",
+    "displayName": "DTSPO-35033 privilege escalation preview - JDBC7700",
+    "enforcementMode": "Default",
+    "notScopes": [],
+    "parameters": {
+      "effect": {
+        "value": "Mutate"
+      }
+    },
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HMCTS/providers/Microsoft.Authorization/policyDefinitions/HMCTSNoPrivEscPreviewJDBC7700",
+    "scope": "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4"
+  },
+  "type": "Microsoft.Authorization/policyAssignments",
+  "id": "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/providers/Microsoft.Authorization/policyAssignments/AP-P-JDBC7700",
+  "name": "AP-P-JDBC7700"
+}
