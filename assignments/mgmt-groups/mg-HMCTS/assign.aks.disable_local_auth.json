@@ -2,7 +2,7 @@
   "properties": {
     "metadata": {
       "assignedBy": "github.com/hmcts/azure-policy",
-      "remediation": "terraform:aks-module-kubernetes - GAP, not implemented. azurerm_kubernetes_cluster.local_account_disabled defaults false; add var + set local_account_disabled = true (requires RBAC + AAD integration, already present)"
+      "remediation": "terraform:aks-module-kubernetes - implemented. Set local_account_disabled = true by default; override to false only for approved exception clusters that require local auth."
     },
     "description": "Audit AKS clusters that have local accounts enabled (should be disabled).",
     "displayName": "AKS Disable Local Accounts (mg:HMCTS)",
